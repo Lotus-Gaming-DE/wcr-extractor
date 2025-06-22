@@ -7,3 +7,6 @@ Dieses Skript lädt die aktuellen Minis von [method.gg](https://www.method.gg/wa
 ```bash
 pip install -r requirements.txt
 python scripts/fetch_method.py
+```
+
+Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei `data/units.json` automatisch aktualisiert.

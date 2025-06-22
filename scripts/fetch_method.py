@@ -1,4 +1,3 @@
-import os
 import json
 import requests
 from bs4 import BeautifulSoup
@@ -9,27 +8,25 @@ OUT_PATH = Path(__file__).parent.parent / "data" / "units.json"
 
 
 def fetch_units():
+    """Fetch the minis list from method.gg and return it as a list of dicts."""
+
     print(f"Starte Abruf von {BASE_URL} ...")
     response = requests.get(BASE_URL, headers={"User-Agent": "Mozilla/5.0"})
     if response.status_code != 200:
         raise Exception(f"Fehler beim Abrufen: {response.status_code}")
 
     soup = BeautifulSoup(response.text, "html.parser")
-    cards = soup.select(".mini-card")
+    cards = soup.select("div.mini-wrapper")
 
     all_units = []
 
     for card in cards:
-        name_elem = card.select_one(".mini-card__name")
-        faction_elem = card.select_one(".mini-card__faction")
-        type_elem = card.select_one(".mini-card__type")
-        cost_elem = card.select_one(".mini-card__elixir")
+        name = card.get("data-name", "?")
+        faction = card.get("data-family", "?")
+        unit_type = card.get("data-type", "?")
+        cost_attr = card.get("data-cost")
+        cost = int(cost_attr) if cost_attr is not None else None
         image_elem = card.select_one("img")
-
-        name = name_elem.text.strip() if name_elem else "?"
-        faction = faction_elem.text.strip() if faction_elem else "?"
-        unit_type = type_elem.text.strip() if type_elem else "?"
-        cost = int(cost_elem.text.strip()) if cost_elem else None
         image_url = image_elem["src"] if image_elem else None
 
         unit_id = name.lower().replace(" ", "-")

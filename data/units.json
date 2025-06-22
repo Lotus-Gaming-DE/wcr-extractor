@@ -5,7 +5,55 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 6,
-    "image": "/images/rumble/minis/300/abomination.png"
+    "image": "/images/rumble/minis/300/abomination.png",
+    "damage": 170,
+    "health": 3400,
+    "dps": 68.0,
+    "speed": "Slow",
+    "traits": [
+      "Hook",
+      "Tank",
+      "Melee",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Melee"
+      },
+      "stats": {
+        "Area Damage": "170",
+        "Health": "3,400",
+        "DPS": "68",
+        "Attack Speed": "2.5",
+        "Speed": "Slow"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Hook",
+          "description": "Hooks ranged enemies."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Noxious Presence",
+          "description": "Poison nearby enemies every 3 seconds."
+        },
+        {
+          "name": "Cannonball",
+          "description": "On deploy and at 50% health, stun nearby enemies for 5 seconds."
+        },
+        {
+          "name": "Fresh Meat",
+          "description": "After hooking a target, deal double damage on the next attack."
+        }
+      ],
+      "advanced_info": "Melee cleave\nArc 140 degrees\nHook\n5-second cooldown\nMinimum range 3\nMaximum acquire range 9\nTargets the lowest max health Ranged enemy in range\nNoxious Presence talent\nApplies 1 stack of Poison every 3 seconds on a radius of 4\nDoes not hit flying minis\nCannonball talent\nStun radius 3.5\n5-second baseline, 0.75 seconds level modifier, 1.25 seconds minimum duration\nStun will proc whenever Abomination enters below 50% health, so it can happen again if the Abomination is healed to above 50%"
+    }
   },
   {
     "id": "ancient-of-war",
@@ -13,7 +61,59 @@
     "faction": "Cenarion",
     "type": "Troop",
     "cost": 0,
-    "image": "/images/rumble/minis/300/ancient-of-war.png"
+    "image": "/images/rumble/minis/300/ancient-of-war.png",
+    "damage": 60,
+    "health": 850,
+    "dps": 0.0,
+    "speed": "Slow",
+    "traits": [
+      "Surge",
+      "Tank",
+      "Armored",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "850",
+        "Attack Speed": "2.1",
+        "Speed": "Slow",
+        "Damage": "60"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        },
+        {
+          "name": "Surge",
+          "description": "Consumes remaining Gold when deployed."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Sapling",
+          "description": "If played for 4 Gold or less, gain 100% Attack Speed."
+        },
+        {
+          "name": "Behemoth",
+          "description": "Gain Siege damage."
+        },
+        {
+          "name": "Lightning Rod",
+          "description": "If played for 5 Gold or more, redirect enemy Spell and Unbound deploys to Ancient of War's current location."
+        }
+      ],
+      "advanced_info": "Surge Health and damage scaling\nLinear scaling per gold spent\nMultiplier per gold spent 0.23999\nFor example, a level 1 Ancient of War has 850 health when played for 1 gold, 1054 (+204) health when played for 2 gold, and 1258 (+204 more again) health when played for 3 gold"
+    }
   },
   {
     "id": "angry-chickens",
@@ -21,15 +121,116 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/angry-chickens.png"
+    "image": "/images/rumble/minis/300/angry-chickens.png",
+    "damage": 50,
+    "health": 25,
+    "dps": 50.0,
+    "speed": "Med-Fast",
+    "traits": [
+      "Cycle",
+      "Fast",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "25",
+        "DPS": "50",
+        "Attack Speed": "1",
+        "Speed": "Med-Fast",
+        "Damage": "50"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Snackrifice",
+          "description": "Nearby Beast allies can consume a Chicken to heal themselves."
+        },
+        {
+          "name": "Walking Crate",
+          "description": "Deploy in a protective crate. When destroyed, Chickens emerge."
+        },
+        {
+          "name": "Furious Fowl",
+          "description": "Gain Fury."
+        }
+      ],
+      "advanced_info": "Snackrifice talent\nEating a Chicken heals a Beast mini for 500\nWalking Crate talent\nMovement speed 2 (slow)\nSingle-target melee attack that deals 60 siege damage every second\nTargeting based on having to turn as little as possible\n210 health"
+    }
   },
   {
-    "id": "anub'arak",
+    "id": "anub-arak",
     "name": "Anub'arak",
     "faction": "Beast,Undead",
     "type": "Leader",
     "cost": 6,
-    "image": "/images/rumble/minis/300/anub-arak.png"
+    "image": "/images/rumble/minis/300/anub-arak.png",
+    "damage": 100,
+    "health": 1440,
+    "dps": 50.0,
+    "speed": "Slow",
+    "traits": [
+      "Tank",
+      "Armored",
+      "Charge",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Area Damage": "100",
+        "Health": "1,440",
+        "DPS": "50",
+        "Attack Speed": "2",
+        "Speed": "Slow"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        },
+        {
+          "name": "Charge",
+          "description": "Charges to enemy targets."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Regenerate",
+          "description": "Regenerate 50% health when emerging from a burrow."
+        },
+        {
+          "name": "Explosive Shells",
+          "description": "Scarab Beetles erupt on death, dealing damage to nearby enemies."
+        },
+        {
+          "name": "Trap Door",
+          "description": "At 50% health, summon 12 Scarab Beetles, and temporarily submerge, avoiding attacks."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nBeast\nElemental\nFast\nFlying\nRanged\nSquad\nTank\nUnbound\nUndead\nWithout a Wildcard slot, Anub’arak cannot buff Execute.\nMelee cleave\nArc 140 degrees\nBurrow\nMinimum range 4\nMaximum acquire range 12\nMovement speed while burrowed 7\nWhile burrowed, Anub'arak is immune to all damage and gains Unstoppable. It also ignores collisions and cannot be pushed.\nScarab Beetles\n10 health\nMovement speed 3\nAttack speed 1.3 seconds\nNo damage, applies 1 stack of poison\nDamage reflection effects do not work on Scarabs because they deal no damage\nExplosive Shells talent\n35 damage\nRadius 5\nTrap Door talent\nCan only proc once per Anub'arak (healing above 50% does not re-enable the effect)\nThe Beetles will spawn even if you already have 12 Beetles on the map\nApplies a 5-second stun on a 3.5 radius"
+    }
   },
   {
     "id": "arcane-blast",
@@ -37,7 +238,52 @@
     "faction": "Alliance",
     "type": "Spell",
     "cost": 1,
-    "image": "/images/rumble/minis/300/arcane-blast.png"
+    "image": "/images/rumble/minis/300/arcane-blast.png",
+    "damage": 75,
+    "health": 0,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Cycle",
+      "Elemental",
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Area Damage": "75",
+        "Radius": "5"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Amplification",
+          "description": "Sequential taps increase Radius by 1."
+        },
+        {
+          "name": "Torrent",
+          "description": "Gain a level after casting Rank 3."
+        },
+        {
+          "name": "Arcane Power",
+          "description": "Spell sequence starts at rank 3 and ends at rank 4."
+        }
+      ],
+      "advanced_info": "Like most spells, Arcane Blast deals half damage against player Barracks.\nInteraction with buffs\nEach cast of Arcane Blast is considered a separate spell, so buffs like Moonkin's +2 levels to the next spell only affect the first cast.\nOn the other hand, each cast is also considered a separate spell for positive effects, like buffing Bloodmage Thalnos.\nTorrent talent\nAdditional levels are capped at +10"
+    }
   },
   {
     "id": "arthas",
@@ -45,7 +291,68 @@
     "faction": "Alliance,Undead",
     "type": "Leader",
     "cost": 5,
-    "image": "/images/rumble/minis/300/arthas.png"
+    "image": "/images/rumble/minis/300/arthas.png",
+    "damage": 185,
+    "health": 1100,
+    "dps": 0.0,
+    "speed": "Medium",
+    "traits": [
+      "Remorseless Winter",
+      "Lichborne",
+      "Army of the Dead",
+      "Armored",
+      "Frost",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,100",
+        "Speed": "Medium",
+        "Damage": "185"
+      },
+      "traits": [
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        },
+        {
+          "name": "Frost",
+          "description": "Frost damage slows enemy movement and attack speed."
+        },
+        {
+          "name": "Remorseless Winter",
+          "description": "Apply Frost to nearby enemies."
+        },
+        {
+          "name": "Lichborne",
+          "description": "Alliance Minis summon a Skeleton Mage on death."
+        },
+        {
+          "name": "Army of the Dead",
+          "description": "Periodically summon a Frosty Footman, max 2 (13 second cooldown)."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Death Grip",
+          "description": "Periodically pull Ranged enemies into melee range, stunning them for 2 seconds (8 second cooldown). Death Grip has a minimum range of 3 and a maximum range of 8."
+        },
+        {
+          "name": "Necrotic Plague",
+          "description": "Soulshatter also applies to Poisoned enemies."
+        },
+        {
+          "name": "Purgatory",
+          "description": "On death, become invulnerable for 3 seconds. If the target dies, return to life with 25% health. The target that needs to die, is the first enemy that Arthas attacks after resurrecting and becoming invulnerable."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row:\nAlliance\nCycle\nFlying\nMelee\nRanged\nSpell\nSquad\nUnbound\nUndead\nWithout a Wildcard slot, Arthas cannot buff a Swole Troll that does not have Meatier Elbow.\nRemorseless Winter:\nApplies Frost to nearby enemies\nFrost reduces both their attack and movement speed by 50%\n6.5 radius from Arthas\nNote that this range means that most ranged minis will be shooting at Arthas from outside the Frost aura, if Arthas is fighting against a tank\nArmy of the Dead:\nPeriodically summons a Frosty Footman\nMaximum of 2 Footmen at a time, per Arthas\nBoth are summoned immediately when you deploy Arthas\n13-second cooldown for each Footman, starts when summoned, so if they die after 13 seconds or more, Arthas immediately summons another\nSoulshatter:\nWhile deployed, Frosted enemies die instantly when taking any damage below 20% health\nDoes not apply to buildings, bosses, and mini-bosses\nGlobal while Arthas is alive\nTarget needs to be hit while already under 20% health – mostly effective against big tanks because small minis often die to a hit while under 20% health anyway\nLichborne:\nNearby allied Alliance Minis summon stationary Skeleton Mages on death\nAllied, so also works for your partners' minis in co-op, but only close to Arthas\n12 radius from Arthas"
+    }
   },
   {
     "id": "banshee",
@@ -53,7 +360,47 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/banshee.png"
+    "image": "/images/rumble/minis/300/banshee.png",
+    "damage": 0,
+    "health": 230,
+    "dps": 0.0,
+    "speed": "Med-Fast",
+    "traits": [
+      "Possession",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "230",
+        "Speed": "Med-Fast"
+      },
+      "traits": [
+        {
+          "name": "Possession",
+          "description": "Takes control of an enemy unit."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Will of the Necropolis",
+          "description": "Fully Heal the possessed target."
+        },
+        {
+          "name": "Soul Eruption",
+          "description": "Possessed targets detonate on death, damaging nearby enemies."
+        },
+        {
+          "name": "Unholy Frenzy",
+          "description": "Possessed targets gain Bloodlust for 10 seconds."
+        }
+      ],
+      "advanced_info": "Possession:\nThe possessed unit always acquires the Banshee's level, which can be higher or lower than the original\nBanshee ignores other Banshees and does not try to possess them\nLife Drain:\nIf Banshee cannot possess a target (boss or Barracks), it applies a damage-over-time effect instead.\nDeals 10 Elemental damage every 0.1 seconds for 10 seconds, for a total of 1000 damage.\nSoul Eruption talent:\n180 Elemental damage\nRadius 5"
+    }
   },
   {
     "id": "baron-rivendare",
@@ -61,7 +408,65 @@
     "faction": "Undead",
     "type": "Leader",
     "cost": 4,
-    "image": "/images/rumble/minis/300/baron-rivendare.png"
+    "image": "/images/rumble/minis/300/baron-rivendare.png",
+    "damage": 190,
+    "health": 1040,
+    "dps": 111.8,
+    "speed": "Fast",
+    "traits": [
+      "Tank",
+      "Fast",
+      "Elemental",
+      "Armored",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,040",
+        "DPS": "111",
+        "Attack Speed": "1.7",
+        "Speed": "Fast",
+        "Damage": "190"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Chill Of The Grave",
+          "description": "Summon Skeletal Mages instead of Warriors."
+        },
+        {
+          "name": "Death Pact",
+          "description": "Periodically sacrifice a nearby Skeleton to be Healed."
+        },
+        {
+          "name": "Skeletal Frenzy",
+          "description": "Nearby allied Skeletons gain Bloodlust."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row:\nCycle\nElemental\nFast\nFlying\nSiege Damage\nSpell\nSquad\nUndead\nWithout a Wildcard slot, Baron Rivendare cannot buff:\nAncient of War\nBog Beast\nDarkspear Troll\nGnoll Brute (unless Rabid)\nHarvest Golem\nStonehoof Tauren\nArmy of the Dead:\nSkeletons spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 15 seconds\nWith Chill of the Grave talent, Skeletal Mages spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 25 seconds\nSkeletal Frenzy talent:\nFriendly Skeletons have Bloodlust as long as they are within a radius of 8 from Baron Rivendare\nDeath Pact talent:\nRange 9\nCooldown 10 seconds\nHeals Rivendare for 100% of his maximum health\nRivendare uses Death Pact when he is below 60% of his maximum health"
+    }
   },
   {
     "id": "bat-rider",
@@ -69,7 +474,62 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/bat-rider.png"
+    "image": "/images/rumble/minis/300/bat-rider.png",
+    "damage": 250,
+    "health": 170,
+    "dps": 100.0,
+    "speed": "Medium",
+    "traits": [
+      "Cycle",
+      "Elemental",
+      "Bombard",
+      "Flying",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Flying"
+      },
+      "stats": {
+        "Area Damage": "250",
+        "Health": "170",
+        "DPS": "100",
+        "Attack Speed": "2.5",
+        "Speed": "Medium",
+        "Range": "6.5",
+        "Duration": "2.5"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Bombard",
+          "description": "Attacks ground enemies only."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Enchanted Vials",
+          "description": "Increase the size of the flaming pool by 30%."
+        },
+        {
+          "name": "Flaming Pitch",
+          "description": "Flaming pool reduces enemy's Speed by 30%."
+        },
+        {
+          "name": "Fiery Surplus",
+          "description": "\"Accidentally\" leave vials on the ground, Burning nearby enemies that touch them."
+        }
+      ],
+      "advanced_info": "Liquid Fire (main attack):\n50 Elemental damage every 0.5 seconds for 2.5 seconds\nRadius 4.5\nEnchanted Vials talent increases the radius to 6 (almost doubles the area of the pool)\nFiery Surplus talent:\nDrops a vial every 12 seconds\nVial decays after 100 seconds or when touched by an enemy\nVial applies Burn on enemy minis that touch it"
+    }
   },
   {
     "id": "blizzard",
@@ -77,7 +537,53 @@
     "faction": "Alliance",
     "type": "Spell",
     "cost": 4,
-    "image": "/images/rumble/minis/300/blizzard.png"
+    "image": "/images/rumble/minis/300/blizzard.png",
+    "damage": 500,
+    "health": 0,
+    "dps": 100.0,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Frost",
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Area Damage": "500",
+        "DPS": "100",
+        "Radius": "6",
+        "Duration": "5"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Frost",
+          "description": "Frost damage slows enemy movement and attack speed."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Cold Snap",
+          "description": "Freeze enemy troops in place."
+        },
+        {
+          "name": "Brittle Ice",
+          "description": "Enemies within take 50% additional damage from Physical sources."
+        },
+        {
+          "name": "Icecrown",
+          "description": "Summons an additional Blizzard at your Base."
+        }
+      ]
+    }
   },
   {
     "id": "bloodmage-thalnos",
@@ -85,7 +591,51 @@
     "faction": "Undead",
     "type": "Leader",
     "cost": 4,
-    "image": "/images/rumble/minis/300/bloodmage-thalnos.png"
+    "image": "/images/rumble/minis/300/bloodmage-thalnos.png",
+    "damage": 140,
+    "health": 460,
+    "dps": 100.0,
+    "speed": "Slow",
+    "traits": [
+      "Elemental",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "140",
+        "Health": "460",
+        "DPS": "100",
+        "Attack Speed": "1.4",
+        "Speed": "Slow",
+        "Range": "8.5"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Bane",
+          "description": "Playing a Spell increases Attack Speed by 30% for 5 seconds."
+        },
+        {
+          "name": "Drain Life",
+          "description": "Gain Lifesteal."
+        },
+        {
+          "name": "Dominance",
+          "description": "Spells costing 3 or more grant an additional level."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nCycle\nElemental\nFast\nLifesteal\nSpell\nSquad\nTank\nUndead\nUnbound\nWithout a Wildcard slot, Bloodmage Thalnos cannot buff\nDarkspear Troll\nShadow Splash:\nThe lifesteal effect is 8% of the damage dealt by Thalnos\nDark Ritual:\nAdditional levels are capped at +10\nDrain Soul talent:\nThe discount effect stacks until you cast a spell\nThe minimum cost of a spell is 1 gold\nThe discount effect has a 12-second cooldown, separately for each Thalnos\nFor example, if you have two copies of Thalnos on the board, you can discount your next spell by 2 every 12 seconds, and the discounts from the two Thalnos minis can come at any time, with each Thalnos on its own separate 12-second cooldown"
+    }
   },
   {
     "id": "bog-beast",
@@ -93,7 +643,55 @@
     "faction": "Cenarion",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/bog-beast.png"
+    "image": "/images/rumble/minis/300/bog-beast.png",
+    "damage": 165,
+    "health": 1100,
+    "dps": 66.0,
+    "speed": "Slow",
+    "traits": [
+      "Tank",
+      "Resistant",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,100",
+        "DPS": "66",
+        "Attack Speed": "2.5",
+        "Speed": "Slow",
+        "Damage": "165"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Resistant",
+          "description": "Takes 50% less Elemental damage."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Flourish",
+          "description": "Heals received are 50% more effective."
+        },
+        {
+          "name": "Living Wood",
+          "description": "Gain Armor until 30% health."
+        },
+        {
+          "name": "Rampant Growth",
+          "description": "At 50% health and on death, Root nearby enemies for 6 seconds."
+        }
+      ],
+      "advanced_info": "Living Wood talent:\nThe Armor cannot be regained even if Bog Beast is healed back up above 30%\nRampant Growth talent:\nThe root is applied on a radius of 6"
+    }
   },
   {
     "id": "cairne-bloodhoof",
@@ -101,7 +699,59 @@
     "faction": "Horde",
     "type": "Leader",
     "cost": 5,
-    "image": "/images/rumble/minis/300/cairne-bloodhoof.png"
+    "image": "/images/rumble/minis/300/cairne-bloodhoof.png",
+    "damage": 176,
+    "health": 1700,
+    "dps": 70.4,
+    "speed": "Znull",
+    "traits": [
+      "Tank",
+      "Attack Stun",
+      "Fast",
+      "Melee",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Melee"
+      },
+      "stats": {
+        "Area Damage": "176",
+        "Health": "1,700",
+        "DPS": "70",
+        "Attack Speed": "2.5"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        },
+        {
+          "name": "Attack Stun",
+          "description": "Attack stuns enemies."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Reincarnation",
+          "description": "After death, Resurrect at 50% Health once."
+        },
+        {
+          "name": "Plainsrunning",
+          "description": "Move 50% faster and gain the Fast trait."
+        },
+        {
+          "name": "Aftershock",
+          "description": "When Stun expires, affected enemies are Dazed for 5 seconds."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row:\nCycle\nElemental\nFast\nFlying\nHorde\nSiege Damage\nSpell\nSquad\nWithout a Wildcard slot, Cairne cannot buff:\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nWorgen\nEarthen Might:\nThe Horde troop health buff is active even if you never deploy Cairne\nShockwave:\nApplies a 1-second Stun\nStuns Towers\nResets Fury stacks on its targets\nAftershock talent\nThe Daze effect movement speed reduction is -50% for 6 seconds\nPlainsrunning talent\nThe movement speed increase is +150%, from 2 to 5"
+    }
   },
   {
     "id": "cenarius",
@@ -109,7 +759,74 @@
     "faction": "Cenarion",
     "type": "Leader",
     "cost": 5,
-    "image": "/images/rumble/minis/300/cenarius.png"
+    "image": "/images/rumble/minis/300/cenarius.png",
+    "damage": 120,
+    "health": 600,
+    "dps": 75.0,
+    "speed": "Medium",
+    "traits": [
+      "Brambles",
+      "Tranquility",
+      "Elemental",
+      "Resistant",
+      "Healer",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "600",
+        "DPS": "75",
+        "Attack Speed": "1.6",
+        "Speed": "Medium",
+        "Range": "8",
+        "Damage": "120",
+        "Healing": "28",
+        "Root Radius": "8",
+        "Roots Duration": "3"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Resistant",
+          "description": "Takes 50% less Elemental damage."
+        },
+        {
+          "name": "Healer",
+          "description": "Heals friendly units."
+        },
+        {
+          "name": "Brambles",
+          "description": "Enemies are Rooted for 3 seconds when first entering an AOE around Cenarius."
+        },
+        {
+          "name": "Tranquility",
+          "description": "Nearby allies are healed over time."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Force of Nature",
+          "description": "Summon a Treant when a Rooted enemy dies."
+        },
+        {
+          "name": "Revitalize",
+          "description": "Allies entering Tranquility trigger an additional heal pulse."
+        },
+        {
+          "name": "Wild Growth",
+          "description": "On deploy, Root all enemies for 5 seconds."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nCenarion\nCycle\nElemental\nFlying\nRanged\nSpell\nSquad\nUnbound\nEven without a Wildcard slot, Cenarius can buff all minis.\nGrove Keeper\nCenarion allies have 30% additional health, and they start at 100% of their original health\nHeal aura\nRadius 8.5\nHeals all allied minis in range for 28 every 1.5 seconds"
+    }
   },
   {
     "id": "chain-lightning",
@@ -117,7 +834,52 @@
     "faction": "Horde",
     "type": "Spell",
     "cost": 2,
-    "image": "/images/rumble/minis/300/chain-lightning.png"
+    "image": "/images/rumble/minis/300/chain-lightning.png",
+    "damage": 150,
+    "health": 0,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Cycle",
+      "Elemental",
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Area Damage": "150",
+        "Radius": "5"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Brilliant Flash",
+          "description": "On deploy, Stun enemies within for 1 second."
+        },
+        {
+          "name": "Reverberation",
+          "description": "Can be cast a second time."
+        },
+        {
+          "name": "Storm's Reach",
+          "description": "Dramatically increase jump distance between targets."
+        }
+      ],
+      "advanced_info": "Bounces\nBounces up to 20 times\nBounce range is 3, with Storm’s Reach talent it is 7\nBrilliant Flash talent\nApplies a 1-second Stun\nStuns Towers"
+    }
   },
   {
     "id": "charlga-razorflank",
@@ -125,7 +887,61 @@
     "faction": "Beast",
     "type": "Leader",
     "cost": 2,
-    "image": "/images/rumble/minis/300/charlga-razorflank.png"
+    "image": "/images/rumble/minis/300/charlga-razorflank.png",
+    "damage": 6,
+    "health": 416,
+    "dps": 24.0,
+    "speed": "Medium",
+    "traits": [
+      "Cycle",
+      "Percent Damage",
+      "Attack Root",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "416",
+        "DPS": "24",
+        "Speed": "Medium",
+        "Range": "8.5",
+        "Damage": "6",
+        "Percent DPS": "8"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Percent Damage",
+          "description": "Deals a percentage of the target's health in damage."
+        },
+        {
+          "name": "Attack Root",
+          "description": "Attack roots enemies, immobilising them."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Cavernous Mists",
+          "description": "Deploy cost reduced by 1."
+        },
+        {
+          "name": "Spirit Passage",
+          "description": "Minis played for 5 Gold gain a level and deploy in Stealth."
+        },
+        {
+          "name": "Nature's Grasp",
+          "description": "Root two additional nearby targets."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nBeast\nCycle\nElemental\nFlying\nRanged\nSpell\nTank\nUnbound\nWithout a Wildcard slot, Charlga cannot buff\nTreant\nMini costs\nCharlga has two decks: a mini pile and a cost pile\nAt the start of the game, both piles are shuffled independently\nEvery mini in your hand costs the same, and you can see the next cost together with the next mini\nWhen you play a mini, the mini goes to the bottom of the mini pile, and the mini’s original cost - not the cost you play it for - goes to the bottom of the cost pile\nSurge minis add a cost that uses all of your gold to the cost pile\nRoot attack\nRoots ground minis, but not flying minis\nDisables Towers for the duration of the channel\n4 ticks per second, 6 seconds channel\nDeals 2% of target's health + 6 damage per tick (but see the note about percentage damage scaling)\nThe 6 damage scales with levels as usual\nPercentage damage scaling\nMinis: 2%, ±0.2% per level\nBuildings: 2%, ±0.2% per level\nBarracks: 0.5%, ±0.05% per level\nBosses: 1%, ±0.1% per level\nRaid bosses: 0.25%, ±0.025% per level\nNo minimum values, so a -10 Charlga loses all percentage damage"
+    }
   },
   {
     "id": "cheat-death",
@@ -133,7 +949,41 @@
     "faction": "Undead",
     "type": "Spell",
     "cost": 3,
-    "image": "/images/rumble/minis/300/cheat-death.png"
+    "image": "/images/rumble/minis/300/cheat-death.png",
+    "damage": 0,
+    "health": 0,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Radius": "5",
+        "Duration": "5",
+        "Lvl Advantage": "0.5 sec"
+      },
+      "talents": [
+        {
+          "name": "Vampirism",
+          "description": "Affected minis are Healed when dealing damage."
+        },
+        {
+          "name": "Apocalypse",
+          "description": "Affected Skeletons Resurrect at your base when they die."
+        },
+        {
+          "name": "Seal Fate",
+          "description": "Affected minis gain Bloodlust, but die when the effect ends."
+        }
+      ],
+      "advanced_info": "Level modifier\nLevels gained while in play do not affect Cheat Death duration\nVampirism talent\nHeals the affected minis by 50 whenever they deal damage (includes damage-over-time effects like poison)"
+    }
   },
   {
     "id": "chimaera",
@@ -141,7 +991,57 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 5,
-    "image": "/images/rumble/minis/300/chimaera.png"
+    "image": "/images/rumble/minis/300/chimaera.png",
+    "damage": 280,
+    "health": 460,
+    "dps": 115.0,
+    "speed": "Med-Fast",
+    "traits": [
+      "Elemental",
+      "Poisonous",
+      "Flying",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Flying"
+      },
+      "stats": {
+        "Health": "460",
+        "Speed": "Med-Fast",
+        "Range": "7",
+        "Left Damage": "150",
+        "Left DPS": "50",
+        "Right Damage": "130",
+        "Right DPS": "65"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Poisonous",
+          "description": "Deals stacking damage over time. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Leviathan",
+          "description": "Gain 10% additional Health per deploy."
+        },
+        {
+          "name": "Frost Shock",
+          "description": "Lightning Ball applies Frost on hit."
+        },
+        {
+          "name": "Corrosive Breath",
+          "description": "Poison Spit inflicts twice as much Poison."
+        }
+      ],
+      "advanced_info": "The heads choose targets independently. The poison head attempts to shoot the highest-health target and the lightning head attempts to shoot the lowest-health target.\nLightning Ball\nBounces up to 20 times\nBounce range is 3\nPoison Spit\nApplies 2 stacks of Poison\nWith Corrosive Breath talent, applies 4 stacks of Poison\nLeviathan talent\nStacks up to 3 times"
+    }
   },
   {
     "id": "core-hounds",
@@ -149,7 +1049,60 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 6,
-    "image": "/images/rumble/minis/300/core-hounds.png"
+    "image": "/images/rumble/minis/300/core-hounds.png",
+    "damage": 220,
+    "health": 1600,
+    "dps": 100.0,
+    "speed": "Slow",
+    "traits": [
+      "Tank",
+      "Resistant",
+      "Revive",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,600",
+        "DPS": "100",
+        "Attack Speed": "2.2",
+        "Speed": "Slow",
+        "Damage": "220"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Resistant",
+          "description": "Takes 50% less Elemental damage."
+        },
+        {
+          "name": "Revive",
+          "description": "Squadmates resurrect each other."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Eternal Bond",
+          "description": "Resurrection range is unlimited."
+        },
+        {
+          "name": "Guard Dog",
+          "description": "Deal 50% additional damage near friendly towers and meeting stones."
+        },
+        {
+          "name": "Fiery Revival",
+          "description": "Upon Revival, damage and burn nearby enemies."
+        }
+      ],
+      "advanced_info": "Resurrection\nRange 4\nIt takes 5 seconds for a Hound to resurrect its partner\nIf a Hound is stunned while resurrecting its partner, the resurrect will fail and the body will despawn\nFiery Rebirth talent\nDeals 170 Elemental damage\nApplies Burn\nRadius 6"
+    }
   },
   {
     "id": "dark-iron-miner",
@@ -157,7 +1110,60 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/dark-iron-miner.png"
+    "image": "/images/rumble/minis/300/dark-iron-miner.png",
+    "damage": 60,
+    "health": 540,
+    "dps": 42.9,
+    "speed": "Medium",
+    "traits": [
+      "Unbound",
+      "Miner",
+      "Cycle",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "540",
+        "DPS": "42",
+        "Attack Speed": "1.4",
+        "Speed": "Medium",
+        "Damage": "60"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Unbound",
+          "description": "Can be played anywhere on the map."
+        },
+        {
+          "name": "Miner",
+          "description": "Mines Gold from Gold Veins."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Dwarven Ambition",
+          "description": "Gain Fury."
+        },
+        {
+          "name": "Gold Mine",
+          "description": "After Mining, drop a proximity mine. Damages nearby enemies when touched."
+        },
+        {
+          "name": "Dark Iron Armaments",
+          "description": "After Mining, gain Armored."
+        }
+      ],
+      "advanced_info": "Gold Mine talent\n120 Physical damage\nRadius 6"
+    }
   },
   {
     "id": "darkspear-troll",
@@ -165,7 +1171,43 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/darkspear-troll.png"
+    "image": "/images/rumble/minis/300/darkspear-troll.png",
+    "damage": 190,
+    "health": 220,
+    "dps": 158.3,
+    "speed": "Medium",
+    "traits": [
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "220",
+        "DPS": "158",
+        "Attack Speed": "1.2",
+        "Speed": "Medium",
+        "Range": "9",
+        "Damage": "190"
+      },
+      "talents": [
+        {
+          "name": "Big Bad Voodoo",
+          "description": "Regenerate 20% health every second."
+        },
+        {
+          "name": "Headhunting",
+          "description": "On kill, increase Attack and Movement speed by 10%. Stacks to 50%."
+        },
+        {
+          "name": "Serpent Sting",
+          "description": "Gain Poison."
+        }
+      ]
+    }
   },
   {
     "id": "deep-breath",
@@ -173,7 +1215,48 @@
     "faction": "Blackrock",
     "type": "Spell",
     "cost": 4,
-    "image": "/images/rumble/minis/300/deep-breath.png"
+    "image": "/images/rumble/minis/300/deep-breath.png",
+    "damage": 160,
+    "health": 0,
+    "dps": 30.0,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Area Damage": "160",
+        "Range": "25",
+        "Burn Damage (8s DoT)": "240"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Attunement",
+          "description": "Allies caught in the effect gain Resist."
+        },
+        {
+          "name": "Melting Point",
+          "description": "Damaging Armored enemies removes their Armor."
+        },
+        {
+          "name": "Double Dragon",
+          "description": "Cast a second wave in the opposite direction."
+        }
+      ],
+      "advanced_info": "Deals 80 Elemental damage and a shorter 4-second Burn effect (120 damage) to Barracks."
+    }
   },
   {
     "id": "defias-bandits",
@@ -181,7 +1264,60 @@
     "faction": "Alliance",
     "type": "Troop",
     "cost": 1,
-    "image": "/images/rumble/minis/300/defias-bandits.png"
+    "image": "/images/rumble/minis/300/defias-bandits.png",
+    "damage": 30,
+    "health": 120,
+    "dps": 16.7,
+    "speed": "Med-Fast",
+    "traits": [
+      "Cycle",
+      "Stealth",
+      "Cheap Shot",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "120",
+        "DPS": "16",
+        "Attack Speed": "1.8",
+        "Speed": "Med-Fast",
+        "Damage": "30"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Stealth",
+          "description": "Invisible to enemies until it attacks or is damaged."
+        },
+        {
+          "name": "Cheap Shot",
+          "description": "Attacking from Stealth will Stun enemy units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Pick Lock",
+          "description": "Earn an extra +2 Gold when opening chests."
+        },
+        {
+          "name": "Deadly Poison",
+          "description": "Gain Poison."
+        },
+        {
+          "name": "Last Resort",
+          "description": "On death, Stun the target for 3 seconds."
+        }
+      ],
+      "advanced_info": "Cheap Shot\nApplies a 4-second Stun\nResets Fury stacks on its target\nDeadly Poison talent\nApplies 1 stack of poison per hit\nLast Resort talent\nSpecial 3-second Stun\nNo level modifier\nDoes not affect bosses at all"
+    }
   },
   {
     "id": "dire-batlings",
@@ -189,7 +1325,60 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/dire-batlings.png"
+    "image": "/images/rumble/minis/300/dire-batlings.png",
+    "damage": 48,
+    "health": 30,
+    "dps": 40.0,
+    "speed": "Fast",
+    "traits": [
+      "Cycle",
+      "Fast",
+      "Detect",
+      "Flying",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Flying"
+      },
+      "stats": {
+        "Health": "30",
+        "DPS": "40",
+        "Attack Speed": "1.2",
+        "Speed": "Fast",
+        "Damage": "48"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        },
+        {
+          "name": "Detect",
+          "description": "Detect and attack Sealthed enemies."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Midnight's Call",
+          "description": "On kill, gain Stealth."
+        },
+        {
+          "name": "Soundbite",
+          "description": "Batling bites emite a sonic wave that damage a nearby enemy mini."
+        },
+        {
+          "name": "Guano Happens",
+          "description": "Periodically drop happy little accidents that Poison the first enemy to touch them."
+        }
+      ],
+      "advanced_info": "Guano Happens talent\nDrops a guano pool every 8-20 seconds (per bat, randomized)\nPool applies 1 stack of Poison to the first ground mini that touches it\nPool decays after 50 seconds if left untouched\nSoundbite talent\n30 damage\n5.5 range from the main target\nCannot hit the main target"
+    }
   },
   {
     "id": "drake",
@@ -197,7 +1386,50 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/drake.png"
+    "image": "/images/rumble/minis/300/drake.png",
+    "damage": 320,
+    "health": 340,
+    "dps": 133.3,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Flying",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Flying"
+      },
+      "stats": {
+        "Area Damage": "320",
+        "Health": "340",
+        "DPS": "133",
+        "Attack Speed": "2.4",
+        "Speed": "Medium"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Mother Drake",
+          "description": "Periodically summon a Whelp Egg."
+        },
+        {
+          "name": "Engulfing Flames",
+          "description": "Damaging enemies Burns them."
+        },
+        {
+          "name": "Roost",
+          "description": "Perch on top of a nearby tower, staying there to defend it."
+        }
+      ],
+      "advanced_info": "Fire Splash\nRange 4\nArc 90 degrees\nMother Drake talent\nSpawns a Whelp Egg every 8 seconds"
+    }
   },
   {
     "id": "druid-of-the-claw",
@@ -205,7 +1437,56 @@
     "faction": "Cenarion",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/druid-of-the-claw.png"
+    "image": "/images/rumble/minis/300/druid-of-the-claw.png",
+    "damage": 332,
+    "health": 2340,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Shapeshift",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Night Elf Damage": "200",
+        "Night Elf Health": "650",
+        "Night Elf Range": "8",
+        "Bear Damage": "132",
+        "Bear Health": "1,690",
+        "Bear Range": "1"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Shapeshift",
+          "description": "Morphs into an alternate form at 50% health."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Regrowth",
+          "description": "When entering Bear form, heal 20% health over 5 seconds."
+        },
+        {
+          "name": "Rejuvenation",
+          "description": "Night Elf form gains the ability to apply a heal over time to an ally."
+        },
+        {
+          "name": "Leader of the Pack",
+          "description": "Bear Form grants a 15% damage boost to nearby allies."
+        }
+      ],
+      "advanced_info": "Bear form\nHeals for 30% of maximum health when changing shapes\nLeader of the Pack talent\nRadius 8\nRejuvenation talent\nCooldown 6 seconds\nRange 7\n25 healing every 0.6 seconds for 6 seconds, 250 healing overall\nTargets the closest injured ally (no smart targeting)"
+    }
   },
   {
     "id": "dryad",
@@ -213,7 +1494,62 @@
     "faction": "Cenarion",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/dryad.png"
+    "image": "/images/rumble/minis/300/dryad.png",
+    "damage": 175,
+    "health": 370,
+    "dps": 109.4,
+    "speed": "Fast",
+    "traits": [
+      "Fast",
+      "Poisonous",
+      "Attack Root",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "370",
+        "DPS": "109",
+        "Attack Speed": "1.6",
+        "Speed": "Fast",
+        "Range": "8",
+        "Damage": "175",
+        "Roots Duration": "2"
+      },
+      "traits": [
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        },
+        {
+          "name": "Attack Root",
+          "description": "Attack roots enemies, immobilising them."
+        },
+        {
+          "name": "Poisonous",
+          "description": "Deals stacking damage over time. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Barrage",
+          "description": "Favor new targets when possible."
+        },
+        {
+          "name": "Thorns",
+          "description": "Deal damage back to Melee attackers. Damage increases on kill, up to 10 stacks."
+        },
+        {
+          "name": "Nature's Swiftness",
+          "description": "Grant rapid movement speed to an Ally. Ability has one charge."
+        }
+      ],
+      "advanced_info": "Spear Throw\nApplies 1 stack of poison per hit\nBarrage talent\nChooses the target based on the highest current health percentage\nNature’s Swiftness talent\nSets the movement speed of the target to 4 (Fast) for most minis\nFor minis with Siege trait, increases movement speed by +75%\nCannot be cast on minis that are stationary or already have fast movement speed\nCannot be cast on Hogger\nCan nowadays be cast on Gargoyle with the Wing Buffet talent\nThorns talent\n20 damage per stack, up to 200 damage"
+    }
   },
   {
     "id": "earth-and-moon",
@@ -221,7 +1557,63 @@
     "faction": "Cenarion",
     "type": "Spell",
     "cost": 5,
-    "image": "/images/rumble/minis/300/earth-and-moon.png"
+    "image": "/images/rumble/minis/300/earth-and-moon.png",
+    "damage": 1095,
+    "health": 0,
+    "dps": 154.0,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Poisonous",
+      "Earth and Moon",
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Root DPS": "24",
+        "Root Damage": "120",
+        "Root Radius": "6",
+        "Roots Duration": "6",
+        "Roots Lvl Advantage": "1",
+        "Starfall DPS": "130",
+        "Starfall Damage": "975",
+        "Starfall Radius": "6"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Poisonous",
+          "description": "Deals stacking damage over time. Strong vs Armored."
+        },
+        {
+          "name": "Earth and Moon",
+          "description": "Alternates between Starfall and Entangling Roots whenever a Cenarion Mini is played."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Moonfury",
+          "description": "Starfall lasts 25% longer."
+        },
+        {
+          "name": "Nature's Grace",
+          "description": "Entangling Roots also grants all allies Resist for 6 seconds."
+        },
+        {
+          "name": "Balance",
+          "description": "Can be cast a second time."
+        }
+      ],
+      "advanced_info": "Entangling Roots\nApplies 3 stacks of poison\nDoes not affect Flying minis\nStarfall\nHits for 65 damage 15 times for a total of 975 damage\nBalance talent\nThe second cast has to be immediately after the first cast: you can never cast the same form twice with Balance\nMoonfury talent\nStarfall ticks 19 times instead of the usual 15 times"
+    }
   },
   {
     "id": "earth-elemental",
@@ -229,7 +1621,65 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/earth-elemental.png"
+    "image": "/images/rumble/minis/300/earth-elemental.png",
+    "damage": 70,
+    "health": 1175,
+    "dps": 35.0,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Armored",
+      "Unbound",
+      "Siege Damage",
+      "Siege Specialist",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Siege Specialist"
+      },
+      "stats": {
+        "Health": "1,175",
+        "DPS": "35",
+        "Attack Speed": "2",
+        "Speed": "Medium",
+        "Damage": "70"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        },
+        {
+          "name": "Unbound",
+          "description": "Can be played anywhere on the map."
+        },
+        {
+          "name": "Siege Damage",
+          "description": "Double damage vs Towers."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Obsidian Shard",
+          "description": "On death, split into two smaller Earth Elementals."
+        },
+        {
+          "name": "Ready to Rumble",
+          "description": "Taunt on deploy."
+        },
+        {
+          "name": "Shrapnel Blast",
+          "description": "Destroying a tower deals damage to nearby enemies."
+        }
+      ],
+      "advanced_info": "Obsidian Shard talent\nShardlings have 200 health\nShardlings deal 35 Siege damage with an attack speed of 2 seconds (the Shardling pair has the same dps as the Earth Elemental itself)\nReady to Rumble talent\nRadius 5.25\nTaunt duration 10 seconds\nShrapnel Blast talent\nRadius 5\n225 damage"
+    }
   },
   {
     "id": "eclipse",
@@ -237,7 +1687,54 @@
     "faction": "Cenarion",
     "type": "Spell",
     "cost": 3,
-    "image": "/images/rumble/minis/300/eclipse.png"
+    "image": "/images/rumble/minis/300/eclipse.png",
+    "damage": 580,
+    "health": 0,
+    "dps": 36.0,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Eclipse",
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Radius": "4",
+        "Sunfire Damage": "400",
+        "Moonfire Damage": "180",
+        "Moonfire DoT (2.5s)": "90"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Eclipse",
+          "description": "Changing forms whenever a Cenarion Mini is played"
+        }
+      ],
+      "talents": [
+        {
+          "name": "Solar Flare",
+          "description": "Sunfire also Burns enemies."
+        },
+        {
+          "name": "Umbral Force",
+          "description": "Moonfire also Stuns enemies for 1 second."
+        },
+        {
+          "name": "Celestial Focus",
+          "description": "Spells gain 2 levels if played immediately after Sunfire or Moonfire."
+        }
+      ],
+      "advanced_info": "Sunfire\nDeals 200 damage Barracks in PvP (half the usual damage)\nSolar Flare talent\nApplies a short 4-second Burn to Barracks in PvP (half the usual duration)"
+    }
   },
   {
     "id": "emperor-thaurissan",
@@ -245,7 +1742,56 @@
     "faction": "Blackrock",
     "type": "Leader",
     "cost": 4,
-    "image": "/images/rumble/minis/300/emperor-thaurissan.png"
+    "image": "/images/rumble/minis/300/emperor-thaurissan.png",
+    "damage": 85,
+    "health": 1330,
+    "dps": 33.0,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Fiery Weapon Enchant",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "1,330",
+        "DPS": "33",
+        "Attack Speed": "2.6",
+        "Speed": "Medium",
+        "Range": "7",
+        "Damage": "85"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Fiery Weapon Enchant",
+          "description": "Non-Elemental allies apply Burn on hit."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Incinerate",
+          "description": "Lava Spike's Burn is permanent and Emperor Thaurissan prefers new targets when attacking."
+        },
+        {
+          "name": "Hubris",
+          "description": "After playing Thaurissan, your next non-Elemental Mini deploys with +2 levels."
+        },
+        {
+          "name": "Moira's Wit",
+          "description": "Nearby Burning enemies (in a 12 radius) heal Thaurissan for 1.5% of his maximum Health per second."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nAoE\nBlackrock\nFlying\nMelee\nRanged\nSpell\nSquad\nTank\nEven without a Wildcard slot, Emperor Thaurissan can buff all minis.\nIncinerate talent\nApplies a 16-second Burn on bosses and buildings"
+    }
   },
   {
     "id": "execute",
@@ -253,7 +1799,41 @@
     "faction": "Horde",
     "type": "Spell",
     "cost": 3,
-    "image": "/images/rumble/minis/300/execute.png"
+    "image": "/images/rumble/minis/300/execute.png",
+    "damage": 0,
+    "health": 0,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Radius": "5",
+        "Lvl Advantage": "5%",
+        "Percent Dmg": "50"
+      },
+      "talents": [
+        {
+          "name": "Bloodthirsty",
+          "description": "Bloodlust allies within spell area for 10 seconds."
+        },
+        {
+          "name": "Overpower",
+          "description": "Knock enemies away from the cast location."
+        },
+        {
+          "name": "Killing Spree",
+          "description": "If an enemy is killed, the next Horde mini costs 1 less."
+        }
+      ],
+      "advanced_info": "Execute has a unique damage model. Its damage is a percentage of the target’s maximum health.\nMost targets: 50% with a 5% level modifier, minimum 5%\nBosses: 10% with a 1% level modifier, minimum 1%\nBarracks: 5% with a 1% level modifier, minimum 1%\nRaid bosses: 3% with a 0.5% level modifier, minimum 0.5%\nOverpower talent\nApplies a 1.5-second stun that does not affect bosses"
+    }
   },
   {
     "id": "faerie-dragon",
@@ -261,7 +1841,66 @@
     "faction": "Cenarion",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/faerie-dragon.png"
+    "image": "/images/rumble/minis/300/faerie-dragon.png",
+    "damage": 200,
+    "health": 180,
+    "dps": 133.3,
+    "speed": "Medium",
+    "traits": [
+      "Detect",
+      "Elemental",
+      "Nullify",
+      "Resistant",
+      "Flying",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Flying"
+      },
+      "stats": {
+        "Health": "180",
+        "DPS": "133",
+        "Attack Speed": "1.5",
+        "Speed": "Medium",
+        "Range": "5",
+        "Damage": "200"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Resistant",
+          "description": "Takes 50% less Elemental damage."
+        },
+        {
+          "name": "Nullify",
+          "description": "Immune to Poison, Burn, Stun and slowing effects."
+        },
+        {
+          "name": "Detect",
+          "description": "Detect and attack Sealthed enemies."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Phase Shift",
+          "description": "Teleport backwards when attacked."
+        },
+        {
+          "name": "Invisibility",
+          "description": "Gain Stealth."
+        },
+        {
+          "name": "Fae Blessing",
+          "description": "Grant Resist to a nearby Ally. Ability has one charge."
+        }
+      ],
+      "advanced_info": "Phase Shift talent\nBlink range 6\nCooldown 4 seconds"
+    }
   },
   {
     "id": "fire-elemental",
@@ -269,7 +1908,60 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/fire-elemental.png"
+    "image": "/images/rumble/minis/300/fire-elemental.png",
+    "damage": 120,
+    "health": 1640,
+    "dps": 66.7,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Elemental",
+      "Resistant",
+      "Melee",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Melee"
+      },
+      "stats": {
+        "Area Damage": "120",
+        "Health": "1,640",
+        "DPS": "66",
+        "Attack Speed": "1.8",
+        "Speed": "Medium"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Resistant",
+          "description": "Takes 50% less Elemental damage."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Immolation Aura",
+          "description": "Periodically damage nearby enemies."
+        },
+        {
+          "name": "Molten Core",
+          "description": "On death, summon a pool of lava, damaging enemies within."
+        },
+        {
+          "name": "Fan The Flames",
+          "description": "Taking Elemental damage increases damage dealt by 10%. Stacks to 30%."
+        }
+      ],
+      "advanced_info": "Immolation Aura talent\n17 Elemental damage every 0.3 seconds\nDoes not hit Flying minis\nMolten Core talent\n75 Elemental damage every 0.5 seconds\nDoes not hit Flying minis\nLava pool decays after 2.5 seconds\nFan the Flames talent\nThe damage buff lasts until the Fire Elemental dies"
+    }
   },
   {
     "id": "firehammer",
@@ -277,7 +1969,56 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/firehammer.png"
+    "image": "/images/rumble/minis/300/firehammer.png",
+    "damage": 140,
+    "health": 350,
+    "dps": 100.0,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Fury",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "350",
+        "DPS": "100",
+        "Attack Speed": "1.4",
+        "Speed": "Medium",
+        "Range": "9",
+        "Damage": "140"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Fury",
+          "description": "Attack speed increases while in combat."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Moultin' Metal",
+          "description": "Deal 50% more damage to Flying enemies."
+        },
+        {
+          "name": "Blazing Speed",
+          "description": "Fury builds up to 40% higher."
+        },
+        {
+          "name": "Heightened Rage",
+          "description": "Level up upon reaching full Fury."
+        }
+      ],
+      "advanced_info": "Blazing Speed talent\nMaximum of 5 stacks of Fury instead of the usual 3 stacks"
+    }
   },
   {
     "id": "flamewaker",
@@ -285,7 +2026,56 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/flamewaker.png"
+    "image": "/images/rumble/minis/300/flamewaker.png",
+    "damage": 220,
+    "health": 460,
+    "dps": 122.2,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Bombard",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "220",
+        "Health": "460",
+        "DPS": "122",
+        "Attack Speed": "1.8",
+        "Speed": "Medium",
+        "Range": "7.5"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Bombard",
+          "description": "Attacks ground enemies only."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Backdraft",
+          "description": "Successive attacks increase flame wave distance. Resets on movement."
+        },
+        {
+          "name": "Engulf",
+          "description": "Damaging enemies Burns thems."
+        },
+        {
+          "name": "Heat Stroke",
+          "description": "Damaging enemies Dazes them."
+        }
+      ],
+      "advanced_info": "Fire Wave\nWhile Flamewaker only shoots when something is within its range of 7.5, the Fire Wave deals damage up to a range of 11\nBackdraft talent increases this effective range to 13.5 after the first shot and then to 16 after the second shot - but there still needs to be something within 7.5 for the Flamewaker to shoot"
+    }
   },
   {
     "id": "footmen",
@@ -293,7 +2083,55 @@
     "faction": "Alliance",
     "type": "Troop",
     "cost": 5,
-    "image": "/images/rumble/minis/300/footmen.png"
+    "image": "/images/rumble/minis/300/footmen.png",
+    "damage": 70,
+    "health": 800,
+    "dps": 43.8,
+    "speed": "Slow",
+    "traits": [
+      "Tank",
+      "Armored",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "800",
+        "DPS": "43",
+        "Attack Speed": "1.6",
+        "Speed": "Slow",
+        "Damage": "70"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Fortification",
+          "description": "Gain 30% extra emtpy Health."
+        },
+        {
+          "name": "Shield Bash",
+          "description": "Periodically Stun the target for 1 second."
+        },
+        {
+          "name": "Last Stand",
+          "description": "Armor increases to 75% damage reduction when no other Footmen are nearby."
+        }
+      ],
+      "advanced_info": "Fortification talent\nFootmen have 30% additional health, and they start at 100% of their original health"
+    }
   },
   {
     "id": "frostwolf-shaman",
@@ -301,7 +2139,57 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/frostwolf-shaman.png"
+    "image": "/images/rumble/minis/300/frostwolf-shaman.png",
+    "damage": 60,
+    "health": 480,
+    "dps": 40.0,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Healer",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "480",
+        "DPS": "40",
+        "Attack Speed": "1.5",
+        "Speed": "Medium",
+        "Range": "8",
+        "Damage": "60",
+        "Healing": "80"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Healer",
+          "description": "Heals friendly units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Earth Shield",
+          "description": "Grant Armored to a nearby ally. Ability has 1 charge."
+        },
+        {
+          "name": "Lightning Mastery",
+          "description": "Ranged attack chains to 3 nearby targets."
+        },
+        {
+          "name": "Earthwall Totem",
+          "description": "Once per deploy, place a totem that partially heals a nearby tower or base."
+        }
+      ],
+      "advanced_info": "Melee attack\n60 damage\n1.7 seconds attack speed\nRanged attack\n80 Elemental damage\n1.5 seconds attack speed\nChain Heal\n4-second cooldown\n8.5 range\n160 healing per target, 2 bounces\nBounce range 5.5\nChooses the target based on the lowest current health percentage\nLightning Mastery talent\nBounce range 3\nEarthwall Totem talent\nHeals 5 times for 105 for a total of 525 healing\nDuration 5.6 seconds\nDoes not heal Barracks in PvP"
+    }
   },
   {
     "id": "gargoyle",
@@ -309,7 +2197,60 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/gargoyle.png"
+    "image": "/images/rumble/minis/300/gargoyle.png",
+    "damage": 250,
+    "health": 1300,
+    "dps": 147.0,
+    "speed": "Slow",
+    "traits": [
+      "Tank",
+      "Armored",
+      "Siege Damage",
+      "Flying",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Flying"
+      },
+      "stats": {
+        "Health": "1,300",
+        "DPS": "147",
+        "Attack Speed": "1.7",
+        "Speed": "Slow",
+        "Damage": "250"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        },
+        {
+          "name": "Siege Damage",
+          "description": "Double damage vs Towers."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Wing Buffet",
+          "description": "Increases move speed by 33%."
+        },
+        {
+          "name": "Aerial Superiority",
+          "description": "Incoming damage from Flying minis is reduced by 50%."
+        },
+        {
+          "name": "Obsidian Statue",
+          "description": "On death, summon a statue with Taunt. Lasts until destroyed."
+        }
+      ],
+      "advanced_info": "Obsidian Statue talent\n420 health\nTaunt duration 10 seconds\nTaunt radius 8\nTaunts every 3 seconds\nCannot be pushed"
+    }
   },
   {
     "id": "general-drakkisath",
@@ -317,7 +2258,60 @@
     "faction": "Blackrock",
     "type": "Leader",
     "cost": 5,
-    "image": "/images/rumble/minis/300/general-drakkisath.png"
+    "image": "/images/rumble/minis/300/general-drakkisath.png",
+    "damage": 300,
+    "health": 1600,
+    "dps": 166.7,
+    "speed": "Slow",
+    "traits": [
+      "Tank",
+      "Elemental",
+      "Resistant",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,600",
+        "DPS": "166",
+        "Attack Speed": "1.8",
+        "Speed": "Slow",
+        "Damage": "300"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Resistant",
+          "description": "Takes 50% less Elemental damage."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Chromatic Scales",
+          "description": "Grants nearby allies the Resistant trait."
+        },
+        {
+          "name": "Piercing Blows",
+          "description": "Attacks pierce through enemies in a line."
+        },
+        {
+          "name": "Lasting Legacy",
+          "description": "On death, drop a banner. Nearby enemies take 50% additional Elemental damage. Lasts 10 seconds."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nBlackrock\nCycle\nElemental\nFast\nFlying\nRanged\nSpell\nUnbound\nWithout a Wildcard slot, General Drakkisath cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFootmen\nMountaineer\nStonehoof Tauren\nSwole Troll\nTreant\nWarsong Grunts\nBanner of Flame\nIncreases Elemental damage taken by 50%\nRadius 9\nDoes not affect Resistant enemies\nDoes affect buildings\nApplies the debuff for 3 seconds every 0.2 seconds\nChromatic Scales talent\nRadius 8\nLasting Legacy talent\nRadius 9\nPiercing Blows talent\nArc 20 degrees\nRadius 6.5"
+    }
   },
   {
     "id": "ghoul",
@@ -325,7 +2319,60 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/ghoul.png"
+    "image": "/images/rumble/minis/300/ghoul.png",
+    "damage": 110,
+    "health": 1040,
+    "dps": 64.7,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Cycle",
+      "Cannibalize",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "DPS": "64",
+        "Attack Speed": "1.7",
+        "Speed": "Medium",
+        "Damage": "110",
+        "Total Health": "1,040"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Cannibalize",
+          "description": "Consumes fallen enemy gold residue to regain health."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Bone Shield",
+          "description": "Cannibalizing grants Armored for 10 seconds."
+        },
+        {
+          "name": "Taste for Blood",
+          "description": "Deal 50% additional damage to enemies who are below 50% health."
+        },
+        {
+          "name": "Ravenous",
+          "description": "Cannibalizing grants Bloodlust for 10 seconds."
+        }
+      ],
+      "advanced_info": "Cannibalize\nGhoul eats for 1.6 seconds at a time\nRestores 240 health\nGhoul can eat four times from a corpse for a total of 960 healing"
+    }
   },
   {
     "id": "gnoll-brute",
@@ -333,7 +2380,50 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/gnoll-brute.png"
+    "image": "/images/rumble/minis/300/gnoll-brute.png",
+    "damage": 130,
+    "health": 1240,
+    "dps": 65.0,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Melee",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Melee"
+      },
+      "stats": {
+        "Area Damage": "130",
+        "Health": "1,240",
+        "DPS": "65",
+        "Attack Speed": "2",
+        "Speed": "Medium"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Rabid",
+          "description": "Reduce deploy cost by 1 and gain the Cycle trait."
+        },
+        {
+          "name": "Thick Hide",
+          "description": "Gain Armor."
+        },
+        {
+          "name": "Pillage",
+          "description": "Deal Siege damage."
+        }
+      ],
+      "advanced_info": "Mace Cleave\nArc 140 degrees"
+    }
   },
   {
     "id": "goblin-sapper",
@@ -341,7 +2431,53 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/goblin-sapper.png"
+    "image": "/images/rumble/minis/300/goblin-sapper.png",
+    "damage": 450,
+    "health": 120,
+    "dps": 0.0,
+    "speed": "Med-Fast",
+    "traits": [
+      "Cycle",
+      "Siege Damage",
+      "Siege Specialist",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Siege Specialist"
+      },
+      "stats": {
+        "Health": "120",
+        "Speed": "Med-Fast",
+        "Damage": "450"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Siege Damage",
+          "description": "Double damage vs Towers."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Rocket Powered Turbo Boots",
+          "description": "Move twice as fast and gain the Fast trait."
+        },
+        {
+          "name": "Extra BOOM",
+          "description": "Deploy an additional +1 Goblin Sapper."
+        },
+        {
+          "name": "Crude Gunpowder",
+          "description": "On death, Burn nearby enemies."
+        }
+      ],
+      "advanced_info": "Movement speed\nRegular movement speed 2.5\nWith Rocket Powered Turbo Boots talent, movement speed becomes 5"
+    }
   },
   {
     "id": "grommash-hellscream",
@@ -349,7 +2485,55 @@
     "faction": "Horde",
     "type": "Leader",
     "cost": 4,
-    "image": "/images/rumble/minis/300/grommash-hellscream.png"
+    "image": "/images/rumble/minis/300/grommash-hellscream.png",
+    "damage": 220,
+    "health": 1496,
+    "dps": 169.2,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Bloodlust",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,496",
+        "DPS": "169",
+        "Attack Speed": "1.3",
+        "Speed": "Medium",
+        "Damage": "220"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Bloodlust",
+          "description": "Bloodlusted units gain +33% movement and attack speed."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Savage Strikes",
+          "description": "Deal double damage to enemies who are below 50% health."
+        },
+        {
+          "name": "Bladestorm",
+          "description": "Gain an AOE bladespin ability that damages all nearby enemies."
+        },
+        {
+          "name": "Mirror Image",
+          "description": "Summon two fragile mirror images when entering combat."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nCycle\nFast\nFlying\nHorde\nRanged\nSpell\nSquad\nUnbound\nWithout a Wildcard slot, Grommash Hellscream cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nMolten Giant\nBloodlust aura\nRadius 9\nApplies a 1-second Bloodlust effect every 0.2 seconds\nBladestorm talent\nRange 3\n6.5 seconds cooldown\n55 damage, 5 times, for a total of 275 damage\nDoes not hit Flying minis\nMirror Image talent\n100 health\n130 damage\n1.5 seconds attack speed\n10 seconds duration\nTaunt, 5.25 radius, 10 seconds duration"
+    }
   },
   {
     "id": "gryphon-rider",
@@ -357,7 +2541,51 @@
     "faction": "Alliance",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/gryphon-rider.png"
+    "image": "/images/rumble/minis/300/gryphon-rider.png",
+    "damage": 160,
+    "health": 170,
+    "dps": 145.4,
+    "speed": "Med-Fast",
+    "traits": [
+      "Cycle",
+      "Flying",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Flying"
+      },
+      "stats": {
+        "Health": "170",
+        "DPS": "145",
+        "Attack Speed": "1.1",
+        "Speed": "Med-Fast",
+        "Range": "5",
+        "Damage": "160"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        }
+      ],
+      "talents": [
+        {
+          "name": "Mighty Throw",
+          "description": "Gain +3 Range."
+        },
+        {
+          "name": "Odyn's Fury",
+          "description": "Gain Fury."
+        },
+        {
+          "name": "Air Drop",
+          "description": "Periodically drop a potion, leveling up the first ally to touch it."
+        }
+      ],
+      "advanced_info": "Air Drop talent\nLevels are capped at +10"
+    }
   },
   {
     "id": "harpies",
@@ -365,7 +2593,49 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/harpies.png"
+    "image": "/images/rumble/minis/300/harpies.png",
+    "damage": 140,
+    "health": 150,
+    "dps": 116.6,
+    "speed": "Fast",
+    "traits": [
+      "Fast",
+      "Flying",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Flying"
+      },
+      "stats": {
+        "Health": "150",
+        "DPS": "116",
+        "Attack Speed": "1.2",
+        "Speed": "Fast",
+        "Damage": "140"
+      },
+      "traits": [
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Infectious Swipes",
+          "description": "Gain Poison."
+        },
+        {
+          "name": "Trinket Collectors",
+          "description": "Gain the Miner trait. Cost increased by 1."
+        },
+        {
+          "name": "Talon Dive",
+          "description": "Deal double damage on the 1st attack."
+        }
+      ]
+    }
   },
   {
     "id": "harvest-golem",
@@ -373,7 +2643,55 @@
     "faction": "Alliance",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/harvest-golem.png"
+    "image": "/images/rumble/minis/300/harvest-golem.png",
+    "damage": 140,
+    "health": 1480,
+    "dps": 70.0,
+    "speed": "Slow",
+    "traits": [
+      "Tank",
+      "Rebirth",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,480",
+        "DPS": "70",
+        "Attack Speed": "2",
+        "Speed": "Slow",
+        "Damage": "140"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Rebirth",
+          "description": "One-time self resurrection. Reborn at 50% life."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Trojan Chickens",
+          "description": "On death, spawn 5 Angry Chickens."
+        },
+        {
+          "name": "Unstable Core",
+          "description": "On death, Stun nearby enemies for 3 seconds."
+        },
+        {
+          "name": "Bountiful Harvest",
+          "description": "On death, apply a Heal over time effect to nearby allies."
+        }
+      ],
+      "advanced_info": "Bountiful Harvest talent\nRadius 7\n25 healing every 0.5 seconds for 5 seconds, 250 healing overall\nUnstable Core talent\nRadius 5"
+    }
   },
   {
     "id": "headless-horseman",
@@ -381,7 +2699,65 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/headless-horseman.png"
+    "image": "/images/rumble/minis/300/headless-horseman.png",
+    "damage": 200,
+    "health": 1550,
+    "dps": 133.0,
+    "speed": "Fast",
+    "traits": [
+      "Fast",
+      "Poisonous",
+      "Elemental",
+      "Bombard",
+      "Melee",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,550",
+        "DPS": "133",
+        "Attack Speed": "1.5",
+        "Speed": "Fast",
+        "Damage": "200"
+      },
+      "traits": [
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Bombard",
+          "description": "Attacks ground enemies only."
+        },
+        {
+          "name": "Poisonous",
+          "description": "Deals stacking damage over time. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Night Watch",
+          "description": "Remain at the deploy location, attacking enemies who approach."
+        },
+        {
+          "name": "Neigh Death Experience",
+          "description": "At 40% health, Heal to 80% health and Stun nearby enemies. Ability has one charge."
+        },
+        {
+          "name": "Decapitate",
+          "description": "On kill, gain Bloodlust for 5 seconds."
+        }
+      ],
+      "advanced_info": "Pumpkin Toss\n8 seconds cooldown\n8 range\n140 Elemental damage\nApplies 2 stacks of poison\nSword hit\n200 damage\n1.5 seconds attack speed\nNeigh Death Experience talent\n3-second stun\nRadius 6\nNight Watch talent\nHeadless Horseman can move far from its guard location as long as it remains in combat, but it will eventually return back when combat ends"
+    }
   },
   {
     "id": "hogger",
@@ -389,7 +2765,50 @@
     "faction": "Beast",
     "type": "Leader",
     "cost": 4,
-    "image": "/images/rumble/minis/300/hogger.png"
+    "image": "/images/rumble/minis/300/hogger.png",
+    "damage": 190,
+    "health": 1120,
+    "dps": 79.2,
+    "speed": "Med-Fast",
+    "traits": [
+      "Tank",
+      "Melee",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Melee"
+      },
+      "stats": {
+        "Area Damage": "190",
+        "Health": "1,120",
+        "DPS": "79",
+        "Attack Speed": "2.4",
+        "Speed": "Med-Fast"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Ham Hock",
+          "description": "Hogger also gains +15% max health each time he is played."
+        },
+        {
+          "name": "Fatal Frenzy",
+          "description": "On death, Bloodlust and grant 1 level to allied Beasts."
+        },
+        {
+          "name": "Spoiled Meat",
+          "description": "Gain Poison."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nBeast\nCycle\nFast\nFlying\nRanged\nSpell\nSquad\nUnbound\nWithout a Wildcard slot, Hogger cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nHarvest Golem\nMolten Giant\nStonehoof Tauren\nSwole Troll\nRelentless and Ham Hock talent\nBoth are capped at 3 stacks\nFatal Frenzy talent\nAdditional levels are capped at +3\nBloodlust lasts for 10 seconds\nSpoiled Meat talent\nHogger applies 1 stack of poison per hit"
+    }
   },
   {
     "id": "holy-nova",
@@ -397,7 +2816,48 @@
     "faction": "Alliance",
     "type": "Spell",
     "cost": 3,
-    "image": "/images/rumble/minis/300/holy-nova.png"
+    "image": "/images/rumble/minis/300/holy-nova.png",
+    "damage": 150,
+    "health": 0,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Area Damage": "150",
+        "Radius": "5",
+        "Healing": "280"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Inner Fire",
+          "description": "Affected allies gain Armored and Resist for 5 seconds."
+        },
+        {
+          "name": "Amplify Magic",
+          "description": "Effects are doubled on all Elemental minis."
+        },
+        {
+          "name": "Renew",
+          "description": "Also adds a heal over time to allies."
+        }
+      ],
+      "advanced_info": "Renew talent\nHeals for 56 per second for 5 seconds for a total of 280 healing"
+    }
   },
   {
     "id": "huntress",
@@ -405,7 +2865,56 @@
     "faction": "Alliance",
     "type": "Troop",
     "cost": 5,
-    "image": "/images/rumble/minis/300/huntress.png"
+    "image": "/images/rumble/minis/300/huntress.png",
+    "damage": 150,
+    "health": 350,
+    "dps": 107.1,
+    "speed": "Fast",
+    "traits": [
+      "Fast",
+      "Resistant",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "150",
+        "Health": "350",
+        "DPS": "107",
+        "Attack Speed": "1.4",
+        "Speed": "Fast",
+        "Range": "7.5"
+      },
+      "traits": [
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        },
+        {
+          "name": "Resistant",
+          "description": "Takes 50% less Elemental damage."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Elven Might",
+          "description": "Deal 50% additional damage to the initial target."
+        },
+        {
+          "name": "Shadowmeld",
+          "description": "Gain Stealth and Ambush."
+        },
+        {
+          "name": "Darnassian Steel",
+          "description": "Glaive bounces an additional 3 times."
+        }
+      ],
+      "advanced_info": "Glaive\nBounces cannot hit Stealthed minis\nElven Might talent\nThe base damage of the initial hit is 225\nAny damage modifiers are applied to this higher base damage\nShadowmeld talent\nThe base damage of the Ambush attack is 300\nAny damage modifiers are applied to this higher base damage"
+    }
   },
   {
     "id": "jaina-proudmoore",
@@ -413,7 +2922,56 @@
     "faction": "Alliance",
     "type": "Leader",
     "cost": 3,
-    "image": "/images/rumble/minis/300/jaina-proudmoore.png"
+    "image": "/images/rumble/minis/300/jaina-proudmoore.png",
+    "damage": 190,
+    "health": 250,
+    "dps": 118.7,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Frost",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "250",
+        "DPS": "118",
+        "Attack Speed": "1.4",
+        "Speed": "Medium",
+        "Range": "8.5",
+        "Damage": "190"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Frost",
+          "description": "Frost damage slows enemy movement and attack speed."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Clearcasting",
+          "description": "Spells cost 1 less (but no less than 1) if played immediately after Jaina."
+        },
+        {
+          "name": "Flurry",
+          "description": "Frostbolts burst on impact, affecting enemies near the target."
+        },
+        {
+          "name": "Blink",
+          "description": "Periodically teleport away from attackers."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nAlliance\nElemental\nFlying\nSiege Damage\nSpell\nSquad\nTank\nUnbound\nWithout a Wildcard slot, Jaina cannot buff\nBanshee\nDarkspear Troll\nDryad\nFlurry talent\nFrostbolt deals 50 area-of-effect damage to secondary targets in addition to the 190 damage to the main target\nFrostbolt applies Frost and deals damage on a radius of 4\nBlink talent\nCooldown 8 seconds"
+    }
   },
   {
     "id": "living-bomb",
@@ -421,7 +2979,47 @@
     "faction": "Blackrock",
     "type": "Spell",
     "cost": 6,
-    "image": "/images/rumble/minis/300/living-bomb.png"
+    "image": "/images/rumble/minis/300/living-bomb.png",
+    "damage": 200,
+    "health": 0,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Area Damage": "200",
+        "Radius": "6"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Chain Reaction",
+          "description": "Splash damage inflicts Living Bomb."
+        },
+        {
+          "name": "Burden Of Fate",
+          "description": "Affected enemies are Dazed."
+        },
+        {
+          "name": "Blast Radius",
+          "description": "Also burn enemies within 10."
+        }
+      ],
+      "advanced_info": "Explosion\nRadius 9\nDelay from cast 5 seconds\nAlso explodes if an affected mini dies before the time is up\nDeals half damage to Barracks and Bosses\nBlast Radius talent\nBurn is applied on cast to a radius of 10\nChain Reaction talent\nDelay from initial explosion 3 seconds\nReapplies Living Bomb to any minis that survive the initial explosion\nThe Chain Reaction explosion does not apply Living Bomb again"
+    }
   },
   {
     "id": "maiev-shadowsong",
@@ -429,7 +3027,56 @@
     "faction": "Alliance",
     "type": "Leader",
     "cost": 5,
-    "image": "/images/rumble/minis/300/maiev-shadowsong.png"
+    "image": "/images/rumble/minis/300/maiev-shadowsong.png",
+    "damage": 552,
+    "health": 744,
+    "dps": 120.0,
+    "speed": "Med-Fast",
+    "traits": [
+      "Unbound",
+      "Stealth",
+      "Melee",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "744",
+        "DPS": "120",
+        "Attack Speed": "1.6",
+        "Speed": "Med-Fast",
+        "Damage": "192",
+        "Fan Damage": "360"
+      },
+      "traits": [
+        {
+          "name": "Unbound",
+          "description": "Can be played anywhere on the map."
+        },
+        {
+          "name": "Stealth",
+          "description": "Invisible to enemies until it attacks or is damaged."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Remorseless",
+          "description": "Deal double damage for 2 seconds after killing an enemy."
+        },
+        {
+          "name": "Enveloping Shadows",
+          "description": "Cast Smoke Bomb on deploy, Stealthing nearby allies."
+        },
+        {
+          "name": "Shadowstep",
+          "description": "Periodically teleport to a ranged attacker when hit."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nAlliance\nCycle\nFast\nFlying\nSiege Damage\nSpell\nTank\nUnbound\nWithout a Wildcard slot, Maiev cannot buff\nBanshee\nDarkspear Troll\nDruid of the Claw\nFirehammer\nFlamewaker\nFrostwolf Shaman\nMoonkin\nNecromancer\nOgre Mage\nPyromancer\nTreant\nMelee attack\nCleave arc 160 degrees\nFan of Knives\nRadius 5.5\nAlso hits Flying minis\nShadowstep talent\nCooldown is 4 seconds"
+    }
   },
   {
     "id": "malfurion",
@@ -437,7 +3084,62 @@
     "faction": "Alliance,Cenarion",
     "type": "Leader",
     "cost": 4,
-    "image": "/images/rumble/minis/300/malfurion.png"
+    "image": "/images/rumble/minis/300/malfurion.png",
+    "damage": 190,
+    "health": 1116,
+    "dps": 95.0,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Healer",
+      "Seeds of Protection",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "1,116",
+        "DPS": "95",
+        "Attack Speed": "2",
+        "Speed": "Medium",
+        "Range": "8",
+        "Damage": "190",
+        "Healing": "50"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Healer",
+          "description": "Heals friendly units."
+        },
+        {
+          "name": "Seeds of Protection",
+          "description": "Protect a nearby Building or Meeting Stone from the next 3 attacks. Ability has one charge."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Natural Salve",
+          "description": "Nearby Poison damage heals Malfurion."
+        },
+        {
+          "name": "Deep Slumber",
+          "description": "Deploy asleep and stationary. Awaken once attacked."
+        },
+        {
+          "name": "Germinate",
+          "description": "After 30 seconds, if at least one Seed of Protection remains, apply Seeds of Protection to all allied Buildings and Meeting Stones."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nAlliance\nCenarion\nCycle\nElemental\nFlying\nRanged\nSpell\nSquad\nUnbound\nEven without a Wildcard slot, Malfurion can buff all minis.\nRegeneration\nHeals for 50 every 1 second for 10 seconds, for a total of 500 healing\nSeeds of Protection\nCan also be cast on Alliance and Cenarion Tank minis\n12 seconds cooldown for cast on minis\n12 range on minis, 10 range on buildings\nOne Seed is removed after 25 seconds, and more are removed every 5 seconds thereafter\nNatural Salve talent\nRadius 8\nBoth allied and enemy poison damage heal Malfurion\nUp to 1% of Malfurion’s maximum Health per second (11.16 healing per second)"
+    }
   },
   {
     "id": "meat-wagon",
@@ -445,7 +3147,61 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/meat-wagon.png"
+    "image": "/images/rumble/minis/300/meat-wagon.png",
+    "damage": 210,
+    "health": 320,
+    "dps": 70.0,
+    "speed": "Medium",
+    "traits": [
+      "Bombard",
+      "Siege Damage",
+      "Longshot",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "210",
+        "Health": "320",
+        "DPS": "70",
+        "Attack Speed": "3",
+        "Speed": "Medium",
+        "Range": "11"
+      },
+      "traits": [
+        {
+          "name": "Bombard",
+          "description": "Attacks ground enemies only."
+        },
+        {
+          "name": "Siege Damage",
+          "description": "Double damage vs Towers."
+        },
+        {
+          "name": "Longshot",
+          "description": "Outranges EVERYTHING else."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Filet Trebuchet",
+          "description": "Increase Bombard range by +2."
+        },
+        {
+          "name": "Meat And Bones",
+          "description": "Every other attack summons a Skeleton instead of dealing damage."
+        },
+        {
+          "name": "Greased Gears",
+          "description": "Gain Fury."
+        }
+      ],
+      "advanced_info": "Grind melee attack\nArc 160 degrees\nAttack speed 2 seconds\n10 Siege damage 8 times, for a total of 80 damage"
+    }
   },
   {
     "id": "molten-giant",
@@ -453,7 +3209,60 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 6,
-    "image": "/images/rumble/minis/300/molten-giant.png"
+    "image": "/images/rumble/minis/300/molten-giant.png",
+    "damage": 230,
+    "health": 3500,
+    "dps": 85.2,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Armored",
+      "Siege Damage",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "3,500",
+        "DPS": "85",
+        "Attack Speed": "2.7",
+        "Speed": "Medium",
+        "Damage": "230"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        },
+        {
+          "name": "Siege Damage",
+          "description": "Double damage vs Towers."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Bolster",
+          "description": "Heal and gain 1 Gold when destroying a tower."
+        },
+        {
+          "name": "Blood Of The Mountain",
+          "description": "On death, explode, damaging nearby enemies."
+        },
+        {
+          "name": "Threatening Presence",
+          "description": "Gain Taunt."
+        }
+      ],
+      "advanced_info": "Bolster talent\nHeals for 25% of Molten Giant’s maximum health (875 healing)\nBlood of the Mountain talent\n180 damage on a radius of 6\nAlso hits Flying minis\nThreatening Presence talent\n10 seconds taunt duration\n10 seconds cooldown\n5.25 radius"
+    }
   },
   {
     "id": "moonkin",
@@ -461,7 +3270,57 @@
     "faction": "Cenarion",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/moonkin.png"
+    "image": "/images/rumble/minis/300/moonkin.png",
+    "damage": 208,
+    "health": 360,
+    "dps": 59.4,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Armored",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "68",
+        "Health": "360",
+        "DPS": "59",
+        "Attack Speed": "1.5",
+        "Speed": "Medium",
+        "Range": "8",
+        "Damage": "140"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Vengeance",
+          "description": "Taking damage increases attack damage by 50% for 5 secs."
+        },
+        {
+          "name": "Moonglow",
+          "description": "The next Spell played after Moonkin gains 2 levels."
+        },
+        {
+          "name": "Typhoon",
+          "description": "Knockback and Daze nearby enemies on deploy, 50% health, and death."
+        }
+      ],
+      "advanced_info": "Moonkin alternates between the single-target and the area-of-effect attack.\nSingle-target attack\n140 Elemental damage\n1.5 seconds attack speed\nArea-of-effect attack\n68 Elemental damage\nRadius 4.5\n2-second attack speed\nMoonglow talent\nDoes not stack, you will only have one +2 level effect in queue even if you play multiple Moonkins before your next spell\nIf left unused, the bonus effect is removed when Moonkin dies\nTyphoon talent\nRadius 9\nKnockback includes a 1.5-second stun (there is no Daze effect)\nCan be activated again if healed above 50% health\nDoes not affect bosses and Unstoppable minis\nVengeance talent\n8 seconds internal cooldown: you get increased damage for 5 seconds, and then cannot have it for another 3 seconds before the cooldown is over"
+    }
   },
   {
     "id": "mountaineer",
@@ -469,7 +3328,60 @@
     "faction": "Alliance",
     "type": "Troop",
     "cost": 5,
-    "image": "/images/rumble/minis/300/mountaineer.png"
+    "image": "/images/rumble/minis/300/mountaineer.png",
+    "damage": 280,
+    "health": 1700,
+    "dps": 182.4,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Heal Squadmate",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Speed": "Medium",
+        "Dwarf Damage": "170",
+        "Dwarf DPS": "121",
+        "Dwarf Health": "300",
+        "Dwarf Attack Speed": "1.4",
+        "Dwarf Range": "8.5",
+        "Bear Damage": "110",
+        "Bear DPS": "61",
+        "Bear Health": "1,400",
+        "Bear Attack Speed": "1.8"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Heal Squadmate",
+          "description": "Mountaineer periodically heals his Bear companion."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Mend Pets",
+          "description": "Heal up to 3 additional nearby Beasts when healing the Bear."
+        },
+        {
+          "name": "Intimidation",
+          "description": "The Bear roars every 10 seconds, stunning up to 3 nearby enemies for 1 second."
+        },
+        {
+          "name": "Frenzied Spirit",
+          "description": "When the Bear or Mountaineer die, the other gains Bloodlust and heals to full health."
+        }
+      ],
+      "advanced_info": "Army bonus slots and Traits\nMountaineer gains the bonus levels from both Melee and Ranged slots\nDuring a battle, the Bear is Melee and the Dwarf is Ranged for the purposes of effects like Abomination's Hook\nGrowl taunt\n10 seconds taunt duration\n10 seconds cooldown\n5.25 radius\nHeal Bear\n20 seconds cooldown\n8.5 range\n8 healing ticks of 12 percent of the target’s maximum health over 3.5 seconds, for a total of 96 percent of the target’s maximum health\nIntimidation talent\nRadius 3\n2-second stun\nMend Pets talent\nUp to 3 allied Beast targets in addition to the Bear\nRadius 6\n8 healing ticks of 12 percent of the target’s maximum health over 3.5 seconds, for a total of 96 percent of the target’s maximum health\nFrenzied Spirit talent\nBloodlust duration 10 seconds"
+    }
   },
   {
     "id": "murloc-tidehunters",
@@ -477,7 +3389,56 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/murloc-tidehunters.png"
+    "image": "/images/rumble/minis/300/murloc-tidehunters.png",
+    "damage": 90,
+    "health": 80,
+    "dps": 56.2,
+    "speed": "Fast",
+    "traits": [
+      "Cycle",
+      "Fast",
+      "Ranged",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "80",
+        "DPS": "56",
+        "Attack Speed": "1.6",
+        "Speed": "Fast",
+        "Range": "6.5",
+        "Damage": "90"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Safety Bubble",
+          "description": "Deploy with a bubble that blocks the first attack."
+        },
+        {
+          "name": "Morelocs",
+          "description": "Deploy with +1 additional Murloc."
+        },
+        {
+          "name": "Careful Aim",
+          "description": "Gain +2 range."
+        }
+      ],
+      "advanced_info": "Careful Aim talent\nRange 8.5 (+2 compared to the regular Tidehunters)"
+    }
   },
   {
     "id": "necromancer",
@@ -485,7 +3446,56 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/necromancer.png"
+    "image": "/images/rumble/minis/300/necromancer.png",
+    "damage": 190,
+    "health": 400,
+    "dps": 146.1,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Summoner",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "400",
+        "DPS": "146",
+        "Attack Speed": "1.3",
+        "Speed": "Medium",
+        "Range": "7.5",
+        "Damage": "190"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Summoner",
+          "description": "Summons additional units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Jeweled Skulls",
+          "description": "Summon Skeletal Mages instead of Skeletons."
+        },
+        {
+          "name": "Breath of the Dying",
+          "description": "On death, summon 5 Skeletons."
+        },
+        {
+          "name": "Cult of the Damned",
+          "description": "On kill, summon a Skeleton."
+        }
+      ],
+      "advanced_info": "Raise Skeletons\nEach of the two Skeletons has an 8-second cooldown before a new one can be summoned\nSkeleton Warriors\n200 health\nMelee\n1.4 seconds attack speed\n46 damage\nCycle minis\nJeweled Skulls talent Skeleton Mages\n200 health\n7 range\n1.4 seconds attack speed\n46 Elemental damage\nFrost\nNot Cycle minis"
+    }
   },
   {
     "id": "ogre-mage",
@@ -493,7 +3503,56 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 5,
-    "image": "/images/rumble/minis/300/ogre-mage.png"
+    "image": "/images/rumble/minis/300/ogre-mage.png",
+    "damage": 160,
+    "health": 650,
+    "dps": 114.3,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Bloodlust",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "160",
+        "Health": "650",
+        "DPS": "114",
+        "Attack Speed": "1.4",
+        "Speed": "Medium",
+        "Range": "8"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Bloodlust",
+          "description": "Bloodlusted units gain +33% movement and attack speed."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Avarice",
+          "description": "Gain Bloodlust when Bloodlusting an ally."
+        },
+        {
+          "name": "Frostfire Bolt",
+          "description": "Gain Frost."
+        },
+        {
+          "name": "Ignite",
+          "description": "Burn enemy targets."
+        }
+      ],
+      "advanced_info": "Bloodlust\nDuration 10 seconds\nCooldown 10 seconds\nRange 9\nAlso Bloodlusts all Warsong Grunts within a radius of 10 from the Ogre Mage when cast\nFrostfire Bolt talent\nThe Frost effects last the full 2 seconds on bosses (most Frost effects last 0.5 seconds on bosses)"
+    }
   },
   {
     "id": "old-murk-eye",
@@ -501,7 +3560,56 @@
     "faction": "Beast",
     "type": "Leader",
     "cost": 4,
-    "image": "/images/rumble/minis/300/old-murk-eye.png"
+    "image": "/images/rumble/minis/300/old-murk-eye.png",
+    "damage": 150,
+    "health": 160,
+    "dps": 93.8,
+    "speed": "Fast",
+    "traits": [
+      "Fast",
+      "Elemental",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "160",
+        "DPS": "93",
+        "Attack Speed": "1.6",
+        "Speed": "Fast",
+        "Range": "6.5",
+        "Damage": "150"
+      },
+      "traits": [
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Marathon Of The Murlocs",
+          "description": "March of the Murlocs lasts an additional 5 seconds longer after deploying."
+        },
+        {
+          "name": "Electric Eels",
+          "description": "Attacks briefly Stun enemies."
+        },
+        {
+          "name": "Tip of the Spear",
+          "description": "Tidehunters spawn at Old Murk Eye's location instead."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nBeast\nCycle\nElemental\nFast\nFlying\nSiege Damage\nSpell\nUnbound\nWithout a Wildcard slot, Old Murk-Eye cannot buff\nBanshee\nDarkspear Troll\nTreant\nMarch of the Murlocs\nMurlocs inherit their level from Old Murk-Eye\nIn co-op, only the gold spent by Old Murk-Eye's owner spawns Murlocs\nElectric Eels talent\n0.4 seconds stun\nNo level modifier\nCannot stun bosses"
+    }
   },
   {
     "id": "onu",
@@ -509,7 +3617,55 @@
     "faction": "Cenarion",
     "type": "Leader",
     "cost": 5,
-    "image": "/images/rumble/minis/300/onu.png"
+    "image": "/images/rumble/minis/300/onu.png",
+    "damage": 190,
+    "health": 4660,
+    "dps": 76.0,
+    "speed": "Slow",
+    "traits": [
+      "Tank",
+      "Vulnerable",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "4,660",
+        "DPS": "76",
+        "Attack Speed": "2.5",
+        "Speed": "Slow",
+        "Damage": "190"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Vulnerable",
+          "description": "Unit takes 2x elemental damage."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Barkskin",
+          "description": "Minis deployed within Safe Arbor gain Armor for 8 seconds. Also grants Onu Armor trait."
+        },
+        {
+          "name": "Petrify",
+          "description": "Petrify on death, keeping Safe Arbor active for 8 seconds. Also summons 3 Treants on spawn."
+        },
+        {
+          "name": "From the Trees!",
+          "description": "Minis deployed within Safe Arbor deal double damage on their first attack."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nCenarion\nCycle\nFast\nFlying\nSiege Damage\nSpell\nSquad\nTank\nWithout a Wildcard slot, Onu cannot buff\nWorgen\nMelee attack cleave\nArc 140 degrees"
+    }
   },
   {
     "id": "orgrim-doomhammer",
@@ -517,7 +3673,56 @@
     "faction": "Blackrock,Horde",
     "type": "Leader",
     "cost": 3,
-    "image": "/images/rumble/minis/300/orgrim-doomhammer.png"
+    "image": "/images/rumble/minis/300/orgrim-doomhammer.png",
+    "damage": 190,
+    "health": 1000,
+    "dps": 95.0,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Mak'gora",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,000",
+        "DPS": "95",
+        "Attack Speed": "2",
+        "Speed": "Medium",
+        "Damage": "190",
+        "Charge Impact Damage": "150"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Mak'gora",
+          "description": "Challenges the first enemy in sight to a duel, revealing their true strength if victorious. Gains more power the closer the duel was."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Deathless Rage",
+          "description": "During the Mak'gora, refuse to die, gaining Cheat Death and Bloodlust for 3.5 seconds instead."
+        },
+        {
+          "name": "Conqueror's Diplomacy",
+          "description": "After winning the Mak'gora, the opponent uses the last of their strength to heal to full and join Doomhammer's side before bleeding out over 15 seconds."
+        },
+        {
+          "name": "Rally the Clan",
+          "description": "Grant Bloodlust to all allies on the board for 10 seconds upon winning the Mak'gora."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nBlackrock\nCycle\nElemental\nFast\nFlying\nHorde\nRanged\nSpell\nUnbound\nWithout a Wildcard slot, Orgrim cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFirst Blood\nDoes not buff Goblin Sappers, Banshee, and Doomhammer\nMak’gora\nBanshee will not steal a mini engaged in Mak’gora\nYou can use other minis and spells to influence the Mak’gora - and you should!\nDoomhammer Revealed - After winning a Mak’gora\nGains melee cleave with a 140-degree arc\nAttack damage depends on how close the Mak’gora was:\nDoomhammer wins with over 67% health left: 210 damage\nDoomhammer wins with 33% to 67% health left: 231 damage\nDoomhammer wins with less than 33% health left: 252 damage"
+    }
   },
   {
     "id": "plague-farmer",
@@ -525,7 +3730,62 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/plague-farmer.png"
+    "image": "/images/rumble/minis/300/plague-farmer.png",
+    "damage": 300,
+    "health": 250,
+    "dps": 130.43,
+    "speed": "Medium",
+    "traits": [
+      "Cycle",
+      "Bombard",
+      "Poisonous",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "300",
+        "Health": "250",
+        "DPS": "130",
+        "Attack Speed": "2.3",
+        "Speed": "Medium",
+        "Range": "9",
+        "Duration": "5"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Bombard",
+          "description": "Attacks ground enemies only."
+        },
+        {
+          "name": "Poisonous",
+          "description": "Deals stacking damage over time. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Splashing Pumpkins",
+          "description": "Increase Range by +1 and double the Splash area."
+        },
+        {
+          "name": "Parting Gift",
+          "description": "On death, summon a pumpkin. When touched, it Poisons nearby enemies."
+        },
+        {
+          "name": "Virulence",
+          "description": "On kill, Poison enemies near the target."
+        }
+      ],
+      "advanced_info": "Bomb Throw\nDeals 140 Elemental damage\nApplies 4 stacks of poison\nVirulence talent\nApplies 3 stacks of poison on kill on a radius of 4\nThis poison also hits Flying minis\nParting Gift talent\nApplies 1 stack of poison on a radius of 5"
+    }
   },
   {
     "id": "polymorph",
@@ -533,7 +3793,41 @@
     "faction": "Beast",
     "type": "Spell",
     "cost": 3,
-    "image": "/images/rumble/minis/300/polymorph.png"
+    "image": "/images/rumble/minis/300/polymorph.png",
+    "damage": 0,
+    "health": 0,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Radius": "5",
+        "Duration": "6",
+        "Lvl Advantage": "0.5 sec"
+      },
+      "talents": [
+        {
+          "name": "Golden Fleece",
+          "description": "One sheep becomes golden. Killing it grants +1 gold."
+        },
+        {
+          "name": "Exploding Sheep",
+          "description": "Killing a sheep damages nearby enemies."
+        },
+        {
+          "name": "Stable Transfiguration",
+          "description": "Lasts twice as long, but sheep regenerate health very quickly."
+        }
+      ],
+      "advanced_info": "Flying minis are still Flying as sheep.\nMini-bosses, bosses, raid bosses, unstoppable minis, and Ragnaros are immune to Polymorph.\nExploding Sheep talent\n75 damage\n8 radius\nStable Transfiguration talent\nSheep regenerate 25 percent of their maximum health per second"
+    }
   },
   {
     "id": "priestess",
@@ -541,7 +3835,62 @@
     "faction": "Alliance",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/priestess.png"
+    "image": "/images/rumble/minis/300/priestess.png",
+    "damage": 35,
+    "health": 300,
+    "dps": 14.9,
+    "speed": "Medium",
+    "traits": [
+      "Healer",
+      "Elemental",
+      "Cycle",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "300",
+        "DPS": "14",
+        "Attack Speed": "2.35",
+        "Speed": "Medium",
+        "Range": "8",
+        "Damage": "35",
+        "Healing": "200"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Healer",
+          "description": "Heals friendly units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Power Word: Shield",
+          "description": "Periodically apply a shield to an ally, absorbing all damage for 2 seconds."
+        },
+        {
+          "name": "Empowered Renew",
+          "description": "Casting Renew on an ally also heals them for 10% of their total health instantly."
+        },
+        {
+          "name": "Spirit of Redemption",
+          "description": "On death, summon a Spirit of Redemption who heals nearby allies for 5 seconds."
+        }
+      ],
+      "advanced_info": "Greater Heal\nRemoves poison\n4 second cooldown\nTargets the mini with the most health missing\nRenew\n5 second cooldown\n40 healing per second, 8 times, for a total of 320 healing\nDoes not stack\nTargets the mini with the lowest health percentage\nPriority cast ahead of Greater Heal\nSmite\nDeals Elemental damage\nEmpowered Renew talent\nEach Priestess only benefits from the talent’s bonus heal on Ragnaros once\nOther targets can gain the bonus on every cast\nPower Word: Shield talent\n8 seconds cooldown\nDebuffs the target with Weakened Soul, preventing them from receiving another Power Word: Shield for 8 seconds\nTargets the mini with the lowest current health\nSpirit of Redemption talent\nHeals all allies within a range of 8 for 40 every 0.5 seconds, for a total of 400 healing"
+    }
   },
   {
     "id": "prowler",
@@ -549,7 +3898,55 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/prowler.png"
+    "image": "/images/rumble/minis/300/prowler.png",
+    "damage": 130,
+    "health": 840,
+    "dps": 144.4,
+    "speed": "Fast",
+    "traits": [
+      "Tank",
+      "Fast",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "840",
+        "DPS": "144",
+        "Attack Speed": "0.9",
+        "Speed": "Fast",
+        "Damage": "130"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Pack Leader",
+          "description": "Grants nearby Beast allies 30% additional damage."
+        },
+        {
+          "name": "On The Prowl",
+          "description": "Gain Stealth, and stun the target when attacking from Stealth."
+        },
+        {
+          "name": "Predatory Instincts",
+          "description": "Deal double damage to enemies who are at more than 75% health."
+        }
+      ],
+      "advanced_info": "Dash\nProwler can dash between ranges 3 and 6\nCooldown 3 seconds\nDash ignores collisions\nDash increases Prowler’s movement speed by +700%\nPack Leader talent\nRadius 8\nPredatory Instincts talent\nThe double damage is implemented as higher base damage, so it is multiplicative and not additive with any other damage modifiers\nOn the Prowl talent\n1.5-second Stun"
+    }
   },
   {
     "id": "pyromancer",
@@ -557,7 +3954,50 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/pyromancer.png"
+    "image": "/images/rumble/minis/300/pyromancer.png",
+    "damage": 170,
+    "health": 220,
+    "dps": 113.3,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "170",
+        "Health": "220",
+        "DPS": "113",
+        "Attack Speed": "1.5",
+        "Range": "8"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Conflagrate",
+          "description": "Splash area is doubled."
+        },
+        {
+          "name": "Pyroblast",
+          "description": "Deal triple damage on the first attack."
+        },
+        {
+          "name": "Blaze of Glory",
+          "description": "Damage and Burn nearby enemies on death."
+        }
+      ],
+      "advanced_info": "Blaze of Glory talent\nRadius 6\n100 Elemental damage\nApplies Burn\nConflagrate talent\nSplash radius 4.25 instead of the usual 3 (doubles the splash area)\nPyroblast talent\nImplemented as a multiplier: additive, not multiplicative, with other multipliers"
+    }
   },
   {
     "id": "quilboar",
@@ -565,7 +4005,65 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/quilboar.png"
+    "image": "/images/rumble/minis/300/quilboar.png",
+    "damage": 70,
+    "health": 700,
+    "dps": 38.9,
+    "speed": "Medium",
+    "traits": [
+      "Cycle",
+      "Resistant",
+      "Unbound",
+      "Tank",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "700",
+        "DPS": "38",
+        "Attack Speed": "1.8",
+        "Speed": "Medium",
+        "Damage": "70"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Resistant",
+          "description": "Takes 50% less Elemental damage."
+        },
+        {
+          "name": "Unbound",
+          "description": "Can be played anywhere on the map."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Tunnel Vision",
+          "description": "Deploy much more quickly."
+        },
+        {
+          "name": "Bristleback",
+          "description": "Deal a small amount of damage to Melee attackers."
+        },
+        {
+          "name": "Bramble Burst",
+          "description": "Inflict Poison on nearby enemies when emerging."
+        }
+      ],
+      "advanced_info": "Bramble Burst talent\nApplies 2 stacks of poison\nDoes not hit Flying minis\nRadius 5\nBristleback talent\nDeals 50 damage when hit by a non-Flying melee unit\n0.5 seconds cooldown\nTunnel Vision talent\nAble to act 1 second after being deployed instead of the usual 3 seconds\nQuilboar can be attacked immediately when deployed with or without the talent"
+    }
   },
   {
     "id": "ragnaros",
@@ -573,7 +4071,70 @@
     "faction": "Blackrock",
     "type": "Leader",
     "cost": 5,
-    "image": "/images/rumble/minis/300/ragnaros.png"
+    "image": "/images/rumble/minis/300/ragnaros.png",
+    "damage": 150,
+    "health": 1800,
+    "dps": 75.0,
+    "speed": "Stationary",
+    "traits": [
+      "Elemental",
+      "Resistant",
+      "Tank",
+      "Braze",
+      "Blast Wave",
+      "Melee",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,800",
+        "DPS": "75",
+        "Attack Speed": "2",
+        "Speed": "Stationary",
+        "Damage": "150"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Resistant",
+          "description": "Takes 50% less Elemental damage."
+        },
+        {
+          "name": "Braze",
+          "description": "Attach to the nearest allied Tower or Base, shielding it."
+        },
+        {
+          "name": "Blast Wave",
+          "description": "While in play, replaces this Mini in your deck with the Blast Wave spell: Burn and knock back enemies near buildings."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Concussive Blast",
+          "description": "Blast Wave leaves enemies stunned for 2 seconds."
+        },
+        {
+          "name": "Radiant Flames",
+          "description": "Buildings you control periodically damage nearby enemies."
+        },
+        {
+          "name": "Son of Flame",
+          "description": "At 50% health, summon two Fire Elementals that last 15 seconds."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nBlackrock\nElemental\nFast\nFlying\nRanged\nSiege Damage\nTank\nUnbound\nWithout a Wildcard slot, Ragnaros cannot buff\nCheat Death\nDefias Bandits\nExecute\nPolymorph\nHealing reduction\nRagnaros receives -75% healing\nPercentage-based effects heal the full amount, so Priestess with Empowered Renew talent can still heal Ragnaros for 10 percent of his maximum health.\nEmpowered Renew has a special rule for Ragnaros that allows it to be applied only once per Priestess\nMolten Armor\nDeals 40 Elemental damage when taking damage\nIgnores damage-over-time effects\nBlast Wave\n75 Elemental damage\nRadius 8\nRadiant Flames talent\n100 Elemental damage on a radius of 7 every 5 seconds"
+    }
   },
   {
     "id": "raptors",
@@ -581,7 +4142,55 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/raptors.png"
+    "image": "/images/rumble/minis/300/raptors.png",
+    "damage": 120,
+    "health": 350,
+    "dps": 92.3,
+    "speed": "Fast",
+    "traits": [
+      "Cycle",
+      "Fast",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "350",
+        "DPS": "92",
+        "Attack Speed": "1.3",
+        "Speed": "Fast",
+        "Damage": "120"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Strength In Numbers",
+          "description": "Deal 10% more damage for each other Raptor nearby."
+        },
+        {
+          "name": "Fast Food",
+          "description": "On kill, heal a small amount of damage."
+        },
+        {
+          "name": "Motivation",
+          "description": "Gain Bloodlust for 10 seconds when coming within range of a chest or gold vein."
+        }
+      ],
+      "advanced_info": "Fast Food talent\nAll Raptors within a radius of 5 from the killed enemy are healed for 160\nMotivation talent\nRadius 7\nStrength in Numbers talent\nRadius 8"
+    }
   },
   {
     "id": "rend-blackhand",
@@ -589,15 +4198,116 @@
     "faction": "Blackrock",
     "type": "Leader",
     "cost": 6,
-    "image": "/images/rumble/minis/300/rend-blackhand.png"
+    "image": "/images/rumble/minis/300/rend-blackhand.png",
+    "damage": 460,
+    "health": 1720,
+    "dps": 82.3,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Dismounts",
+      "Flying",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Flying"
+      },
+      "stats": {
+        "Rend Dmg": "140",
+        "Rend DPS": "82",
+        "Rend Health": "1,380",
+        "Rend Range": "Melee",
+        "Gyth Dmg": "320",
+        "Gyth DPS": "133",
+        "Gyth Health": "340",
+        "Gyth Range": "4"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Dismounts",
+          "description": "Dismounts the mount/vehicle after it's destroyed."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Scale and Steel",
+          "description": "Gain Resistant while flying and Armored while dismounted."
+        },
+        {
+          "name": "Flaming Soul",
+          "description": "Cast Living Bomb upon dismounting, damaging nearby enemies."
+        },
+        {
+          "name": "Legionnaire",
+          "description": "Dismount when first taking damage. The Drake continues fighting."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nBlackrock\nCycle\nElemental\nFlying\nRanged\nSquad\nTank\nUnbound\nWithout a Wildcard slot, Rend cannot buff\nCheat Death\nExecute\nPolymorph\nCharge\nDismounted Rend charges at targets\nRend acquires charge targets from a minimum range of 3 and maximum of 9.5\nCharge increases Rend’s movement speed by +700%\nCharge deals 140 damage\nMelee cleave (dismounted Rend)\nArc 140 degrees"
+    }
   },
   {
-    "id": "s.a.f.e.-pilot",
+    "id": "s-a-f-e-pilot",
     "name": "S.A.F.E. Pilot",
     "faction": "Alliance",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/s-a-f-e-pilot.png"
+    "image": "/images/rumble/minis/300/s-a-f-e-pilot.png",
+    "damage": 170,
+    "health": 210,
+    "dps": 70.8,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Unbound",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "170",
+        "Health": "210",
+        "DPS": "70",
+        "Attack Speed": "2.4",
+        "Speed": "Medium",
+        "Range": "8.5",
+        "Crash Damage": "145"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Unbound",
+          "description": "Can be played anywhere on the map."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Gnomish Cloaking Device",
+          "description": "Deploy from the explosion with Stealth."
+        },
+        {
+          "name": "Comin' In Hot!",
+          "description": "Deploy twice as fast and Burn nearby enemies."
+        },
+        {
+          "name": "Gnomish Muttonizer",
+          "description": "Polymorph the first blaster target."
+        }
+      ],
+      "advanced_info": "Crash\nCrash damage 220\nCrash delay 2.8 seconds\nComin’ In Hot! Talent\nCrash damage 145\nApplies Burn\nCrash delay 1.4 seconds"
+    }
   },
   {
     "id": "skeleton-party",
@@ -605,7 +4315,61 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/skeleton-party.png"
+    "image": "/images/rumble/minis/300/skeleton-party.png",
+    "damage": 46,
+    "health": 200,
+    "dps": 32.9,
+    "speed": "Medium",
+    "traits": [
+      "Elemental",
+      "Frost",
+      "Unbound",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "200",
+        "DPS": "32",
+        "Attack Speed": "1.4",
+        "Speed": "Medium",
+        "Range": "7",
+        "Damage": "46"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Frost",
+          "description": "Frost damage slows enemy movement and attack speed."
+        },
+        {
+          "name": "Unbound",
+          "description": "Can be played anywhere on the map."
+        }
+      ],
+      "talents": [
+        {
+          "name": "5-Man",
+          "description": "Summons a Skeleton Tank, Rogue, Priest, and 2 Mages."
+        },
+        {
+          "name": "Corpse Run",
+          "description": "Gain +1 level for each deploy after the first. (Maximum +3 levels)"
+        },
+        {
+          "name": "Ritual of Rime",
+          "description": "Summon 5 Skeleton Mages who guard the deploy location."
+        }
+      ],
+      "advanced_info": "Skeleton Warriors\n200 health\nMelee\n1.4 seconds attack speed\n46 damage\nUnlike other Skeleton Warriors, Skeleton Party members are not Cycle minis\nSkeleton Mages\n200 health\n7 range\n1.4 seconds attack speed\n46 Elemental damage\nFrost\nNot Cycle minis\nArmy bonus slots\nAlways gets the bonus from the Ranged slot\nDoes not get the bonus from the Melee slot with the Ritual of Rime talent\nRitual of Rime talent\nSkeleton Mages will walk back to their position if they are knocked off\nMind-controlled Skeleton Mages can move\n5-Man talent\nSkeleton Tank has Taunt: 10 seconds duration, 5.25 radius, 10 seconds cooldown\nSkeleton Rogue has Stealth and Ambush\nSkeleton Priest has a 20-damage wand attack with 1.5 seconds attack speed and heals for 50 every 4.5 seconds with a range of 8.5"
+    }
   },
   {
     "id": "skeletons",
@@ -613,7 +4377,55 @@
     "faction": "Undead",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/skeletons.png"
+    "image": "/images/rumble/minis/300/skeletons.png",
+    "damage": 46,
+    "health": 200,
+    "dps": 32.9,
+    "speed": "Medium",
+    "traits": [
+      "Cycle",
+      "Unbound",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "200",
+        "DPS": "32",
+        "Attack Speed": "1.4",
+        "Speed": "Medium",
+        "Damage": "46"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Unbound",
+          "description": "Can be played anywhere on the map."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Questing Buddies",
+          "description": "One Skeleton gains Armor, one gains Resist, and one gains Stealth."
+        },
+        {
+          "name": "Exhume",
+          "description": "If deployed near a Tower or Meeting Stone, deploy +2 additional Skeletons."
+        },
+        {
+          "name": "Cackle",
+          "description": "Gain Taunt."
+        }
+      ],
+      "advanced_info": "Exhume talent\nAdditional Skeletons spawn when played within a radius of 4 from any Barracks, Tower, or Meeting Stone. Deploying Skeletons near a boss does not spawn additional Skeletons.\nCackle talent\nSkeletons have Taunt: 10 seconds duration, 5.25 radius, 10 seconds cooldown"
+    }
   },
   {
     "id": "smoke-bomb",
@@ -621,7 +4433,48 @@
     "faction": "Blackrock",
     "type": "Spell",
     "cost": 1,
-    "image": "/images/rumble/minis/300/smoke-bomb.png"
+    "image": "/images/rumble/minis/300/smoke-bomb.png",
+    "damage": 0,
+    "health": 0,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Cycle",
+      "Spell",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Spell"
+      },
+      "stats": {
+        "Radius": "5",
+        "Duration": "8",
+        "Lvl Advantage": "0.800049 sec"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        }
+      ],
+      "talents": [
+        {
+          "name": "Through The Shadows",
+          "description": "Affected minis move 50% faster until unstealthed."
+        },
+        {
+          "name": "Band Of Thieves",
+          "description": "Grant +2 levels to Cycle minis within."
+        },
+        {
+          "name": "Strangers in the Night",
+          "description": "Effects apply to enemies as well."
+        }
+      ],
+      "advanced_info": "Ambush talent\nDoes not apply to Goblin Sappers and Banshee\n+50% damage modifier, additive with other damage multipliers\nDoes not require Stealth\nThe bonus lasts for 8 seconds or until the first attack\nAdds +50% damage to minis with the Ambush ability (Smoke Bomb's Ambush is a separate multiplier)\nBand of Thieves talent\nNo level cap\nMost Skeletons are considered Cycle minis\nSkeleton Mages are not Cycle minis\nSkeleton Party members are not Cycle minis, not even the Skeleton Warriors"
+    }
   },
   {
     "id": "sneed",
@@ -629,7 +4482,60 @@
     "faction": "Horde",
     "type": "Leader",
     "cost": 5,
-    "image": "/images/rumble/minis/300/sneed.png"
+    "image": "/images/rumble/minis/300/sneed.png",
+    "damage": 360,
+    "health": 1352,
+    "dps": 120.0,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Armored",
+      "Siege Damage",
+      "Melee",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Melee"
+      },
+      "stats": {
+        "Area Damage": "360",
+        "Health": "1,352",
+        "DPS": "120",
+        "Attack Speed": "3",
+        "Speed": "Medium"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        },
+        {
+          "name": "Siege Damage",
+          "description": "Double damage vs Towers."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Lead With Greed",
+          "description": "Gain an additional +2 Gold when Sneed triggers Sneed Before Greed."
+        },
+        {
+          "name": "Mine Is Money, Friend!",
+          "description": "Gain the Miner trait."
+        },
+        {
+          "name": "Land Grab",
+          "description": "Gain 2 levels whenever Sneed Before Greed triggers."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nCycle\nFast\nFlying\nHorde\nRanged\nSpell\nSquad\nUnbound\nWithout a Wildcard slot, Sneed cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nDemolitions Mechanic\nDeals 30 Siege damage 12 times for a total of 360 damage\nArc 180 degrees\nMine is Money, Friend! talent\nSneed mines entire gold mines with a single swing\nLand Grab talent\nThe additional levels are capped at +10"
+    }
   },
   {
     "id": "spiderlings",
@@ -637,7 +4543,61 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/spiderlings.png"
+    "image": "/images/rumble/minis/300/spiderlings.png",
+    "damage": 40,
+    "health": 380,
+    "dps": 66.5,
+    "speed": "Fast",
+    "traits": [
+      "Cycle",
+      "Poisonous",
+      "Vulnerable",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "380",
+        "DPS": "66",
+        "Attack Speed": "0.6",
+        "Speed": "Fast",
+        "Duration": "5",
+        "Damage": "40"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Poisonous",
+          "description": "Deals stacking damage over time. Strong vs Armored."
+        },
+        {
+          "name": "Vulnerable",
+          "description": "Unit takes 2x elemental damage."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Cave Dwellers",
+          "description": "Gain Stealth & Frost."
+        },
+        {
+          "name": "Bloated Carapace",
+          "description": "Explode on death, Poisoning and Stunning nearby enemies (1s stun)."
+        },
+        {
+          "name": "Envenom",
+          "description": "Deal twice as much Poison damage."
+        }
+      ],
+      "advanced_info": "Poison attack\nDeals 8 Elemental damage and applies 1 stack of poison\nCave Dwellers talent\nStealth reduces movement speed by 20%\nBloated Carapace talent\nRadius 5\nDeals 45 Elemental damage and applies 1 stack of poison and a 1-second stun\nAlso hits Flying minis"
+    }
   },
   {
     "id": "stonehoof-tauren",
@@ -645,7 +4605,55 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/stonehoof-tauren.png"
+    "image": "/images/rumble/minis/300/stonehoof-tauren.png",
+    "damage": 150,
+    "health": 1720,
+    "dps": 83.3,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Charge",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,720",
+        "DPS": "83",
+        "Attack Speed": "1.8",
+        "Speed": "Medium",
+        "Damage": "150"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Charge",
+          "description": "Charges to enemy targets."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Momentum",
+          "description": "After connecting a charge, immediately charge a second time if possible."
+        },
+        {
+          "name": "Pummel",
+          "description": "After connecting a charge, Stun the target for 3 seconds."
+        },
+        {
+          "name": "Provoke",
+          "description": "After connecting a charge, Taunt nearby enemies."
+        }
+      ],
+      "advanced_info": "Charge\nMinimum range 3\nMaximum range 9.5\n300 physical damage on impact\nOnly targets non-boss minis with Charge\n5.6 seconds cooldown\nMomentum talent\nSecondary charge deals 260 damage on impact\nPummel talent\nThe 3-second Stun does not scale\nOnly targets non-boss minis with Charge\nProvoke talent\nRadius 6\n10 seconds duration"
+    }
   },
   {
     "id": "swole-troll",
@@ -653,7 +4661,60 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/swole-troll.png"
+    "image": "/images/rumble/minis/300/swole-troll.png",
+    "damage": 250,
+    "health": 2600,
+    "dps": 125.0,
+    "speed": "Slow",
+    "traits": [
+      "Siege Damage",
+      "Unstoppable",
+      "Tank",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "2,600",
+        "DPS": "125",
+        "Attack Speed": "2",
+        "Speed": "Slow",
+        "Damage": "250"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Siege Damage",
+          "description": "Double damage vs Towers."
+        },
+        {
+          "name": "Unstoppable",
+          "description": "Cannot be slowed, rooted, frozen stunned, or polymorphed."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Trollnado",
+          "description": "Uses a spinning attack to knock nearby enemy Minis far away every 7 seconds."
+        },
+        {
+          "name": "Troll Train",
+          "description": "Dashes to an enemy Mini to stun them along his path."
+        },
+        {
+          "name": "Meatier Elbow",
+          "description": "Now targets enemy Minis with a large damaging AOE."
+        }
+      ],
+      "advanced_info": "Army bonus slots\nAlways gets the bonus from the Siege slot\nOnly gets the bonus from the Melee slot if equipped with the Meatier Elbow talent\nKnockback\nWhen attacking buildings, Swole Troll also knocks back surrounding enemy minis in a radius of 4\nTroll Train talent\nTargets are acquired from a 45-degree cone in front of the Swole Troll, so it will never turn back\n5.6-second cooldown\nTrollnado talent\nRadius 4\nMeatier Elbow\nCleave arc 180 degrees\nKnockback radius 3.5, in the cleave area\nDamage reduced to 210 siege damage\nAttack speed slowed down to 3.2 seconds\nNo longer a Siege Specialist, now a regular tank: targets enemy minis and stops to fight against them"
+    }
   },
   {
     "id": "sylvanas-windrunner",
@@ -661,7 +4722,51 @@
     "faction": "Horde,Undead",
     "type": "Leader",
     "cost": 6,
-    "image": "/images/rumble/minis/300/sylvanas-windrunner.png"
+    "image": "/images/rumble/minis/300/sylvanas-windrunner.png",
+    "damage": 190,
+    "health": 500,
+    "dps": 146.0,
+    "speed": "Medium",
+    "traits": [
+      "Haunt",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "500",
+        "DPS": "146",
+        "Attack Speed": "1.3",
+        "Speed": "Medium",
+        "Range": "8.5",
+        "Damage": "190"
+      },
+      "traits": [
+        {
+          "name": "Haunt",
+          "description": "Summon a Banshee on death."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Forsaken Fury",
+          "description": "Windrunner Aura also grants Fury to Horde and Undead Allies."
+        },
+        {
+          "name": "Banshee's Wail",
+          "description": "Scream on Death, Stunning nearby enemies for 3 seconds."
+        },
+        {
+          "name": "Queen's Reach",
+          "description": "Black Arrow travels 20% farther, but attack speed is 10% slower."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nCycle\nFast\nFlying\nHorde\nSpell\nSquad\nTank\nUnbound\nUndead\nWithout a Wildcard slot, Sylvanas cannot buff\nDruid of the Claw\nFirehammer\nFlamewaker\nMoonkin\nPyromancer\nWindrunner Warchief\nThe Horde and Undead troop buff is active even if you never deploy Sylvanas\nThis also applies to the Forsaken Fury talent\nBlack Arrow\nWhile Sylvanas will not target objects further away than 8.5, the Black Arrow itself is a 2-wide projectile that travels up to a range of 16\nQueen’s Reach talent\nRange 10.2 (outranges regular Towers)\nWhile Sylvanas will not target objects further away than 10.2, the Black Arrow itself is a 2-wide projectile that travels up to a range of 20\nBanshee’s Wail talent\nRadius 9\nRegular 3-second stun"
+    }
   },
   {
     "id": "thrall",
@@ -669,7 +4774,62 @@
     "faction": "Horde",
     "type": "Leader",
     "cost": 4,
-    "image": "/images/rumble/minis/300/thrall.png"
+    "image": "/images/rumble/minis/300/thrall.png",
+    "damage": 305,
+    "health": 1500,
+    "dps": 174.0,
+    "speed": "Medium",
+    "traits": [
+      "Detect",
+      "Elemental",
+      "Tank",
+      "Ranged",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Health": "1,500",
+        "Speed": "Medium",
+        "Range": "8",
+        "Axe Damage": "180",
+        "Axe DPS": "100",
+        "Lightning Damage": "125",
+        "Lightning DPS": "74"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Detect",
+          "description": "Detect and attack Sealthed enemies."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Call of the Horde",
+          "description": "Gain Bloodlust for 5 seconds and pulses lightning whenever a Horde ally is deployed."
+        },
+        {
+          "name": "Feral Spirit",
+          "description": "When Thrall's health drops to 50%, he summons 2 Spirit Wolves to fight by his side. This can trigger twice per deploy."
+        },
+        {
+          "name": "Totemic Mastery",
+          "description": "When deployed Thrall summons a totem as his location and a new one every 10 seconds. Each totem lasts for 10 seconds."
+        }
+      ],
+      "advanced_info": "Axe\n180 Physical damage\n1.8 seconds attack speed\nMelee range\nAfter two melee swings, Thrall gains one charge for his ground Chain Lightning\nChain Lightning\nThrall has two ranged Chain Lightning attacks: he can always cast his Chain Lightning on flying minis, and he also has another version of it that can be cast on ground minis. That version starts with one charge, and recharges after two melee swings. Other than that, the two Chain Lightning attacks are identical.\n125 Elemental damage\n1.7 seconds attack speed\n8 range\nBounces up to 2 additional targets within a range of 6\nFeral Spirit talent Spirit Wolves\n700 health\n4 movement speed (Fast)\nBite: 100 Elemental damage, 0.9 seconds attack speed, 1.5 range, hits ground minis only\nDash: 100 Elemental damage, 6 range charge\nTaunt: 10 seconds duration, 1.5 range, single use\nCall of the Horde talent Lightning pulse\n200 Elemental damage\n6 radius\nHits both ground and flying minis\nCannot hit Barracks\nTotemic Mastery talent Totems\nAll your Thralls cycle through the same list of Totems\nEach Totem lasts for 10 seconds, and Thrall summons another one after 10 seconds, so each Thrall has one active Totem at a time\nWindfury: +25% attack speed to allies map-wide\nSearing: 25 Elemental damage to an enemy within a radius of 6 every second\nHealing: 25 healing per second to allies map-wide\nEarthbind: -25% movement speed to enemies map-wide"
+    }
   },
   {
     "id": "tirion-fordring",
@@ -677,7 +4837,61 @@
     "faction": "Alliance",
     "type": "Leader",
     "cost": 4,
-    "image": "/images/rumble/minis/300/tirion-fordring.png"
+    "image": "/images/rumble/minis/300/tirion-fordring.png",
+    "damage": 120,
+    "health": 700,
+    "dps": 66.7,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Armored",
+      "Healer",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "700",
+        "DPS": "66",
+        "Attack Speed": "1.8",
+        "Speed": "Medium",
+        "Damage": "120",
+        "Healing": "160"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        },
+        {
+          "name": "Healer",
+          "description": "Heals friendly units."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Divine Shield",
+          "description": "Gain a magical shield at 30% health, absorbing all damage for 5 seconds."
+        },
+        {
+          "name": "By The Light",
+          "description": "Heal the primary target for twice as much."
+        },
+        {
+          "name": "Consecrate",
+          "description": "Regularly consecrate the ground, damaging enemies within."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nAlliance\nCycle\nFlying\nRanged\nSiege Damage\nSpell\nSquad\nUnbound\nWithout a Wildcard slot, Tirion cannot buff\nHeadless Horseman\nHoly Light\nRange 8\nRadius 3\nCooldown 4 seconds\nHeals for 160 and removes poison\nConsecrate talent\nCooldown 8.25 seconds\nRange 4\nRadius 5\nDoes not hit Flying minis\n50 Elemental damage per second for 8 seconds for a total of 400 damage\nDivine Shield talent\nDivine Shield can only proc once, even if Tirion is healed to above 30% health"
+    }
   },
   {
     "id": "treant",
@@ -685,7 +4899,55 @@
     "faction": "Cenarion",
     "type": "Troop",
     "cost": 1,
-    "image": "/images/rumble/minis/300/treant.png"
+    "image": "/images/rumble/minis/300/treant.png",
+    "damage": 90,
+    "health": 225,
+    "dps": 36.0,
+    "speed": "Slow",
+    "traits": [
+      "Surge",
+      "Armored",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "225",
+        "DPS": "36",
+        "Attack Speed": "2.0",
+        "Speed": "Slow",
+        "Damage": "90"
+      },
+      "traits": [
+        {
+          "name": "Armored",
+          "description": "50% Physical damage reduction."
+        },
+        {
+          "name": "Surge",
+          "description": "Consumes remaining Gold when deployed."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Composting",
+          "description": "On death, Heal nearby allied minis immediately and over time."
+        },
+        {
+          "name": "Propagation",
+          "description": "Summon two extra Treants at your base for every 3 Gold spent on deploy."
+        },
+        {
+          "name": "Uproot",
+          "description": "On death, Root the target for 3 seconds."
+        }
+      ],
+      "advanced_info": "Each additional gold you spend on Treants increases their health and damage by +10%\n1 gold spawns 1 Treant with the baseline stats\n2 gold spawns 2 Treants that both have +10% health and damage\n3 gold spawns 3 Treants that each have +20% health and damage\nAnd so on\nEach Treant spawned changes the form of Cenarion spells\n1 Treant (1 gold) changes Sunfire to Moonfire\n2 Treants (2 gold) keep Sunfire as Sunfire\nTherefore, odd amounts of gold spent change the form of Cenarion spells whereas even amounts of gold spent keeps them the same\nComposting talent\nRadius 6\n90 immediate healing + 60 healing over the next 6 seconds, 10 healing per second\nUproot talent\nCannot affect Flying minis or bosses\nRadius 6"
+    }
   },
   {
     "id": "vultures",
@@ -693,7 +4955,55 @@
     "faction": "Beast",
     "type": "Troop",
     "cost": 1,
-    "image": "/images/rumble/minis/300/vultures.png"
+    "image": "/images/rumble/minis/300/vultures.png",
+    "damage": 70,
+    "health": 25,
+    "dps": 43.8,
+    "speed": "Med-Fast",
+    "traits": [
+      "Cycle",
+      "Carrion",
+      "Flying",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Flying"
+      },
+      "stats": {
+        "Health": "25",
+        "DPS": "43",
+        "Attack Speed": "1.6",
+        "Speed": "Med-Fast",
+        "Damage": "70"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Carrion",
+          "description": "Multiplies from slain enemies."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Feeding Frenzy",
+          "description": "The flock gains Bloodlust for 5 seconds when spawning a new Vulture."
+        },
+        {
+          "name": "Migration",
+          "description": "All additional Vultures spawn at your base."
+        },
+        {
+          "name": "Tendon Rip",
+          "description": "Attacks Daze enemies for 3 seconds."
+        }
+      ],
+      "advanced_info": "Deploying the squad mini summons three Vultures.\nSummoning new Vultures\nEach kill spawns two Vultures\nVultures do not spawn after killing other Vultures, Whelp Eggs (only the Egg part), Spider Eggs (Darkmist Broodqueen), or buildings\nVultures can spawn for up to 2.5 seconds after a Vulture has hit the target\nTendon Rip talent\n-30% movement speed for 5 seconds\nFeeding Frenzy talent\nGives Bloodlust to all allied Vultures in a radius of 100 for 5 seconds"
+    }
   },
   {
     "id": "warsong-grunts",
@@ -701,7 +5011,55 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 5,
-    "image": "/images/rumble/minis/300/warsong-grunts.png"
+    "image": "/images/rumble/minis/300/warsong-grunts.png",
+    "damage": 95,
+    "health": 1720,
+    "dps": 59.4,
+    "speed": "Medium",
+    "traits": [
+      "Tank",
+      "Fury",
+      "Melee",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,720",
+        "DPS": "59",
+        "Attack Speed": "1.6",
+        "Speed": "Medium",
+        "Damage": "95"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Fury",
+          "description": "Attack speed increases while in combat."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Blood Pact",
+          "description": "When a Grunt dies, the other gain Bloodlust and fully heals."
+        },
+        {
+          "name": "Command",
+          "description": "While deployed, Beast allies deal 30% additional damage."
+        },
+        {
+          "name": "Guard Duty",
+          "description": "Remain at deploy location until entering combat, gain Armored and reduce Gold cost by 1."
+        }
+      ],
+      "advanced_info": "Command talent\nThe damage buff applies map-wide while a Grunt is alive"
+    }
   },
   {
     "id": "warsong-raider",
@@ -709,7 +5067,60 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 4,
-    "image": "/images/rumble/minis/300/warsong-raider.png"
+    "image": "/images/rumble/minis/300/warsong-raider.png",
+    "damage": 180,
+    "health": 1340,
+    "dps": 105.9,
+    "speed": "Fast",
+    "traits": [
+      "Tank",
+      "Fast",
+      "Siege Damage",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "1,340",
+        "DPS": "105",
+        "Attack Speed": "1.7",
+        "Speed": "Fast",
+        "Damage": "180"
+      },
+      "traits": [
+        {
+          "name": "Tank",
+          "description": "High health unit. Good at soaking Tower damage."
+        },
+        {
+          "name": "Fast",
+          "description": "Fastest moving units."
+        },
+        {
+          "name": "Siege Damage",
+          "description": "Double damage vs Towers."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Razing Focus",
+          "description": "Become a Siege unit, ignoring enemy Minis."
+        },
+        {
+          "name": "Saboteur",
+          "description": "Damaging a tower reduces its damage dealt by 50% for 3 seconds."
+        },
+        {
+          "name": "Sunder Armor",
+          "description": "Damaging an Armored enemy removes their Armor."
+        }
+      ],
+      "advanced_info": "Sunder Armor talent\nThe armor removal is temporary against bosses: it lasts for 8 seconds"
+    }
   },
   {
     "id": "whelp-eggs",
@@ -717,7 +5128,61 @@
     "faction": "Blackrock",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/whelp-eggs.png"
+    "image": "/images/rumble/minis/300/whelp-eggs.png",
+    "damage": 110,
+    "health": 130,
+    "dps": 61.1,
+    "speed": "Med-Fast",
+    "traits": [
+      "Elemental",
+      "Unbound",
+      "Hatching",
+      "Flying",
+      "Squad"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "Squad",
+        "type": "Flying"
+      },
+      "stats": {
+        "Area Damage": "110",
+        "Health": "130",
+        "DPS": "61",
+        "Attack Speed": "1.8",
+        "Speed": "Med-Fast",
+        "Range": "3.5"
+      },
+      "traits": [
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Unbound",
+          "description": "Can be played anywhere on the map."
+        },
+        {
+          "name": "Hatching",
+          "description": "Unit hatches into final form when attacked."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Flame Burst",
+          "description": "Damage nearby enemies when hatching."
+        },
+        {
+          "name": "Rookery",
+          "description": "When one egg hatches, the others hatch immediately."
+        },
+        {
+          "name": "Chromatic Plating",
+          "description": "Eggs gain Taunt."
+        }
+      ],
+      "advanced_info": "Eggs\n10 health\nChromatic Plating talent\nEggs have Taunt: 10 seconds duration, 5.25 radius, 10 seconds cooldown\nFlame Burst talent\nRadius 5\n50 Elemental damage\nOnly hits ground minis"
+    }
   },
   {
     "id": "witch-doctor",
@@ -725,7 +5190,56 @@
     "faction": "Horde",
     "type": "Troop",
     "cost": 2,
-    "image": "/images/rumble/minis/300/witch-doctor.png"
+    "image": "/images/rumble/minis/300/witch-doctor.png",
+    "damage": 118,
+    "health": 300,
+    "dps": 90.0,
+    "speed": "Medium",
+    "traits": [
+      "Cycle",
+      "Elemental",
+      "Ranged",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Ranged"
+      },
+      "stats": {
+        "Area Damage": "100",
+        "Health": "300",
+        "DPS": "90",
+        "Speed": "Medium",
+        "Range": "7",
+        "Damage": "18"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Alchemist",
+          "description": "Periodically drop a potion, granting Bloodlust to the first ally who touches it."
+        },
+        {
+          "name": "Amplify Curse",
+          "description": "Enemies killed by the Curse explosion also explode."
+        },
+        {
+          "name": "Spirit Ward",
+          "description": "On kill, grant a shield to nearby allies, absorbing the next hit against them."
+        }
+      ],
+      "advanced_info": "Curse channeling\n18 damage every 0.2 seconds for 8 seconds\nWhen a target dies, it explodes for 100 Elemental damage on a radius of 5\nSpirit Ward talent\nRadius 8\nDuration 5 seconds\nAlchemist talent\nCooldown 12 seconds\n10 seconds of Bloodlust for one mini that picks up the potion\nAmplify Curse talent\nRadius 6"
+    }
   },
   {
     "id": "worgen",
@@ -733,7 +5247,60 @@
     "faction": "Alliance",
     "type": "Troop",
     "cost": 3,
-    "image": "/images/rumble/minis/300/worgen.png"
+    "image": "/images/rumble/minis/300/worgen.png",
+    "damage": 130,
+    "health": 340,
+    "dps": 162.5,
+    "speed": "Med-Fast",
+    "traits": [
+      "Unbound",
+      "Stealth",
+      "Ambush",
+      "Melee",
+      "One-Target"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "One-Target",
+        "type": "Melee"
+      },
+      "stats": {
+        "Health": "340",
+        "DPS": "162",
+        "Attack Speed": "0.8",
+        "Speed": "Med-Fast",
+        "Damage": "130"
+      },
+      "traits": [
+        {
+          "name": "Unbound",
+          "description": "Can be played anywhere on the map."
+        },
+        {
+          "name": "Stealth",
+          "description": "Invisible to enemies until it attacks or is damaged."
+        },
+        {
+          "name": "Ambush",
+          "description": "Double damage when attacking from Stealth."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Premeditation",
+          "description": "Increase Ambush damage by 50%."
+        },
+        {
+          "name": "Lone Wolf",
+          "description": "On deploy, grant +1 gold if no allies are nearby."
+        },
+        {
+          "name": "Frenzy",
+          "description": "On kill, gain Bloodlust for 10 seconds."
+        }
+      ],
+      "advanced_info": "Ambush\nThe damage of the Ambush attack is 260\nAny damage modifiers are applied to this higher damage\nPremeditation talent\nThe damage of the Ambush attack with Premeditation is 390\nAny damage modifiers are applied to this higher damage\nLone Wolf talent\nThere can be no allies within a radius of 20"
+    }
   },
   {
     "id": "ysera",
@@ -741,6 +5308,52 @@
     "faction": "Cenarion",
     "type": "Leader",
     "cost": 3,
-    "image": "/images/rumble/minis/300/ysera.png"
+    "image": "/images/rumble/minis/300/ysera.png",
+    "damage": 0,
+    "health": 0,
+    "dps": 0.0,
+    "speed": "Znull",
+    "traits": [
+      "Elemental",
+      "Cycle",
+      "Poisonous",
+      "Flying",
+      "AoE"
+    ],
+    "details": {
+      "core_trait": {
+        "attack": "AoE",
+        "type": "Flying"
+      },
+      "traits": [
+        {
+          "name": "Cycle",
+          "description": "2 cost or less for more Mini plays!"
+        },
+        {
+          "name": "Elemental",
+          "description": "Deals elemental damage. Strong vs Armored."
+        },
+        {
+          "name": "Poisonous",
+          "description": "Deals stacking damage over time. Strong vs Armored."
+        }
+      ],
+      "talents": [
+        {
+          "name": "Recurring Dream",
+          "description": "Ysera Minis are twice as likely to show up in hand."
+        },
+        {
+          "name": "Shared Dream",
+          "description": "Hibernate applies to all enemies on the board."
+        },
+        {
+          "name": "Corrupted Dream",
+          "description": "Emerald Whelps and Emerald Drake apply twice as much poison."
+        }
+      ],
+      "advanced_info": "Available army bonus slots for the bottom row\nCenarion\nFast\nFlying\nRanged\nSpell\nSquad\nUnbound\nTank\nEven without a Wildcard slot, Ysera can buff all minis.\nYsera minis\nAlways appear in the same order: Innervate, Emerald Whelps, Hibernate, Emerald Drake\nLevel is the same as Ysera level\nEmerald Whelps\n130 health\nRange 3.5\n1.8 seconds attack speed\n110 Elemental damage and 1 stack of poison\nHibernate\nRadius 8\n8-second stun (breaks on damage)\nEmerald Drake\n340 health\nRange 4\n2.4 seconds attack speed\n5 times 64 damage (320 damage overall) and 3 stacks of poison\nRecurring Dream talent\nMinis appear in the opposite order than the regular ones: Emerald Drake, Hibernate, Emerald Whelps, Innervate\nLevel is the same as Barracks level\nCorrupted Dream talent\nEmerald Whelps apply 2 stacks of poison\nEmerald Drake applies 6 stacks of poison"
+    }
   }
 ]

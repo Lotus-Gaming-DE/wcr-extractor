@@ -10,3 +10,12 @@ python scripts/fetch_method.py
 ```
 
 Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei `data/units.json` automatisch aktualisiert.
+
+## Tests
+
+Die Tests lassen sich mit [pytest](https://pytest.org) ausführen:
+
+```bash
+pip install -r requirements.txt
+pytest
+```

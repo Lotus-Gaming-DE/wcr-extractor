@@ -9,6 +9,16 @@ OUT_PATH = Path(__file__).parent.parent / "data" / "units.json"
 
 def fetch_units():
     """Fetch the minis list from method.gg and return it as a list of dicts."""
+    """Download minis from method.gg and store them as JSON.
+
+    The function retrieves the minis overview from ``method.gg`` and parses
+    name, faction, type, cost and image for each entry. All collected units
+    are written to ``data/units.json``. The file will be created if it does
+    not exist and overwritten otherwise.
+
+    Returns:
+        None: Writes the JSON file and prints progress information.
+    """
 
     print(f"Starte Abruf von {BASE_URL} ...")
     response = requests.get(BASE_URL, headers={"User-Agent": "Mozilla/5.0"})

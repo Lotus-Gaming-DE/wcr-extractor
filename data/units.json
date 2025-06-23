@@ -2,19 +2,21 @@
   {
     "id": "abomination",
     "name": "Abomination",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 6,
     "image": "/images/rumble/minis/300/abomination.png",
     "damage": 170,
     "health": 3400,
     "dps": 68.0,
-    "speed": "Slow",
-    "traits": [
-      "Hook",
-      "Tank",
-      "Melee",
-      "AoE"
+    "speed_id": "slow",
+    "trait_ids": [
+      "hook",
+      "tank",
+      "melee",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -58,20 +60,22 @@
   {
     "id": "ancient-of-war",
     "name": "Ancient of War",
-    "faction": "Cenarion",
-    "type": "Troop",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "troop",
     "cost": 0,
     "image": "/images/rumble/minis/300/ancient-of-war.png",
     "damage": 60,
     "health": 850,
     "dps": 0.0,
-    "speed": "Slow",
-    "traits": [
-      "Surge",
-      "Tank",
-      "Armored",
-      "Melee",
-      "One-Target"
+    "speed_id": "slow",
+    "trait_ids": [
+      "surge",
+      "tank",
+      "armored",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -118,19 +122,21 @@
   {
     "id": "angry-chickens",
     "name": "Angry Chickens",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/angry-chickens.png",
     "damage": 50,
     "health": 25,
     "dps": 50.0,
-    "speed": "Med-Fast",
-    "traits": [
-      "Cycle",
-      "Fast",
-      "Melee",
-      "Squad"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "cycle",
+      "fast",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -174,20 +180,23 @@
   {
     "id": "anub-arak",
     "name": "Anub'arak",
-    "faction": "Beast,Undead",
-    "type": "Leader",
+    "faction_ids": [
+      "beast",
+      "undead"
+    ],
+    "type_id": "leader",
     "cost": 6,
     "image": "/images/rumble/minis/300/anub-arak.png",
     "damage": 100,
     "health": 1440,
     "dps": 50.0,
-    "speed": "Slow",
-    "traits": [
-      "Tank",
-      "Armored",
-      "Charge",
-      "Melee",
-      "One-Target"
+    "speed_id": "slow",
+    "trait_ids": [
+      "tank",
+      "armored",
+      "charge",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -229,25 +238,38 @@
           "description": "At 50% health, summon 12 Scarab Beetles, and temporarily submerge, avoiding attacks."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nBeast\nElemental\nFast\nFlying\nRanged\nSquad\nTank\nUnbound\nUndead\nWithout a Wildcard slot, Anub’arak cannot buff Execute.\nMelee cleave\nArc 140 degrees\nBurrow\nMinimum range 4\nMaximum acquire range 12\nMovement speed while burrowed 7\nWhile burrowed, Anub'arak is immune to all damage and gains Unstoppable. It also ignores collisions and cannot be pushed.\nScarab Beetles\n10 health\nMovement speed 3\nAttack speed 1.3 seconds\nNo damage, applies 1 stack of poison\nDamage reflection effects do not work on Scarabs because they deal no damage\nExplosive Shells talent\n35 damage\nRadius 5\nTrap Door talent\nCan only proc once per Anub'arak (healing above 50% does not re-enable the effect)\nThe Beetles will spawn even if you already have 12 Beetles on the map\nApplies a 5-second stun on a 3.5 radius"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Anub’arak cannot buff Execute.\nMelee cleave\nArc 140 degrees\nBurrow\nMinimum range 4\nMaximum acquire range 12\nMovement speed while burrowed 7\nWhile burrowed, Anub'arak is immune to all damage and gains Unstoppable. It also ignores collisions and cannot be pushed.\nScarab Beetles\n10 health\nMovement speed 3\nAttack speed 1.3 seconds\nNo damage, applies 1 stack of poison\nDamage reflection effects do not work on Scarabs because they deal no damage\nExplosive Shells talent\n35 damage\nRadius 5\nTrap Door talent\nCan only proc once per Anub'arak (healing above 50% does not re-enable the effect)\nThe Beetles will spawn even if you already have 12 Beetles on the map\nApplies a 5-second stun on a 3.5 radius",
+      "army_bonus_slots": [
+        "Beast",
+        "Elemental",
+        "Fast",
+        "Flying",
+        "Ranged",
+        "Squad",
+        "Tank",
+        "Unbound",
+        "Undead"
+      ]
     }
   },
   {
     "id": "arcane-blast",
     "name": "Arcane Blast",
-    "faction": "Alliance",
-    "type": "Spell",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "spell",
     "cost": 1,
     "image": "/images/rumble/minis/300/arcane-blast.png",
     "damage": 75,
     "health": 0,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Cycle",
-      "Elemental",
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "cycle",
+      "elemental",
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -288,22 +310,25 @@
   {
     "id": "arthas",
     "name": "Arthas",
-    "faction": "Alliance,Undead",
-    "type": "Leader",
+    "faction_ids": [
+      "alliance",
+      "undead"
+    ],
+    "type_id": "leader",
     "cost": 5,
     "image": "/images/rumble/minis/300/arthas.png",
     "damage": 185,
     "health": 1100,
     "dps": 0.0,
-    "speed": "Medium",
-    "traits": [
-      "Remorseless Winter",
-      "Lichborne",
-      "Army of the Dead",
-      "Armored",
-      "Frost",
-      "Melee",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "remorseless-winter",
+      "lichborne",
+      "army-of-the-dead",
+      "armored",
+      "frost",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -351,24 +376,37 @@
           "description": "On death, become invulnerable for 3 seconds. If the target dies, return to life with 25% health. The target that needs to die, is the first enemy that Arthas attacks after resurrecting and becoming invulnerable."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row:\nAlliance\nCycle\nFlying\nMelee\nRanged\nSpell\nSquad\nUnbound\nUndead\nWithout a Wildcard slot, Arthas cannot buff a Swole Troll that does not have Meatier Elbow.\nRemorseless Winter:\nApplies Frost to nearby enemies\nFrost reduces both their attack and movement speed by 50%\n6.5 radius from Arthas\nNote that this range means that most ranged minis will be shooting at Arthas from outside the Frost aura, if Arthas is fighting against a tank\nArmy of the Dead:\nPeriodically summons a Frosty Footman\nMaximum of 2 Footmen at a time, per Arthas\nBoth are summoned immediately when you deploy Arthas\n13-second cooldown for each Footman, starts when summoned, so if they die after 13 seconds or more, Arthas immediately summons another\nSoulshatter:\nWhile deployed, Frosted enemies die instantly when taking any damage below 20% health\nDoes not apply to buildings, bosses, and mini-bosses\nGlobal while Arthas is alive\nTarget needs to be hit while already under 20% health – mostly effective against big tanks because small minis often die to a hit while under 20% health anyway\nLichborne:\nNearby allied Alliance Minis summon stationary Skeleton Mages on death\nAllied, so also works for your partners' minis in co-op, but only close to Arthas\n12 radius from Arthas"
+      "advanced_info": "Available army bonus slots for the bottom row:\nWithout a Wildcard slot, Arthas cannot buff a Swole Troll that does not have Meatier Elbow.\nRemorseless Winter:\nApplies Frost to nearby enemies\nFrost reduces both their attack and movement speed by 50%\n6.5 radius from Arthas\nNote that this range means that most ranged minis will be shooting at Arthas from outside the Frost aura, if Arthas is fighting against a tank\nArmy of the Dead:\nPeriodically summons a Frosty Footman\nMaximum of 2 Footmen at a time, per Arthas\nBoth are summoned immediately when you deploy Arthas\n13-second cooldown for each Footman, starts when summoned, so if they die after 13 seconds or more, Arthas immediately summons another\nSoulshatter:\nWhile deployed, Frosted enemies die instantly when taking any damage below 20% health\nDoes not apply to buildings, bosses, and mini-bosses\nGlobal while Arthas is alive\nTarget needs to be hit while already under 20% health – mostly effective against big tanks because small minis often die to a hit while under 20% health anyway\nLichborne:\nNearby allied Alliance Minis summon stationary Skeleton Mages on death\nAllied, so also works for your partners' minis in co-op, but only close to Arthas\n12 radius from Arthas",
+      "army_bonus_slots": [
+        "Alliance",
+        "Cycle",
+        "Flying",
+        "Melee",
+        "Ranged",
+        "Spell",
+        "Squad",
+        "Unbound",
+        "Undead"
+      ]
     }
   },
   {
     "id": "banshee",
     "name": "Banshee",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/banshee.png",
     "damage": 0,
     "health": 230,
     "dps": 0.0,
-    "speed": "Med-Fast",
-    "traits": [
-      "Possession",
-      "Ranged",
-      "One-Target"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "possession",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -405,21 +443,23 @@
   {
     "id": "baron-rivendare",
     "name": "Baron Rivendare",
-    "faction": "Undead",
-    "type": "Leader",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "leader",
     "cost": 4,
     "image": "/images/rumble/minis/300/baron-rivendare.png",
     "damage": 190,
     "health": 1040,
     "dps": 111.8,
-    "speed": "Fast",
-    "traits": [
-      "Tank",
-      "Fast",
-      "Elemental",
-      "Armored",
-      "Melee",
-      "One-Target"
+    "speed_id": "fast",
+    "trait_ids": [
+      "tank",
+      "fast",
+      "elemental",
+      "armored",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -465,26 +505,38 @@
           "description": "Nearby allied Skeletons gain Bloodlust."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row:\nCycle\nElemental\nFast\nFlying\nSiege Damage\nSpell\nSquad\nUndead\nWithout a Wildcard slot, Baron Rivendare cannot buff:\nAncient of War\nBog Beast\nDarkspear Troll\nGnoll Brute (unless Rabid)\nHarvest Golem\nStonehoof Tauren\nArmy of the Dead:\nSkeletons spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 15 seconds\nWith Chill of the Grave talent, Skeletal Mages spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 25 seconds\nSkeletal Frenzy talent:\nFriendly Skeletons have Bloodlust as long as they are within a radius of 8 from Baron Rivendare\nDeath Pact talent:\nRange 9\nCooldown 10 seconds\nHeals Rivendare for 100% of his maximum health\nRivendare uses Death Pact when he is below 60% of his maximum health"
+      "advanced_info": "Available army bonus slots for the bottom row:\nWithout a Wildcard slot, Baron Rivendare cannot buff:\nAncient of War\nBog Beast\nDarkspear Troll\nGnoll Brute (unless Rabid)\nHarvest Golem\nStonehoof Tauren\nArmy of the Dead:\nSkeletons spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 15 seconds\nWith Chill of the Grave talent, Skeletal Mages spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 25 seconds\nSkeletal Frenzy talent:\nFriendly Skeletons have Bloodlust as long as they are within a radius of 8 from Baron Rivendare\nDeath Pact talent:\nRange 9\nCooldown 10 seconds\nHeals Rivendare for 100% of his maximum health\nRivendare uses Death Pact when he is below 60% of his maximum health",
+      "army_bonus_slots": [
+        "Cycle",
+        "Elemental",
+        "Fast",
+        "Flying",
+        "Siege Damage",
+        "Spell",
+        "Squad",
+        "Undead"
+      ]
     }
   },
   {
     "id": "bat-rider",
     "name": "Bat Rider",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/bat-rider.png",
     "damage": 250,
     "health": 170,
     "dps": 100.0,
-    "speed": "Medium",
-    "traits": [
-      "Cycle",
-      "Elemental",
-      "Bombard",
-      "Flying",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "cycle",
+      "elemental",
+      "bombard",
+      "flying",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -534,19 +586,21 @@
   {
     "id": "blizzard",
     "name": "Blizzard",
-    "faction": "Alliance",
-    "type": "Spell",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "spell",
     "cost": 4,
     "image": "/images/rumble/minis/300/blizzard.png",
     "damage": 500,
     "health": 0,
     "dps": 100.0,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Frost",
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "frost",
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -588,18 +642,20 @@
   {
     "id": "bloodmage-thalnos",
     "name": "Bloodmage Thalnos",
-    "faction": "Undead",
-    "type": "Leader",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "leader",
     "cost": 4,
     "image": "/images/rumble/minis/300/bloodmage-thalnos.png",
     "damage": 140,
     "health": 460,
     "dps": 100.0,
-    "speed": "Slow",
-    "traits": [
-      "Elemental",
-      "Ranged",
-      "AoE"
+    "speed_id": "slow",
+    "trait_ids": [
+      "elemental",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -634,25 +690,38 @@
           "description": "Spells costing 3 or more grant an additional level."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nCycle\nElemental\nFast\nLifesteal\nSpell\nSquad\nTank\nUndead\nUnbound\nWithout a Wildcard slot, Bloodmage Thalnos cannot buff\nDarkspear Troll\nShadow Splash:\nThe lifesteal effect is 8% of the damage dealt by Thalnos\nDark Ritual:\nAdditional levels are capped at +10\nDrain Soul talent:\nThe discount effect stacks until you cast a spell\nThe minimum cost of a spell is 1 gold\nThe discount effect has a 12-second cooldown, separately for each Thalnos\nFor example, if you have two copies of Thalnos on the board, you can discount your next spell by 2 every 12 seconds, and the discounts from the two Thalnos minis can come at any time, with each Thalnos on its own separate 12-second cooldown"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Bloodmage Thalnos cannot buff\nDarkspear Troll\nShadow Splash:\nThe lifesteal effect is 8% of the damage dealt by Thalnos\nDark Ritual:\nAdditional levels are capped at +10\nDrain Soul talent:\nThe discount effect stacks until you cast a spell\nThe minimum cost of a spell is 1 gold\nThe discount effect has a 12-second cooldown, separately for each Thalnos\nFor example, if you have two copies of Thalnos on the board, you can discount your next spell by 2 every 12 seconds, and the discounts from the two Thalnos minis can come at any time, with each Thalnos on its own separate 12-second cooldown",
+      "army_bonus_slots": [
+        "Cycle",
+        "Elemental",
+        "Fast",
+        "Lifesteal",
+        "Spell",
+        "Squad",
+        "Tank",
+        "Undead",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "bog-beast",
     "name": "Bog Beast",
-    "faction": "Cenarion",
-    "type": "Troop",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/bog-beast.png",
     "damage": 165,
     "health": 1100,
     "dps": 66.0,
-    "speed": "Slow",
-    "traits": [
-      "Tank",
-      "Resistant",
-      "Melee",
-      "One-Target"
+    "speed_id": "slow",
+    "trait_ids": [
+      "tank",
+      "resistant",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -696,20 +765,22 @@
   {
     "id": "cairne-bloodhoof",
     "name": "Cairne Bloodhoof",
-    "faction": "Horde",
-    "type": "Leader",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "leader",
     "cost": 5,
     "image": "/images/rumble/minis/300/cairne-bloodhoof.png",
     "damage": 176,
     "health": 1700,
     "dps": 70.4,
-    "speed": "Znull",
-    "traits": [
-      "Tank",
-      "Attack Stun",
-      "Fast",
-      "Melee",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "tank",
+      "attack-stun",
+      "fast",
+      "melee",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -750,28 +821,40 @@
           "description": "When Stun expires, affected enemies are Dazed for 5 seconds."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row:\nCycle\nElemental\nFast\nFlying\nHorde\nSiege Damage\nSpell\nSquad\nWithout a Wildcard slot, Cairne cannot buff:\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nWorgen\nEarthen Might:\nThe Horde troop health buff is active even if you never deploy Cairne\nShockwave:\nApplies a 1-second Stun\nStuns Towers\nResets Fury stacks on its targets\nAftershock talent\nThe Daze effect movement speed reduction is -50% for 6 seconds\nPlainsrunning talent\nThe movement speed increase is +150%, from 2 to 5"
+      "advanced_info": "Available army bonus slots for the bottom row:\nWithout a Wildcard slot, Cairne cannot buff:\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nWorgen\nEarthen Might:\nThe Horde troop health buff is active even if you never deploy Cairne\nShockwave:\nApplies a 1-second Stun\nStuns Towers\nResets Fury stacks on its targets\nAftershock talent\nThe Daze effect movement speed reduction is -50% for 6 seconds\nPlainsrunning talent\nThe movement speed increase is +150%, from 2 to 5",
+      "army_bonus_slots": [
+        "Cycle",
+        "Elemental",
+        "Fast",
+        "Flying",
+        "Horde",
+        "Siege Damage",
+        "Spell",
+        "Squad"
+      ]
     }
   },
   {
     "id": "cenarius",
     "name": "Cenarius",
-    "faction": "Cenarion",
-    "type": "Leader",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "leader",
     "cost": 5,
     "image": "/images/rumble/minis/300/cenarius.png",
     "damage": 120,
     "health": 600,
     "dps": 75.0,
-    "speed": "Medium",
-    "traits": [
-      "Brambles",
-      "Tranquility",
-      "Elemental",
-      "Resistant",
-      "Healer",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "brambles",
+      "tranquility",
+      "elemental",
+      "resistant",
+      "healer",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -825,25 +908,43 @@
           "description": "On deploy, Root all enemies for 5 seconds."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nCenarion\nCycle\nElemental\nFlying\nRanged\nSpell\nSquad\nUnbound\nEven without a Wildcard slot, Cenarius can buff all minis.\nGrove Keeper\nCenarion allies have 30% additional health, and they start at 100% of their original health\nHeal aura\nRadius 8.5\nHeals all allied minis in range for 28 every 1.5 seconds"
+      "advanced_info": "Available army bonus slots for the bottom row",
+      "army_bonus_slots": [
+        "Cenarion",
+        "Cycle",
+        "Elemental",
+        "Flying",
+        "Ranged",
+        "Spell",
+        "Squad",
+        "Unbound",
+        "Even without a Wildcard slot, Cenarius can buff all minis.",
+        "Grove Keeper",
+        "Cenarion allies have 30% additional health, and they start at 100% of their original health",
+        "Heal aura",
+        "Radius 8.5",
+        "Heals all allied minis in range for 28 every 1.5 seconds"
+      ]
     }
   },
   {
     "id": "chain-lightning",
     "name": "Chain Lightning",
-    "faction": "Horde",
-    "type": "Spell",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "spell",
     "cost": 2,
     "image": "/images/rumble/minis/300/chain-lightning.png",
     "damage": 150,
     "health": 0,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Cycle",
-      "Elemental",
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "cycle",
+      "elemental",
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -884,20 +985,22 @@
   {
     "id": "charlga-razorflank",
     "name": "Charlga Razorflank",
-    "faction": "Beast",
-    "type": "Leader",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "leader",
     "cost": 2,
     "image": "/images/rumble/minis/300/charlga-razorflank.png",
     "damage": 6,
     "health": 416,
     "dps": 24.0,
-    "speed": "Medium",
-    "traits": [
-      "Cycle",
-      "Percent Damage",
-      "Attack Root",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "cycle",
+      "percent-damage",
+      "attack-root",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -940,23 +1043,35 @@
           "description": "Root two additional nearby targets."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nBeast\nCycle\nElemental\nFlying\nRanged\nSpell\nTank\nUnbound\nWithout a Wildcard slot, Charlga cannot buff\nTreant\nMini costs\nCharlga has two decks: a mini pile and a cost pile\nAt the start of the game, both piles are shuffled independently\nEvery mini in your hand costs the same, and you can see the next cost together with the next mini\nWhen you play a mini, the mini goes to the bottom of the mini pile, and the mini’s original cost - not the cost you play it for - goes to the bottom of the cost pile\nSurge minis add a cost that uses all of your gold to the cost pile\nRoot attack\nRoots ground minis, but not flying minis\nDisables Towers for the duration of the channel\n4 ticks per second, 6 seconds channel\nDeals 2% of target's health + 6 damage per tick (but see the note about percentage damage scaling)\nThe 6 damage scales with levels as usual\nPercentage damage scaling\nMinis: 2%, ±0.2% per level\nBuildings: 2%, ±0.2% per level\nBarracks: 0.5%, ±0.05% per level\nBosses: 1%, ±0.1% per level\nRaid bosses: 0.25%, ±0.025% per level\nNo minimum values, so a -10 Charlga loses all percentage damage"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Charlga cannot buff\nTreant\nMini costs\nCharlga has two decks: a mini pile and a cost pile\nAt the start of the game, both piles are shuffled independently\nEvery mini in your hand costs the same, and you can see the next cost together with the next mini\nWhen you play a mini, the mini goes to the bottom of the mini pile, and the mini’s original cost - not the cost you play it for - goes to the bottom of the cost pile\nSurge minis add a cost that uses all of your gold to the cost pile\nRoot attack\nRoots ground minis, but not flying minis\nDisables Towers for the duration of the channel\n4 ticks per second, 6 seconds channel\nDeals 2% of target's health + 6 damage per tick (but see the note about percentage damage scaling)\nThe 6 damage scales with levels as usual\nPercentage damage scaling\nMinis: 2%, ±0.2% per level\nBuildings: 2%, ±0.2% per level\nBarracks: 0.5%, ±0.05% per level\nBosses: 1%, ±0.1% per level\nRaid bosses: 0.25%, ±0.025% per level\nNo minimum values, so a -10 Charlga loses all percentage damage",
+      "army_bonus_slots": [
+        "Beast",
+        "Cycle",
+        "Elemental",
+        "Flying",
+        "Ranged",
+        "Spell",
+        "Tank",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "cheat-death",
     "name": "Cheat Death",
-    "faction": "Undead",
-    "type": "Spell",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "spell",
     "cost": 3,
     "image": "/images/rumble/minis/300/cheat-death.png",
     "damage": 0,
     "health": 0,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -988,19 +1103,21 @@
   {
     "id": "chimaera",
     "name": "Chimaera",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 5,
     "image": "/images/rumble/minis/300/chimaera.png",
     "damage": 280,
     "health": 460,
     "dps": 115.0,
-    "speed": "Med-Fast",
-    "traits": [
-      "Elemental",
-      "Poisonous",
-      "Flying",
-      "AoE"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "elemental",
+      "poisonous",
+      "flying",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -1046,20 +1163,22 @@
   {
     "id": "core-hounds",
     "name": "Core Hounds",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 6,
     "image": "/images/rumble/minis/300/core-hounds.png",
     "damage": 220,
     "health": 1600,
     "dps": 100.0,
-    "speed": "Slow",
-    "traits": [
-      "Tank",
-      "Resistant",
-      "Revive",
-      "Melee",
-      "Squad"
+    "speed_id": "slow",
+    "trait_ids": [
+      "tank",
+      "resistant",
+      "revive",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -1107,20 +1226,22 @@
   {
     "id": "dark-iron-miner",
     "name": "Dark Iron Miner",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/dark-iron-miner.png",
     "damage": 60,
     "health": 540,
     "dps": 42.9,
-    "speed": "Medium",
-    "traits": [
-      "Unbound",
-      "Miner",
-      "Cycle",
-      "Melee",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "unbound",
+      "miner",
+      "cycle",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -1168,17 +1289,19 @@
   {
     "id": "darkspear-troll",
     "name": "Darkspear Troll",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/darkspear-troll.png",
     "damage": 190,
     "health": 220,
     "dps": 158.3,
-    "speed": "Medium",
-    "traits": [
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -1212,18 +1335,20 @@
   {
     "id": "deep-breath",
     "name": "Deep Breath",
-    "faction": "Blackrock",
-    "type": "Spell",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "spell",
     "cost": 4,
     "image": "/images/rumble/minis/300/deep-breath.png",
     "damage": 160,
     "health": 0,
     "dps": 30.0,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -1261,20 +1386,22 @@
   {
     "id": "defias-bandits",
     "name": "Defias Bandits",
-    "faction": "Alliance",
-    "type": "Troop",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "troop",
     "cost": 1,
     "image": "/images/rumble/minis/300/defias-bandits.png",
     "damage": 30,
     "health": 120,
     "dps": 16.7,
-    "speed": "Med-Fast",
-    "traits": [
-      "Cycle",
-      "Stealth",
-      "Cheap Shot",
-      "Melee",
-      "Squad"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "cycle",
+      "stealth",
+      "cheap-shot",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -1322,20 +1449,22 @@
   {
     "id": "dire-batlings",
     "name": "Dire Batlings",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/dire-batlings.png",
     "damage": 48,
     "health": 30,
     "dps": 40.0,
-    "speed": "Fast",
-    "traits": [
-      "Cycle",
-      "Fast",
-      "Detect",
-      "Flying",
-      "Squad"
+    "speed_id": "fast",
+    "trait_ids": [
+      "cycle",
+      "fast",
+      "detect",
+      "flying",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -1383,18 +1512,20 @@
   {
     "id": "drake",
     "name": "Drake",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/drake.png",
     "damage": 320,
     "health": 340,
     "dps": 133.3,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Flying",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "flying",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -1434,19 +1565,21 @@
   {
     "id": "druid-of-the-claw",
     "name": "Druid of the Claw",
-    "faction": "Cenarion",
-    "type": "Troop",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/druid-of-the-claw.png",
     "damage": 332,
     "health": 2340,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Shapeshift",
-      "Ranged",
-      "One-Target"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "shapeshift",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -1491,20 +1624,22 @@
   {
     "id": "dryad",
     "name": "Dryad",
-    "faction": "Cenarion",
-    "type": "Troop",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/dryad.png",
     "damage": 175,
     "health": 370,
     "dps": 109.4,
-    "speed": "Fast",
-    "traits": [
-      "Fast",
-      "Poisonous",
-      "Attack Root",
-      "Ranged",
-      "One-Target"
+    "speed_id": "fast",
+    "trait_ids": [
+      "fast",
+      "poisonous",
+      "attack-root",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -1554,20 +1689,22 @@
   {
     "id": "earth-and-moon",
     "name": "Earth and Moon",
-    "faction": "Cenarion",
-    "type": "Spell",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "spell",
     "cost": 5,
     "image": "/images/rumble/minis/300/earth-and-moon.png",
     "damage": 1095,
     "health": 0,
     "dps": 154.0,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Poisonous",
-      "Earth and Moon",
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "poisonous",
+      "earth-and-moon",
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -1618,21 +1755,23 @@
   {
     "id": "earth-elemental",
     "name": "Earth Elemental",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/earth-elemental.png",
     "damage": 70,
     "health": 1175,
     "dps": 35.0,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Armored",
-      "Unbound",
-      "Siege Damage",
-      "Siege Specialist",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "armored",
+      "unbound",
+      "siege-damage",
+      "siege-specialist",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -1684,19 +1823,21 @@
   {
     "id": "eclipse",
     "name": "Eclipse",
-    "faction": "Cenarion",
-    "type": "Spell",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "spell",
     "cost": 3,
     "image": "/images/rumble/minis/300/eclipse.png",
     "damage": 580,
     "health": 0,
     "dps": 36.0,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Eclipse",
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "eclipse",
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -1739,19 +1880,21 @@
   {
     "id": "emperor-thaurissan",
     "name": "Emperor Thaurissan",
-    "faction": "Blackrock",
-    "type": "Leader",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "leader",
     "cost": 4,
     "image": "/images/rumble/minis/300/emperor-thaurissan.png",
     "damage": 85,
     "health": 1330,
     "dps": 33.0,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Fiery Weapon Enchant",
-      "Ranged",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "fiery-weapon-enchant",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -1790,23 +1933,38 @@
           "description": "Nearby Burning enemies (in a 12 radius) heal Thaurissan for 1.5% of his maximum Health per second."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nAoE\nBlackrock\nFlying\nMelee\nRanged\nSpell\nSquad\nTank\nEven without a Wildcard slot, Emperor Thaurissan can buff all minis.\nIncinerate talent\nApplies a 16-second Burn on bosses and buildings"
+      "advanced_info": "Available army bonus slots for the bottom row",
+      "army_bonus_slots": [
+        "AoE",
+        "Blackrock",
+        "Flying",
+        "Melee",
+        "Ranged",
+        "Spell",
+        "Squad",
+        "Tank",
+        "Even without a Wildcard slot, Emperor Thaurissan can buff all minis.",
+        "Incinerate talent",
+        "Applies a 16-second Burn on bosses and buildings"
+      ]
     }
   },
   {
     "id": "execute",
     "name": "Execute",
-    "faction": "Horde",
-    "type": "Spell",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "spell",
     "cost": 3,
     "image": "/images/rumble/minis/300/execute.png",
     "damage": 0,
     "health": 0,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -1838,21 +1996,23 @@
   {
     "id": "faerie-dragon",
     "name": "Faerie Dragon",
-    "faction": "Cenarion",
-    "type": "Troop",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/faerie-dragon.png",
     "damage": 200,
     "health": 180,
     "dps": 133.3,
-    "speed": "Medium",
-    "traits": [
-      "Detect",
-      "Elemental",
-      "Nullify",
-      "Resistant",
-      "Flying",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "detect",
+      "elemental",
+      "nullify",
+      "resistant",
+      "flying",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -1905,20 +2065,22 @@
   {
     "id": "fire-elemental",
     "name": "Fire Elemental",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/fire-elemental.png",
     "damage": 120,
     "health": 1640,
     "dps": 66.7,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Elemental",
-      "Resistant",
-      "Melee",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "elemental",
+      "resistant",
+      "melee",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -1966,19 +2128,21 @@
   {
     "id": "firehammer",
     "name": "Firehammer",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/firehammer.png",
     "damage": 140,
     "health": 350,
     "dps": 100.0,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Fury",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "fury",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -2023,19 +2187,21 @@
   {
     "id": "flamewaker",
     "name": "Flamewaker",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/flamewaker.png",
     "damage": 220,
     "health": 460,
     "dps": 122.2,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Bombard",
-      "Ranged",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "bombard",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -2080,19 +2246,21 @@
   {
     "id": "footmen",
     "name": "Footmen",
-    "faction": "Alliance",
-    "type": "Troop",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "troop",
     "cost": 5,
     "image": "/images/rumble/minis/300/footmen.png",
     "damage": 70,
     "health": 800,
     "dps": 43.8,
-    "speed": "Slow",
-    "traits": [
-      "Tank",
-      "Armored",
-      "Melee",
-      "Squad"
+    "speed_id": "slow",
+    "trait_ids": [
+      "tank",
+      "armored",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -2136,19 +2304,21 @@
   {
     "id": "frostwolf-shaman",
     "name": "Frostwolf Shaman",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/frostwolf-shaman.png",
     "damage": 60,
     "health": 480,
     "dps": 40.0,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Healer",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "healer",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -2194,20 +2364,22 @@
   {
     "id": "gargoyle",
     "name": "Gargoyle",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/gargoyle.png",
     "damage": 250,
     "health": 1300,
     "dps": 147.0,
-    "speed": "Slow",
-    "traits": [
-      "Tank",
-      "Armored",
-      "Siege Damage",
-      "Flying",
-      "One-Target"
+    "speed_id": "slow",
+    "trait_ids": [
+      "tank",
+      "armored",
+      "siege-damage",
+      "flying",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -2255,20 +2427,22 @@
   {
     "id": "general-drakkisath",
     "name": "General Drakkisath",
-    "faction": "Blackrock",
-    "type": "Leader",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "leader",
     "cost": 5,
     "image": "/images/rumble/minis/300/general-drakkisath.png",
     "damage": 300,
     "health": 1600,
     "dps": 166.7,
-    "speed": "Slow",
-    "traits": [
-      "Tank",
-      "Elemental",
-      "Resistant",
-      "Melee",
-      "One-Target"
+    "speed_id": "slow",
+    "trait_ids": [
+      "tank",
+      "elemental",
+      "resistant",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -2310,26 +2484,38 @@
           "description": "On death, drop a banner. Nearby enemies take 50% additional Elemental damage. Lasts 10 seconds."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nBlackrock\nCycle\nElemental\nFast\nFlying\nRanged\nSpell\nUnbound\nWithout a Wildcard slot, General Drakkisath cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFootmen\nMountaineer\nStonehoof Tauren\nSwole Troll\nTreant\nWarsong Grunts\nBanner of Flame\nIncreases Elemental damage taken by 50%\nRadius 9\nDoes not affect Resistant enemies\nDoes affect buildings\nApplies the debuff for 3 seconds every 0.2 seconds\nChromatic Scales talent\nRadius 8\nLasting Legacy talent\nRadius 9\nPiercing Blows talent\nArc 20 degrees\nRadius 6.5"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, General Drakkisath cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFootmen\nMountaineer\nStonehoof Tauren\nSwole Troll\nTreant\nWarsong Grunts\nBanner of Flame\nIncreases Elemental damage taken by 50%\nRadius 9\nDoes not affect Resistant enemies\nDoes affect buildings\nApplies the debuff for 3 seconds every 0.2 seconds\nChromatic Scales talent\nRadius 8\nLasting Legacy talent\nRadius 9\nPiercing Blows talent\nArc 20 degrees\nRadius 6.5",
+      "army_bonus_slots": [
+        "Blackrock",
+        "Cycle",
+        "Elemental",
+        "Fast",
+        "Flying",
+        "Ranged",
+        "Spell",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "ghoul",
     "name": "Ghoul",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/ghoul.png",
     "damage": 110,
     "health": 1040,
     "dps": 64.7,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Cycle",
-      "Cannibalize",
-      "Melee",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "cycle",
+      "cannibalize",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -2377,18 +2563,20 @@
   {
     "id": "gnoll-brute",
     "name": "Gnoll Brute",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/gnoll-brute.png",
     "damage": 130,
     "health": 1240,
     "dps": 65.0,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Melee",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "melee",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -2428,19 +2616,21 @@
   {
     "id": "goblin-sapper",
     "name": "Goblin Sapper",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/goblin-sapper.png",
     "damage": 450,
     "health": 120,
     "dps": 0.0,
-    "speed": "Med-Fast",
-    "traits": [
-      "Cycle",
-      "Siege Damage",
-      "Siege Specialist",
-      "Squad"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "cycle",
+      "siege-damage",
+      "siege-specialist",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -2482,19 +2672,21 @@
   {
     "id": "grommash-hellscream",
     "name": "Grommash Hellscream",
-    "faction": "Horde",
-    "type": "Leader",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "leader",
     "cost": 4,
     "image": "/images/rumble/minis/300/grommash-hellscream.png",
     "damage": 220,
     "health": 1496,
     "dps": 169.2,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Bloodlust",
-      "Melee",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "bloodlust",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -2532,24 +2724,36 @@
           "description": "Summon two fragile mirror images when entering combat."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nCycle\nFast\nFlying\nHorde\nRanged\nSpell\nSquad\nUnbound\nWithout a Wildcard slot, Grommash Hellscream cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nMolten Giant\nBloodlust aura\nRadius 9\nApplies a 1-second Bloodlust effect every 0.2 seconds\nBladestorm talent\nRange 3\n6.5 seconds cooldown\n55 damage, 5 times, for a total of 275 damage\nDoes not hit Flying minis\nMirror Image talent\n100 health\n130 damage\n1.5 seconds attack speed\n10 seconds duration\nTaunt, 5.25 radius, 10 seconds duration"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Grommash Hellscream cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nMolten Giant\nBloodlust aura\nRadius 9\nApplies a 1-second Bloodlust effect every 0.2 seconds\nBladestorm talent\nRange 3\n6.5 seconds cooldown\n55 damage, 5 times, for a total of 275 damage\nDoes not hit Flying minis\nMirror Image talent\n100 health\n130 damage\n1.5 seconds attack speed\n10 seconds duration\nTaunt, 5.25 radius, 10 seconds duration",
+      "army_bonus_slots": [
+        "Cycle",
+        "Fast",
+        "Flying",
+        "Horde",
+        "Ranged",
+        "Spell",
+        "Squad",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "gryphon-rider",
     "name": "Gryphon Rider",
-    "faction": "Alliance",
-    "type": "Troop",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/gryphon-rider.png",
     "damage": 160,
     "health": 170,
     "dps": 145.4,
-    "speed": "Med-Fast",
-    "traits": [
-      "Cycle",
-      "Flying",
-      "One-Target"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "cycle",
+      "flying",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -2590,18 +2794,20 @@
   {
     "id": "harpies",
     "name": "Harpies",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/harpies.png",
     "damage": 140,
     "health": 150,
     "dps": 116.6,
-    "speed": "Fast",
-    "traits": [
-      "Fast",
-      "Flying",
-      "Squad"
+    "speed_id": "fast",
+    "trait_ids": [
+      "fast",
+      "flying",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -2640,19 +2846,21 @@
   {
     "id": "harvest-golem",
     "name": "Harvest Golem",
-    "faction": "Alliance",
-    "type": "Troop",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/harvest-golem.png",
     "damage": 140,
     "health": 1480,
     "dps": 70.0,
-    "speed": "Slow",
-    "traits": [
-      "Tank",
-      "Rebirth",
-      "Melee",
-      "One-Target"
+    "speed_id": "slow",
+    "trait_ids": [
+      "tank",
+      "rebirth",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -2696,21 +2904,23 @@
   {
     "id": "headless-horseman",
     "name": "Headless Horseman",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/headless-horseman.png",
     "damage": 200,
     "health": 1550,
     "dps": 133.0,
-    "speed": "Fast",
-    "traits": [
-      "Fast",
-      "Poisonous",
-      "Elemental",
-      "Bombard",
-      "Melee",
-      "AoE"
+    "speed_id": "fast",
+    "trait_ids": [
+      "fast",
+      "poisonous",
+      "elemental",
+      "bombard",
+      "melee",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -2762,18 +2972,20 @@
   {
     "id": "hogger",
     "name": "Hogger",
-    "faction": "Beast",
-    "type": "Leader",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "leader",
     "cost": 4,
     "image": "/images/rumble/minis/300/hogger.png",
     "damage": 190,
     "health": 1120,
     "dps": 79.2,
-    "speed": "Med-Fast",
-    "traits": [
-      "Tank",
-      "Melee",
-      "AoE"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "tank",
+      "melee",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -2807,24 +3019,36 @@
           "description": "Gain Poison."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nBeast\nCycle\nFast\nFlying\nRanged\nSpell\nSquad\nUnbound\nWithout a Wildcard slot, Hogger cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nHarvest Golem\nMolten Giant\nStonehoof Tauren\nSwole Troll\nRelentless and Ham Hock talent\nBoth are capped at 3 stacks\nFatal Frenzy talent\nAdditional levels are capped at +3\nBloodlust lasts for 10 seconds\nSpoiled Meat talent\nHogger applies 1 stack of poison per hit"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Hogger cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nHarvest Golem\nMolten Giant\nStonehoof Tauren\nSwole Troll\nRelentless and Ham Hock talent\nBoth are capped at 3 stacks\nFatal Frenzy talent\nAdditional levels are capped at +3\nBloodlust lasts for 10 seconds\nSpoiled Meat talent\nHogger applies 1 stack of poison per hit",
+      "army_bonus_slots": [
+        "Beast",
+        "Cycle",
+        "Fast",
+        "Flying",
+        "Ranged",
+        "Spell",
+        "Squad",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "holy-nova",
     "name": "Holy Nova",
-    "faction": "Alliance",
-    "type": "Spell",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "spell",
     "cost": 3,
     "image": "/images/rumble/minis/300/holy-nova.png",
     "damage": 150,
     "health": 0,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -2862,19 +3086,21 @@
   {
     "id": "huntress",
     "name": "Huntress",
-    "faction": "Alliance",
-    "type": "Troop",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "troop",
     "cost": 5,
     "image": "/images/rumble/minis/300/huntress.png",
     "damage": 150,
     "health": 350,
     "dps": 107.1,
-    "speed": "Fast",
-    "traits": [
-      "Fast",
-      "Resistant",
-      "Ranged",
-      "AoE"
+    "speed_id": "fast",
+    "trait_ids": [
+      "fast",
+      "resistant",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -2919,19 +3145,21 @@
   {
     "id": "jaina-proudmoore",
     "name": "Jaina Proudmoore",
-    "faction": "Alliance",
-    "type": "Leader",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "leader",
     "cost": 3,
     "image": "/images/rumble/minis/300/jaina-proudmoore.png",
     "damage": 190,
     "health": 250,
     "dps": 118.7,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Frost",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "frost",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -2970,24 +3198,36 @@
           "description": "Periodically teleport away from attackers."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nAlliance\nElemental\nFlying\nSiege Damage\nSpell\nSquad\nTank\nUnbound\nWithout a Wildcard slot, Jaina cannot buff\nBanshee\nDarkspear Troll\nDryad\nFlurry talent\nFrostbolt deals 50 area-of-effect damage to secondary targets in addition to the 190 damage to the main target\nFrostbolt applies Frost and deals damage on a radius of 4\nBlink talent\nCooldown 8 seconds"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Jaina cannot buff\nBanshee\nDarkspear Troll\nDryad\nFlurry talent\nFrostbolt deals 50 area-of-effect damage to secondary targets in addition to the 190 damage to the main target\nFrostbolt applies Frost and deals damage on a radius of 4\nBlink talent\nCooldown 8 seconds",
+      "army_bonus_slots": [
+        "Alliance",
+        "Elemental",
+        "Flying",
+        "Siege Damage",
+        "Spell",
+        "Squad",
+        "Tank",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "living-bomb",
     "name": "Living Bomb",
-    "faction": "Blackrock",
-    "type": "Spell",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "spell",
     "cost": 6,
     "image": "/images/rumble/minis/300/living-bomb.png",
     "damage": 200,
     "health": 0,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -3024,19 +3264,21 @@
   {
     "id": "maiev-shadowsong",
     "name": "Maiev Shadowsong",
-    "faction": "Alliance",
-    "type": "Leader",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "leader",
     "cost": 5,
     "image": "/images/rumble/minis/300/maiev-shadowsong.png",
     "damage": 552,
     "health": 744,
     "dps": 120.0,
-    "speed": "Med-Fast",
-    "traits": [
-      "Unbound",
-      "Stealth",
-      "Melee",
-      "AoE"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "unbound",
+      "stealth",
+      "melee",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -3075,26 +3317,39 @@
           "description": "Periodically teleport to a ranged attacker when hit."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nAlliance\nCycle\nFast\nFlying\nSiege Damage\nSpell\nTank\nUnbound\nWithout a Wildcard slot, Maiev cannot buff\nBanshee\nDarkspear Troll\nDruid of the Claw\nFirehammer\nFlamewaker\nFrostwolf Shaman\nMoonkin\nNecromancer\nOgre Mage\nPyromancer\nTreant\nMelee attack\nCleave arc 160 degrees\nFan of Knives\nRadius 5.5\nAlso hits Flying minis\nShadowstep talent\nCooldown is 4 seconds"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Maiev cannot buff\nBanshee\nDarkspear Troll\nDruid of the Claw\nFirehammer\nFlamewaker\nFrostwolf Shaman\nMoonkin\nNecromancer\nOgre Mage\nPyromancer\nTreant\nMelee attack\nCleave arc 160 degrees\nFan of Knives\nRadius 5.5\nAlso hits Flying minis\nShadowstep talent\nCooldown is 4 seconds",
+      "army_bonus_slots": [
+        "Alliance",
+        "Cycle",
+        "Fast",
+        "Flying",
+        "Siege Damage",
+        "Spell",
+        "Tank",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "malfurion",
     "name": "Malfurion",
-    "faction": "Alliance,Cenarion",
-    "type": "Leader",
+    "faction_ids": [
+      "alliance",
+      "cenarion"
+    ],
+    "type_id": "leader",
     "cost": 4,
     "image": "/images/rumble/minis/300/malfurion.png",
     "damage": 190,
     "health": 1116,
     "dps": 95.0,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Healer",
-      "Seeds of Protection",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "healer",
+      "seeds-of-protection",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -3138,26 +3393,51 @@
           "description": "After 30 seconds, if at least one Seed of Protection remains, apply Seeds of Protection to all allied Buildings and Meeting Stones."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nAlliance\nCenarion\nCycle\nElemental\nFlying\nRanged\nSpell\nSquad\nUnbound\nEven without a Wildcard slot, Malfurion can buff all minis.\nRegeneration\nHeals for 50 every 1 second for 10 seconds, for a total of 500 healing\nSeeds of Protection\nCan also be cast on Alliance and Cenarion Tank minis\n12 seconds cooldown for cast on minis\n12 range on minis, 10 range on buildings\nOne Seed is removed after 25 seconds, and more are removed every 5 seconds thereafter\nNatural Salve talent\nRadius 8\nBoth allied and enemy poison damage heal Malfurion\nUp to 1% of Malfurion’s maximum Health per second (11.16 healing per second)"
+      "advanced_info": "Available army bonus slots for the bottom row",
+      "army_bonus_slots": [
+        "Alliance",
+        "Cenarion",
+        "Cycle",
+        "Elemental",
+        "Flying",
+        "Ranged",
+        "Spell",
+        "Squad",
+        "Unbound",
+        "Even without a Wildcard slot, Malfurion can buff all minis.",
+        "Regeneration",
+        "Heals for 50 every 1 second for 10 seconds, for a total of 500 healing",
+        "Seeds of Protection",
+        "Can also be cast on Alliance and Cenarion Tank minis",
+        "12 seconds cooldown for cast on minis",
+        "12 range on minis, 10 range on buildings",
+        "One Seed is removed after 25 seconds, and more are removed every 5 seconds thereafter",
+        "Natural Salve talent",
+        "Radius 8",
+        "Both allied and enemy poison damage heal Malfurion",
+        "Up to 1% of Malfurion’s maximum Health per second (11.16 healing per second)"
+      ]
     }
   },
   {
     "id": "meat-wagon",
     "name": "Meat Wagon",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/meat-wagon.png",
     "damage": 210,
     "health": 320,
     "dps": 70.0,
-    "speed": "Medium",
-    "traits": [
-      "Bombard",
-      "Siege Damage",
-      "Longshot",
-      "Ranged",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "bombard",
+      "siege-damage",
+      "longshot",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -3206,20 +3486,22 @@
   {
     "id": "molten-giant",
     "name": "Molten Giant",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 6,
     "image": "/images/rumble/minis/300/molten-giant.png",
     "damage": 230,
     "health": 3500,
     "dps": 85.2,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Armored",
-      "Siege Damage",
-      "Melee",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "armored",
+      "siege-damage",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -3267,19 +3549,21 @@
   {
     "id": "moonkin",
     "name": "Moonkin",
-    "faction": "Cenarion",
-    "type": "Troop",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/moonkin.png",
     "damage": 208,
     "health": 360,
     "dps": 59.4,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Armored",
-      "Ranged",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "armored",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -3325,19 +3609,21 @@
   {
     "id": "mountaineer",
     "name": "Mountaineer",
-    "faction": "Alliance",
-    "type": "Troop",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "troop",
     "cost": 5,
     "image": "/images/rumble/minis/300/mountaineer.png",
     "damage": 280,
     "health": 1700,
     "dps": 182.4,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Heal Squadmate",
-      "Melee",
-      "Squad"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "heal-squadmate",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -3386,19 +3672,21 @@
   {
     "id": "murloc-tidehunters",
     "name": "Murloc Tidehunters",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/murloc-tidehunters.png",
     "damage": 90,
     "health": 80,
     "dps": 56.2,
-    "speed": "Fast",
-    "traits": [
-      "Cycle",
-      "Fast",
-      "Ranged",
-      "Squad"
+    "speed_id": "fast",
+    "trait_ids": [
+      "cycle",
+      "fast",
+      "ranged",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -3443,19 +3731,21 @@
   {
     "id": "necromancer",
     "name": "Necromancer",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/necromancer.png",
     "damage": 190,
     "health": 400,
     "dps": 146.1,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Summoner",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "summoner",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -3500,19 +3790,21 @@
   {
     "id": "ogre-mage",
     "name": "Ogre Mage",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 5,
     "image": "/images/rumble/minis/300/ogre-mage.png",
     "damage": 160,
     "health": 650,
     "dps": 114.3,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Bloodlust",
-      "Ranged",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "bloodlust",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -3557,19 +3849,21 @@
   {
     "id": "old-murk-eye",
     "name": "Old Murk-Eye",
-    "faction": "Beast",
-    "type": "Leader",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "leader",
     "cost": 4,
     "image": "/images/rumble/minis/300/old-murk-eye.png",
     "damage": 150,
     "health": 160,
     "dps": 93.8,
-    "speed": "Fast",
-    "traits": [
-      "Fast",
-      "Elemental",
-      "Ranged",
-      "AoE"
+    "speed_id": "fast",
+    "trait_ids": [
+      "fast",
+      "elemental",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -3608,25 +3902,37 @@
           "description": "Tidehunters spawn at Old Murk Eye's location instead."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nBeast\nCycle\nElemental\nFast\nFlying\nSiege Damage\nSpell\nUnbound\nWithout a Wildcard slot, Old Murk-Eye cannot buff\nBanshee\nDarkspear Troll\nTreant\nMarch of the Murlocs\nMurlocs inherit their level from Old Murk-Eye\nIn co-op, only the gold spent by Old Murk-Eye's owner spawns Murlocs\nElectric Eels talent\n0.4 seconds stun\nNo level modifier\nCannot stun bosses"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Old Murk-Eye cannot buff\nBanshee\nDarkspear Troll\nTreant\nMarch of the Murlocs\nMurlocs inherit their level from Old Murk-Eye\nIn co-op, only the gold spent by Old Murk-Eye's owner spawns Murlocs\nElectric Eels talent\n0.4 seconds stun\nNo level modifier\nCannot stun bosses",
+      "army_bonus_slots": [
+        "Beast",
+        "Cycle",
+        "Elemental",
+        "Fast",
+        "Flying",
+        "Siege Damage",
+        "Spell",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "onu",
     "name": "Onu",
-    "faction": "Cenarion",
-    "type": "Leader",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "leader",
     "cost": 5,
     "image": "/images/rumble/minis/300/onu.png",
     "damage": 190,
     "health": 4660,
     "dps": 76.0,
-    "speed": "Slow",
-    "traits": [
-      "Tank",
-      "Vulnerable",
-      "Melee",
-      "One-Target"
+    "speed_id": "slow",
+    "trait_ids": [
+      "tank",
+      "vulnerable",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -3664,25 +3970,38 @@
           "description": "Minis deployed within Safe Arbor deal double damage on their first attack."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nCenarion\nCycle\nFast\nFlying\nSiege Damage\nSpell\nSquad\nTank\nWithout a Wildcard slot, Onu cannot buff\nWorgen\nMelee attack cleave\nArc 140 degrees"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Onu cannot buff\nWorgen\nMelee attack cleave\nArc 140 degrees",
+      "army_bonus_slots": [
+        "Cenarion",
+        "Cycle",
+        "Fast",
+        "Flying",
+        "Siege Damage",
+        "Spell",
+        "Squad",
+        "Tank"
+      ]
     }
   },
   {
     "id": "orgrim-doomhammer",
     "name": "Orgrim Doomhammer",
-    "faction": "Blackrock,Horde",
-    "type": "Leader",
+    "faction_ids": [
+      "blackrock",
+      "horde"
+    ],
+    "type_id": "leader",
     "cost": 3,
     "image": "/images/rumble/minis/300/orgrim-doomhammer.png",
     "damage": 190,
     "health": 1000,
     "dps": 95.0,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Mak'gora",
-      "Melee",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "mak'gora",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -3721,26 +4040,39 @@
           "description": "Grant Bloodlust to all allies on the board for 10 seconds upon winning the Mak'gora."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nBlackrock\nCycle\nElemental\nFast\nFlying\nHorde\nRanged\nSpell\nUnbound\nWithout a Wildcard slot, Orgrim cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFirst Blood\nDoes not buff Goblin Sappers, Banshee, and Doomhammer\nMak’gora\nBanshee will not steal a mini engaged in Mak’gora\nYou can use other minis and spells to influence the Mak’gora - and you should!\nDoomhammer Revealed - After winning a Mak’gora\nGains melee cleave with a 140-degree arc\nAttack damage depends on how close the Mak’gora was:\nDoomhammer wins with over 67% health left: 210 damage\nDoomhammer wins with 33% to 67% health left: 231 damage\nDoomhammer wins with less than 33% health left: 252 damage"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Orgrim cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFirst Blood\nDoes not buff Goblin Sappers, Banshee, and Doomhammer\nMak’gora\nBanshee will not steal a mini engaged in Mak’gora\nYou can use other minis and spells to influence the Mak’gora - and you should!\nDoomhammer Revealed - After winning a Mak’gora\nGains melee cleave with a 140-degree arc\nAttack damage depends on how close the Mak’gora was:\nDoomhammer wins with over 67% health left: 210 damage\nDoomhammer wins with 33% to 67% health left: 231 damage\nDoomhammer wins with less than 33% health left: 252 damage",
+      "army_bonus_slots": [
+        "Blackrock",
+        "Cycle",
+        "Elemental",
+        "Fast",
+        "Flying",
+        "Horde",
+        "Ranged",
+        "Spell",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "plague-farmer",
     "name": "Plague Farmer",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/plague-farmer.png",
     "damage": 300,
     "health": 250,
     "dps": 130.43,
-    "speed": "Medium",
-    "traits": [
-      "Cycle",
-      "Bombard",
-      "Poisonous",
-      "Ranged",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "cycle",
+      "bombard",
+      "poisonous",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -3790,17 +4122,19 @@
   {
     "id": "polymorph",
     "name": "Polymorph",
-    "faction": "Beast",
-    "type": "Spell",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "spell",
     "cost": 3,
     "image": "/images/rumble/minis/300/polymorph.png",
     "damage": 0,
     "health": 0,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -3832,20 +4166,22 @@
   {
     "id": "priestess",
     "name": "Priestess",
-    "faction": "Alliance",
-    "type": "Troop",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/priestess.png",
     "damage": 35,
     "health": 300,
     "dps": 14.9,
-    "speed": "Medium",
-    "traits": [
-      "Healer",
-      "Elemental",
-      "Cycle",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "healer",
+      "elemental",
+      "cycle",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -3895,19 +4231,21 @@
   {
     "id": "prowler",
     "name": "Prowler",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/prowler.png",
     "damage": 130,
     "health": 840,
     "dps": 144.4,
-    "speed": "Fast",
-    "traits": [
-      "Tank",
-      "Fast",
-      "Melee",
-      "One-Target"
+    "speed_id": "fast",
+    "trait_ids": [
+      "tank",
+      "fast",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -3951,18 +4289,20 @@
   {
     "id": "pyromancer",
     "name": "Pyromancer",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/pyromancer.png",
     "damage": 170,
     "health": 220,
     "dps": 113.3,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Ranged",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -4002,21 +4342,23 @@
   {
     "id": "quilboar",
     "name": "Quilboar",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/quilboar.png",
     "damage": 70,
     "health": 700,
     "dps": 38.9,
-    "speed": "Medium",
-    "traits": [
-      "Cycle",
-      "Resistant",
-      "Unbound",
-      "Tank",
-      "Melee",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "cycle",
+      "resistant",
+      "unbound",
+      "tank",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -4068,22 +4410,24 @@
   {
     "id": "ragnaros",
     "name": "Ragnaros",
-    "faction": "Blackrock",
-    "type": "Leader",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "leader",
     "cost": 5,
     "image": "/images/rumble/minis/300/ragnaros.png",
     "damage": 150,
     "health": 1800,
     "dps": 75.0,
-    "speed": "Stationary",
-    "traits": [
-      "Elemental",
-      "Resistant",
-      "Tank",
-      "Braze",
-      "Blast Wave",
-      "Melee",
-      "AoE"
+    "speed_id": "stationary",
+    "trait_ids": [
+      "elemental",
+      "resistant",
+      "tank",
+      "braze",
+      "blast-wave",
+      "melee",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -4133,25 +4477,37 @@
           "description": "At 50% health, summon two Fire Elementals that last 15 seconds."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nBlackrock\nElemental\nFast\nFlying\nRanged\nSiege Damage\nTank\nUnbound\nWithout a Wildcard slot, Ragnaros cannot buff\nCheat Death\nDefias Bandits\nExecute\nPolymorph\nHealing reduction\nRagnaros receives -75% healing\nPercentage-based effects heal the full amount, so Priestess with Empowered Renew talent can still heal Ragnaros for 10 percent of his maximum health.\nEmpowered Renew has a special rule for Ragnaros that allows it to be applied only once per Priestess\nMolten Armor\nDeals 40 Elemental damage when taking damage\nIgnores damage-over-time effects\nBlast Wave\n75 Elemental damage\nRadius 8\nRadiant Flames talent\n100 Elemental damage on a radius of 7 every 5 seconds"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Ragnaros cannot buff\nCheat Death\nDefias Bandits\nExecute\nPolymorph\nHealing reduction\nRagnaros receives -75% healing\nPercentage-based effects heal the full amount, so Priestess with Empowered Renew talent can still heal Ragnaros for 10 percent of his maximum health.\nEmpowered Renew has a special rule for Ragnaros that allows it to be applied only once per Priestess\nMolten Armor\nDeals 40 Elemental damage when taking damage\nIgnores damage-over-time effects\nBlast Wave\n75 Elemental damage\nRadius 8\nRadiant Flames talent\n100 Elemental damage on a radius of 7 every 5 seconds",
+      "army_bonus_slots": [
+        "Blackrock",
+        "Elemental",
+        "Fast",
+        "Flying",
+        "Ranged",
+        "Siege Damage",
+        "Tank",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "raptors",
     "name": "Raptors",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/raptors.png",
     "damage": 120,
     "health": 350,
     "dps": 92.3,
-    "speed": "Fast",
-    "traits": [
-      "Cycle",
-      "Fast",
-      "Melee",
-      "Squad"
+    "speed_id": "fast",
+    "trait_ids": [
+      "cycle",
+      "fast",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -4195,19 +4551,21 @@
   {
     "id": "rend-blackhand",
     "name": "Rend Blackhand",
-    "faction": "Blackrock",
-    "type": "Leader",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "leader",
     "cost": 6,
     "image": "/images/rumble/minis/300/rend-blackhand.png",
     "damage": 460,
     "health": 1720,
     "dps": 82.3,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Dismounts",
-      "Flying",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "dismounts",
+      "flying",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -4248,25 +4606,37 @@
           "description": "Dismount when first taking damage. The Drake continues fighting."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nBlackrock\nCycle\nElemental\nFlying\nRanged\nSquad\nTank\nUnbound\nWithout a Wildcard slot, Rend cannot buff\nCheat Death\nExecute\nPolymorph\nCharge\nDismounted Rend charges at targets\nRend acquires charge targets from a minimum range of 3 and maximum of 9.5\nCharge increases Rend’s movement speed by +700%\nCharge deals 140 damage\nMelee cleave (dismounted Rend)\nArc 140 degrees"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Rend cannot buff\nCheat Death\nExecute\nPolymorph\nCharge\nDismounted Rend charges at targets\nRend acquires charge targets from a minimum range of 3 and maximum of 9.5\nCharge increases Rend’s movement speed by +700%\nCharge deals 140 damage\nMelee cleave (dismounted Rend)\nArc 140 degrees",
+      "army_bonus_slots": [
+        "Blackrock",
+        "Cycle",
+        "Elemental",
+        "Flying",
+        "Ranged",
+        "Squad",
+        "Tank",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "s-a-f-e-pilot",
     "name": "S.A.F.E. Pilot",
-    "faction": "Alliance",
-    "type": "Troop",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/s-a-f-e-pilot.png",
     "damage": 170,
     "health": 210,
     "dps": 70.8,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Unbound",
-      "Ranged",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "unbound",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -4312,20 +4682,22 @@
   {
     "id": "skeleton-party",
     "name": "Skeleton Party",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/skeleton-party.png",
     "damage": 46,
     "health": 200,
     "dps": 32.9,
-    "speed": "Medium",
-    "traits": [
-      "Elemental",
-      "Frost",
-      "Unbound",
-      "Melee",
-      "Squad"
+    "speed_id": "medium",
+    "trait_ids": [
+      "elemental",
+      "frost",
+      "unbound",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -4374,19 +4746,21 @@
   {
     "id": "skeletons",
     "name": "Skeletons",
-    "faction": "Undead",
-    "type": "Troop",
+    "faction_ids": [
+      "undead"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/skeletons.png",
     "damage": 46,
     "health": 200,
     "dps": 32.9,
-    "speed": "Medium",
-    "traits": [
-      "Cycle",
-      "Unbound",
-      "Melee",
-      "Squad"
+    "speed_id": "medium",
+    "trait_ids": [
+      "cycle",
+      "unbound",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -4430,18 +4804,20 @@
   {
     "id": "smoke-bomb",
     "name": "Smoke Bomb",
-    "faction": "Blackrock",
-    "type": "Spell",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "spell",
     "cost": 1,
     "image": "/images/rumble/minis/300/smoke-bomb.png",
     "damage": 0,
     "health": 0,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Cycle",
-      "Spell",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "cycle",
+      "spell",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -4479,20 +4855,22 @@
   {
     "id": "sneed",
     "name": "Sneed",
-    "faction": "Horde",
-    "type": "Leader",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "leader",
     "cost": 5,
     "image": "/images/rumble/minis/300/sneed.png",
     "damage": 360,
     "health": 1352,
     "dps": 120.0,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Armored",
-      "Siege Damage",
-      "Melee",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "armored",
+      "siege-damage",
+      "melee",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -4534,26 +4912,38 @@
           "description": "Gain 2 levels whenever Sneed Before Greed triggers."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nCycle\nFast\nFlying\nHorde\nRanged\nSpell\nSquad\nUnbound\nWithout a Wildcard slot, Sneed cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nDemolitions Mechanic\nDeals 30 Siege damage 12 times for a total of 360 damage\nArc 180 degrees\nMine is Money, Friend! talent\nSneed mines entire gold mines with a single swing\nLand Grab talent\nThe additional levels are capped at +10"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Sneed cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nDemolitions Mechanic\nDeals 30 Siege damage 12 times for a total of 360 damage\nArc 180 degrees\nMine is Money, Friend! talent\nSneed mines entire gold mines with a single swing\nLand Grab talent\nThe additional levels are capped at +10",
+      "army_bonus_slots": [
+        "Cycle",
+        "Fast",
+        "Flying",
+        "Horde",
+        "Ranged",
+        "Spell",
+        "Squad",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "spiderlings",
     "name": "Spiderlings",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/spiderlings.png",
     "damage": 40,
     "health": 380,
     "dps": 66.5,
-    "speed": "Fast",
-    "traits": [
-      "Cycle",
-      "Poisonous",
-      "Vulnerable",
-      "Melee",
-      "Squad"
+    "speed_id": "fast",
+    "trait_ids": [
+      "cycle",
+      "poisonous",
+      "vulnerable",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -4602,19 +4992,21 @@
   {
     "id": "stonehoof-tauren",
     "name": "Stonehoof Tauren",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/stonehoof-tauren.png",
     "damage": 150,
     "health": 1720,
     "dps": 83.3,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Charge",
-      "Melee",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "charge",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -4658,20 +5050,22 @@
   {
     "id": "swole-troll",
     "name": "Swole Troll",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/swole-troll.png",
     "damage": 250,
     "health": 2600,
     "dps": 125.0,
-    "speed": "Slow",
-    "traits": [
-      "Siege Damage",
-      "Unstoppable",
-      "Tank",
-      "Melee",
-      "One-Target"
+    "speed_id": "slow",
+    "trait_ids": [
+      "siege-damage",
+      "unstoppable",
+      "tank",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -4719,18 +5113,21 @@
   {
     "id": "sylvanas-windrunner",
     "name": "Sylvanas Windrunner",
-    "faction": "Horde,Undead",
-    "type": "Leader",
+    "faction_ids": [
+      "horde",
+      "undead"
+    ],
+    "type_id": "leader",
     "cost": 6,
     "image": "/images/rumble/minis/300/sylvanas-windrunner.png",
     "damage": 190,
     "health": 500,
     "dps": 146.0,
-    "speed": "Medium",
-    "traits": [
-      "Haunt",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "haunt",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -4765,26 +5162,39 @@
           "description": "Black Arrow travels 20% farther, but attack speed is 10% slower."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nCycle\nFast\nFlying\nHorde\nSpell\nSquad\nTank\nUnbound\nUndead\nWithout a Wildcard slot, Sylvanas cannot buff\nDruid of the Claw\nFirehammer\nFlamewaker\nMoonkin\nPyromancer\nWindrunner Warchief\nThe Horde and Undead troop buff is active even if you never deploy Sylvanas\nThis also applies to the Forsaken Fury talent\nBlack Arrow\nWhile Sylvanas will not target objects further away than 8.5, the Black Arrow itself is a 2-wide projectile that travels up to a range of 16\nQueen’s Reach talent\nRange 10.2 (outranges regular Towers)\nWhile Sylvanas will not target objects further away than 10.2, the Black Arrow itself is a 2-wide projectile that travels up to a range of 20\nBanshee’s Wail talent\nRadius 9\nRegular 3-second stun"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Sylvanas cannot buff\nDruid of the Claw\nFirehammer\nFlamewaker\nMoonkin\nPyromancer\nWindrunner Warchief\nThe Horde and Undead troop buff is active even if you never deploy Sylvanas\nThis also applies to the Forsaken Fury talent\nBlack Arrow\nWhile Sylvanas will not target objects further away than 8.5, the Black Arrow itself is a 2-wide projectile that travels up to a range of 16\nQueen’s Reach talent\nRange 10.2 (outranges regular Towers)\nWhile Sylvanas will not target objects further away than 10.2, the Black Arrow itself is a 2-wide projectile that travels up to a range of 20\nBanshee’s Wail talent\nRadius 9\nRegular 3-second stun",
+      "army_bonus_slots": [
+        "Cycle",
+        "Fast",
+        "Flying",
+        "Horde",
+        "Spell",
+        "Squad",
+        "Tank",
+        "Unbound",
+        "Undead"
+      ]
     }
   },
   {
     "id": "thrall",
     "name": "Thrall",
-    "faction": "Horde",
-    "type": "Leader",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "leader",
     "cost": 4,
     "image": "/images/rumble/minis/300/thrall.png",
     "damage": 305,
     "health": 1500,
     "dps": 174.0,
-    "speed": "Medium",
-    "traits": [
-      "Detect",
-      "Elemental",
-      "Tank",
-      "Ranged",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "detect",
+      "elemental",
+      "tank",
+      "ranged",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -4834,20 +5244,22 @@
   {
     "id": "tirion-fordring",
     "name": "Tirion Fordring",
-    "faction": "Alliance",
-    "type": "Leader",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "leader",
     "cost": 4,
     "image": "/images/rumble/minis/300/tirion-fordring.png",
     "damage": 120,
     "health": 700,
     "dps": 66.7,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Armored",
-      "Healer",
-      "Melee",
-      "One-Target"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "armored",
+      "healer",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -4890,25 +5302,37 @@
           "description": "Regularly consecrate the ground, damaging enemies within."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nAlliance\nCycle\nFlying\nRanged\nSiege Damage\nSpell\nSquad\nUnbound\nWithout a Wildcard slot, Tirion cannot buff\nHeadless Horseman\nHoly Light\nRange 8\nRadius 3\nCooldown 4 seconds\nHeals for 160 and removes poison\nConsecrate talent\nCooldown 8.25 seconds\nRange 4\nRadius 5\nDoes not hit Flying minis\n50 Elemental damage per second for 8 seconds for a total of 400 damage\nDivine Shield talent\nDivine Shield can only proc once, even if Tirion is healed to above 30% health"
+      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Tirion cannot buff\nHeadless Horseman\nHoly Light\nRange 8\nRadius 3\nCooldown 4 seconds\nHeals for 160 and removes poison\nConsecrate talent\nCooldown 8.25 seconds\nRange 4\nRadius 5\nDoes not hit Flying minis\n50 Elemental damage per second for 8 seconds for a total of 400 damage\nDivine Shield talent\nDivine Shield can only proc once, even if Tirion is healed to above 30% health",
+      "army_bonus_slots": [
+        "Alliance",
+        "Cycle",
+        "Flying",
+        "Ranged",
+        "Siege Damage",
+        "Spell",
+        "Squad",
+        "Unbound"
+      ]
     }
   },
   {
     "id": "treant",
     "name": "Treant",
-    "faction": "Cenarion",
-    "type": "Troop",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "troop",
     "cost": 1,
     "image": "/images/rumble/minis/300/treant.png",
     "damage": 90,
     "health": 225,
     "dps": 36.0,
-    "speed": "Slow",
-    "traits": [
-      "Surge",
-      "Armored",
-      "Melee",
-      "Squad"
+    "speed_id": "slow",
+    "trait_ids": [
+      "surge",
+      "armored",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -4952,19 +5376,21 @@
   {
     "id": "vultures",
     "name": "Vultures",
-    "faction": "Beast",
-    "type": "Troop",
+    "faction_ids": [
+      "beast"
+    ],
+    "type_id": "troop",
     "cost": 1,
     "image": "/images/rumble/minis/300/vultures.png",
     "damage": 70,
     "health": 25,
     "dps": 43.8,
-    "speed": "Med-Fast",
-    "traits": [
-      "Cycle",
-      "Carrion",
-      "Flying",
-      "Squad"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "cycle",
+      "carrion",
+      "flying",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -5008,19 +5434,21 @@
   {
     "id": "warsong-grunts",
     "name": "Warsong Grunts",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 5,
     "image": "/images/rumble/minis/300/warsong-grunts.png",
     "damage": 95,
     "health": 1720,
     "dps": 59.4,
-    "speed": "Medium",
-    "traits": [
-      "Tank",
-      "Fury",
-      "Melee",
-      "Squad"
+    "speed_id": "medium",
+    "trait_ids": [
+      "tank",
+      "fury",
+      "melee",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -5064,20 +5492,22 @@
   {
     "id": "warsong-raider",
     "name": "Warsong Raider",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 4,
     "image": "/images/rumble/minis/300/warsong-raider.png",
     "damage": 180,
     "health": 1340,
     "dps": 105.9,
-    "speed": "Fast",
-    "traits": [
-      "Tank",
-      "Fast",
-      "Siege Damage",
-      "Melee",
-      "One-Target"
+    "speed_id": "fast",
+    "trait_ids": [
+      "tank",
+      "fast",
+      "siege-damage",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -5125,20 +5555,22 @@
   {
     "id": "whelp-eggs",
     "name": "Whelp Eggs",
-    "faction": "Blackrock",
-    "type": "Troop",
+    "faction_ids": [
+      "blackrock"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/whelp-eggs.png",
     "damage": 110,
     "health": 130,
     "dps": 61.1,
-    "speed": "Med-Fast",
-    "traits": [
-      "Elemental",
-      "Unbound",
-      "Hatching",
-      "Flying",
-      "Squad"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "elemental",
+      "unbound",
+      "hatching",
+      "flying",
+      "squad"
     ],
     "details": {
       "core_trait": {
@@ -5187,19 +5619,21 @@
   {
     "id": "witch-doctor",
     "name": "Witch Doctor",
-    "faction": "Horde",
-    "type": "Troop",
+    "faction_ids": [
+      "horde"
+    ],
+    "type_id": "troop",
     "cost": 2,
     "image": "/images/rumble/minis/300/witch-doctor.png",
     "damage": 118,
     "health": 300,
     "dps": 90.0,
-    "speed": "Medium",
-    "traits": [
-      "Cycle",
-      "Elemental",
-      "Ranged",
-      "AoE"
+    "speed_id": "medium",
+    "trait_ids": [
+      "cycle",
+      "elemental",
+      "ranged",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -5244,20 +5678,22 @@
   {
     "id": "worgen",
     "name": "Worgen",
-    "faction": "Alliance",
-    "type": "Troop",
+    "faction_ids": [
+      "alliance"
+    ],
+    "type_id": "troop",
     "cost": 3,
     "image": "/images/rumble/minis/300/worgen.png",
     "damage": 130,
     "health": 340,
     "dps": 162.5,
-    "speed": "Med-Fast",
-    "traits": [
-      "Unbound",
-      "Stealth",
-      "Ambush",
-      "Melee",
-      "One-Target"
+    "speed_id": "med-fast",
+    "trait_ids": [
+      "unbound",
+      "stealth",
+      "ambush",
+      "melee",
+      "one-target"
     ],
     "details": {
       "core_trait": {
@@ -5305,20 +5741,22 @@
   {
     "id": "ysera",
     "name": "Ysera",
-    "faction": "Cenarion",
-    "type": "Leader",
+    "faction_ids": [
+      "cenarion"
+    ],
+    "type_id": "leader",
     "cost": 3,
     "image": "/images/rumble/minis/300/ysera.png",
     "damage": 0,
     "health": 0,
     "dps": 0.0,
-    "speed": "Znull",
-    "traits": [
-      "Elemental",
-      "Cycle",
-      "Poisonous",
-      "Flying",
-      "AoE"
+    "speed_id": "znull",
+    "trait_ids": [
+      "elemental",
+      "cycle",
+      "poisonous",
+      "flying",
+      "aoe"
     ],
     "details": {
       "core_trait": {
@@ -5353,7 +5791,40 @@
           "description": "Emerald Whelps and Emerald Drake apply twice as much poison."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nCenarion\nFast\nFlying\nRanged\nSpell\nSquad\nUnbound\nTank\nEven without a Wildcard slot, Ysera can buff all minis.\nYsera minis\nAlways appear in the same order: Innervate, Emerald Whelps, Hibernate, Emerald Drake\nLevel is the same as Ysera level\nEmerald Whelps\n130 health\nRange 3.5\n1.8 seconds attack speed\n110 Elemental damage and 1 stack of poison\nHibernate\nRadius 8\n8-second stun (breaks on damage)\nEmerald Drake\n340 health\nRange 4\n2.4 seconds attack speed\n5 times 64 damage (320 damage overall) and 3 stacks of poison\nRecurring Dream talent\nMinis appear in the opposite order than the regular ones: Emerald Drake, Hibernate, Emerald Whelps, Innervate\nLevel is the same as Barracks level\nCorrupted Dream talent\nEmerald Whelps apply 2 stacks of poison\nEmerald Drake applies 6 stacks of poison"
+      "advanced_info": "Available army bonus slots for the bottom row",
+      "army_bonus_slots": [
+        "Cenarion",
+        "Fast",
+        "Flying",
+        "Ranged",
+        "Spell",
+        "Squad",
+        "Unbound",
+        "Tank",
+        "Even without a Wildcard slot, Ysera can buff all minis.",
+        "Ysera minis",
+        "Always appear in the same order: Innervate, Emerald Whelps, Hibernate, Emerald Drake",
+        "Level is the same as Ysera level",
+        "Emerald Whelps",
+        "130 health",
+        "Range 3.5",
+        "1.8 seconds attack speed",
+        "110 Elemental damage and 1 stack of poison",
+        "Hibernate",
+        "Radius 8",
+        "8-second stun (breaks on damage)",
+        "Emerald Drake",
+        "340 health",
+        "Range 4",
+        "2.4 seconds attack speed",
+        "5 times 64 damage (320 damage overall) and 3 stacks of poison",
+        "Recurring Dream talent",
+        "Minis appear in the opposite order than the regular ones: Emerald Drake, Hibernate, Emerald Whelps, Innervate",
+        "Level is the same as Barracks level",
+        "Corrupted Dream talent",
+        "Emerald Whelps apply 2 stacks of poison",
+        "Emerald Drake applies 6 stacks of poison"
+      ]
     }
   }
 ]

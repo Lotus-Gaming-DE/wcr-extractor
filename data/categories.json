@@ -1,0 +1,480 @@
+[
+  {"id": "alliance", "names": {"en": "Alliance", "de": ""}},
+  {"id": "horde", "names": {"en": "Horde", "de": ""}},
+  {"id": "blackrock", "names": {"en": "Blackrock", "de": ""}},
+  {"id": "beast", "names": {"en": "Beast", "de": ""}},
+  {"id": "cenarion", "names": {"en": "Cenarion", "de": ""}},
+  {"id": "undead", "names": {"en": "Undead", "de": ""}}
+]
+{
+  "factions": [
+    {
+      "id": "alliance",
+      "names": {
+        "en": "Alliance"
+      },
+      "icon": "/images/rumble/alliance.png",
+      "color": "#4A8CC4"
+    },
+    {
+      "id": "beast",
+      "names": {
+        "en": "Beast"
+      },
+      "icon": "/images/rumble/beast.png",
+      "color": "#B55F28"
+    },
+    {
+      "id": "blackrock",
+      "names": {
+        "en": "Blackrock"
+      },
+      "icon": "/images/rumble/blackrock.png",
+      "color": "#628C8E"
+    },
+    {
+      "id": "cenarion",
+      "names": {
+        "en": "Cenarion"
+      },
+      "icon": "/images/rumble/cenarion.png",
+      "color": "#007D65"
+    },
+    {
+      "id": "horde",
+      "names": {
+        "en": "Horde"
+      },
+      "icon": "/images/rumble/horde.png",
+      "color": "#BC3A28"
+    },
+    {
+      "id": "undead",
+      "names": {
+        "en": "Undead"
+      },
+      "icon": "/images/rumble/undead.png",
+      "color": "#6D59A7"
+    }
+  ],
+  "types": [
+    {
+      "id": "leader",
+      "names": {
+        "en": "Leader"
+      }
+    },
+    {
+      "id": "spell",
+      "names": {
+        "en": "Spell"
+      }
+    },
+    {
+      "id": "troop",
+      "names": {
+        "en": "Troop"
+      }
+    }
+  ],
+  "traits": [
+    {
+      "id": "ambush",
+      "names": {
+        "en": "Ambush"
+      }
+    },
+    {
+      "id": "aoe",
+      "names": {
+        "en": "AoE"
+      }
+    },
+    {
+      "id": "armored",
+      "names": {
+        "en": "Armored"
+      }
+    },
+    {
+      "id": "army-of-the-dead",
+      "names": {
+        "en": "Army of the Dead"
+      }
+    },
+    {
+      "id": "attack-root",
+      "names": {
+        "en": "Attack Root"
+      }
+    },
+    {
+      "id": "attack-stun",
+      "names": {
+        "en": "Attack Stun"
+      }
+    },
+    {
+      "id": "blast-wave",
+      "names": {
+        "en": "Blast Wave"
+      }
+    },
+    {
+      "id": "bloodlust",
+      "names": {
+        "en": "Bloodlust"
+      }
+    },
+    {
+      "id": "bombard",
+      "names": {
+        "en": "Bombard"
+      }
+    },
+    {
+      "id": "brambles",
+      "names": {
+        "en": "Brambles"
+      }
+    },
+    {
+      "id": "braze",
+      "names": {
+        "en": "Braze"
+      }
+    },
+    {
+      "id": "cannibalize",
+      "names": {
+        "en": "Cannibalize"
+      }
+    },
+    {
+      "id": "carrion",
+      "names": {
+        "en": "Carrion"
+      }
+    },
+    {
+      "id": "charge",
+      "names": {
+        "en": "Charge"
+      }
+    },
+    {
+      "id": "cheap-shot",
+      "names": {
+        "en": "Cheap Shot"
+      }
+    },
+    {
+      "id": "cycle",
+      "names": {
+        "en": "Cycle"
+      }
+    },
+    {
+      "id": "detect",
+      "names": {
+        "en": "Detect"
+      }
+    },
+    {
+      "id": "dismounts",
+      "names": {
+        "en": "Dismounts"
+      }
+    },
+    {
+      "id": "earth-and-moon",
+      "names": {
+        "en": "Earth and Moon"
+      }
+    },
+    {
+      "id": "eclipse",
+      "names": {
+        "en": "Eclipse"
+      }
+    },
+    {
+      "id": "elemental",
+      "names": {
+        "en": "Elemental"
+      }
+    },
+    {
+      "id": "fast",
+      "names": {
+        "en": "Fast"
+      }
+    },
+    {
+      "id": "fiery-weapon-enchant",
+      "names": {
+        "en": "Fiery Weapon Enchant"
+      }
+    },
+    {
+      "id": "flying",
+      "names": {
+        "en": "Flying"
+      }
+    },
+    {
+      "id": "frost",
+      "names": {
+        "en": "Frost"
+      }
+    },
+    {
+      "id": "fury",
+      "names": {
+        "en": "Fury"
+      }
+    },
+    {
+      "id": "hatching",
+      "names": {
+        "en": "Hatching"
+      }
+    },
+    {
+      "id": "haunt",
+      "names": {
+        "en": "Haunt"
+      }
+    },
+    {
+      "id": "heal-squadmate",
+      "names": {
+        "en": "Heal Squadmate"
+      }
+    },
+    {
+      "id": "healer",
+      "names": {
+        "en": "Healer"
+      }
+    },
+    {
+      "id": "hook",
+      "names": {
+        "en": "Hook"
+      }
+    },
+    {
+      "id": "lichborne",
+      "names": {
+        "en": "Lichborne"
+      }
+    },
+    {
+      "id": "longshot",
+      "names": {
+        "en": "Longshot"
+      }
+    },
+    {
+      "id": "mak'gora",
+      "names": {
+        "en": "Mak'gora"
+      }
+    },
+    {
+      "id": "melee",
+      "names": {
+        "en": "Melee"
+      }
+    },
+    {
+      "id": "miner",
+      "names": {
+        "en": "Miner"
+      }
+    },
+    {
+      "id": "nullify",
+      "names": {
+        "en": "Nullify"
+      }
+    },
+    {
+      "id": "one-target",
+      "names": {
+        "en": "One-Target"
+      }
+    },
+    {
+      "id": "percent-damage",
+      "names": {
+        "en": "Percent Damage"
+      }
+    },
+    {
+      "id": "poisonous",
+      "names": {
+        "en": "Poisonous"
+      }
+    },
+    {
+      "id": "possession",
+      "names": {
+        "en": "Possession"
+      }
+    },
+    {
+      "id": "ranged",
+      "names": {
+        "en": "Ranged"
+      }
+    },
+    {
+      "id": "rebirth",
+      "names": {
+        "en": "Rebirth"
+      }
+    },
+    {
+      "id": "remorseless-winter",
+      "names": {
+        "en": "Remorseless Winter"
+      }
+    },
+    {
+      "id": "resistant",
+      "names": {
+        "en": "Resistant"
+      }
+    },
+    {
+      "id": "revive",
+      "names": {
+        "en": "Revive"
+      }
+    },
+    {
+      "id": "seeds-of-protection",
+      "names": {
+        "en": "Seeds of Protection"
+      }
+    },
+    {
+      "id": "shapeshift",
+      "names": {
+        "en": "Shapeshift"
+      }
+    },
+    {
+      "id": "siege-damage",
+      "names": {
+        "en": "Siege Damage"
+      }
+    },
+    {
+      "id": "siege-specialist",
+      "names": {
+        "en": "Siege Specialist"
+      }
+    },
+    {
+      "id": "spell",
+      "names": {
+        "en": "Spell"
+      }
+    },
+    {
+      "id": "squad",
+      "names": {
+        "en": "Squad"
+      }
+    },
+    {
+      "id": "stealth",
+      "names": {
+        "en": "Stealth"
+      }
+    },
+    {
+      "id": "summoner",
+      "names": {
+        "en": "Summoner"
+      }
+    },
+    {
+      "id": "surge",
+      "names": {
+        "en": "Surge"
+      }
+    },
+    {
+      "id": "tank",
+      "names": {
+        "en": "Tank"
+      }
+    },
+    {
+      "id": "tranquility",
+      "names": {
+        "en": "Tranquility"
+      }
+    },
+    {
+      "id": "unbound",
+      "names": {
+        "en": "Unbound"
+      }
+    },
+    {
+      "id": "unstoppable",
+      "names": {
+        "en": "Unstoppable"
+      }
+    },
+    {
+      "id": "vulnerable",
+      "names": {
+        "en": "Vulnerable"
+      }
+    }
+  ],
+  "speeds": [
+    {
+      "id": "fast",
+      "names": {
+        "en": "Fast"
+      }
+    },
+    {
+      "id": "med-fast",
+      "names": {
+        "en": "Med-Fast"
+      }
+    },
+    {
+      "id": "medium",
+      "names": {
+        "en": "Medium"
+      }
+    },
+    {
+      "id": "slow",
+      "names": {
+        "en": "Slow"
+      }
+    },
+    {
+      "id": "stationary",
+      "names": {
+        "en": "Stationary"
+      }
+    },
+    {
+      "id": "znull",
+      "names": {
+        "en": "Znull"
+      }
+    }
+  ]
+}

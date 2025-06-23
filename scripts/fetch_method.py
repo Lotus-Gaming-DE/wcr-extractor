@@ -3,8 +3,52 @@ import requests
 from bs4 import BeautifulSoup
 from pathlib import Path
 
+CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
+
 BASE_URL = "https://www.method.gg/warcraft-rumble/minis"
 OUT_PATH = Path(__file__).parent.parent / "data" / "units.json"
+CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
+
+
+def load_categories() -> dict:
+    """Load category mappings from :data:`CATEGORIES_PATH`."""
+    with open(CATEGORIES_PATH, encoding="utf-8") as f:
+        data = json.load(f)
+
+    def to_map(items):
+        return {item["names"]["en"]: item["id"] for item in items}
+
+    return {
+        "faction": to_map(data.get("factions", [])),
+        "type": to_map(data.get("types", [])),
+        "trait": to_map(data.get("traits", [])),
+        "speed": to_map(data.get("speeds", [])),
+    }
+
+
+def load_categories() -> list:
+    """Load known categories from :data:`data/categories.json`."""
+
+    if not CATEGORIES_PATH.exists():
+        return []
+    with open(CATEGORIES_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+_CATEGORIES = load_categories()
+_CATEGORIES_EN = {c.get("names", {}).get("en"): c for c in _CATEGORIES if c.get("names")}
+
+
+def resolve_category(name: str) -> str:
+    """Return the English label for a category.
+
+    If the category is unknown, the input string is returned.  This allows
+    additional languages to be added in ``categories.json`` without changing
+    the scraping logic.
+    """
+
+    entry = _CATEGORIES_EN.get(name)
+    return entry["names"]["en"] if entry else name
 
 
 def fetch_unit_details(url: str) -> dict:
@@ -93,7 +137,24 @@ def fetch_unit_details(url: str) -> dict:
     if adv_section:
         content = adv_section.select_one(".mini-content")
         if content:
-            details["advanced_info"] = content.get_text("\n", strip=True)
+            adv_text = content.get_text("\n", strip=True)
+            lines = adv_text.splitlines()
+            prefix = "Available army bonus slots for the bottom row"
+            army_bonus_slots = []
+            for idx, line in enumerate(lines):
+                if line.startswith(prefix):
+                    j = idx + 1
+                    while j < len(lines):
+                        next_line = lines[j]
+                        if next_line == "" or next_line.startswith("Without"):
+                            break
+                        army_bonus_slots.append(next_line.strip())
+                        j += 1
+                    del lines[idx + 1 : j]
+                    break
+            details["advanced_info"] = "\n".join(lines)
+            if army_bonus_slots:
+                details["army_bonus_slots"] = army_bonus_slots
 
     return details
 
@@ -122,11 +183,15 @@ def fetch_units():
     soup = BeautifulSoup(response.text, "html.parser")
     cards = soup.select("div.mini-wrapper")
 
+    cats = load_categories()
     all_units = []
 
     for card in cards:
         name = card.get("data-name", "?")
-        faction = card.get("data-family", "?")
+        raw_factions = card.get("data-family", "?")
+        factions = [resolve_category(f.strip()) for f in raw_factions.split(',') if f.strip()]
+        faction = ",".join(factions)
+        faction_val = card.get("data-family", "?")
         unit_type = card.get("data-type", "?")
         cost_attr = card.get("data-cost")
         cost = int(cost_attr) if cost_attr is not None else None
@@ -142,30 +207,38 @@ def fetch_units():
             speed = None
         else:
             speed = speed_attr
+        speed_val = card.get("data-speed")
         traits_attr = card.get("data-traits", "")
-        traits = [t.strip() for t in traits_attr.split(",") if t.strip()]
+        trait_names = [t.strip() for t in traits_attr.split(",") if t.strip()]
 
         link = card.select_one("a.mini-link")
         url = f"https://www.method.gg{link['href']}" if link else None
         image_elem = card.select_one("img")
         image_url = image_elem["src"] if image_elem else None
 
-        unit_id = (link["href"].split("/")[-1] if link else name).lower().replace(" ", "-")
+        unit_id = (
+            link["href"].split("/")[-1] if link else name
+        ).lower().replace(" ", "-")
 
         details = fetch_unit_details(url) if url else {}
+
+        faction_ids = [cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f]
+        trait_ids = [cats["trait"].get(t, t.lower().replace(" ", "-")) for t in trait_names]
+        type_id = cats["type"].get(unit_type, unit_type.lower())
+        speed_id = cats["speed"].get(speed_val, speed_val.lower()) if speed_val else None
 
         unit_data = {
             "id": unit_id,
             "name": name,
-            "faction": faction,
-            "type": unit_type,
+            "faction_ids": faction_ids,
+            "type_id": type_id,
             "cost": cost,
             "image": image_url,
             "damage": damage,
             "health": health,
             "dps": dps,
-            "speed": speed,
-            "traits": traits,
+            "speed_id": speed_id,
+            "trait_ids": trait_ids,
             "details": details,
         }
 

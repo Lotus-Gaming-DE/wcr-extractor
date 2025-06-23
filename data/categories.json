@@ -1,3 +1,11 @@
+[
+  {"id": "alliance", "names": {"en": "Alliance", "de": ""}},
+  {"id": "horde", "names": {"en": "Horde", "de": ""}},
+  {"id": "blackrock", "names": {"en": "Blackrock", "de": ""}},
+  {"id": "beast", "names": {"en": "Beast", "de": ""}},
+  {"id": "cenarion", "names": {"en": "Cenarion", "de": ""}},
+  {"id": "undead", "names": {"en": "Undead", "de": ""}}
+]
 {
   "factions": [
     {

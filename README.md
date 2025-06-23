@@ -63,3 +63,19 @@ Die Tests lassen sich mit [pytest](https://pytest.org) ausführen:
 pip install -r requirements.txt
 pytest
 ```
+
+## Contributing translations
+
+The names of factions and other categories are defined in
+`data/categories.json`.  Each entry contains an `id` and a `names`
+dictionary with language codes as keys.  The scraper currently reads only the
+English value (`names["en"]`), but you can provide translations for additional
+languages.  To contribute a translation, add or update the appropriate
+language key.  For example:
+
+```json
+{ "id": "alliance", "names": { "en": "Alliance", "de": "Allianz" } }
+```
+
+Please keep the English text intact so the parser can continue to resolve the
+categories correctly.

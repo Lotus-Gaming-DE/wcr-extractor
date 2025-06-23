@@ -3,6 +3,8 @@ import requests
 from bs4 import BeautifulSoup
 from pathlib import Path
 
+CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
+
 BASE_URL = "https://www.method.gg/warcraft-rumble/minis"
 OUT_PATH = Path(__file__).parent.parent / "data" / "units.json"
 CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
@@ -22,6 +24,31 @@ def load_categories() -> dict:
         "trait": to_map(data.get("traits", [])),
         "speed": to_map(data.get("speeds", [])),
     }
+
+
+def load_categories() -> list:
+    """Load known categories from :data:`data/categories.json`."""
+
+    if not CATEGORIES_PATH.exists():
+        return []
+    with open(CATEGORIES_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+_CATEGORIES = load_categories()
+_CATEGORIES_EN = {c.get("names", {}).get("en"): c for c in _CATEGORIES if c.get("names")}
+
+
+def resolve_category(name: str) -> str:
+    """Return the English label for a category.
+
+    If the category is unknown, the input string is returned.  This allows
+    additional languages to be added in ``categories.json`` without changing
+    the scraping logic.
+    """
+
+    entry = _CATEGORIES_EN.get(name)
+    return entry["names"]["en"] if entry else name
 
 
 def fetch_unit_details(url: str) -> dict:
@@ -159,6 +186,9 @@ def fetch_units():
 
     for card in cards:
         name = card.get("data-name", "?")
+        raw_factions = card.get("data-family", "?")
+        factions = [resolve_category(f.strip()) for f in raw_factions.split(',') if f.strip()]
+        faction = ",".join(factions)
         faction_val = card.get("data-family", "?")
         unit_type = card.get("data-type", "?")
         cost_attr = card.get("data-cost")

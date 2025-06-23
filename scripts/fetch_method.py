@@ -54,7 +54,9 @@ def fetch_unit_details(url: str) -> dict:
 
     The returned dictionary contains the sections ``core_trait``, ``stats``,
     ``traits``, ``talents`` and ``advanced_info`` extracted from the detail
-    page. ``traits`` now contains only trait IDs which are resolved via
+    page. ``core_trait`` stores ``attack_id`` and ``type_id`` which reference
+    trait IDs from ``data/categories.json``. ``traits`` contains only trait IDs
+    which are resolved via
     :func:`load_categories`.  Talent names and descriptions are stored as
     language dictionaries, e.g. ``{"name": {"en": "Fresh Meat"}}``.  If
     present, the optional ``army_bonus_slots`` field lists the available army
@@ -78,16 +80,18 @@ def fetch_unit_details(url: str) -> dict:
     info_section = find_section("Mini Information")
     core_trait = {}
     if info_section:
+        cat_map = load_categories()["trait"]
         for tile in info_section.select(".mini-details-tile"):
             label_elem = tile.select_one(".detail-label")
             info_elem = tile.select_one(".detail-info")
             label = label_elem.get_text(strip=True) if label_elem else None
             value = info_elem.get_text(strip=True) if info_elem else None
-            if label and label.startswith("Core Trait"):
+            if label and value and label.startswith("Core Trait"):
+                trait_id = cat_map.get(value, value.lower().replace(" ", "-"))
                 if "Attack" in label:
-                    core_trait["attack"] = value
+                    core_trait["attack_id"] = trait_id
                 elif "Type" in label:
-                    core_trait["type"] = value
+                    core_trait["type_id"] = trait_id
     if core_trait:
         details["core_trait"] = core_trait
 

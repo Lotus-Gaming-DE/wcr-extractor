@@ -34,7 +34,7 @@ Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
     "faction_ids": ["alliance"],
     "trait_ids": ["melee", "one-target"],
     "details": {
-      "core_trait": {},
+      "core_trait": {"attack_id": "aoe", "type_id": "melee"},
       "stats": {},
       "traits": [],
       "talents": [
@@ -49,6 +49,8 @@ Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
 Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Dateien
 `data/units.json` und `data/categories.json` automatisch aktualisiert.
 Trait descriptions are stored in `data/categories.json` under the `descriptions` field.
+The `core_trait` object of each unit lists `attack_id` and `type_id`,
+which map to the same trait IDs used in `trait_ids`.
 
 Das optionale Feld `army_bonus_slots` listet die Boni, die eine Einheit in der
 unteren Reihe des Armeefensters gewähren kann. Sind solche Angaben vorhanden,

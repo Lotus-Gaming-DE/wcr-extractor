@@ -163,3 +163,35 @@ def test_fetch_unit_details_returns_trait_ids():
         details = fetch_method.fetch_unit_details("url")
 
     assert details["traits"] == ["tank"]
+
+
+def test_fetch_unit_details_core_trait_ids():
+    html = """
+        <div class=\"mini-section\">
+            <h2>Mini Information</h2>
+            <div class=\"mini-details-tile\">
+                <div class=\"detail-label\">Core Trait Attack</div>
+                <div class=\"detail-info\">AoE</div>
+            </div>
+            <div class=\"mini-details-tile\">
+                <div class=\"detail-label\">Core Trait Type</div>
+                <div class=\"detail-info\">Melee</div>
+            </div>
+        </div>
+    """
+    mock_response = Mock(status_code=200, text=html)
+
+    with patch("scripts.fetch_method.requests.get", return_value=mock_response), \
+         patch(
+             "scripts.fetch_method.load_categories",
+             return_value={
+                 "faction": {},
+                 "type": {},
+                 "trait": {"AoE": "aoe", "Melee": "melee"},
+                 "speed": {},
+                 "trait_desc": {},
+             },
+         ):
+        details = fetch_method.fetch_unit_details("url")
+
+    assert details["core_trait"] == {"attack_id": "aoe", "type_id": "melee"}

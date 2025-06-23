@@ -330,6 +330,18 @@ def test_fetch_unit_details_core_trait_ids():
     assert details["core_trait"] == {"attack_id": "aoe", "type_id": "melee"}
 
 
+def test_fetch_unit_details_request_exception(capsys):
+    """Die Funktion soll bei Netzwerkfehlern mit Code 1 beenden."""
+    with patch(
+        "scripts.fetch_method.requests.get",
+        side_effect=requests.RequestException("boom"),
+    ):
+        with pytest.raises(SystemExit) as excinfo:
+            fetch_method.fetch_unit_details("url")
+    assert excinfo.value.code == 1
+    assert "Fehler beim Abrufen" in capsys.readouterr().out
+
+
 def test_fetch_units_request_exception(tmp_path, capsys):
     """Die Funktion soll bei Netzwerkfehlern mit Code 1 beenden."""
     with patch(

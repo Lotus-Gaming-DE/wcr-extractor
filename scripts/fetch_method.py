@@ -3,17 +3,22 @@ import requests
 from bs4 import BeautifulSoup
 from pathlib import Path
 
-CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
-
 BASE_URL = "https://www.method.gg/warcraft-rumble/minis"
 OUT_PATH = Path(__file__).parent.parent / "data" / "units.json"
 CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
 
 
 def load_categories() -> dict:
-    """Load category mappings from :data:`CATEGORIES_PATH`."""
+    """Return the parsed contents of :data:`CATEGORIES_PATH`."""
+
+    if not CATEGORIES_PATH.exists():
+        return {}
     with open(CATEGORIES_PATH, encoding="utf-8") as f:
-        data = json.load(f)
+        return json.load(f)
+
+
+def build_category_maps(data: dict) -> dict:
+    """Create lookup tables mapping English names to IDs."""
 
     def to_map(items):
         return {item["names"]["en"]: item["id"] for item in items}
@@ -26,17 +31,22 @@ def load_categories() -> dict:
     }
 
 
-def load_categories() -> list:
-    """Load known categories from :data:`data/categories.json`."""
+def _build_en_lookup(data: dict) -> dict:
+    """Create a mapping from English name to the full entry."""
 
-    if not CATEGORIES_PATH.exists():
-        return []
-    with open(CATEGORIES_PATH, "r", encoding="utf-8") as f:
-        return json.load(f)
+    lookup = {}
+    for items in data.values():
+        if isinstance(items, list):
+            for item in items:
+                en = item.get("names", {}).get("en")
+                if en:
+                    lookup[en] = item
+    return lookup
 
 
 _CATEGORIES = load_categories()
-_CATEGORIES_EN = {c.get("names", {}).get("en"): c for c in _CATEGORIES if c.get("names")}
+_CATEGORY_MAPS = build_category_maps(_CATEGORIES)
+_CATEGORIES_EN = _build_en_lookup(_CATEGORIES)
 
 
 def resolve_category(name: str) -> str:
@@ -183,7 +193,7 @@ def fetch_units():
     soup = BeautifulSoup(response.text, "html.parser")
     cards = soup.select("div.mini-wrapper")
 
-    cats = load_categories()
+    cats = build_category_maps(load_categories())
     all_units = []
 
     for card in cards:
@@ -241,6 +251,8 @@ def fetch_units():
             "trait_ids": trait_ids,
             "details": details,
         }
+        if speed is None:
+            unit_data["speed"] = None
 
         all_units.append(unit_data)
 

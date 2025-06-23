@@ -1,7 +1,8 @@
 import json
+from pathlib import Path
+
 import requests
 from bs4 import BeautifulSoup
-from pathlib import Path
 
 BASE_URL = "https://www.method.gg/warcraft-rumble/minis"
 OUT_PATH = Path(__file__).parent.parent / "data" / "units.json"
@@ -44,6 +45,39 @@ def load_categories() -> dict:
         "speed": to_map(data.get("speeds", [])),
         "trait_desc": trait_desc,
     }
+
+
+def load_existing_units() -> dict:
+    """Return existing units indexed by ``id`` if the JSON file exists."""
+
+    if not OUT_PATH.exists():
+        return {}
+    try:
+        with open(OUT_PATH, encoding="utf-8") as f:
+            units = json.load(f)
+        return {unit.get("id"): unit for unit in units}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def is_unit_changed(old: dict, new: dict) -> bool:
+    """Return ``True`` if relevant fields differ between two units."""
+
+    compare_keys = [
+        "faction_ids",
+        "type_id",
+        "cost",
+        "image",
+        "damage",
+        "health",
+        "dps",
+        "speed_id",
+        "trait_ids",
+        "details",
+    ]
+    if old.get("names", {}).get("en") != new.get("names", {}).get("en"):
+        return True
+    return any(old.get(k) != new.get(k) for k in compare_keys)
 
 
 
@@ -179,8 +213,10 @@ def fetch_units():
     JSON-Datei erscheint dieser daher als ``null``. Ihr ``speed_id``-Eintrag
     ist ebenfalls ``null``.
     The unit name is stored in a ``names`` dictionary with language codes as
-    keys.  All collected units are written to ``data/units.json``. The file
-    will be created if it does not exist and overwritten otherwise.
+    keys.  Existing entries from ``data/units.json`` are loaded and compared
+    to the scraped data. Only minis with changed values are updated in the
+    output; unchanged entries remain verbatim. The file will be created if it
+    does not exist.
 
     Returns:
         None: Writes the JSON file and prints progress information.
@@ -195,7 +231,8 @@ def fetch_units():
     cards = soup.select("div.mini-wrapper")
 
     cats = load_categories()
-    all_units = []
+    scraped_units = []
+    existing_units = load_existing_units()
 
     for card in cards:
         name = card.get("data-name", "?")
@@ -256,28 +293,32 @@ def fetch_units():
         if speed is None:
             unit_data["speed"] = None
 
-        all_units.append(unit_data)
+        scraped_units.append(unit_data)
 
-    existing_names = {}
-    if OUT_PATH.exists():
-        try:
-            with open(OUT_PATH, encoding="utf-8") as f:
-                for unit in json.load(f):
-                    existing_names[unit.get("id")] = unit.get("names", {})
-        except (json.JSONDecodeError, OSError):
-            existing_names = {}
+    result_units = []
+    seen = set()
+    for unit in scraped_units:
+        old = existing_units.get(unit["id"])
+        seen.add(unit["id"])
+        if old and not is_unit_changed(old, unit):
+            result_units.append(old)
+            continue
 
-    for unit in all_units:
-        old_names = existing_names.get(unit["id"], {})
+        old_names = old.get("names", {}) if old else {}
         for lang, text in old_names.items():
             if lang != "en" and lang not in unit["names"]:
                 unit["names"][lang] = text
+        result_units.append(unit)
+
+    for uid, old_unit in existing_units.items():
+        if uid not in seen:
+            result_units.append(old_unit)
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(all_units, f, indent=2, ensure_ascii=False)
+        json.dump(result_units, f, indent=2, ensure_ascii=False)
 
-    print(f"{len(all_units)} Einheiten gespeichert in {OUT_PATH}")
+    print(f"{len(result_units)} Einheiten gespeichert in {OUT_PATH}")
 
 
 if __name__ == "__main__":

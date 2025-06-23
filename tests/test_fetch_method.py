@@ -107,6 +107,99 @@ def test_fetch_units_preserves_translations(tmp_path):
     assert data[0]["names"] == {"en": "Footman", "de": "Fußmann"}
 
 
+def test_fetch_units_skips_unchanged_unit(tmp_path):
+    html = """
+        <div class=\"mini-wrapper\" data-name=\"Footman\" data-family=\"Alliance\" data-type=\"Troop\" data-cost=\"2\" data-damage=\"10\" data-health=\"20\" data-dps=\"5\" data-speed=\"Slow\" data-traits=\"Melee\">
+            <a class=\"mini-link\" href=\"/warcraft-rumble/minis/footman\">
+                <img src=\"footman.png\" />
+            </a>
+        </div>
+    """
+    mock_response = Mock(status_code=200, text=html)
+
+    categories = {
+        "factions": [{"id": "alliance", "names": {"en": "Alliance"}}],
+        "types": [{"id": "troop", "names": {"en": "Troop"}}],
+        "traits": [{"id": "melee", "names": {"en": "Melee"}}],
+        "speeds": [{"id": "slow", "names": {"en": "Slow"}}],
+    }
+
+    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+        out_file = tmp_path / "units.json"
+        cat_file = tmp_path / "categories.json"
+        cat_file.write_text(json.dumps(categories))
+        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
+        existing = [{
+            "id": "footman",
+            "names": {"en": "Footman", "de": "Fußmann"},
+            "faction_ids": ["alliance"],
+            "type_id": "troop",
+            "cost": 2,
+            "image": "footman.png",
+            "damage": 10,
+            "health": 20,
+            "dps": 5.0,
+            "speed_id": "slow",
+            "trait_ids": ["melee"],
+            "details": dummy_details,
+        }]
+        out_file.write_text(json.dumps(existing))
+        with patch.object(fetch_method, "OUT_PATH", out_file), \
+             patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
+             patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
+            fetch_method.fetch_units()
+            data = json.loads(out_file.read_text(encoding="utf-8"))
+
+    assert data == existing
+
+
+def test_fetch_units_updates_changed_unit(tmp_path):
+    html = """
+        <div class=\"mini-wrapper\" data-name=\"Footman\" data-family=\"Alliance\" data-type=\"Troop\" data-cost=\"3\" data-damage=\"10\" data-health=\"20\" data-dps=\"5\" data-speed=\"Slow\" data-traits=\"Melee\">
+            <a class=\"mini-link\" href=\"/warcraft-rumble/minis/footman\">
+                <img src=\"footman.png\" />
+            </a>
+        </div>
+    """
+    mock_response = Mock(status_code=200, text=html)
+
+    categories = {
+        "factions": [{"id": "alliance", "names": {"en": "Alliance"}}],
+        "types": [{"id": "troop", "names": {"en": "Troop"}}],
+        "traits": [{"id": "melee", "names": {"en": "Melee"}}],
+        "speeds": [{"id": "slow", "names": {"en": "Slow"}}],
+    }
+
+    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+        out_file = tmp_path / "units.json"
+        cat_file = tmp_path / "categories.json"
+        cat_file.write_text(json.dumps(categories))
+        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
+        existing = [{
+            "id": "footman",
+            "names": {"en": "Footman", "de": "Fußmann"},
+            "faction_ids": ["alliance"],
+            "type_id": "troop",
+            "cost": 2,
+            "image": "footman.png",
+            "damage": 10,
+            "health": 20,
+            "dps": 5.0,
+            "speed_id": "slow",
+            "trait_ids": ["melee"],
+            "details": dummy_details,
+        }]
+        out_file.write_text(json.dumps(existing))
+        with patch.object(fetch_method, "OUT_PATH", out_file), \
+             patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
+             patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
+            fetch_method.fetch_units()
+            data = json.loads(out_file.read_text(encoding="utf-8"))
+
+    assert data[0]["cost"] == 3
+    assert data[0]["names"]["de"] == "Fußmann"
+
+
 @pytest.mark.parametrize("speed_value", ["", "Znull"])
 def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
     html = f"""

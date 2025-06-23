@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import sys
 
 import requests
 from bs4 import BeautifulSoup
@@ -97,10 +98,16 @@ def fetch_unit_details(url: str) -> dict:
     language dictionaries, e.g. ``{"name": {"en": "Fresh Meat"}}``.  If
     present, the optional ``army_bonus_slots`` field lists the available army
     bonus slots for the bottom row and those lines are removed from
-    ``advanced_info``.
+    ``advanced_info``.  Wenn beim Abruf ein Netzwerkfehler auftritt,
+    gibt die Funktion eine Fehlermeldung aus und beendet das Skript
+    mit dem Rückgabecode ``1``.
     """
 
-    response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+    except requests.RequestException as exc:
+        print(f"Fehler beim Abrufen von {url}: {exc}")
+        sys.exit(1)
     if response.status_code != 200:
         raise Exception(f"Fehler beim Abrufen: {response.status_code}")
 
@@ -218,14 +225,20 @@ def fetch_units():
     keys.  Existing entries from ``data/units.json`` are loaded and compared
     to the scraped data. Only minis with changed values are updated in the
     output; unchanged entries remain verbatim. The file will be created if it
-    does not exist.
+    does not exist.  Scheitert der Abruf der Übersichtsseite aufgrund
+    eines Netzwerkfehlers, gibt die Funktion eine Meldung aus und beendet
+    das Skript mit dem Rückgabecode ``1``.
 
     Returns:
         None: Writes the JSON file and prints progress information.
     """
 
     print(f"Starte Abruf von {BASE_URL} ...")
-    response = requests.get(BASE_URL, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        response = requests.get(BASE_URL, headers={"User-Agent": "Mozilla/5.0"})
+    except requests.RequestException as exc:
+        print(f"Fehler beim Abrufen von {BASE_URL}: {exc}")
+        sys.exit(1)
     if response.status_code != 200:
         raise Exception(f"Fehler beim Abrufen: {response.status_code}")
 

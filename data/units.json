@@ -238,7 +238,7 @@
           "description": "At 50% health, summon 12 Scarab Beetles, and temporarily submerge, avoiding attacks."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Anub’arak cannot buff Execute.\nMelee cleave\nArc 140 degrees\nBurrow\nMinimum range 4\nMaximum acquire range 12\nMovement speed while burrowed 7\nWhile burrowed, Anub'arak is immune to all damage and gains Unstoppable. It also ignores collisions and cannot be pushed.\nScarab Beetles\n10 health\nMovement speed 3\nAttack speed 1.3 seconds\nNo damage, applies 1 stack of poison\nDamage reflection effects do not work on Scarabs because they deal no damage\nExplosive Shells talent\n35 damage\nRadius 5\nTrap Door talent\nCan only proc once per Anub'arak (healing above 50% does not re-enable the effect)\nThe Beetles will spawn even if you already have 12 Beetles on the map\nApplies a 5-second stun on a 3.5 radius",
+      "advanced_info": "Without a Wildcard slot, Anub’arak cannot buff Execute.\nMelee cleave\nArc 140 degrees\nBurrow\nMinimum range 4\nMaximum acquire range 12\nMovement speed while burrowed 7\nWhile burrowed, Anub'arak is immune to all damage and gains Unstoppable. It also ignores collisions and cannot be pushed.\nScarab Beetles\n10 health\nMovement speed 3\nAttack speed 1.3 seconds\nNo damage, applies 1 stack of poison\nDamage reflection effects do not work on Scarabs because they deal no damage\nExplosive Shells talent\n35 damage\nRadius 5\nTrap Door talent\nCan only proc once per Anub'arak (healing above 50% does not re-enable the effect)\nThe Beetles will spawn even if you already have 12 Beetles on the map\nApplies a 5-second stun on a 3.5 radius",
       "army_bonus_slots": [
         "Beast",
         "Elemental",
@@ -377,7 +377,7 @@
           "description": "On death, become invulnerable for 3 seconds. If the target dies, return to life with 25% health. The target that needs to die, is the first enemy that Arthas attacks after resurrecting and becoming invulnerable."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row:\nWithout a Wildcard slot, Arthas cannot buff a Swole Troll that does not have Meatier Elbow.\nRemorseless Winter:\nApplies Frost to nearby enemies\nFrost reduces both their attack and movement speed by 50%\n6.5 radius from Arthas\nNote that this range means that most ranged minis will be shooting at Arthas from outside the Frost aura, if Arthas is fighting against a tank\nArmy of the Dead:\nPeriodically summons a Frosty Footman\nMaximum of 2 Footmen at a time, per Arthas\nBoth are summoned immediately when you deploy Arthas\n13-second cooldown for each Footman, starts when summoned, so if they die after 13 seconds or more, Arthas immediately summons another\nSoulshatter:\nWhile deployed, Frosted enemies die instantly when taking any damage below 20% health\nDoes not apply to buildings, bosses, and mini-bosses\nGlobal while Arthas is alive\nTarget needs to be hit while already under 20% health – mostly effective against big tanks because small minis often die to a hit while under 20% health anyway\nLichborne:\nNearby allied Alliance Minis summon stationary Skeleton Mages on death\nAllied, so also works for your partners' minis in co-op, but only close to Arthas\n12 radius from Arthas",
+      "advanced_info": "Without a Wildcard slot, Arthas cannot buff a Swole Troll that does not have Meatier Elbow.\nRemorseless Winter:\nApplies Frost to nearby enemies\nFrost reduces both their attack and movement speed by 50%\n6.5 radius from Arthas\nNote that this range means that most ranged minis will be shooting at Arthas from outside the Frost aura, if Arthas is fighting against a tank\nArmy of the Dead:\nPeriodically summons a Frosty Footman\nMaximum of 2 Footmen at a time, per Arthas\nBoth are summoned immediately when you deploy Arthas\n13-second cooldown for each Footman, starts when summoned, so if they die after 13 seconds or more, Arthas immediately summons another\nSoulshatter:\nWhile deployed, Frosted enemies die instantly when taking any damage below 20% health\nDoes not apply to buildings, bosses, and mini-bosses\nGlobal while Arthas is alive\nTarget needs to be hit while already under 20% health – mostly effective against big tanks because small minis often die to a hit while under 20% health anyway\nLichborne:\nNearby allied Alliance Minis summon stationary Skeleton Mages on death\nAllied, so also works for your partners' minis in co-op, but only close to Arthas\n12 radius from Arthas",
       "army_bonus_slots": [
         "Alliance",
         "Cycle",
@@ -506,7 +506,7 @@
           "description": "Nearby allied Skeletons gain Bloodlust."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row:\nWithout a Wildcard slot, Baron Rivendare cannot buff:\nAncient of War\nBog Beast\nDarkspear Troll\nGnoll Brute (unless Rabid)\nHarvest Golem\nStonehoof Tauren\nArmy of the Dead:\nSkeletons spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 15 seconds\nWith Chill of the Grave talent, Skeletal Mages spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 25 seconds\nSkeletal Frenzy talent:\nFriendly Skeletons have Bloodlust as long as they are within a radius of 8 from Baron Rivendare\nDeath Pact talent:\nRange 9\nCooldown 10 seconds\nHeals Rivendare for 100% of his maximum health\nRivendare uses Death Pact when he is below 60% of his maximum health",
+      "advanced_info": "Without a Wildcard slot, Baron Rivendare cannot buff:\nAncient of War\nBog Beast\nDarkspear Troll\nGnoll Brute (unless Rabid)\nHarvest Golem\nStonehoof Tauren\nArmy of the Dead:\nSkeletons spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 15 seconds\nWith Chill of the Grave talent, Skeletal Mages spawn from the Barracks every 60 seconds and from Towers and Meeting Stones every 25 seconds\nSkeletal Frenzy talent:\nFriendly Skeletons have Bloodlust as long as they are within a radius of 8 from Baron Rivendare\nDeath Pact talent:\nRange 9\nCooldown 10 seconds\nHeals Rivendare for 100% of his maximum health\nRivendare uses Death Pact when he is below 60% of his maximum health",
       "army_bonus_slots": [
         "Cycle",
         "Elemental",
@@ -692,7 +692,7 @@
           "description": "Spells costing 3 or more grant an additional level."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Bloodmage Thalnos cannot buff\nDarkspear Troll\nShadow Splash:\nThe lifesteal effect is 8% of the damage dealt by Thalnos\nDark Ritual:\nAdditional levels are capped at +10\nDrain Soul talent:\nThe discount effect stacks until you cast a spell\nThe minimum cost of a spell is 1 gold\nThe discount effect has a 12-second cooldown, separately for each Thalnos\nFor example, if you have two copies of Thalnos on the board, you can discount your next spell by 2 every 12 seconds, and the discounts from the two Thalnos minis can come at any time, with each Thalnos on its own separate 12-second cooldown",
+      "advanced_info": "Without a Wildcard slot, Bloodmage Thalnos cannot buff\nDarkspear Troll\nShadow Splash:\nThe lifesteal effect is 8% of the damage dealt by Thalnos\nDark Ritual:\nAdditional levels are capped at +10\nDrain Soul talent:\nThe discount effect stacks until you cast a spell\nThe minimum cost of a spell is 1 gold\nThe discount effect has a 12-second cooldown, separately for each Thalnos\nFor example, if you have two copies of Thalnos on the board, you can discount your next spell by 2 every 12 seconds, and the discounts from the two Thalnos minis can come at any time, with each Thalnos on its own separate 12-second cooldown",
       "army_bonus_slots": [
         "Cycle",
         "Elemental",
@@ -823,7 +823,7 @@
           "description": "When Stun expires, affected enemies are Dazed for 5 seconds."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row:\nWithout a Wildcard slot, Cairne cannot buff:\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nWorgen\nEarthen Might:\nThe Horde troop health buff is active even if you never deploy Cairne\nShockwave:\nApplies a 1-second Stun\nStuns Towers\nResets Fury stacks on its targets\nAftershock talent\nThe Daze effect movement speed reduction is -50% for 6 seconds\nPlainsrunning talent\nThe movement speed increase is +150%, from 2 to 5",
+      "advanced_info": "Without a Wildcard slot, Cairne cannot buff:\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nWorgen\nEarthen Might:\nThe Horde troop health buff is active even if you never deploy Cairne\nShockwave:\nApplies a 1-second Stun\nStuns Towers\nResets Fury stacks on its targets\nAftershock talent\nThe Daze effect movement speed reduction is -50% for 6 seconds\nPlainsrunning talent\nThe movement speed increase is +150%, from 2 to 5",
       "army_bonus_slots": [
         "Cycle",
         "Elemental",
@@ -911,7 +911,7 @@
           "description": "On deploy, Root all enemies for 5 seconds."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row",
+      "advanced_info": "",
       "army_bonus_slots": [
         "Cenarion",
         "Cycle",
@@ -1047,7 +1047,7 @@
           "description": "Root two additional nearby targets."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Charlga cannot buff\nTreant\nMini costs\nCharlga has two decks: a mini pile and a cost pile\nAt the start of the game, both piles are shuffled independently\nEvery mini in your hand costs the same, and you can see the next cost together with the next mini\nWhen you play a mini, the mini goes to the bottom of the mini pile, and the mini’s original cost - not the cost you play it for - goes to the bottom of the cost pile\nSurge minis add a cost that uses all of your gold to the cost pile\nRoot attack\nRoots ground minis, but not flying minis\nDisables Towers for the duration of the channel\n4 ticks per second, 6 seconds channel\nDeals 2% of target's health + 6 damage per tick (but see the note about percentage damage scaling)\nThe 6 damage scales with levels as usual\nPercentage damage scaling\nMinis: 2%, ±0.2% per level\nBuildings: 2%, ±0.2% per level\nBarracks: 0.5%, ±0.05% per level\nBosses: 1%, ±0.1% per level\nRaid bosses: 0.25%, ±0.025% per level\nNo minimum values, so a -10 Charlga loses all percentage damage",
+      "advanced_info": "Without a Wildcard slot, Charlga cannot buff\nTreant\nMini costs\nCharlga has two decks: a mini pile and a cost pile\nAt the start of the game, both piles are shuffled independently\nEvery mini in your hand costs the same, and you can see the next cost together with the next mini\nWhen you play a mini, the mini goes to the bottom of the mini pile, and the mini’s original cost - not the cost you play it for - goes to the bottom of the cost pile\nSurge minis add a cost that uses all of your gold to the cost pile\nRoot attack\nRoots ground minis, but not flying minis\nDisables Towers for the duration of the channel\n4 ticks per second, 6 seconds channel\nDeals 2% of target's health + 6 damage per tick (but see the note about percentage damage scaling)\nThe 6 damage scales with levels as usual\nPercentage damage scaling\nMinis: 2%, ±0.2% per level\nBuildings: 2%, ±0.2% per level\nBarracks: 0.5%, ±0.05% per level\nBosses: 1%, ±0.1% per level\nRaid bosses: 0.25%, ±0.025% per level\nNo minimum values, so a -10 Charlga loses all percentage damage",
       "army_bonus_slots": [
         "Beast",
         "Cycle",
@@ -1942,7 +1942,7 @@
           "description": "Nearby Burning enemies (in a 12 radius) heal Thaurissan for 1.5% of his maximum Health per second."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row",
+      "advanced_info": "",
       "army_bonus_slots": [
         "AoE",
         "Blackrock",
@@ -2494,7 +2494,7 @@
           "description": "On death, drop a banner. Nearby enemies take 50% additional Elemental damage. Lasts 10 seconds."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, General Drakkisath cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFootmen\nMountaineer\nStonehoof Tauren\nSwole Troll\nTreant\nWarsong Grunts\nBanner of Flame\nIncreases Elemental damage taken by 50%\nRadius 9\nDoes not affect Resistant enemies\nDoes affect buildings\nApplies the debuff for 3 seconds every 0.2 seconds\nChromatic Scales talent\nRadius 8\nLasting Legacy talent\nRadius 9\nPiercing Blows talent\nArc 20 degrees\nRadius 6.5",
+      "advanced_info": "Without a Wildcard slot, General Drakkisath cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFootmen\nMountaineer\nStonehoof Tauren\nSwole Troll\nTreant\nWarsong Grunts\nBanner of Flame\nIncreases Elemental damage taken by 50%\nRadius 9\nDoes not affect Resistant enemies\nDoes affect buildings\nApplies the debuff for 3 seconds every 0.2 seconds\nChromatic Scales talent\nRadius 8\nLasting Legacy talent\nRadius 9\nPiercing Blows talent\nArc 20 degrees\nRadius 6.5",
       "army_bonus_slots": [
         "Blackrock",
         "Cycle",
@@ -2734,7 +2734,7 @@
           "description": "Summon two fragile mirror images when entering combat."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Grommash Hellscream cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nMolten Giant\nBloodlust aura\nRadius 9\nApplies a 1-second Bloodlust effect every 0.2 seconds\nBladestorm talent\nRange 3\n6.5 seconds cooldown\n55 damage, 5 times, for a total of 275 damage\nDoes not hit Flying minis\nMirror Image talent\n100 health\n130 damage\n1.5 seconds attack speed\n10 seconds duration\nTaunt, 5.25 radius, 10 seconds duration",
+      "advanced_info": "Without a Wildcard slot, Grommash Hellscream cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nMolten Giant\nBloodlust aura\nRadius 9\nApplies a 1-second Bloodlust effect every 0.2 seconds\nBladestorm talent\nRange 3\n6.5 seconds cooldown\n55 damage, 5 times, for a total of 275 damage\nDoes not hit Flying minis\nMirror Image talent\n100 health\n130 damage\n1.5 seconds attack speed\n10 seconds duration\nTaunt, 5.25 radius, 10 seconds duration",
       "army_bonus_slots": [
         "Cycle",
         "Fast",
@@ -3029,7 +3029,7 @@
           "description": "Gain Poison."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Hogger cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nHarvest Golem\nMolten Giant\nStonehoof Tauren\nSwole Troll\nRelentless and Ham Hock talent\nBoth are capped at 3 stacks\nFatal Frenzy talent\nAdditional levels are capped at +3\nBloodlust lasts for 10 seconds\nSpoiled Meat talent\nHogger applies 1 stack of poison per hit",
+      "advanced_info": "Without a Wildcard slot, Hogger cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nHarvest Golem\nMolten Giant\nStonehoof Tauren\nSwole Troll\nRelentless and Ham Hock talent\nBoth are capped at 3 stacks\nFatal Frenzy talent\nAdditional levels are capped at +3\nBloodlust lasts for 10 seconds\nSpoiled Meat talent\nHogger applies 1 stack of poison per hit",
       "army_bonus_slots": [
         "Beast",
         "Cycle",
@@ -3209,7 +3209,7 @@
           "description": "Periodically teleport away from attackers."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Jaina cannot buff\nBanshee\nDarkspear Troll\nDryad\nFlurry talent\nFrostbolt deals 50 area-of-effect damage to secondary targets in addition to the 190 damage to the main target\nFrostbolt applies Frost and deals damage on a radius of 4\nBlink talent\nCooldown 8 seconds",
+      "advanced_info": "Without a Wildcard slot, Jaina cannot buff\nBanshee\nDarkspear Troll\nDryad\nFlurry talent\nFrostbolt deals 50 area-of-effect damage to secondary targets in addition to the 190 damage to the main target\nFrostbolt applies Frost and deals damage on a radius of 4\nBlink talent\nCooldown 8 seconds",
       "army_bonus_slots": [
         "Alliance",
         "Elemental",
@@ -3329,7 +3329,7 @@
           "description": "Periodically teleport to a ranged attacker when hit."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Maiev cannot buff\nBanshee\nDarkspear Troll\nDruid of the Claw\nFirehammer\nFlamewaker\nFrostwolf Shaman\nMoonkin\nNecromancer\nOgre Mage\nPyromancer\nTreant\nMelee attack\nCleave arc 160 degrees\nFan of Knives\nRadius 5.5\nAlso hits Flying minis\nShadowstep talent\nCooldown is 4 seconds",
+      "advanced_info": "Without a Wildcard slot, Maiev cannot buff\nBanshee\nDarkspear Troll\nDruid of the Claw\nFirehammer\nFlamewaker\nFrostwolf Shaman\nMoonkin\nNecromancer\nOgre Mage\nPyromancer\nTreant\nMelee attack\nCleave arc 160 degrees\nFan of Knives\nRadius 5.5\nAlso hits Flying minis\nShadowstep talent\nCooldown is 4 seconds",
       "army_bonus_slots": [
         "Alliance",
         "Cycle",
@@ -3405,7 +3405,7 @@
           "description": "After 30 seconds, if at least one Seed of Protection remains, apply Seeds of Protection to all allied Buildings and Meeting Stones."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row",
+      "advanced_info": "",
       "army_bonus_slots": [
         "Alliance",
         "Cenarion",
@@ -3914,7 +3914,7 @@
           "description": "Tidehunters spawn at Old Murk Eye's location instead."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Old Murk-Eye cannot buff\nBanshee\nDarkspear Troll\nTreant\nMarch of the Murlocs\nMurlocs inherit their level from Old Murk-Eye\nIn co-op, only the gold spent by Old Murk-Eye's owner spawns Murlocs\nElectric Eels talent\n0.4 seconds stun\nNo level modifier\nCannot stun bosses",
+      "advanced_info": "Without a Wildcard slot, Old Murk-Eye cannot buff\nBanshee\nDarkspear Troll\nTreant\nMarch of the Murlocs\nMurlocs inherit their level from Old Murk-Eye\nIn co-op, only the gold spent by Old Murk-Eye's owner spawns Murlocs\nElectric Eels talent\n0.4 seconds stun\nNo level modifier\nCannot stun bosses",
       "army_bonus_slots": [
         "Beast",
         "Cycle",
@@ -3982,7 +3982,7 @@
           "description": "Minis deployed within Safe Arbor deal double damage on their first attack."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Onu cannot buff\nWorgen\nMelee attack cleave\nArc 140 degrees",
+      "advanced_info": "Without a Wildcard slot, Onu cannot buff\nWorgen\nMelee attack cleave\nArc 140 degrees",
       "army_bonus_slots": [
         "Cenarion",
         "Cycle",
@@ -4052,7 +4052,7 @@
           "description": "Grant Bloodlust to all allies on the board for 10 seconds upon winning the Mak'gora."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Orgrim cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFirst Blood\nDoes not buff Goblin Sappers, Banshee, and Doomhammer\nMak’gora\nBanshee will not steal a mini engaged in Mak’gora\nYou can use other minis and spells to influence the Mak’gora - and you should!\nDoomhammer Revealed - After winning a Mak’gora\nGains melee cleave with a 140-degree arc\nAttack damage depends on how close the Mak’gora was:\nDoomhammer wins with over 67% health left: 210 damage\nDoomhammer wins with 33% to 67% health left: 231 damage\nDoomhammer wins with less than 33% health left: 252 damage",
+      "advanced_info": "Without a Wildcard slot, Orgrim cannot buff\nAbomination\nAncient of War\nBog Beast\nGnoll Brute (unless Rabid)\nHarvest Golem\nFirst Blood\nDoes not buff Goblin Sappers, Banshee, and Doomhammer\nMak’gora\nBanshee will not steal a mini engaged in Mak’gora\nYou can use other minis and spells to influence the Mak’gora - and you should!\nDoomhammer Revealed - After winning a Mak’gora\nGains melee cleave with a 140-degree arc\nAttack damage depends on how close the Mak’gora was:\nDoomhammer wins with over 67% health left: 210 damage\nDoomhammer wins with 33% to 67% health left: 231 damage\nDoomhammer wins with less than 33% health left: 252 damage",
       "army_bonus_slots": [
         "Blackrock",
         "Cycle",
@@ -4491,7 +4491,7 @@
           "description": "At 50% health, summon two Fire Elementals that last 15 seconds."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Ragnaros cannot buff\nCheat Death\nDefias Bandits\nExecute\nPolymorph\nHealing reduction\nRagnaros receives -75% healing\nPercentage-based effects heal the full amount, so Priestess with Empowered Renew talent can still heal Ragnaros for 10 percent of his maximum health.\nEmpowered Renew has a special rule for Ragnaros that allows it to be applied only once per Priestess\nMolten Armor\nDeals 40 Elemental damage when taking damage\nIgnores damage-over-time effects\nBlast Wave\n75 Elemental damage\nRadius 8\nRadiant Flames talent\n100 Elemental damage on a radius of 7 every 5 seconds",
+      "advanced_info": "Without a Wildcard slot, Ragnaros cannot buff\nCheat Death\nDefias Bandits\nExecute\nPolymorph\nHealing reduction\nRagnaros receives -75% healing\nPercentage-based effects heal the full amount, so Priestess with Empowered Renew talent can still heal Ragnaros for 10 percent of his maximum health.\nEmpowered Renew has a special rule for Ragnaros that allows it to be applied only once per Priestess\nMolten Armor\nDeals 40 Elemental damage when taking damage\nIgnores damage-over-time effects\nBlast Wave\n75 Elemental damage\nRadius 8\nRadiant Flames talent\n100 Elemental damage on a radius of 7 every 5 seconds",
       "army_bonus_slots": [
         "Blackrock",
         "Elemental",
@@ -4620,7 +4620,7 @@
           "description": "Dismount when first taking damage. The Drake continues fighting."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Rend cannot buff\nCheat Death\nExecute\nPolymorph\nCharge\nDismounted Rend charges at targets\nRend acquires charge targets from a minimum range of 3 and maximum of 9.5\nCharge increases Rend’s movement speed by +700%\nCharge deals 140 damage\nMelee cleave (dismounted Rend)\nArc 140 degrees",
+      "advanced_info": "Without a Wildcard slot, Rend cannot buff\nCheat Death\nExecute\nPolymorph\nCharge\nDismounted Rend charges at targets\nRend acquires charge targets from a minimum range of 3 and maximum of 9.5\nCharge increases Rend’s movement speed by +700%\nCharge deals 140 damage\nMelee cleave (dismounted Rend)\nArc 140 degrees",
       "army_bonus_slots": [
         "Blackrock",
         "Cycle",
@@ -4928,7 +4928,7 @@
           "description": "Gain 2 levels whenever Sneed Before Greed triggers."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Sneed cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nDemolitions Mechanic\nDeals 30 Siege damage 12 times for a total of 360 damage\nArc 180 degrees\nMine is Money, Friend! talent\nSneed mines entire gold mines with a single swing\nLand Grab talent\nThe additional levels are capped at +10",
+      "advanced_info": "Without a Wildcard slot, Sneed cannot buff\nAbomination\nAncient of War\nBog Beast\nFire Elemental\nGnoll Brute (unless Rabid)\nHarvest Golem\nDemolitions Mechanic\nDeals 30 Siege damage 12 times for a total of 360 damage\nArc 180 degrees\nMine is Money, Friend! talent\nSneed mines entire gold mines with a single swing\nLand Grab talent\nThe additional levels are capped at +10",
       "army_bonus_slots": [
         "Cycle",
         "Fast",
@@ -5178,7 +5178,7 @@
           "description": "Black Arrow travels 20% farther, but attack speed is 10% slower."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Sylvanas cannot buff\nDruid of the Claw\nFirehammer\nFlamewaker\nMoonkin\nPyromancer\nWindrunner Warchief\nThe Horde and Undead troop buff is active even if you never deploy Sylvanas\nThis also applies to the Forsaken Fury talent\nBlack Arrow\nWhile Sylvanas will not target objects further away than 8.5, the Black Arrow itself is a 2-wide projectile that travels up to a range of 16\nQueen’s Reach talent\nRange 10.2 (outranges regular Towers)\nWhile Sylvanas will not target objects further away than 10.2, the Black Arrow itself is a 2-wide projectile that travels up to a range of 20\nBanshee’s Wail talent\nRadius 9\nRegular 3-second stun",
+      "advanced_info": "Without a Wildcard slot, Sylvanas cannot buff\nDruid of the Claw\nFirehammer\nFlamewaker\nMoonkin\nPyromancer\nWindrunner Warchief\nThe Horde and Undead troop buff is active even if you never deploy Sylvanas\nThis also applies to the Forsaken Fury talent\nBlack Arrow\nWhile Sylvanas will not target objects further away than 8.5, the Black Arrow itself is a 2-wide projectile that travels up to a range of 16\nQueen’s Reach talent\nRange 10.2 (outranges regular Towers)\nWhile Sylvanas will not target objects further away than 10.2, the Black Arrow itself is a 2-wide projectile that travels up to a range of 20\nBanshee’s Wail talent\nRadius 9\nRegular 3-second stun",
       "army_bonus_slots": [
         "Cycle",
         "Fast",
@@ -5318,7 +5318,7 @@
           "description": "Regularly consecrate the ground, damaging enemies within."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row\nWithout a Wildcard slot, Tirion cannot buff\nHeadless Horseman\nHoly Light\nRange 8\nRadius 3\nCooldown 4 seconds\nHeals for 160 and removes poison\nConsecrate talent\nCooldown 8.25 seconds\nRange 4\nRadius 5\nDoes not hit Flying minis\n50 Elemental damage per second for 8 seconds for a total of 400 damage\nDivine Shield talent\nDivine Shield can only proc once, even if Tirion is healed to above 30% health",
+      "advanced_info": "Without a Wildcard slot, Tirion cannot buff\nHeadless Horseman\nHoly Light\nRange 8\nRadius 3\nCooldown 4 seconds\nHeals for 160 and removes poison\nConsecrate talent\nCooldown 8.25 seconds\nRange 4\nRadius 5\nDoes not hit Flying minis\n50 Elemental damage per second for 8 seconds for a total of 400 damage\nDivine Shield talent\nDivine Shield can only proc once, even if Tirion is healed to above 30% health",
       "army_bonus_slots": [
         "Alliance",
         "Cycle",
@@ -5807,7 +5807,7 @@
           "description": "Emerald Whelps and Emerald Drake apply twice as much poison."
         }
       ],
-      "advanced_info": "Available army bonus slots for the bottom row",
+      "advanced_info": "",
       "army_bonus_slots": [
         "Cenarion",
         "Fast",

@@ -5,6 +5,23 @@ from pathlib import Path
 
 BASE_URL = "https://www.method.gg/warcraft-rumble/minis"
 OUT_PATH = Path(__file__).parent.parent / "data" / "units.json"
+CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
+
+
+def load_categories() -> dict:
+    """Load category mappings from :data:`CATEGORIES_PATH`."""
+    with open(CATEGORIES_PATH, encoding="utf-8") as f:
+        data = json.load(f)
+
+    def to_map(items):
+        return {item["names"]["en"]: item["id"] for item in items}
+
+    return {
+        "faction": to_map(data.get("factions", [])),
+        "type": to_map(data.get("types", [])),
+        "trait": to_map(data.get("traits", [])),
+        "speed": to_map(data.get("speeds", [])),
+    }
 
 
 def fetch_unit_details(url: str) -> dict:
@@ -137,11 +154,12 @@ def fetch_units():
     soup = BeautifulSoup(response.text, "html.parser")
     cards = soup.select("div.mini-wrapper")
 
+    cats = load_categories()
     all_units = []
 
     for card in cards:
         name = card.get("data-name", "?")
-        faction = card.get("data-family", "?")
+        faction_val = card.get("data-family", "?")
         unit_type = card.get("data-type", "?")
         cost_attr = card.get("data-cost")
         cost = int(cost_attr) if cost_attr is not None else None
@@ -152,31 +170,38 @@ def fetch_units():
         health = int(float(health_attr)) if health_attr is not None else None
         dps_attr = card.get("data-dps")
         dps = float(dps_attr) if dps_attr is not None else None
-        speed = card.get("data-speed")
+        speed_val = card.get("data-speed")
         traits_attr = card.get("data-traits", "")
-        traits = [t.strip() for t in traits_attr.split(",") if t.strip()]
+        trait_names = [t.strip() for t in traits_attr.split(",") if t.strip()]
 
         link = card.select_one("a.mini-link")
         url = f"https://www.method.gg{link['href']}" if link else None
         image_elem = card.select_one("img")
         image_url = image_elem["src"] if image_elem else None
 
-        unit_id = (link["href"].split("/")[-1] if link else name).lower().replace(" ", "-")
+        unit_id = (
+            link["href"].split("/")[-1] if link else name
+        ).lower().replace(" ", "-")
 
         details = fetch_unit_details(url) if url else {}
+
+        faction_ids = [cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f]
+        trait_ids = [cats["trait"].get(t, t.lower().replace(" ", "-")) for t in trait_names]
+        type_id = cats["type"].get(unit_type, unit_type.lower())
+        speed_id = cats["speed"].get(speed_val, speed_val.lower()) if speed_val else None
 
         unit_data = {
             "id": unit_id,
             "name": name,
-            "faction": faction,
-            "type": unit_type,
+            "faction_ids": faction_ids,
+            "type_id": type_id,
             "cost": cost,
             "image": image_url,
             "damage": damage,
             "health": health,
             "dps": dps,
-            "speed": speed,
-            "traits": traits,
+            "speed_id": speed_id,
+            "trait_ids": trait_ids,
             "details": details,
         }
 

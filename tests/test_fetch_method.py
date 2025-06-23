@@ -19,7 +19,14 @@ def test_fetch_units_writes_json(tmp_path):
     mock_response = Mock(status_code=200, text=html)
     with patch("scripts.fetch_method.requests.get", return_value=mock_response):
         out_file = tmp_path / "units.json"
-        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
+        dummy_details = {
+            "core_trait": {},
+            "stats": {},
+            "traits": [],
+            "talents": [],
+            "advanced_info": "info",
+            "army_bonus_slots": ["Cycle"],
+        }
         with patch.object(fetch_method, "OUT_PATH", out_file), \
              patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()

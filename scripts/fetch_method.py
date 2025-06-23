@@ -9,21 +9,40 @@ CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
 
 
 def load_categories() -> dict:
-    """Return mappings from English category names to their IDs."""
+    """Return mappings for category lookups.
+
+    Besides the existing English name-to-ID maps, the returned dictionary
+    contains a ``trait_desc`` mapping from trait IDs to their English
+    descriptions.  ``CATEGORIES_PATH`` must point to the JSON file with the
+    category definitions.
+    """
 
     if not CATEGORIES_PATH.exists():
-        return {"faction": {}, "type": {}, "trait": {}, "speed": {}}
+        return {
+            "faction": {},
+            "type": {},
+            "trait": {},
+            "speed": {},
+            "trait_desc": {},
+        }
+
     with open(CATEGORIES_PATH, encoding="utf-8") as f:
         data = json.load(f)
 
     def to_map(items):
         return {item["names"]["en"]: item["id"] for item in items}
 
+    trait_desc = {
+        item["id"]: item.get("descriptions", {}).get("en")
+        for item in data.get("traits", [])
+    }
+
     return {
         "faction": to_map(data.get("factions", [])),
         "type": to_map(data.get("types", [])),
         "trait": to_map(data.get("traits", [])),
         "speed": to_map(data.get("speeds", [])),
+        "trait_desc": trait_desc,
     }
 
 
@@ -35,9 +54,10 @@ def fetch_unit_details(url: str) -> dict:
 
     The returned dictionary contains the sections ``core_trait``,
     ``stats``, ``traits``, ``talents`` and ``advanced_info`` extracted
-    from the detail page.  If present, the optional ``army_bonus_slots``
-    field lists the available army bonus slots for the bottom row and
-    those lines are removed from ``advanced_info``.
+    from the detail page. ``traits`` now contains only trait IDs which are
+    resolved via :func:`load_categories`. If present, the optional
+    ``army_bonus_slots`` field lists the available army bonus slots for the
+    bottom row and those lines are removed from ``advanced_info``.
     """
 
     response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -89,13 +109,12 @@ def fetch_unit_details(url: str) -> dict:
     traits_section = find_section("Traits")
     traits = []
     if traits_section:
+        cat_map = load_categories()["trait"]
         for tile in traits_section.select(".mini-trait-tile"):
             name_elem = tile.select_one(".detail-info")
-            desc_elem = tile.select_one(".mini-talent__description")
             name = name_elem.get_text(strip=True) if name_elem else None
-            desc = desc_elem.get_text(strip=True) if desc_elem else None
             if name:
-                traits.append({"name": name, "description": desc})
+                traits.append(cat_map.get(name, name.lower().replace(" ", "-")))
     if traits:
         details["traits"] = traits
 

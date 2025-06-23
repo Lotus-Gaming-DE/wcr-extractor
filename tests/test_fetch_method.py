@@ -23,8 +23,16 @@ def test_fetch_units_writes_json(tmp_path):
         "factions": [{"id": "alliance", "names": {"en": "Alliance"}}],
         "types": [{"id": "troop", "names": {"en": "Troop"}}],
         "traits": [
-            {"id": "melee", "names": {"en": "Melee"}},
-            {"id": "one-target", "names": {"en": "One-Target"}},
+            {
+                "id": "melee",
+                "names": {"en": "Melee"},
+                "descriptions": {"en": "Attacks enemies at close range."},
+            },
+            {
+                "id": "one-target",
+                "names": {"en": "One-Target"},
+                "descriptions": {"en": "Attacks a single enemy at a time."},
+            },
         ],
         "speeds": [{"id": "slow", "names": {"en": "Slow"}}],
     }
@@ -128,3 +136,31 @@ def test_fetch_unit_details_army_bonus_slots_removed():
         "Without a Wildcard slot, Cairne cannot buff\nShockwave applies a 1-second Stun"
     )
     assert "Available army bonus slots" not in details["advanced_info"]
+
+
+def test_fetch_unit_details_returns_trait_ids():
+    html = """
+        <div class=\"mini-section\">
+            <h2>Traits</h2>
+            <div class=\"mini-trait-tile\">
+                <div class=\"detail-info\">Tank</div>
+                <div class=\"mini-talent__description\">High health unit.</div>
+            </div>
+        </div>
+    """
+    mock_response = Mock(status_code=200, text=html)
+
+    with patch("scripts.fetch_method.requests.get", return_value=mock_response), \
+         patch(
+             "scripts.fetch_method.load_categories",
+             return_value={
+                 "faction": {},
+                 "type": {},
+                 "trait": {"Tank": "tank"},
+                 "speed": {},
+                 "trait_desc": {"tank": "desc"},
+             },
+         ):
+        details = fetch_method.fetch_unit_details("url")
+
+    assert details["traits"] == ["tank"]

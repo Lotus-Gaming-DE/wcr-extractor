@@ -33,6 +33,14 @@ def test_fetch_units_writes_json(tmp_path):
         cat_file = tmp_path / "categories.json"
         cat_file.write_text(json.dumps(categories))
         dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
+        dummy_details = {
+            "core_trait": {},
+            "stats": {},
+            "traits": [],
+            "talents": [],
+            "advanced_info": "info",
+            "army_bonus_slots": ["Cycle"],
+        }
         with patch.object(fetch_method, "OUT_PATH", out_file), \
              patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
              patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):

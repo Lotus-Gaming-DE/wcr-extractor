@@ -35,6 +35,25 @@ Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
 
 Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Dateien
 `data/units.json` und `data/categories.json` automatisch aktualisiert.
+    "speed": "Slow",
+    "traits": ["Melee", "One-Target"],
+    "details": {
+      "core_trait": {},
+      "stats": {},
+      "traits": [],
+      "talents": [],
+      "advanced_info": "...",
+      "army_bonus_slots": []
+    }
+  }
+]
+```
+
+Das optionale Feld `army_bonus_slots` enthält eine Liste der Boni, die eine
+Einheit in der unteren Reihe des Armeefensters gewähren kann, sofern diese
+Information auf der Detailseite vorhanden ist.
+
+Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei `data/units.json` automatisch aktualisiert.
 
 ## Tests
 

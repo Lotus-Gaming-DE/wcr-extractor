@@ -258,6 +258,21 @@ def fetch_units():
 
         all_units.append(unit_data)
 
+    existing_names = {}
+    if OUT_PATH.exists():
+        try:
+            with open(OUT_PATH, encoding="utf-8") as f:
+                for unit in json.load(f):
+                    existing_names[unit.get("id")] = unit.get("names", {})
+        except (json.JSONDecodeError, OSError):
+            existing_names = {}
+
+    for unit in all_units:
+        old_names = existing_names.get(unit["id"], {})
+        for lang, text in old_names.items():
+            if lang != "en" and lang not in unit["names"]:
+                unit["names"][lang] = text
+
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(all_units, f, indent=2, ensure_ascii=False)

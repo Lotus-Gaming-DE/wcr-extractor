@@ -81,3 +81,29 @@ def test_fetch_units_handles_missing_speed(tmp_path, speed_value):
             data = json.loads(Path(out_file).read_text(encoding="utf-8"))
 
     assert data[0]["speed"] is None
+
+
+def test_fetch_unit_details_army_bonus_slots_removed():
+    html = """
+        <div class=\"mini-section\">
+            <h2>Advanced Mini Information</h2>
+            <div class=\"mini-content\">
+                <p>Available army bonus slots for the bottom row</p>
+                <p>Cycle</p>
+                <p>Tank</p>
+                <p>Without a Wildcard slot, Cairne cannot buff</p>
+                <p>Shockwave applies a 1-second Stun</p>
+            </div>
+        </div>
+    """
+
+    mock_response = Mock(status_code=200, text=html)
+
+    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+        details = fetch_method.fetch_unit_details("url")
+
+    assert details["army_bonus_slots"] == ["Cycle", "Tank"]
+    assert details["advanced_info"] == (
+        "Without a Wildcard slot, Cairne cannot buff\nShockwave applies a 1-second Stun"
+    )
+    assert "Available army bonus slots" not in details["advanced_info"]

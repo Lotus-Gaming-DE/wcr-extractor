@@ -65,7 +65,7 @@ def test_fetch_units_writes_json(tmp_path):
 
 
 @pytest.mark.parametrize("speed_value", ["", "Znull"])
-def test_fetch_units_handles_missing_speed(tmp_path, speed_value):
+def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
     html = f"""
         <div class=\"mini-wrapper\" data-name=\"Spell\" data-family=\"Beast\" data-type=\"Spell\" data-cost=\"1\" data-damage=\"0\" data-health=\"0\" data-dps=\"0\" data-speed=\"{speed_value}\" data-traits=\"\">
             <a class=\"mini-link\" href=\"/warcraft-rumble/minis/spell\"></a>
@@ -80,7 +80,28 @@ def test_fetch_units_handles_missing_speed(tmp_path, speed_value):
             fetch_method.fetch_units()
             data = json.loads(Path(out_file).read_text(encoding="utf-8"))
 
-    assert data[0]["speed"] is None
+    assert data[0]["speed_id"] is None
+
+
+@pytest.mark.parametrize("speed_value", ["", "Znull"])
+def test_speed_id_is_none_when_speed_empty_or_znull(tmp_path, speed_value):
+    """Ensure speed_id is None when the speed attribute is empty or 'Znull'."""
+    html = f"""
+        <div class=\"mini-wrapper\" data-name=\"Spell\" data-family=\"Beast\" da
+ta-type=\"Spell\" data-cost=\"1\" data-damage=\"0\" data-health=\"0\" data-dps=\"0\" data-speed=\"{speed_value}\" data-traits=\"\">
+            <a class=\"mini-link\" href=\"/warcraft-rumble/minis/spell\"></a>
+        </div>
+    """
+    mock_response = Mock(status_code=200, text=html)
+    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+        out_file = tmp_path / "units.json"
+        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
+        with patch.object(fetch_method, "OUT_PATH", out_file), \
+             patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
+            fetch_method.fetch_units()
+            data = json.loads(Path(out_file).read_text(encoding="utf-8"))
+
+    assert data[0]["speed_id"] is None
 
 
 def test_fetch_unit_details_army_bonus_slots_removed():

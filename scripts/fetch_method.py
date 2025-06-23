@@ -93,15 +93,17 @@ def fetch_unit_details(url: str) -> dict:
     ``traits``, ``talents`` and ``advanced_info`` extracted from the detail
     page. ``core_trait`` stores ``attack_id`` and ``type_id`` which reference
     trait IDs from ``data/categories.json``. ``traits`` contains only trait IDs
-    which are resolved via
-    :func:`load_categories`.  Talent names and descriptions are stored as
-    language dictionaries, e.g. ``{"name": {"en": "Fresh Meat"}}``.  If
-    present, the optional ``army_bonus_slots`` field lists the available army
-    bonus slots for the bottom row and those lines are removed from
-    ``advanced_info``.  Wenn beim Abruf ein Netzwerkfehler auftritt,
-    gibt die Funktion eine Fehlermeldung aus und beendet das Skript
+    which are resolved via category lookups.  The mapping data is loaded once at
+    the start of this function using :func:`load_categories`.  Talent names and
+    descriptions are stored as language dictionaries, e.g. ``{"name": {"en":
+    "Fresh Meat"}}``.  If present, the optional ``army_bonus_slots`` field lists
+    the available army bonus slots for the bottom row and those lines are
+    removed from ``advanced_info``.  Wenn beim Abruf ein Netzwerkfehler
+    auftritt, gibt die Funktion eine Fehlermeldung aus und beendet das Skript
     mit dem Rückgabecode ``1``.
     """
+
+    cats = load_categories()
 
     try:
         response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -123,7 +125,7 @@ def fetch_unit_details(url: str) -> dict:
     info_section = find_section("Mini Information")
     core_trait = {}
     if info_section:
-        cat_map = load_categories()["trait"]
+        cat_map = cats["trait"]
         for tile in info_section.select(".mini-details-tile"):
             label_elem = tile.select_one(".detail-label")
             info_elem = tile.select_one(".detail-info")
@@ -158,7 +160,7 @@ def fetch_unit_details(url: str) -> dict:
     traits_section = find_section("Traits")
     traits = []
     if traits_section:
-        cat_map = load_categories()["trait"]
+        cat_map = cats["trait"]
         for tile in traits_section.select(".mini-trait-tile"):
             name_elem = tile.select_one(".detail-info")
             name = name_elem.get_text(strip=True) if name_elem else None

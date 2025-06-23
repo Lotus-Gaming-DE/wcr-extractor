@@ -38,7 +38,7 @@ Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
       "stats": {},
       "traits": [],
       "talents": [
-        {"names": {"en": "Hold the Line"}, "description": "..."}
+        {"name": {"en": "Hold the Line"}, "description": {"en": "..."}}
       ],
       "advanced_info": "..."
     }
@@ -70,8 +70,9 @@ pytest
 The names of factions and other categories are defined in
 `data/categories.json`.  Each entry contains an `id` and a `names`
 dictionary with language codes as keys. Traits also have a `descriptions`
-dictionary for localized text. Unit and talent names in `data/units.json`
-use the same structure.
+dictionary for localized text. Unit names and talent information in
+`data/units.json` use the same structure: every textual field is a dictionary
+keyed by language code.
 The scraper currently reads only the English values (`names["en"]`), but you can
 provide translations for additional languages. To contribute a translation,
 add a new language key anywhere a `names` or `descriptions` dictionary appears.

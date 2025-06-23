@@ -79,8 +79,7 @@ pytest
 The names of factions and other categories are defined in
 `data/categories.json`. Each entry contains an `id` and a `names`
 dictionary with language codes as keys. Split-leader factions such as
-"Alliance & Undead" appear here as well and use the color of the first
-listed faction. Traits also have a `descriptions` dictionary for
+"Alliance & Undead" appear here as well. Traits also have a `descriptions` dictionary for
 localized text. Unit names and talent information in `data/units.json`
 use the same structure: every textual field is a dictionary keyed by
 language code.

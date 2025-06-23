@@ -5,99 +5,77 @@
       "names": {
         "en": "Alliance",
         "de": "Allianz"
-      },
-      "icon": "/images/rumble/alliance.png",
-      "color": "#4A8CC4"
+      }
     },
     {
       "id": "beast",
       "names": {
         "en": "Beast",
         "de": "Bestien"
-      },
-      "icon": "/images/rumble/beast.png",
-      "color": "#B55F28"
+      }
     },
     {
       "id": "blackrock",
       "names": {
         "en": "Blackrock",
         "de": "Schwarzfels"
-      },
-      "icon": "/images/rumble/blackrock.png",
-      "color": "#628C8E"
+      }
     },
     {
       "id": "cenarion",
       "names": {
         "en": "Cenarion",
         "de": "Cenarion"
-      },
-      "icon": "/images/rumble/cenarion.png",
-      "color": "#007D65"
+      }
     },
     {
       "id": "horde",
       "names": {
         "en": "Horde",
         "de": "Horde"
-      },
-      "icon": "/images/rumble/horde.png",
-      "color": "#BC3A28"
+      }
     },
     {
       "id": "undead",
       "names": {
         "en": "Undead",
         "de": "Untote"
-      },
-      "icon": "/images/rumble/undead.png",
-      "color": "#6D59A7"
+      }
     },
     {
       "id": "alliance-undead",
       "names": {
         "en": "Alliance & Undead",
         "de": "Allianz & Untote"
-      },
-      "icon": "/images/rumble/wcr_alliance_undead.png",
-      "color": "#4A8CC4"
+      }
     },
     {
       "id": "alliance-cenarion",
       "names": {
         "en": "Alliance & Cenarion",
         "de": "Allianz & Cenarion"
-      },
-      "icon": "/images/rumble/wcr_alliance_cenarion.png",
-      "color": "#4A8CC4"
+      }
     },
     {
       "id": "horde-blackrock",
       "names": {
         "en": "Horde & Blackrock",
         "de": "Horde & Schwarzfels"
-      },
-      "icon": "/images/rumble/wcr_horde_blackrock.png",
-      "color": "#BC3A28"
+      }
     },
     {
       "id": "undead-horde",
       "names": {
         "en": "Undead & Horde",
         "de": "Untote & Horde"
-      },
-      "icon": "/images/rumble/wcr_undead_horde.png",
-      "color": "#6D59A7"
+      }
     },
     {
       "id": "undead-beast",
       "names": {
         "en": "Undead & Beast",
         "de": "Untote & Bestien"
-      },
-      "icon": "/images/rumble/wcr_undead_beast.png",
-      "color": "#6D59A7"
+      }
     }
   ],
   "types": [

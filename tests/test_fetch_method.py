@@ -200,7 +200,7 @@ def test_fetch_units_updates_changed_unit(tmp_path):
     assert data[0]["names"]["de"] == "Fußmann"
 
 
-@pytest.mark.parametrize("speed_value", ["", "Znull"])
+@pytest.mark.parametrize("speed_value", ["", "Znull", fetch_method.STATIONARY])
 def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
     html = f"""
         <div class=\"mini-wrapper\" data-name=\"Spell\" data-family=\"Beast\" data-type=\"Spell\" data-cost=\"1\" data-damage=\"0\" data-health=\"0\" data-dps=\"0\" data-speed=\"{speed_value}\" data-traits=\"\">
@@ -217,11 +217,14 @@ def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
             data = json.loads(Path(out_file).read_text(encoding="utf-8"))
 
     assert data[0]["speed_id"] is None
+    if speed_value == fetch_method.STATIONARY:
+        assert data[0]["speed"] is None
 
 
-@pytest.mark.parametrize("speed_value", ["", "Znull"])
+@pytest.mark.parametrize("speed_value", ["", "Znull", fetch_method.STATIONARY])
 def test_speed_id_is_none_when_speed_empty_or_znull(tmp_path, speed_value):
-    """Ensure speed_id is None when the speed attribute is empty or 'Znull'."""
+    """Ensure speed_id is None when the speed attribute is empty, 'Znull' or
+    'Stationary'."""
     html = f"""
         <div class=\"mini-wrapper\" data-name=\"Spell\" data-family=\"Beast\" da
 ta-type=\"Spell\" data-cost=\"1\" data-damage=\"0\" data-health=\"0\" data-dps=\"0\" data-speed=\"{speed_value}\" data-traits=\"\">

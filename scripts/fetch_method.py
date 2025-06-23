@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 BASE_URL = "https://www.method.gg/warcraft-rumble/minis"
 OUT_PATH = Path(__file__).parent.parent / "data" / "units.json"
 CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
+# Value used by method.gg for immobile units.
+STATIONARY = "Stationary"
 
 
 def load_categories() -> dict:
@@ -248,7 +250,13 @@ def fetch_units():
         dps_attr = card.get("data-dps")
         dps = float(dps_attr) if dps_attr is not None else None
         speed_attr = card.get("data-speed")
-        if speed_attr is None or speed_attr.strip() == "" or speed_attr == "Znull":
+        if (
+            speed_attr is None
+            or speed_attr.strip() == ""
+            or speed_attr == "Znull"
+            or speed_attr == STATIONARY
+        ):
+            # Treat "Stationary" the same as a missing speed value
             speed = None
             speed_val = None
         else:

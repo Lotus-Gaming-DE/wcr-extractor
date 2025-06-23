@@ -12,9 +12,11 @@ Bei allen anderen Einheiten wird `speed` weggelassen; stattdessen verweist
 ## Setup
 
 ```bash
-pip install -r requirements.txt
+./setup.sh
 python scripts/fetch_method.py
 ```
+
+`setup.sh` installiert alle Abhängigkeiten aus `requirements.txt`.
 
 Der Aufruf legt die Dateien `data/units.json` und `data/categories.json` an.
 `units.json` enthält die Minis, `categories.json` die verfügbaren Fraktionen,

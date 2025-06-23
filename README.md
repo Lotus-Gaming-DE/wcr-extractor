@@ -17,6 +17,8 @@ python scripts/fetch_method.py
 ```
 
 Der Aufruf legt die Dateien `data/units.json` und `data/categories.json` an.
+Tritt beim Abrufen ein Netzwerkfehler auf, gibt das Skript eine
+Fehlermeldung aus und beendet sich mit dem Code `1`.
 `units.json` enthält die Minis, `categories.json` die verfügbaren Fraktionen,
 Typen, Traits und Geschwindigkeiten.
 Ein Auszug aus `units.json` könnte folgendermaßen aussehen:

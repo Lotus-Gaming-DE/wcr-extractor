@@ -3,6 +3,7 @@
 Dieses Skript lädt die aktuellen Minis von [method.gg](https://www.method.gg/warcraft-rumble/minis) und speichert sie als `data/units.json`.
 Der Scraper durchsucht dabei alle `div.mini-wrapper` Elemente auf der Minis-Liste und ruft anschließend die jeweilige Detailseite auf.
 Neben den Basisdaten werden dadurch auch Schaden, Lebenspunkte, DPS, Geschwindigkeit und Traits sowie weitere Detailinformationen erfasst.
+Zauber oder stationäre Einheiten besitzen keinen Geschwindigkeitswert; das Feld wird in der JSON-Datei daher als `null` gespeichert.
 
 ## Setup
 

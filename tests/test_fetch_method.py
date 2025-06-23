@@ -41,7 +41,6 @@ def test_fetch_units_writes_json(tmp_path):
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
         cat_file.write_text(json.dumps(categories))
-        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
         dummy_details = {
             "core_trait": {},
             "stats": {},
@@ -58,7 +57,7 @@ def test_fetch_units_writes_json(tmp_path):
 
     assert data == [{
         "id": "footman",
-        "name": "Footman",
+        "names": {"en": "Footman"},
         "faction_ids": ["alliance"],
         "type_id": "troop",
         "cost": 2,

@@ -52,12 +52,14 @@ def load_categories() -> dict:
 def fetch_unit_details(url: str) -> dict:
     """Fetch and parse the details page for a single mini.
 
-    The returned dictionary contains the sections ``core_trait``,
-    ``stats``, ``traits``, ``talents`` and ``advanced_info`` extracted
-    from the detail page. ``traits`` now contains only trait IDs which are
-    resolved via :func:`load_categories`. If present, the optional
-    ``army_bonus_slots`` field lists the available army bonus slots for the
-    bottom row and those lines are removed from ``advanced_info``.
+    The returned dictionary contains the sections ``core_trait``, ``stats``,
+    ``traits``, ``talents`` and ``advanced_info`` extracted from the detail
+    page. ``traits`` now contains only trait IDs which are resolved via
+    :func:`load_categories`.  Talent names and descriptions are stored as
+    language dictionaries, e.g. ``{"name": {"en": "Fresh Meat"}}``.  If
+    present, the optional ``army_bonus_slots`` field lists the available army
+    bonus slots for the bottom row and those lines are removed from
+    ``advanced_info``.
     """
 
     response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -128,7 +130,10 @@ def fetch_unit_details(url: str) -> dict:
             name = name_elem.get_text(strip=True) if name_elem else None
             desc = desc_elem.get_text(strip=True) if desc_elem else None
             if name:
-                talents.append({"name": name, "description": desc})
+                talent = {"name": {"en": name}}
+                if desc:
+                    talent["description"] = {"en": desc}
+                talents.append(talent)
     if talents:
         details["talents"] = talents
 
@@ -169,8 +174,9 @@ def fetch_units():
     Spells oder stationäre Einheiten besitzen keinen ``speed``-Wert; in der
     JSON-Datei erscheint dieser daher als ``null``. Ihr ``speed_id``-Eintrag
     ist ebenfalls ``null``.
-    All collected units are written to ``data/units.json``. The file will be
-    created if it does not exist and overwritten otherwise.
+    The unit name is stored in a ``names`` dictionary with language codes as
+    keys.  All collected units are written to ``data/units.json``. The file
+    will be created if it does not exist and overwritten otherwise.
 
     Returns:
         None: Writes the JSON file and prints progress information.
@@ -231,7 +237,7 @@ def fetch_units():
 
         unit_data = {
             "id": unit_id,
-            "name": name,
+            "names": {"en": name},
             "faction_ids": faction_ids,
             "type_id": type_id,
             "cost": cost,

@@ -35,7 +35,9 @@ def fetch_unit_details(url: str) -> dict:
 
     The returned dictionary contains the sections ``core_trait``,
     ``stats``, ``traits``, ``talents`` and ``advanced_info`` extracted
-    from the detail page.
+    from the detail page.  If present, the optional ``army_bonus_slots``
+    field lists the available army bonus slots for the bottom row and
+    those lines are removed from ``advanced_info``.
     """
 
     response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -129,7 +131,7 @@ def fetch_unit_details(url: str) -> dict:
                             break
                         army_bonus_slots.append(next_line.strip())
                         j += 1
-                    del lines[idx + 1 : j]
+                    del lines[idx:j]
                     break
             details["advanced_info"] = "\n".join(lines)
             if army_bonus_slots:

@@ -9,16 +9,12 @@ CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
 
 
 def load_categories() -> dict:
-    """Return the parsed contents of :data:`CATEGORIES_PATH`."""
+    """Return mappings from English category names to their IDs."""
 
     if not CATEGORIES_PATH.exists():
-        return {}
+        return {"faction": {}, "type": {}, "trait": {}, "speed": {}}
     with open(CATEGORIES_PATH, encoding="utf-8") as f:
-        return json.load(f)
-
-
-def build_category_maps(data: dict) -> dict:
-    """Create lookup tables mapping English names to IDs."""
+        data = json.load(f)
 
     def to_map(items):
         return {item["names"]["en"]: item["id"] for item in items}
@@ -31,34 +27,7 @@ def build_category_maps(data: dict) -> dict:
     }
 
 
-def _build_en_lookup(data: dict) -> dict:
-    """Create a mapping from English name to the full entry."""
 
-    lookup = {}
-    for items in data.values():
-        if isinstance(items, list):
-            for item in items:
-                en = item.get("names", {}).get("en")
-                if en:
-                    lookup[en] = item
-    return lookup
-
-
-_CATEGORIES = load_categories()
-_CATEGORY_MAPS = build_category_maps(_CATEGORIES)
-_CATEGORIES_EN = _build_en_lookup(_CATEGORIES)
-
-
-def resolve_category(name: str) -> str:
-    """Return the English label for a category.
-
-    If the category is unknown, the input string is returned.  This allows
-    additional languages to be added in ``categories.json`` without changing
-    the scraping logic.
-    """
-
-    entry = _CATEGORIES_EN.get(name)
-    return entry["names"]["en"] if entry else name
 
 
 def fetch_unit_details(url: str) -> dict:
@@ -193,14 +162,11 @@ def fetch_units():
     soup = BeautifulSoup(response.text, "html.parser")
     cards = soup.select("div.mini-wrapper")
 
-    cats = build_category_maps(load_categories())
+    cats = load_categories()
     all_units = []
 
     for card in cards:
         name = card.get("data-name", "?")
-        raw_factions = card.get("data-family", "?")
-        factions = [resolve_category(f.strip()) for f in raw_factions.split(',') if f.strip()]
-        faction = ",".join(factions)
         faction_val = card.get("data-family", "?")
         unit_type = card.get("data-type", "?")
         cost_attr = card.get("data-cost")

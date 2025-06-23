@@ -22,8 +22,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Melee"
+        "attack_id": "aoe",
+        "type_id": "melee"
       },
       "stats": {
         "Area Damage": "170",
@@ -89,8 +89,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "850",
@@ -155,8 +155,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "25",
@@ -223,8 +223,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Area Damage": "100",
@@ -301,8 +301,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Area Damage": "75",
@@ -369,8 +369,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,100",
@@ -446,8 +446,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "230",
@@ -510,8 +510,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,040",
@@ -589,8 +589,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Flying"
+        "attack_id": "aoe",
+        "type_id": "flying"
       },
       "stats": {
         "Area Damage": "250",
@@ -658,8 +658,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Area Damage": "500",
@@ -722,8 +722,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "140",
@@ -799,8 +799,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,100",
@@ -866,8 +866,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Melee"
+        "attack_id": "aoe",
+        "type_id": "melee"
       },
       "stats": {
         "Area Damage": "176",
@@ -946,8 +946,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "600",
@@ -1035,8 +1035,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Area Damage": "150",
@@ -1100,8 +1100,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "416",
@@ -1176,8 +1176,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Radius": "5",
@@ -1237,8 +1237,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Flying"
+        "attack_id": "aoe",
+        "type_id": "flying"
       },
       "stats": {
         "Health": "460",
@@ -1306,8 +1306,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,600",
@@ -1374,8 +1374,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "540",
@@ -1439,8 +1439,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "220",
@@ -1500,8 +1500,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Area Damage": "160",
@@ -1565,8 +1565,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "120",
@@ -1633,8 +1633,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Flying"
+        "attack_id": "squad",
+        "type_id": "flying"
       },
       "stats": {
         "Health": "30",
@@ -1699,8 +1699,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Flying"
+        "attack_id": "aoe",
+        "type_id": "flying"
       },
       "stats": {
         "Area Damage": "320",
@@ -1764,8 +1764,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Night Elf Damage": "200",
@@ -1833,8 +1833,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "370",
@@ -1903,8 +1903,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Root DPS": "24",
@@ -1976,8 +1976,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Siege Specialist"
+        "attack_id": "one-target",
+        "type_id": "siege-specialist"
       },
       "stats": {
         "Health": "1,175",
@@ -2044,8 +2044,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Radius": "4",
@@ -2110,8 +2110,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "1,330",
@@ -2188,8 +2188,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Radius": "5",
@@ -2251,8 +2251,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Flying"
+        "attack_id": "one-target",
+        "type_id": "flying"
       },
       "stats": {
         "Health": "180",
@@ -2321,8 +2321,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Melee"
+        "attack_id": "aoe",
+        "type_id": "melee"
       },
       "stats": {
         "Area Damage": "120",
@@ -2388,8 +2388,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "350",
@@ -2455,8 +2455,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "220",
@@ -2522,8 +2522,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "800",
@@ -2588,8 +2588,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "480",
@@ -2657,8 +2657,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Flying"
+        "attack_id": "one-target",
+        "type_id": "flying"
       },
       "stats": {
         "Health": "1,300",
@@ -2725,8 +2725,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,600",
@@ -2803,8 +2803,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "DPS": "64",
@@ -2869,8 +2869,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Melee"
+        "attack_id": "aoe",
+        "type_id": "melee"
       },
       "stats": {
         "Area Damage": "130",
@@ -2934,8 +2934,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Siege Specialist"
+        "attack_id": "squad",
+        "type_id": "siege-specialist"
       },
       "stats": {
         "Health": "120",
@@ -2998,8 +2998,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,496",
@@ -3073,8 +3073,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Flying"
+        "attack_id": "one-target",
+        "type_id": "flying"
       },
       "stats": {
         "Health": "170",
@@ -3138,8 +3138,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Flying"
+        "attack_id": "squad",
+        "type_id": "flying"
       },
       "stats": {
         "Health": "150",
@@ -3202,8 +3202,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,480",
@@ -3270,8 +3270,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Melee"
+        "attack_id": "aoe",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,550",
@@ -3337,8 +3337,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Melee"
+        "attack_id": "aoe",
+        "type_id": "melee"
       },
       "stats": {
         "Area Damage": "190",
@@ -3411,8 +3411,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Area Damage": "150",
@@ -3475,8 +3475,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "150",
@@ -3542,8 +3542,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "250",
@@ -3618,8 +3618,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Area Damage": "200",
@@ -3681,8 +3681,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Melee"
+        "attack_id": "aoe",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "744",
@@ -3760,8 +3760,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "1,116",
@@ -3853,8 +3853,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "210",
@@ -3922,8 +3922,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "3,500",
@@ -3989,8 +3989,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "68",
@@ -4057,8 +4057,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Speed": "Medium",
@@ -4128,8 +4128,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Ranged"
+        "attack_id": "squad",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "80",
@@ -4195,8 +4195,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "400",
@@ -4262,8 +4262,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "160",
@@ -4329,8 +4329,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "160",
@@ -4406,8 +4406,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "4,660",
@@ -4483,8 +4483,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,000",
@@ -4562,8 +4562,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "300",
@@ -4629,8 +4629,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Radius": "5",
@@ -4691,8 +4691,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "300",
@@ -4760,8 +4760,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "840",
@@ -4825,8 +4825,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "170",
@@ -4893,8 +4893,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "700",
@@ -4964,8 +4964,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Melee"
+        "attack_id": "aoe",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,800",
@@ -5043,8 +5043,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "350",
@@ -5109,8 +5109,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Flying"
+        "attack_id": "aoe",
+        "type_id": "flying"
       },
       "stats": {
         "Rend Dmg": "140",
@@ -5189,8 +5189,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "170",
@@ -5258,8 +5258,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "200",
@@ -5326,8 +5326,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "200",
@@ -5391,8 +5391,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Spell"
+        "attack_id": "aoe",
+        "type_id": "spell"
       },
       "stats": {
         "Radius": "5",
@@ -5456,8 +5456,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Melee"
+        "attack_id": "aoe",
+        "type_id": "melee"
       },
       "stats": {
         "Area Damage": "360",
@@ -5534,8 +5534,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "380",
@@ -5602,8 +5602,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,720",
@@ -5669,8 +5669,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "2,600",
@@ -5736,8 +5736,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "500",
@@ -5814,8 +5814,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Ranged"
+        "attack_id": "one-target",
+        "type_id": "ranged"
       },
       "stats": {
         "Health": "1,500",
@@ -5884,8 +5884,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "700",
@@ -5962,8 +5962,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "225",
@@ -6028,8 +6028,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Flying"
+        "attack_id": "squad",
+        "type_id": "flying"
       },
       "stats": {
         "Health": "25",
@@ -6094,8 +6094,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Melee"
+        "attack_id": "squad",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,720",
@@ -6161,8 +6161,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "1,340",
@@ -6229,8 +6229,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "Squad",
-        "type": "Flying"
+        "attack_id": "squad",
+        "type_id": "flying"
       },
       "stats": {
         "Area Damage": "110",
@@ -6297,8 +6297,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Ranged"
+        "attack_id": "aoe",
+        "type_id": "ranged"
       },
       "stats": {
         "Area Damage": "100",
@@ -6365,8 +6365,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "One-Target",
-        "type": "Melee"
+        "attack_id": "one-target",
+        "type_id": "melee"
       },
       "stats": {
         "Health": "340",
@@ -6433,8 +6433,8 @@
     ],
     "details": {
       "core_trait": {
-        "attack": "AoE",
-        "type": "Flying"
+        "attack_id": "aoe",
+        "type_id": "flying"
       },
       "traits": [
         "cycle",

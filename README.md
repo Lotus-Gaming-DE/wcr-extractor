@@ -6,6 +6,8 @@ Neben den Basisdaten werden dadurch auch Schaden, Lebenspunkte, DPS,
 Geschwindigkeit und Traits sowie weitere Detailinformationen erfasst.
 Zauber oder stationäre Einheiten besitzen keinen Geschwindigkeitswert; in der
 JSON-Datei erscheint daher `"speed": null` und auch `speed_id` ist `null`.
+Falls das `speed`-Attribut den Wert `"Stationary"` trägt, wird dieser ebenfalls
+als fehlende Geschwindigkeit behandelt und als `null` gespeichert.
 Bei allen anderen Einheiten wird `speed` weggelassen; stattdessen verweist
 `speed_id` auf die jeweilige Geschwindigkeitskategorie.
 

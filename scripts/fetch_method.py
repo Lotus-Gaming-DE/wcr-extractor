@@ -100,13 +100,16 @@ def fetch_unit_details(url: str) -> dict:
     the available army bonus slots for the bottom row and those lines are
     removed from ``advanced_info``.  Wenn beim Abruf ein Netzwerkfehler
     auftritt, gibt die Funktion eine Fehlermeldung aus und beendet das Skript
-    mit dem Rückgabecode ``1``.
+    mit dem Rückgabecode ``1``. Alle HTTP-Anfragen verwenden einen Timeout von
+    zehn Sekunden, um bei ausbleibender Antwort nicht ewig zu blockieren.
     """
 
     cats = load_categories()
 
     try:
-        response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+        response = requests.get(
+            url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+        )
     except requests.RequestException as exc:
         print(f"Fehler beim Abrufen von {url}: {exc}")
         sys.exit(1)
@@ -229,7 +232,8 @@ def fetch_units():
     output; unchanged entries remain verbatim. The file will be created if it
     does not exist.  Scheitert der Abruf der Übersichtsseite aufgrund
     eines Netzwerkfehlers, gibt die Funktion eine Meldung aus und beendet
-    das Skript mit dem Rückgabecode ``1``.
+    das Skript mit dem Rückgabecode ``1``. Die HTTP-Abfrage der Übersichtsseite
+    bricht nach zehn Sekunden ohne Antwort mit einem Timeout ab.
 
     Returns:
         None: Writes the JSON file and prints progress information.
@@ -237,7 +241,9 @@ def fetch_units():
 
     print(f"Starte Abruf von {BASE_URL} ...")
     try:
-        response = requests.get(BASE_URL, headers={"User-Agent": "Mozilla/5.0"})
+        response = requests.get(
+            BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+        )
     except requests.RequestException as exc:
         print(f"Fehler beim Abrufen von {BASE_URL}: {exc}")
         sys.exit(1)

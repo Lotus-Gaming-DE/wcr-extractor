@@ -38,7 +38,9 @@ def test_fetch_units_writes_json(tmp_path):
         "speeds": [{"id": "slow", "names": {"en": "Slow"}}],
     }
 
-    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+    with patch(
+        "scripts.fetch_method.requests.get", return_value=mock_response
+    ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
         cat_file.write_text(json.dumps(categories))
@@ -54,6 +56,11 @@ def test_fetch_units_writes_json(tmp_path):
              patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
              patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
+            mock_get.assert_called_once_with(
+                fetch_method.BASE_URL,
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=10,
+            )
             data = json.loads(Path(out_file).read_text(encoding="utf-8"))
 
     assert data == [{
@@ -89,7 +96,9 @@ def test_fetch_units_preserves_translations(tmp_path):
         "speeds": [{"id": "slow", "names": {"en": "Slow"}}],
     }
 
-    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+    with patch(
+        "scripts.fetch_method.requests.get", return_value=mock_response
+    ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
         cat_file.write_text(json.dumps(categories))
@@ -103,6 +112,11 @@ def test_fetch_units_preserves_translations(tmp_path):
              patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
              patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
+            mock_get.assert_called_once_with(
+                fetch_method.BASE_URL,
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=10,
+            )
             data = json.loads(out_file.read_text(encoding="utf-8"))
 
     assert data[0]["names"] == {"en": "Footman", "de": "Fußmann"}
@@ -125,7 +139,9 @@ def test_fetch_units_skips_unchanged_unit(tmp_path):
         "speeds": [{"id": "slow", "names": {"en": "Slow"}}],
     }
 
-    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+    with patch(
+        "scripts.fetch_method.requests.get", return_value=mock_response
+    ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
         cat_file.write_text(json.dumps(categories))
@@ -149,6 +165,11 @@ def test_fetch_units_skips_unchanged_unit(tmp_path):
              patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
              patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
+            mock_get.assert_called_once_with(
+                fetch_method.BASE_URL,
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=10,
+            )
             data = json.loads(out_file.read_text(encoding="utf-8"))
 
     assert data == existing
@@ -171,7 +192,9 @@ def test_fetch_units_updates_changed_unit(tmp_path):
         "speeds": [{"id": "slow", "names": {"en": "Slow"}}],
     }
 
-    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+    with patch(
+        "scripts.fetch_method.requests.get", return_value=mock_response
+    ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
         cat_file.write_text(json.dumps(categories))
@@ -195,6 +218,11 @@ def test_fetch_units_updates_changed_unit(tmp_path):
              patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
              patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
+            mock_get.assert_called_once_with(
+                fetch_method.BASE_URL,
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=10,
+            )
             data = json.loads(out_file.read_text(encoding="utf-8"))
 
     assert data[0]["cost"] == 3
@@ -209,12 +237,19 @@ def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
         </div>
     """
     mock_response = Mock(status_code=200, text=html)
-    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+    with patch(
+        "scripts.fetch_method.requests.get", return_value=mock_response
+    ) as mock_get:
         out_file = tmp_path / "units.json"
         dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
         with patch.object(fetch_method, "OUT_PATH", out_file), \
              patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
+            mock_get.assert_called_once_with(
+                fetch_method.BASE_URL,
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=10,
+            )
             data = json.loads(Path(out_file).read_text(encoding="utf-8"))
 
     assert data[0]["speed_id"] is None
@@ -233,12 +268,19 @@ ta-type=\"Spell\" data-cost=\"1\" data-damage=\"0\" data-health=\"0\" data-dps=\
         </div>
     """
     mock_response = Mock(status_code=200, text=html)
-    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+    with patch(
+        "scripts.fetch_method.requests.get", return_value=mock_response
+    ) as mock_get:
         out_file = tmp_path / "units.json"
         dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
         with patch.object(fetch_method, "OUT_PATH", out_file), \
              patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
+            mock_get.assert_called_once_with(
+                fetch_method.BASE_URL,
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=10,
+            )
             data = json.loads(Path(out_file).read_text(encoding="utf-8"))
 
     assert data[0]["speed_id"] is None
@@ -260,8 +302,13 @@ def test_fetch_unit_details_army_bonus_slots_removed():
 
     mock_response = Mock(status_code=200, text=html)
 
-    with patch("scripts.fetch_method.requests.get", return_value=mock_response):
+    with patch(
+        "scripts.fetch_method.requests.get", return_value=mock_response
+    ) as mock_get:
         details = fetch_method.fetch_unit_details("url")
+        mock_get.assert_called_once_with(
+            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+        )
 
     assert details["army_bonus_slots"] == ["Cycle", "Tank"]
     assert details["advanced_info"] == (
@@ -282,7 +329,9 @@ def test_fetch_unit_details_returns_trait_ids():
     """
     mock_response = Mock(status_code=200, text=html)
 
-    with patch("scripts.fetch_method.requests.get", return_value=mock_response), \
+    with patch(
+        "scripts.fetch_method.requests.get", return_value=mock_response
+    ) as mock_get, \
          patch(
              "scripts.fetch_method.load_categories",
              return_value={
@@ -294,6 +343,9 @@ def test_fetch_unit_details_returns_trait_ids():
              },
          ):
         details = fetch_method.fetch_unit_details("url")
+        mock_get.assert_called_once_with(
+            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+        )
 
     assert details["traits"] == ["tank"]
 
@@ -314,10 +366,12 @@ def test_fetch_unit_details_core_trait_ids():
     """
     mock_response = Mock(status_code=200, text=html)
 
-    with patch("scripts.fetch_method.requests.get", return_value=mock_response), \
-         patch(
-             "scripts.fetch_method.load_categories",
-             return_value={
+    with patch(
+        "scripts.fetch_method.requests.get", return_value=mock_response
+    ) as mock_get, \
+        patch(
+            "scripts.fetch_method.load_categories",
+            return_value={
                  "faction": {},
                  "type": {},
                  "trait": {"AoE": "aoe", "Melee": "melee"},
@@ -326,6 +380,9 @@ def test_fetch_unit_details_core_trait_ids():
              },
          ):
         details = fetch_method.fetch_unit_details("url")
+        mock_get.assert_called_once_with(
+            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+        )
 
     assert details["core_trait"] == {"attack_id": "aoe", "type_id": "melee"}
 
@@ -335,9 +392,12 @@ def test_fetch_unit_details_request_exception(capsys):
     with patch(
         "scripts.fetch_method.requests.get",
         side_effect=requests.RequestException("boom"),
-    ):
+    ) as mock_get:
         with pytest.raises(SystemExit) as excinfo:
             fetch_method.fetch_unit_details("url")
+        mock_get.assert_called_once_with(
+            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+        )
     assert excinfo.value.code == 1
     assert "Fehler beim Abrufen" in capsys.readouterr().out
 
@@ -347,8 +407,13 @@ def test_fetch_units_request_exception(tmp_path, capsys):
     with patch(
         "scripts.fetch_method.requests.get",
         side_effect=requests.RequestException("boom"),
-    ), patch.object(fetch_method, "OUT_PATH", tmp_path / "units.json"):
+    ) as mock_get, patch.object(fetch_method, "OUT_PATH", tmp_path / "units.json"):
         with pytest.raises(SystemExit) as excinfo:
             fetch_method.fetch_units()
+        mock_get.assert_called_once_with(
+            fetch_method.BASE_URL,
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=10,
+        )
     assert excinfo.value.code == 1
     assert "Fehler beim Abrufen" in capsys.readouterr().out

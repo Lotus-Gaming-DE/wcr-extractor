@@ -1,17 +1,10 @@
-[
-  {"id": "alliance", "names": {"en": "Alliance", "de": ""}},
-  {"id": "horde", "names": {"en": "Horde", "de": ""}},
-  {"id": "blackrock", "names": {"en": "Blackrock", "de": ""}},
-  {"id": "beast", "names": {"en": "Beast", "de": ""}},
-  {"id": "cenarion", "names": {"en": "Cenarion", "de": ""}},
-  {"id": "undead", "names": {"en": "Undead", "de": ""}}
-]
 {
   "factions": [
     {
       "id": "alliance",
       "names": {
-        "en": "Alliance"
+        "en": "Alliance",
+        "de": ""
       },
       "icon": "/images/rumble/alliance.png",
       "color": "#4A8CC4"
@@ -19,7 +12,8 @@
     {
       "id": "beast",
       "names": {
-        "en": "Beast"
+        "en": "Beast",
+        "de": ""
       },
       "icon": "/images/rumble/beast.png",
       "color": "#B55F28"
@@ -27,7 +21,8 @@
     {
       "id": "blackrock",
       "names": {
-        "en": "Blackrock"
+        "en": "Blackrock",
+        "de": ""
       },
       "icon": "/images/rumble/blackrock.png",
       "color": "#628C8E"
@@ -35,7 +30,8 @@
     {
       "id": "cenarion",
       "names": {
-        "en": "Cenarion"
+        "en": "Cenarion",
+        "de": ""
       },
       "icon": "/images/rumble/cenarion.png",
       "color": "#007D65"
@@ -43,7 +39,8 @@
     {
       "id": "horde",
       "names": {
-        "en": "Horde"
+        "en": "Horde",
+        "de": ""
       },
       "icon": "/images/rumble/horde.png",
       "color": "#BC3A28"
@@ -51,7 +48,8 @@
     {
       "id": "undead",
       "names": {
-        "en": "Undead"
+        "en": "Undead",
+        "de": ""
       },
       "icon": "/images/rumble/undead.png",
       "color": "#6D59A7"
@@ -61,19 +59,22 @@
     {
       "id": "leader",
       "names": {
-        "en": "Leader"
+        "en": "Leader",
+        "de": ""
       }
     },
     {
       "id": "spell",
       "names": {
-        "en": "Spell"
+        "en": "Spell",
+        "de": ""
       }
     },
     {
       "id": "troop",
       "names": {
-        "en": "Troop"
+        "en": "Troop",
+        "de": ""
       }
     }
   ],
@@ -81,361 +82,421 @@
     {
       "id": "ambush",
       "names": {
-        "en": "Ambush"
+        "en": "Ambush",
+        "de": ""
       }
     },
     {
       "id": "aoe",
       "names": {
-        "en": "AoE"
+        "en": "AoE",
+        "de": ""
       }
     },
     {
       "id": "armored",
       "names": {
-        "en": "Armored"
+        "en": "Armored",
+        "de": ""
       }
     },
     {
       "id": "army-of-the-dead",
       "names": {
-        "en": "Army of the Dead"
+        "en": "Army of the Dead",
+        "de": ""
       }
     },
     {
       "id": "attack-root",
       "names": {
-        "en": "Attack Root"
+        "en": "Attack Root",
+        "de": ""
       }
     },
     {
       "id": "attack-stun",
       "names": {
-        "en": "Attack Stun"
+        "en": "Attack Stun",
+        "de": ""
       }
     },
     {
       "id": "blast-wave",
       "names": {
-        "en": "Blast Wave"
+        "en": "Blast Wave",
+        "de": ""
       }
     },
     {
       "id": "bloodlust",
       "names": {
-        "en": "Bloodlust"
+        "en": "Bloodlust",
+        "de": ""
       }
     },
     {
       "id": "bombard",
       "names": {
-        "en": "Bombard"
+        "en": "Bombard",
+        "de": ""
       }
     },
     {
       "id": "brambles",
       "names": {
-        "en": "Brambles"
+        "en": "Brambles",
+        "de": ""
       }
     },
     {
       "id": "braze",
       "names": {
-        "en": "Braze"
+        "en": "Braze",
+        "de": ""
       }
     },
     {
       "id": "cannibalize",
       "names": {
-        "en": "Cannibalize"
+        "en": "Cannibalize",
+        "de": ""
       }
     },
     {
       "id": "carrion",
       "names": {
-        "en": "Carrion"
+        "en": "Carrion",
+        "de": ""
       }
     },
     {
       "id": "charge",
       "names": {
-        "en": "Charge"
+        "en": "Charge",
+        "de": ""
       }
     },
     {
       "id": "cheap-shot",
       "names": {
-        "en": "Cheap Shot"
+        "en": "Cheap Shot",
+        "de": ""
       }
     },
     {
       "id": "cycle",
       "names": {
-        "en": "Cycle"
+        "en": "Cycle",
+        "de": ""
       }
     },
     {
       "id": "detect",
       "names": {
-        "en": "Detect"
+        "en": "Detect",
+        "de": ""
       }
     },
     {
       "id": "dismounts",
       "names": {
-        "en": "Dismounts"
+        "en": "Dismounts",
+        "de": ""
       }
     },
     {
       "id": "earth-and-moon",
       "names": {
-        "en": "Earth and Moon"
+        "en": "Earth and Moon",
+        "de": ""
       }
     },
     {
       "id": "eclipse",
       "names": {
-        "en": "Eclipse"
+        "en": "Eclipse",
+        "de": ""
       }
     },
     {
       "id": "elemental",
       "names": {
-        "en": "Elemental"
+        "en": "Elemental",
+        "de": ""
       }
     },
     {
       "id": "fast",
       "names": {
-        "en": "Fast"
+        "en": "Fast",
+        "de": ""
       }
     },
     {
       "id": "fiery-weapon-enchant",
       "names": {
-        "en": "Fiery Weapon Enchant"
+        "en": "Fiery Weapon Enchant",
+        "de": ""
       }
     },
     {
       "id": "flying",
       "names": {
-        "en": "Flying"
+        "en": "Flying",
+        "de": ""
       }
     },
     {
       "id": "frost",
       "names": {
-        "en": "Frost"
+        "en": "Frost",
+        "de": ""
       }
     },
     {
       "id": "fury",
       "names": {
-        "en": "Fury"
+        "en": "Fury",
+        "de": ""
       }
     },
     {
       "id": "hatching",
       "names": {
-        "en": "Hatching"
+        "en": "Hatching",
+        "de": ""
       }
     },
     {
       "id": "haunt",
       "names": {
-        "en": "Haunt"
+        "en": "Haunt",
+        "de": ""
       }
     },
     {
       "id": "heal-squadmate",
       "names": {
-        "en": "Heal Squadmate"
+        "en": "Heal Squadmate",
+        "de": ""
       }
     },
     {
       "id": "healer",
       "names": {
-        "en": "Healer"
+        "en": "Healer",
+        "de": ""
       }
     },
     {
       "id": "hook",
       "names": {
-        "en": "Hook"
+        "en": "Hook",
+        "de": ""
       }
     },
     {
       "id": "lichborne",
       "names": {
-        "en": "Lichborne"
+        "en": "Lichborne",
+        "de": ""
       }
     },
     {
       "id": "longshot",
       "names": {
-        "en": "Longshot"
+        "en": "Longshot",
+        "de": ""
       }
     },
     {
       "id": "mak'gora",
       "names": {
-        "en": "Mak'gora"
+        "en": "Mak'gora",
+        "de": ""
       }
     },
     {
       "id": "melee",
       "names": {
-        "en": "Melee"
+        "en": "Melee",
+        "de": ""
       }
     },
     {
       "id": "miner",
       "names": {
-        "en": "Miner"
+        "en": "Miner",
+        "de": ""
       }
     },
     {
       "id": "nullify",
       "names": {
-        "en": "Nullify"
+        "en": "Nullify",
+        "de": ""
       }
     },
     {
       "id": "one-target",
       "names": {
-        "en": "One-Target"
+        "en": "One-Target",
+        "de": ""
       }
     },
     {
       "id": "percent-damage",
       "names": {
-        "en": "Percent Damage"
+        "en": "Percent Damage",
+        "de": ""
       }
     },
     {
       "id": "poisonous",
       "names": {
-        "en": "Poisonous"
+        "en": "Poisonous",
+        "de": ""
       }
     },
     {
       "id": "possession",
       "names": {
-        "en": "Possession"
+        "en": "Possession",
+        "de": ""
       }
     },
     {
       "id": "ranged",
       "names": {
-        "en": "Ranged"
+        "en": "Ranged",
+        "de": ""
       }
     },
     {
       "id": "rebirth",
       "names": {
-        "en": "Rebirth"
+        "en": "Rebirth",
+        "de": ""
       }
     },
     {
       "id": "remorseless-winter",
       "names": {
-        "en": "Remorseless Winter"
+        "en": "Remorseless Winter",
+        "de": ""
       }
     },
     {
       "id": "resistant",
       "names": {
-        "en": "Resistant"
+        "en": "Resistant",
+        "de": ""
       }
     },
     {
       "id": "revive",
       "names": {
-        "en": "Revive"
+        "en": "Revive",
+        "de": ""
       }
     },
     {
       "id": "seeds-of-protection",
       "names": {
-        "en": "Seeds of Protection"
+        "en": "Seeds of Protection",
+        "de": ""
       }
     },
     {
       "id": "shapeshift",
       "names": {
-        "en": "Shapeshift"
+        "en": "Shapeshift",
+        "de": ""
       }
     },
     {
       "id": "siege-damage",
       "names": {
-        "en": "Siege Damage"
+        "en": "Siege Damage",
+        "de": ""
       }
     },
     {
       "id": "siege-specialist",
       "names": {
-        "en": "Siege Specialist"
+        "en": "Siege Specialist",
+        "de": ""
       }
     },
     {
       "id": "spell",
       "names": {
-        "en": "Spell"
+        "en": "Spell",
+        "de": ""
       }
     },
     {
       "id": "squad",
       "names": {
-        "en": "Squad"
+        "en": "Squad",
+        "de": ""
       }
     },
     {
       "id": "stealth",
       "names": {
-        "en": "Stealth"
+        "en": "Stealth",
+        "de": ""
       }
     },
     {
       "id": "summoner",
       "names": {
-        "en": "Summoner"
+        "en": "Summoner",
+        "de": ""
       }
     },
     {
       "id": "surge",
       "names": {
-        "en": "Surge"
+        "en": "Surge",
+        "de": ""
       }
     },
     {
       "id": "tank",
       "names": {
-        "en": "Tank"
+        "en": "Tank",
+        "de": ""
       }
     },
     {
       "id": "tranquility",
       "names": {
-        "en": "Tranquility"
+        "en": "Tranquility",
+        "de": ""
       }
     },
     {
       "id": "unbound",
       "names": {
-        "en": "Unbound"
+        "en": "Unbound",
+        "de": ""
       }
     },
     {
       "id": "unstoppable",
       "names": {
-        "en": "Unstoppable"
+        "en": "Unstoppable",
+        "de": ""
       }
     },
     {
       "id": "vulnerable",
       "names": {
-        "en": "Vulnerable"
+        "en": "Vulnerable",
+        "de": ""
       }
     }
   ],
@@ -443,37 +504,36 @@
     {
       "id": "fast",
       "names": {
-        "en": "Fast"
+        "en": "Fast",
+        "de": ""
       }
     },
     {
       "id": "med-fast",
       "names": {
-        "en": "Med-Fast"
+        "en": "Med-Fast",
+        "de": ""
       }
     },
     {
       "id": "medium",
       "names": {
-        "en": "Medium"
+        "en": "Medium",
+        "de": ""
       }
     },
     {
       "id": "slow",
       "names": {
-        "en": "Slow"
+        "en": "Slow",
+        "de": ""
       }
     },
     {
       "id": "stationary",
       "names": {
-        "en": "Stationary"
-      }
-    },
-    {
-      "id": "znull",
-      "names": {
-        "en": "Znull"
+        "en": "Stationary",
+        "de": ""
       }
     }
   ]

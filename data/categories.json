@@ -4,7 +4,7 @@
       "id": "alliance",
       "names": {
         "en": "Alliance",
-        "de": ""
+        "de": "Allianz"
       },
       "icon": "/images/rumble/alliance.png",
       "color": "#4A8CC4"
@@ -13,7 +13,7 @@
       "id": "beast",
       "names": {
         "en": "Beast",
-        "de": ""
+        "de": "Bestien"
       },
       "icon": "/images/rumble/beast.png",
       "color": "#B55F28"
@@ -22,7 +22,7 @@
       "id": "blackrock",
       "names": {
         "en": "Blackrock",
-        "de": ""
+        "de": "Schwarzfels"
       },
       "icon": "/images/rumble/blackrock.png",
       "color": "#628C8E"
@@ -31,7 +31,7 @@
       "id": "cenarion",
       "names": {
         "en": "Cenarion",
-        "de": ""
+        "de": "Cenarion"
       },
       "icon": "/images/rumble/cenarion.png",
       "color": "#007D65"
@@ -40,7 +40,7 @@
       "id": "horde",
       "names": {
         "en": "Horde",
-        "de": ""
+        "de": "Horde"
       },
       "icon": "/images/rumble/horde.png",
       "color": "#BC3A28"
@@ -49,7 +49,7 @@
       "id": "undead",
       "names": {
         "en": "Undead",
-        "de": ""
+        "de": "Untote"
       },
       "icon": "/images/rumble/undead.png",
       "color": "#6D59A7"
@@ -60,21 +60,21 @@
       "id": "leader",
       "names": {
         "en": "Leader",
-        "de": ""
+        "de": "Anführer"
       }
     },
     {
       "id": "spell",
       "names": {
         "en": "Spell",
-        "de": ""
+        "de": "Zauber"
       }
     },
     {
       "id": "troop",
       "names": {
         "en": "Troop",
-        "de": ""
+        "de": "Truppe"
       }
     }
   ],
@@ -83,7 +83,7 @@
       "id": "ambush",
       "names": {
         "en": "Ambush",
-        "de": ""
+        "de": "Hinterhalt"
       },
       "descriptions": {
         "en": "Double damage when attacking from Stealth."
@@ -93,7 +93,7 @@
       "id": "aoe",
       "names": {
         "en": "AoE",
-        "de": ""
+        "de": "Flächenschaden"
       },
       "descriptions": {
         "en": "Deals area damage."
@@ -103,7 +103,7 @@
       "id": "armored",
       "names": {
         "en": "Armored",
-        "de": ""
+        "de": "Gepanzert"
       },
       "descriptions": {
         "en": "50% Physical damage reduction."
@@ -113,7 +113,7 @@
       "id": "army-of-the-dead",
       "names": {
         "en": "Army of the Dead",
-        "de": ""
+        "de": "Armee der Toten"
       },
       "descriptions": {
         "en": "Periodically summon a Frosty Footman, max 2 (13 second cooldown)."
@@ -123,7 +123,7 @@
       "id": "attack-root",
       "names": {
         "en": "Attack Root",
-        "de": ""
+        "de": "Angriff verwurzelt"
       },
       "descriptions": {
         "en": "Attack roots enemies, immobilising them."
@@ -133,7 +133,7 @@
       "id": "attack-stun",
       "names": {
         "en": "Attack Stun",
-        "de": ""
+        "de": "Angriff betäubt"
       },
       "descriptions": {
         "en": "Attack stuns enemies."
@@ -143,7 +143,7 @@
       "id": "blast-wave",
       "names": {
         "en": "Blast Wave",
-        "de": ""
+        "de": "Schockwelle"
       },
       "descriptions": {
         "en": "While in play, replaces this Mini in your deck with the Blast Wave spell: Burn and knock back enemies near buildings."
@@ -153,7 +153,7 @@
       "id": "bloodlust",
       "names": {
         "en": "Bloodlust",
-        "de": ""
+        "de": "Kampfrausch"
       },
       "descriptions": {
         "en": "Bloodlusted units gain +33% movement and attack speed."
@@ -163,7 +163,7 @@
       "id": "bombard",
       "names": {
         "en": "Bombard",
-        "de": ""
+        "de": "Bombardement"
       },
       "descriptions": {
         "en": "Attacks ground enemies only."
@@ -173,7 +173,7 @@
       "id": "brambles",
       "names": {
         "en": "Brambles",
-        "de": ""
+        "de": "Dornenranken"
       },
       "descriptions": {
         "en": "Enemies are Rooted for 3 seconds when first entering an AOE around Cenarius."
@@ -183,7 +183,7 @@
       "id": "braze",
       "names": {
         "en": "Braze",
-        "de": ""
+        "de": "Verstärkung"
       },
       "descriptions": {
         "en": "Attach to the nearest allied Tower or Base, shielding it."
@@ -193,7 +193,7 @@
       "id": "cannibalize",
       "names": {
         "en": "Cannibalize",
-        "de": ""
+        "de": "Kannibalisieren"
       },
       "descriptions": {
         "en": "Consumes fallen enemy gold residue to regain health."
@@ -203,7 +203,7 @@
       "id": "carrion",
       "names": {
         "en": "Carrion",
-        "de": ""
+        "de": "Aas"
       },
       "descriptions": {
         "en": "Multiplies from slain enemies."
@@ -213,7 +213,7 @@
       "id": "charge",
       "names": {
         "en": "Charge",
-        "de": ""
+        "de": "Sturmangriff"
       },
       "descriptions": {
         "en": "Charges to enemy targets."
@@ -223,7 +223,7 @@
       "id": "cheap-shot",
       "names": {
         "en": "Cheap Shot",
-        "de": ""
+        "de": "Fieser Schlag"
       },
       "descriptions": {
         "en": "Attacking from Stealth will Stun enemy units."
@@ -233,7 +233,7 @@
       "id": "cycle",
       "names": {
         "en": "Cycle",
-        "de": ""
+        "de": "Zyklus"
       },
       "descriptions": {
         "en": "2 cost or less for more Mini plays!"
@@ -243,7 +243,7 @@
       "id": "detect",
       "names": {
         "en": "Detect",
-        "de": ""
+        "de": "Aufspüren"
       },
       "descriptions": {
         "en": "Detect and attack Sealthed enemies."
@@ -253,7 +253,7 @@
       "id": "dismounts",
       "names": {
         "en": "Dismounts",
-        "de": ""
+        "de": "Absetzen"
       },
       "descriptions": {
         "en": "Dismounts the mount/vehicle after it's destroyed."
@@ -263,7 +263,7 @@
       "id": "earth-and-moon",
       "names": {
         "en": "Earth and Moon",
-        "de": ""
+        "de": "Erde und Mond"
       },
       "descriptions": {
         "en": "Alternates between Starfall and Entangling Roots whenever a Cenarion Mini is played."
@@ -273,7 +273,7 @@
       "id": "eclipse",
       "names": {
         "en": "Eclipse",
-        "de": ""
+        "de": "Finsternis"
       },
       "descriptions": {
         "en": "Changing forms whenever a Cenarion Mini is played"
@@ -283,7 +283,7 @@
       "id": "elemental",
       "names": {
         "en": "Elemental",
-        "de": ""
+        "de": "Elementar"
       },
       "descriptions": {
         "en": "Deals elemental damage. Strong vs Armored."
@@ -293,7 +293,7 @@
       "id": "fast",
       "names": {
         "en": "Fast",
-        "de": ""
+        "de": "Schnell"
       },
       "descriptions": {
         "en": "Fastest moving units."
@@ -303,7 +303,7 @@
       "id": "fiery-weapon-enchant",
       "names": {
         "en": "Fiery Weapon Enchant",
-        "de": ""
+        "de": "Feurige Waffenverzauberung"
       },
       "descriptions": {
         "en": "Non-Elemental allies apply Burn on hit."
@@ -313,7 +313,7 @@
       "id": "flying",
       "names": {
         "en": "Flying",
-        "de": ""
+        "de": "Fliegend"
       },
       "descriptions": {
         "en": "Can move over ground obstacles."
@@ -323,7 +323,7 @@
       "id": "frost",
       "names": {
         "en": "Frost",
-        "de": ""
+        "de": "Frost"
       },
       "descriptions": {
         "en": "Frost damage slows enemy movement and attack speed."
@@ -333,7 +333,7 @@
       "id": "fury",
       "names": {
         "en": "Fury",
-        "de": ""
+        "de": "Raserei"
       },
       "descriptions": {
         "en": "Attack speed increases while in combat."
@@ -343,7 +343,7 @@
       "id": "hatching",
       "names": {
         "en": "Hatching",
-        "de": ""
+        "de": "Schlüpfen"
       },
       "descriptions": {
         "en": "Unit hatches into final form when attacked."
@@ -353,7 +353,7 @@
       "id": "haunt",
       "names": {
         "en": "Haunt",
-        "de": ""
+        "de": "Heimsuchung"
       },
       "descriptions": {
         "en": "Summon a Banshee on death."
@@ -363,7 +363,7 @@
       "id": "heal-squadmate",
       "names": {
         "en": "Heal Squadmate",
-        "de": ""
+        "de": "Truppkamerad heilen"
       },
       "descriptions": {
         "en": "Mountaineer periodically heals his Bear companion."
@@ -373,7 +373,7 @@
       "id": "healer",
       "names": {
         "en": "Healer",
-        "de": ""
+        "de": "Heiler"
       },
       "descriptions": {
         "en": "Heals friendly units."
@@ -383,7 +383,7 @@
       "id": "hook",
       "names": {
         "en": "Hook",
-        "de": ""
+        "de": "Haken"
       },
       "descriptions": {
         "en": "Hooks ranged enemies."
@@ -393,7 +393,7 @@
       "id": "lichborne",
       "names": {
         "en": "Lichborne",
-        "de": ""
+        "de": "Lichform"
       },
       "descriptions": {
         "en": "Alliance Minis summon a Skeleton Mage on death."
@@ -403,7 +403,7 @@
       "id": "longshot",
       "names": {
         "en": "Longshot",
-        "de": ""
+        "de": "Weitschuss"
       },
       "descriptions": {
         "en": "Outranges EVERYTHING else."
@@ -413,7 +413,7 @@
       "id": "mak'gora",
       "names": {
         "en": "Mak'gora",
-        "de": ""
+        "de": "Mak'gora"
       },
       "descriptions": {
         "en": "Challenges the first enemy in sight to a duel, revealing their true strength if victorious. Gains more power the closer the duel was."
@@ -423,7 +423,7 @@
       "id": "melee",
       "names": {
         "en": "Melee",
-        "de": ""
+        "de": "Nahkampf"
       },
       "descriptions": {
         "en": "Attacks enemies at close range."
@@ -433,7 +433,7 @@
       "id": "miner",
       "names": {
         "en": "Miner",
-        "de": ""
+        "de": "Minenarbeiter"
       },
       "descriptions": {
         "en": "Mines Gold from Gold Veins."
@@ -443,7 +443,7 @@
       "id": "nullify",
       "names": {
         "en": "Nullify",
-        "de": ""
+        "de": "Neutralisieren"
       },
       "descriptions": {
         "en": "Immune to Poison, Burn, Stun and slowing effects."
@@ -453,7 +453,7 @@
       "id": "one-target",
       "names": {
         "en": "One-Target",
-        "de": ""
+        "de": "Einzelziel"
       },
       "descriptions": {
         "en": "Attacks a single enemy at a time."
@@ -463,7 +463,7 @@
       "id": "percent-damage",
       "names": {
         "en": "Percent Damage",
-        "de": ""
+        "de": "Prozentualer Schaden"
       },
       "descriptions": {
         "en": "Deals a percentage of the target's health in damage."
@@ -473,7 +473,7 @@
       "id": "poisonous",
       "names": {
         "en": "Poisonous",
-        "de": ""
+        "de": "Giftig"
       },
       "descriptions": {
         "en": "Deals stacking damage over time. Strong vs Armored."
@@ -483,7 +483,7 @@
       "id": "possession",
       "names": {
         "en": "Possession",
-        "de": ""
+        "de": "Übernahme"
       },
       "descriptions": {
         "en": "Takes control of an enemy unit."
@@ -493,7 +493,7 @@
       "id": "ranged",
       "names": {
         "en": "Ranged",
-        "de": ""
+        "de": "Fernkampf"
       },
       "descriptions": {
         "en": "Attacks from a distance."
@@ -503,7 +503,7 @@
       "id": "rebirth",
       "names": {
         "en": "Rebirth",
-        "de": ""
+        "de": "Wiedergeburt"
       },
       "descriptions": {
         "en": "One-time self resurrection. Reborn at 50% life."
@@ -513,7 +513,7 @@
       "id": "remorseless-winter",
       "names": {
         "en": "Remorseless Winter",
-        "de": ""
+        "de": "Gnadenloser Winter"
       },
       "descriptions": {
         "en": "Apply Frost to nearby enemies."
@@ -523,7 +523,7 @@
       "id": "resistant",
       "names": {
         "en": "Resistant",
-        "de": ""
+        "de": "Resistent"
       },
       "descriptions": {
         "en": "Takes 50% less Elemental damage."
@@ -533,7 +533,7 @@
       "id": "revive",
       "names": {
         "en": "Revive",
-        "de": ""
+        "de": "Wiederbeleben"
       },
       "descriptions": {
         "en": "Squadmates resurrect each other."
@@ -543,7 +543,7 @@
       "id": "seeds-of-protection",
       "names": {
         "en": "Seeds of Protection",
-        "de": ""
+        "de": "Samen des Schutzes"
       },
       "descriptions": {
         "en": "Protect a nearby Building or Meeting Stone from the next 3 attacks. Ability has one charge."
@@ -553,7 +553,7 @@
       "id": "shapeshift",
       "names": {
         "en": "Shapeshift",
-        "de": ""
+        "de": "Gestaltwandlung"
       },
       "descriptions": {
         "en": "Morphs into an alternate form at 50% health."
@@ -563,7 +563,7 @@
       "id": "siege-damage",
       "names": {
         "en": "Siege Damage",
-        "de": ""
+        "de": "Belagerungsschaden"
       },
       "descriptions": {
         "en": "Double damage vs Towers."
@@ -573,7 +573,7 @@
       "id": "siege-specialist",
       "names": {
         "en": "Siege Specialist",
-        "de": ""
+        "de": "Belagerungsspezialist"
       },
       "descriptions": {
         "en": "Deals increased damage to Towers."
@@ -583,7 +583,7 @@
       "id": "spell",
       "names": {
         "en": "Spell",
-        "de": ""
+        "de": "Zauber"
       },
       "descriptions": {
         "en": "A spell that affects the battlefield."
@@ -593,7 +593,7 @@
       "id": "squad",
       "names": {
         "en": "Squad",
-        "de": ""
+        "de": "Trupp"
       },
       "descriptions": {
         "en": "Summons multiple units as a group."
@@ -603,7 +603,7 @@
       "id": "stealth",
       "names": {
         "en": "Stealth",
-        "de": ""
+        "de": "Verstohlenheit"
       },
       "descriptions": {
         "en": "Invisible to enemies until it attacks or is damaged."
@@ -613,7 +613,7 @@
       "id": "summoner",
       "names": {
         "en": "Summoner",
-        "de": ""
+        "de": "Beschwörer"
       },
       "descriptions": {
         "en": "Summons additional units."
@@ -623,7 +623,7 @@
       "id": "surge",
       "names": {
         "en": "Surge",
-        "de": ""
+        "de": "Ansturm"
       },
       "descriptions": {
         "en": "Consumes remaining Gold when deployed."
@@ -633,7 +633,7 @@
       "id": "tank",
       "names": {
         "en": "Tank",
-        "de": ""
+        "de": "Tank"
       },
       "descriptions": {
         "en": "High health unit. Good at soaking Tower damage."
@@ -643,7 +643,7 @@
       "id": "tranquility",
       "names": {
         "en": "Tranquility",
-        "de": ""
+        "de": "Gelassenheit"
       },
       "descriptions": {
         "en": "Nearby allies are healed over time."
@@ -653,7 +653,7 @@
       "id": "unbound",
       "names": {
         "en": "Unbound",
-        "de": ""
+        "de": "Ungebunden"
       },
       "descriptions": {
         "en": "Can be played anywhere on the map."
@@ -663,7 +663,7 @@
       "id": "unstoppable",
       "names": {
         "en": "Unstoppable",
-        "de": ""
+        "de": "Unaufhaltsam"
       },
       "descriptions": {
         "en": "Cannot be slowed, rooted, frozen stunned, or polymorphed."
@@ -673,7 +673,7 @@
       "id": "vulnerable",
       "names": {
         "en": "Vulnerable",
-        "de": ""
+        "de": "Verwundbar"
       },
       "descriptions": {
         "en": "Unit takes 2x elemental damage."
@@ -685,35 +685,35 @@
       "id": "fast",
       "names": {
         "en": "Fast",
-        "de": ""
+        "de": "Schnell"
       }
     },
     {
       "id": "med-fast",
       "names": {
         "en": "Med-Fast",
-        "de": ""
+        "de": "Mittelschnell"
       }
     },
     {
       "id": "medium",
       "names": {
         "en": "Medium",
-        "de": ""
+        "de": "Mittel"
       }
     },
     {
       "id": "slow",
       "names": {
         "en": "Slow",
-        "de": ""
+        "de": "Langsam"
       }
     },
     {
       "id": "stationary",
       "names": {
         "en": "Stationary",
-        "de": ""
+        "de": "Stationär"
       }
     }
   ]

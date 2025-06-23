@@ -84,6 +84,9 @@
       "names": {
         "en": "Ambush",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Double damage when attacking from Stealth."
       }
     },
     {
@@ -91,6 +94,9 @@
       "names": {
         "en": "AoE",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Deals area damage."
       }
     },
     {
@@ -98,6 +104,9 @@
       "names": {
         "en": "Armored",
         "de": ""
+      },
+      "descriptions": {
+        "en": "50% Physical damage reduction."
       }
     },
     {
@@ -105,6 +114,9 @@
       "names": {
         "en": "Army of the Dead",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Periodically summon a Frosty Footman, max 2 (13 second cooldown)."
       }
     },
     {
@@ -112,6 +124,9 @@
       "names": {
         "en": "Attack Root",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Attack roots enemies, immobilising them."
       }
     },
     {
@@ -119,6 +134,9 @@
       "names": {
         "en": "Attack Stun",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Attack stuns enemies."
       }
     },
     {
@@ -126,6 +144,9 @@
       "names": {
         "en": "Blast Wave",
         "de": ""
+      },
+      "descriptions": {
+        "en": "While in play, replaces this Mini in your deck with the Blast Wave spell: Burn and knock back enemies near buildings."
       }
     },
     {
@@ -133,6 +154,9 @@
       "names": {
         "en": "Bloodlust",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Bloodlusted units gain +33% movement and attack speed."
       }
     },
     {
@@ -140,6 +164,9 @@
       "names": {
         "en": "Bombard",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Attacks ground enemies only."
       }
     },
     {
@@ -147,6 +174,9 @@
       "names": {
         "en": "Brambles",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Enemies are Rooted for 3 seconds when first entering an AOE around Cenarius."
       }
     },
     {
@@ -154,6 +184,9 @@
       "names": {
         "en": "Braze",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Attach to the nearest allied Tower or Base, shielding it."
       }
     },
     {
@@ -161,6 +194,9 @@
       "names": {
         "en": "Cannibalize",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Consumes fallen enemy gold residue to regain health."
       }
     },
     {
@@ -168,6 +204,9 @@
       "names": {
         "en": "Carrion",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Multiplies from slain enemies."
       }
     },
     {
@@ -175,6 +214,9 @@
       "names": {
         "en": "Charge",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Charges to enemy targets."
       }
     },
     {
@@ -182,6 +224,9 @@
       "names": {
         "en": "Cheap Shot",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Attacking from Stealth will Stun enemy units."
       }
     },
     {
@@ -189,6 +234,9 @@
       "names": {
         "en": "Cycle",
         "de": ""
+      },
+      "descriptions": {
+        "en": "2 cost or less for more Mini plays!"
       }
     },
     {
@@ -196,6 +244,9 @@
       "names": {
         "en": "Detect",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Detect and attack Sealthed enemies."
       }
     },
     {
@@ -203,6 +254,9 @@
       "names": {
         "en": "Dismounts",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Dismounts the mount/vehicle after it's destroyed."
       }
     },
     {
@@ -210,6 +264,9 @@
       "names": {
         "en": "Earth and Moon",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Alternates between Starfall and Entangling Roots whenever a Cenarion Mini is played."
       }
     },
     {
@@ -217,6 +274,9 @@
       "names": {
         "en": "Eclipse",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Changing forms whenever a Cenarion Mini is played"
       }
     },
     {
@@ -224,6 +284,9 @@
       "names": {
         "en": "Elemental",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Deals elemental damage. Strong vs Armored."
       }
     },
     {
@@ -231,6 +294,9 @@
       "names": {
         "en": "Fast",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Fastest moving units."
       }
     },
     {
@@ -238,6 +304,9 @@
       "names": {
         "en": "Fiery Weapon Enchant",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Non-Elemental allies apply Burn on hit."
       }
     },
     {
@@ -245,6 +314,9 @@
       "names": {
         "en": "Flying",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Can move over ground obstacles."
       }
     },
     {
@@ -252,6 +324,9 @@
       "names": {
         "en": "Frost",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Frost damage slows enemy movement and attack speed."
       }
     },
     {
@@ -259,6 +334,9 @@
       "names": {
         "en": "Fury",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Attack speed increases while in combat."
       }
     },
     {
@@ -266,6 +344,9 @@
       "names": {
         "en": "Hatching",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Unit hatches into final form when attacked."
       }
     },
     {
@@ -273,6 +354,9 @@
       "names": {
         "en": "Haunt",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Summon a Banshee on death."
       }
     },
     {
@@ -280,6 +364,9 @@
       "names": {
         "en": "Heal Squadmate",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Mountaineer periodically heals his Bear companion."
       }
     },
     {
@@ -287,6 +374,9 @@
       "names": {
         "en": "Healer",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Heals friendly units."
       }
     },
     {
@@ -294,6 +384,9 @@
       "names": {
         "en": "Hook",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Hooks ranged enemies."
       }
     },
     {
@@ -301,6 +394,9 @@
       "names": {
         "en": "Lichborne",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Alliance Minis summon a Skeleton Mage on death."
       }
     },
     {
@@ -308,6 +404,9 @@
       "names": {
         "en": "Longshot",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Outranges EVERYTHING else."
       }
     },
     {
@@ -315,6 +414,9 @@
       "names": {
         "en": "Mak'gora",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Challenges the first enemy in sight to a duel, revealing their true strength if victorious. Gains more power the closer the duel was."
       }
     },
     {
@@ -322,6 +424,9 @@
       "names": {
         "en": "Melee",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Attacks enemies at close range."
       }
     },
     {
@@ -329,6 +434,9 @@
       "names": {
         "en": "Miner",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Mines Gold from Gold Veins."
       }
     },
     {
@@ -336,6 +444,9 @@
       "names": {
         "en": "Nullify",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Immune to Poison, Burn, Stun and slowing effects."
       }
     },
     {
@@ -343,6 +454,9 @@
       "names": {
         "en": "One-Target",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Attacks a single enemy at a time."
       }
     },
     {
@@ -350,6 +464,9 @@
       "names": {
         "en": "Percent Damage",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Deals a percentage of the target's health in damage."
       }
     },
     {
@@ -357,6 +474,9 @@
       "names": {
         "en": "Poisonous",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Deals stacking damage over time. Strong vs Armored."
       }
     },
     {
@@ -364,6 +484,9 @@
       "names": {
         "en": "Possession",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Takes control of an enemy unit."
       }
     },
     {
@@ -371,6 +494,9 @@
       "names": {
         "en": "Ranged",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Attacks from a distance."
       }
     },
     {
@@ -378,6 +504,9 @@
       "names": {
         "en": "Rebirth",
         "de": ""
+      },
+      "descriptions": {
+        "en": "One-time self resurrection. Reborn at 50% life."
       }
     },
     {
@@ -385,6 +514,9 @@
       "names": {
         "en": "Remorseless Winter",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Apply Frost to nearby enemies."
       }
     },
     {
@@ -392,6 +524,9 @@
       "names": {
         "en": "Resistant",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Takes 50% less Elemental damage."
       }
     },
     {
@@ -399,6 +534,9 @@
       "names": {
         "en": "Revive",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Squadmates resurrect each other."
       }
     },
     {
@@ -406,6 +544,9 @@
       "names": {
         "en": "Seeds of Protection",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Protect a nearby Building or Meeting Stone from the next 3 attacks. Ability has one charge."
       }
     },
     {
@@ -413,6 +554,9 @@
       "names": {
         "en": "Shapeshift",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Morphs into an alternate form at 50% health."
       }
     },
     {
@@ -420,6 +564,9 @@
       "names": {
         "en": "Siege Damage",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Double damage vs Towers."
       }
     },
     {
@@ -427,6 +574,9 @@
       "names": {
         "en": "Siege Specialist",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Deals increased damage to Towers."
       }
     },
     {
@@ -434,6 +584,9 @@
       "names": {
         "en": "Spell",
         "de": ""
+      },
+      "descriptions": {
+        "en": "A spell that affects the battlefield."
       }
     },
     {
@@ -441,6 +594,9 @@
       "names": {
         "en": "Squad",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Summons multiple units as a group."
       }
     },
     {
@@ -448,6 +604,9 @@
       "names": {
         "en": "Stealth",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Invisible to enemies until it attacks or is damaged."
       }
     },
     {
@@ -455,6 +614,9 @@
       "names": {
         "en": "Summoner",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Summons additional units."
       }
     },
     {
@@ -462,6 +624,9 @@
       "names": {
         "en": "Surge",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Consumes remaining Gold when deployed."
       }
     },
     {
@@ -469,6 +634,9 @@
       "names": {
         "en": "Tank",
         "de": ""
+      },
+      "descriptions": {
+        "en": "High health unit. Good at soaking Tower damage."
       }
     },
     {
@@ -476,6 +644,9 @@
       "names": {
         "en": "Tranquility",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Nearby allies are healed over time."
       }
     },
     {
@@ -483,6 +654,9 @@
       "names": {
         "en": "Unbound",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Can be played anywhere on the map."
       }
     },
     {
@@ -490,6 +664,9 @@
       "names": {
         "en": "Unstoppable",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Cannot be slowed, rooted, frozen stunned, or polymorphed."
       }
     },
     {
@@ -497,6 +674,9 @@
       "names": {
         "en": "Vulnerable",
         "de": ""
+      },
+      "descriptions": {
+        "en": "Unit takes 2x elemental damage."
       }
     }
   ],

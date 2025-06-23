@@ -71,3 +71,8 @@ language key.  For example:
 
 Please keep the English text intact so the parser can continue to resolve the
 categories correctly.
+
+Trait descriptions are stored in the same file.  Each trait entry has a
+``descriptions`` object with language codes as keys.  The unit data only lists
+trait IDs in ``details['traits']``; refer to ``categories.json`` to look up the
+text.

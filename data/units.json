@@ -1,6 +1,9 @@
 [
   {
     "id": "abomination",
+    "names": {
+      "en": "Abomination"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -60,13 +63,13 @@
         }
       ],
       "advanced_info": "Melee cleave\nArc 140 degrees\nHook\n5-second cooldown\nMinimum range 3\nMaximum acquire range 9\nTargets the lowest max health Ranged enemy in range\nNoxious Presence talent\nApplies 1 stack of Poison every 3 seconds on a radius of 4\nDoes not hit flying minis\nCannonball talent\nStun radius 3.5\n5-second baseline, 0.75 seconds level modifier, 1.25 seconds minimum duration\nStun will proc whenever Abomination enters below 50% health, so it can happen again if the Abomination is healed to above 50%"
-    },
-    "names": {
-      "en": "Abomination"
     }
   },
   {
     "id": "ancient-of-war",
+    "names": {
+      "en": "Ancient of War"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -127,13 +130,13 @@
         }
       ],
       "advanced_info": "Surge Health and damage scaling\nLinear scaling per gold spent\nMultiplier per gold spent 0.23999\nFor example, a level 1 Ancient of War has 850 health when played for 1 gold, 1054 (+204) health when played for 2 gold, and 1258 (+204 more again) health when played for 3 gold"
-    },
-    "names": {
-      "en": "Ancient of War"
     }
   },
   {
     "id": "angry-chickens",
+    "names": {
+      "en": "Angry Chickens"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -193,13 +196,13 @@
         }
       ],
       "advanced_info": "Snackrifice talent\nEating a Chicken heals a Beast mini for 500\nWalking Crate talent\nMovement speed 2 (slow)\nSingle-target melee attack that deals 60 siege damage every second\nTargeting based on having to turn as little as possible\n210 health"
-    },
-    "names": {
-      "en": "Angry Chickens"
     }
   },
   {
     "id": "anub-arak",
+    "names": {
+      "en": "Anub'arak"
+    },
     "faction_ids": [
       "beast",
       "undead"
@@ -273,13 +276,13 @@
         "Unbound",
         "Undead"
       ]
-    },
-    "names": {
-      "en": "Anub'arak"
     }
   },
   {
     "id": "arcane-blast",
+    "names": {
+      "en": "Arcane Blast"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -337,13 +340,13 @@
       ],
       "advanced_info": "Like most spells, Arcane Blast deals half damage against player Barracks.\nInteraction with buffs\nEach cast of Arcane Blast is considered a separate spell, so buffs like Moonkin's +2 levels to the next spell only affect the first cast.\nOn the other hand, each cast is also considered a separate spell for positive effects, like buffing Bloodmage Thalnos.\nTorrent talent\nAdditional levels are capped at +10"
     },
-    "speed": null,
-    "names": {
-      "en": "Arcane Blast"
-    }
+    "speed": null
   },
   {
     "id": "arthas",
+    "names": {
+      "en": "Arthas"
+    },
     "faction_ids": [
       "alliance",
       "undead"
@@ -419,13 +422,13 @@
         "Unbound",
         "Undead"
       ]
-    },
-    "names": {
-      "en": "Arthas"
     }
   },
   {
     "id": "banshee",
+    "names": {
+      "en": "Banshee"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -480,13 +483,13 @@
         }
       ],
       "advanced_info": "Possession:\nThe possessed unit always acquires the Banshee's level, which can be higher or lower than the original\nBanshee ignores other Banshees and does not try to possess them\nLife Drain:\nIf Banshee cannot possess a target (boss or Barracks), it applies a damage-over-time effect instead.\nDeals 10 Elemental damage every 0.1 seconds for 10 seconds, for a total of 1000 damage.\nSoul Eruption talent:\n180 Elemental damage\nRadius 5"
-    },
-    "names": {
-      "en": "Banshee"
     }
   },
   {
     "id": "baron-rivendare",
+    "names": {
+      "en": "Baron Rivendare"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -560,13 +563,13 @@
         "Squad",
         "Undead"
       ]
-    },
-    "names": {
-      "en": "Baron Rivendare"
     }
   },
   {
     "id": "bat-rider",
+    "names": {
+      "en": "Bat Rider"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -630,13 +633,13 @@
         }
       ],
       "advanced_info": "Liquid Fire (main attack):\n50 Elemental damage every 0.5 seconds for 2.5 seconds\nRadius 4.5\nEnchanted Vials talent increases the radius to 6 (almost doubles the area of the pool)\nFiery Surplus talent:\nDrops a vial every 12 seconds\nVial decays after 100 seconds or when touched by an enemy\nVial applies Burn on enemy minis that touch it"
-    },
-    "names": {
-      "en": "Bat Rider"
     }
   },
   {
     "id": "blizzard",
+    "names": {
+      "en": "Blizzard"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -695,13 +698,13 @@
         }
       ]
     },
-    "speed": null,
-    "names": {
-      "en": "Blizzard"
-    }
+    "speed": null
   },
   {
     "id": "bloodmage-thalnos",
+    "names": {
+      "en": "Bloodmage Thalnos"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -771,13 +774,13 @@
         "Undead",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Bloodmage Thalnos"
     }
   },
   {
     "id": "bog-beast",
+    "names": {
+      "en": "Bog Beast"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -837,13 +840,13 @@
         }
       ],
       "advanced_info": "Living Wood talent:\nThe Armor cannot be regained even if Bog Beast is healed back up above 30%\nRampant Growth talent:\nThe root is applied on a radius of 6"
-    },
-    "names": {
-      "en": "Bog Beast"
     }
   },
   {
     "id": "cairne-bloodhoof",
+    "names": {
+      "en": "Cairne Bloodhoof"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -915,13 +918,13 @@
         "Squad"
       ]
     },
-    "speed": null,
-    "names": {
-      "en": "Cairne Bloodhoof"
-    }
+    "speed": null
   },
   {
     "id": "cenarius",
+    "names": {
+      "en": "Cenarius"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -1007,13 +1010,13 @@
         "Radius 8.5",
         "Heals all allied minis in range for 28 every 1.5 seconds"
       ]
-    },
-    "names": {
-      "en": "Cenarius"
     }
   },
   {
     "id": "chain-lightning",
+    "names": {
+      "en": "Chain Lightning"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -1071,13 +1074,13 @@
       ],
       "advanced_info": "Bounces\nBounces up to 20 times\nBounce range is 3, with Storm’s Reach talent it is 7\nBrilliant Flash talent\nApplies a 1-second Stun\nStuns Towers"
     },
-    "speed": null,
-    "names": {
-      "en": "Chain Lightning"
-    }
+    "speed": null
   },
   {
     "id": "charlga-razorflank",
+    "names": {
+      "en": "Charlga Razorflank"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -1150,13 +1153,13 @@
         "Tank",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Charlga Razorflank"
     }
   },
   {
     "id": "cheat-death",
+    "names": {
+      "en": "Cheat Death"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -1209,13 +1212,13 @@
       ],
       "advanced_info": "Level modifier\nLevels gained while in play do not affect Cheat Death duration\nVampirism talent\nHeals the affected minis by 50 whenever they deal damage (includes damage-over-time effects like poison)"
     },
-    "speed": null,
-    "names": {
-      "en": "Cheat Death"
-    }
+    "speed": null
   },
   {
     "id": "chimaera",
+    "names": {
+      "en": "Chimaera"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -1277,13 +1280,13 @@
         }
       ],
       "advanced_info": "The heads choose targets independently. The poison head attempts to shoot the highest-health target and the lightning head attempts to shoot the lowest-health target.\nLightning Ball\nBounces up to 20 times\nBounce range is 3\nPoison Spit\nApplies 2 stacks of Poison\nWith Corrosive Breath talent, applies 4 stacks of Poison\nLeviathan talent\nStacks up to 3 times"
-    },
-    "names": {
-      "en": "Chimaera"
     }
   },
   {
     "id": "core-hounds",
+    "names": {
+      "en": "Core Hounds"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -1345,13 +1348,13 @@
         }
       ],
       "advanced_info": "Resurrection\nRange 4\nIt takes 5 seconds for a Hound to resurrect its partner\nIf a Hound is stunned while resurrecting its partner, the resurrect will fail and the body will despawn\nFiery Rebirth talent\nDeals 170 Elemental damage\nApplies Burn\nRadius 6"
-    },
-    "names": {
-      "en": "Core Hounds"
     }
   },
   {
     "id": "dark-iron-miner",
+    "names": {
+      "en": "Dark Iron Miner"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -1413,13 +1416,13 @@
         }
       ],
       "advanced_info": "Gold Mine talent\n120 Physical damage\nRadius 6"
-    },
-    "names": {
-      "en": "Dark Iron Miner"
     }
   },
   {
     "id": "darkspear-troll",
+    "names": {
+      "en": "Darkspear Troll"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -1473,13 +1476,13 @@
           }
         }
       ]
-    },
-    "names": {
-      "en": "Darkspear Troll"
     }
   },
   {
     "id": "deep-breath",
+    "names": {
+      "en": "Deep Breath"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -1536,13 +1539,13 @@
       ],
       "advanced_info": "Deals 80 Elemental damage and a shorter 4-second Burn effect (120 damage) to Barracks."
     },
-    "speed": null,
-    "names": {
-      "en": "Deep Breath"
-    }
+    "speed": null
   },
   {
     "id": "defias-bandits",
+    "names": {
+      "en": "Defias Bandits"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -1604,13 +1607,13 @@
         }
       ],
       "advanced_info": "Cheap Shot\nApplies a 4-second Stun\nResets Fury stacks on its target\nDeadly Poison talent\nApplies 1 stack of poison per hit\nLast Resort talent\nSpecial 3-second Stun\nNo level modifier\nDoes not affect bosses at all"
-    },
-    "names": {
-      "en": "Defias Bandits"
     }
   },
   {
     "id": "dire-batlings",
+    "names": {
+      "en": "Dire Batlings"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -1672,13 +1675,13 @@
         }
       ],
       "advanced_info": "Guano Happens talent\nDrops a guano pool every 8-20 seconds (per bat, randomized)\nPool applies 1 stack of Poison to the first ground mini that touches it\nPool decays after 50 seconds if left untouched\nSoundbite talent\n30 damage\n5.5 range from the main target\nCannot hit the main target"
-    },
-    "names": {
-      "en": "Dire Batlings"
     }
   },
   {
     "id": "drake",
+    "names": {
+      "en": "Drake"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -1736,13 +1739,13 @@
         }
       ],
       "advanced_info": "Fire Splash\nRange 4\nArc 90 degrees\nMother Drake talent\nSpawns a Whelp Egg every 8 seconds"
-    },
-    "names": {
-      "en": "Drake"
     }
   },
   {
     "id": "druid-of-the-claw",
+    "names": {
+      "en": "Druid of the Claw"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -1804,13 +1807,13 @@
       ],
       "advanced_info": "Bear form\nHeals for 30% of maximum health when changing shapes\nLeader of the Pack talent\nRadius 8\nRejuvenation talent\nCooldown 6 seconds\nRange 7\n25 healing every 0.6 seconds for 6 seconds, 250 healing overall\nTargets the closest injured ally (no smart targeting)"
     },
-    "speed": null,
-    "names": {
-      "en": "Druid of the Claw"
-    }
+    "speed": null
   },
   {
     "id": "dryad",
+    "names": {
+      "en": "Dryad"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -1874,13 +1877,13 @@
         }
       ],
       "advanced_info": "Spear Throw\nApplies 1 stack of poison per hit\nBarrage talent\nChooses the target based on the highest current health percentage\nNature’s Swiftness talent\nSets the movement speed of the target to 4 (Fast) for most minis\nFor minis with Siege trait, increases movement speed by +75%\nCannot be cast on minis that are stationary or already have fast movement speed\nCannot be cast on Hogger\nCan nowadays be cast on Gargoyle with the Wing Buffet talent\nThorns talent\n20 damage per stack, up to 200 damage"
-    },
-    "names": {
-      "en": "Dryad"
     }
   },
   {
     "id": "earth-and-moon",
+    "names": {
+      "en": "Earth and Moon"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -1946,13 +1949,13 @@
       ],
       "advanced_info": "Entangling Roots\nApplies 3 stacks of poison\nDoes not affect Flying minis\nStarfall\nHits for 65 damage 15 times for a total of 975 damage\nBalance talent\nThe second cast has to be immediately after the first cast: you can never cast the same form twice with Balance\nMoonfury talent\nStarfall ticks 19 times instead of the usual 15 times"
     },
-    "speed": null,
-    "names": {
-      "en": "Earth and Moon"
-    }
+    "speed": null
   },
   {
     "id": "earth-elemental",
+    "names": {
+      "en": "Earth Elemental"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -2016,13 +2019,13 @@
         }
       ],
       "advanced_info": "Obsidian Shard talent\nShardlings have 200 health\nShardlings deal 35 Siege damage with an attack speed of 2 seconds (the Shardling pair has the same dps as the Earth Elemental itself)\nReady to Rumble talent\nRadius 5.25\nTaunt duration 10 seconds\nShrapnel Blast talent\nRadius 5\n225 damage"
-    },
-    "names": {
-      "en": "Earth Elemental"
     }
   },
   {
     "id": "eclipse",
+    "names": {
+      "en": "Eclipse"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -2082,13 +2085,13 @@
       ],
       "advanced_info": "Sunfire\nDeals 200 damage Barracks in PvP (half the usual damage)\nSolar Flare talent\nApplies a short 4-second Burn to Barracks in PvP (half the usual duration)"
     },
-    "speed": null,
-    "names": {
-      "en": "Eclipse"
-    }
+    "speed": null
   },
   {
     "id": "emperor-thaurissan",
+    "names": {
+      "en": "Emperor Thaurissan"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -2162,13 +2165,13 @@
         "Incinerate talent",
         "Applies a 16-second Burn on bosses and buildings"
       ]
-    },
-    "names": {
-      "en": "Emperor Thaurissan"
     }
   },
   {
     "id": "execute",
+    "names": {
+      "en": "Execute"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -2221,13 +2224,13 @@
       ],
       "advanced_info": "Execute has a unique damage model. Its damage is a percentage of the target’s maximum health.\nMost targets: 50% with a 5% level modifier, minimum 5%\nBosses: 10% with a 1% level modifier, minimum 1%\nBarracks: 5% with a 1% level modifier, minimum 1%\nRaid bosses: 3% with a 0.5% level modifier, minimum 0.5%\nOverpower talent\nApplies a 1.5-second stun that does not affect bosses"
     },
-    "speed": null,
-    "names": {
-      "en": "Execute"
-    }
+    "speed": null
   },
   {
     "id": "faerie-dragon",
+    "names": {
+      "en": "Faerie Dragon"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -2292,13 +2295,13 @@
         }
       ],
       "advanced_info": "Phase Shift talent\nBlink range 6\nCooldown 4 seconds"
-    },
-    "names": {
-      "en": "Faerie Dragon"
     }
   },
   {
     "id": "fire-elemental",
+    "names": {
+      "en": "Fire Elemental"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -2360,13 +2363,13 @@
         }
       ],
       "advanced_info": "Immolation Aura talent\n17 Elemental damage every 0.3 seconds\nDoes not hit Flying minis\nMolten Core talent\n75 Elemental damage every 0.5 seconds\nDoes not hit Flying minis\nLava pool decays after 2.5 seconds\nFan the Flames talent\nThe damage buff lasts until the Fire Elemental dies"
-    },
-    "names": {
-      "en": "Fire Elemental"
     }
   },
   {
     "id": "firehammer",
+    "names": {
+      "en": "Firehammer"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -2427,13 +2430,13 @@
         }
       ],
       "advanced_info": "Blazing Speed talent\nMaximum of 5 stacks of Fury instead of the usual 3 stacks"
-    },
-    "names": {
-      "en": "Firehammer"
     }
   },
   {
     "id": "flamewaker",
+    "names": {
+      "en": "Flamewaker"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -2494,13 +2497,13 @@
         }
       ],
       "advanced_info": "Fire Wave\nWhile Flamewaker only shoots when something is within its range of 7.5, the Fire Wave deals damage up to a range of 11\nBackdraft talent increases this effective range to 13.5 after the first shot and then to 16 after the second shot - but there still needs to be something within 7.5 for the Flamewaker to shoot"
-    },
-    "names": {
-      "en": "Flamewaker"
     }
   },
   {
     "id": "footmen",
+    "names": {
+      "en": "Footmen"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -2560,13 +2563,13 @@
         }
       ],
       "advanced_info": "Fortification talent\nFootmen have 30% additional health, and they start at 100% of their original health"
-    },
-    "names": {
-      "en": "Footmen"
     }
   },
   {
     "id": "frostwolf-shaman",
+    "names": {
+      "en": "Frostwolf Shaman"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -2628,13 +2631,13 @@
         }
       ],
       "advanced_info": "Melee attack\n60 damage\n1.7 seconds attack speed\nRanged attack\n80 Elemental damage\n1.5 seconds attack speed\nChain Heal\n4-second cooldown\n8.5 range\n160 healing per target, 2 bounces\nBounce range 5.5\nChooses the target based on the lowest current health percentage\nLightning Mastery talent\nBounce range 3\nEarthwall Totem talent\nHeals 5 times for 105 for a total of 525 healing\nDuration 5.6 seconds\nDoes not heal Barracks in PvP"
-    },
-    "names": {
-      "en": "Frostwolf Shaman"
     }
   },
   {
     "id": "gargoyle",
+    "names": {
+      "en": "Gargoyle"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -2696,13 +2699,13 @@
         }
       ],
       "advanced_info": "Obsidian Statue talent\n420 health\nTaunt duration 10 seconds\nTaunt radius 8\nTaunts every 3 seconds\nCannot be pushed"
-    },
-    "names": {
-      "en": "Gargoyle"
     }
   },
   {
     "id": "general-drakkisath",
+    "names": {
+      "en": "General Drakkisath"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -2774,13 +2777,13 @@
         "Spell",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "General Drakkisath"
     }
   },
   {
     "id": "ghoul",
+    "names": {
+      "en": "Ghoul"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -2842,13 +2845,13 @@
         }
       ],
       "advanced_info": "Cannibalize\nGhoul eats for 1.6 seconds at a time\nRestores 240 health\nGhoul can eat four times from a corpse for a total of 960 healing"
-    },
-    "names": {
-      "en": "Ghoul"
     }
   },
   {
     "id": "gnoll-brute",
+    "names": {
+      "en": "Gnoll Brute"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -2906,13 +2909,13 @@
         }
       ],
       "advanced_info": "Mace Cleave\nArc 140 degrees"
-    },
-    "names": {
-      "en": "Gnoll Brute"
     }
   },
   {
     "id": "goblin-sapper",
+    "names": {
+      "en": "Goblin Sapper"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -2970,13 +2973,13 @@
         }
       ],
       "advanced_info": "Movement speed\nRegular movement speed 2.5\nWith Rocket Powered Turbo Boots talent, movement speed becomes 5"
-    },
-    "names": {
-      "en": "Goblin Sapper"
     }
   },
   {
     "id": "grommash-hellscream",
+    "names": {
+      "en": "Grommash Hellscream"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -3046,13 +3049,13 @@
         "Squad",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Grommash Hellscream"
     }
   },
   {
     "id": "gryphon-rider",
+    "names": {
+      "en": "Gryphon Rider"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -3111,13 +3114,13 @@
         }
       ],
       "advanced_info": "Air Drop talent\nLevels are capped at +10"
-    },
-    "names": {
-      "en": "Gryphon Rider"
     }
   },
   {
     "id": "harpies",
+    "names": {
+      "en": "Harpies"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -3174,13 +3177,13 @@
           }
         }
       ]
-    },
-    "names": {
-      "en": "Harpies"
     }
   },
   {
     "id": "harvest-golem",
+    "names": {
+      "en": "Harvest Golem"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -3240,13 +3243,13 @@
         }
       ],
       "advanced_info": "Bountiful Harvest talent\nRadius 7\n25 healing every 0.5 seconds for 5 seconds, 250 healing overall\nUnstable Core talent\nRadius 5"
-    },
-    "names": {
-      "en": "Harvest Golem"
     }
   },
   {
     "id": "headless-horseman",
+    "names": {
+      "en": "Headless Horseman"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -3310,13 +3313,13 @@
         }
       ],
       "advanced_info": "Pumpkin Toss\n8 seconds cooldown\n8 range\n140 Elemental damage\nApplies 2 stacks of poison\nSword hit\n200 damage\n1.5 seconds attack speed\nNeigh Death Experience talent\n3-second stun\nRadius 6\nNight Watch talent\nHeadless Horseman can move far from its guard location as long as it remains in combat, but it will eventually return back when combat ends"
-    },
-    "names": {
-      "en": "Headless Horseman"
     }
   },
   {
     "id": "hogger",
+    "names": {
+      "en": "Hogger"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -3384,13 +3387,13 @@
         "Squad",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Hogger"
     }
   },
   {
     "id": "holy-nova",
+    "names": {
+      "en": "Holy Nova"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -3447,13 +3450,13 @@
       ],
       "advanced_info": "Renew talent\nHeals for 56 per second for 5 seconds for a total of 280 healing"
     },
-    "speed": null,
-    "names": {
-      "en": "Holy Nova"
-    }
+    "speed": null
   },
   {
     "id": "huntress",
+    "names": {
+      "en": "Huntress"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -3514,13 +3517,13 @@
         }
       ],
       "advanced_info": "Glaive\nBounces cannot hit Stealthed minis\nElven Might talent\nThe base damage of the initial hit is 225\nAny damage modifiers are applied to this higher base damage\nShadowmeld talent\nThe base damage of the Ambush attack is 300\nAny damage modifiers are applied to this higher base damage"
-    },
-    "names": {
-      "en": "Huntress"
     }
   },
   {
     "id": "jaina-proudmoore",
+    "names": {
+      "en": "Jaina Proudmoore"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -3591,13 +3594,13 @@
         "Tank",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Jaina Proudmoore"
     }
   },
   {
     "id": "living-bomb",
+    "names": {
+      "en": "Living Bomb"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -3653,13 +3656,13 @@
       ],
       "advanced_info": "Explosion\nRadius 9\nDelay from cast 5 seconds\nAlso explodes if an affected mini dies before the time is up\nDeals half damage to Barracks and Bosses\nBlast Radius talent\nBurn is applied on cast to a radius of 10\nChain Reaction talent\nDelay from initial explosion 3 seconds\nReapplies Living Bomb to any minis that survive the initial explosion\nThe Chain Reaction explosion does not apply Living Bomb again"
     },
-    "speed": null,
-    "names": {
-      "en": "Living Bomb"
-    }
+    "speed": null
   },
   {
     "id": "maiev-shadowsong",
+    "names": {
+      "en": "Maiev Shadowsong"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -3730,13 +3733,13 @@
         "Tank",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Maiev Shadowsong"
     }
   },
   {
     "id": "malfurion",
+    "names": {
+      "en": "Malfurion"
+    },
     "faction_ids": [
       "alliance",
       "cenarion"
@@ -3824,13 +3827,13 @@
         "Both allied and enemy poison damage heal Malfurion",
         "Up to 1% of Malfurion’s maximum Health per second (11.16 healing per second)"
       ]
-    },
-    "names": {
-      "en": "Malfurion"
     }
   },
   {
     "id": "meat-wagon",
+    "names": {
+      "en": "Meat Wagon"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -3893,13 +3896,13 @@
         }
       ],
       "advanced_info": "Grind melee attack\nArc 160 degrees\nAttack speed 2 seconds\n10 Siege damage 8 times, for a total of 80 damage"
-    },
-    "names": {
-      "en": "Meat Wagon"
     }
   },
   {
     "id": "molten-giant",
+    "names": {
+      "en": "Molten Giant"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -3961,13 +3964,13 @@
         }
       ],
       "advanced_info": "Bolster talent\nHeals for 25% of Molten Giant’s maximum health (875 healing)\nBlood of the Mountain talent\n180 damage on a radius of 6\nAlso hits Flying minis\nThreatening Presence talent\n10 seconds taunt duration\n10 seconds cooldown\n5.25 radius"
-    },
-    "names": {
-      "en": "Molten Giant"
     }
   },
   {
     "id": "moonkin",
+    "names": {
+      "en": "Moonkin"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -4029,13 +4032,13 @@
         }
       ],
       "advanced_info": "Moonkin alternates between the single-target and the area-of-effect attack.\nSingle-target attack\n140 Elemental damage\n1.5 seconds attack speed\nArea-of-effect attack\n68 Elemental damage\nRadius 4.5\n2-second attack speed\nMoonglow talent\nDoes not stack, you will only have one +2 level effect in queue even if you play multiple Moonkins before your next spell\nIf left unused, the bonus effect is removed when Moonkin dies\nTyphoon talent\nRadius 9\nKnockback includes a 1.5-second stun (there is no Daze effect)\nCan be activated again if healed above 50% health\nDoes not affect bosses and Unstoppable minis\nVengeance talent\n8 seconds internal cooldown: you get increased damage for 5 seconds, and then cannot have it for another 3 seconds before the cooldown is over"
-    },
-    "names": {
-      "en": "Moonkin"
     }
   },
   {
     "id": "mountaineer",
+    "names": {
+      "en": "Mountaineer"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -4100,13 +4103,13 @@
         }
       ],
       "advanced_info": "Army bonus slots and Traits\nMountaineer gains the bonus levels from both Melee and Ranged slots\nDuring a battle, the Bear is Melee and the Dwarf is Ranged for the purposes of effects like Abomination's Hook\nGrowl taunt\n10 seconds taunt duration\n10 seconds cooldown\n5.25 radius\nHeal Bear\n20 seconds cooldown\n8.5 range\n8 healing ticks of 12 percent of the target’s maximum health over 3.5 seconds, for a total of 96 percent of the target’s maximum health\nIntimidation talent\nRadius 3\n2-second stun\nMend Pets talent\nUp to 3 allied Beast targets in addition to the Bear\nRadius 6\n8 healing ticks of 12 percent of the target’s maximum health over 3.5 seconds, for a total of 96 percent of the target’s maximum health\nFrenzied Spirit talent\nBloodlust duration 10 seconds"
-    },
-    "names": {
-      "en": "Mountaineer"
     }
   },
   {
     "id": "murloc-tidehunters",
+    "names": {
+      "en": "Murloc Tidehunters"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -4167,13 +4170,13 @@
         }
       ],
       "advanced_info": "Careful Aim talent\nRange 8.5 (+2 compared to the regular Tidehunters)"
-    },
-    "names": {
-      "en": "Murloc Tidehunters"
     }
   },
   {
     "id": "necromancer",
+    "names": {
+      "en": "Necromancer"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -4234,13 +4237,13 @@
         }
       ],
       "advanced_info": "Raise Skeletons\nEach of the two Skeletons has an 8-second cooldown before a new one can be summoned\nSkeleton Warriors\n200 health\nMelee\n1.4 seconds attack speed\n46 damage\nCycle minis\nJeweled Skulls talent Skeleton Mages\n200 health\n7 range\n1.4 seconds attack speed\n46 Elemental damage\nFrost\nNot Cycle minis"
-    },
-    "names": {
-      "en": "Necromancer"
     }
   },
   {
     "id": "ogre-mage",
+    "names": {
+      "en": "Ogre Mage"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -4301,13 +4304,13 @@
         }
       ],
       "advanced_info": "Bloodlust\nDuration 10 seconds\nCooldown 10 seconds\nRange 9\nAlso Bloodlusts all Warsong Grunts within a radius of 10 from the Ogre Mage when cast\nFrostfire Bolt talent\nThe Frost effects last the full 2 seconds on bosses (most Frost effects last 0.5 seconds on bosses)"
-    },
-    "names": {
-      "en": "Ogre Mage"
     }
   },
   {
     "id": "old-murk-eye",
+    "names": {
+      "en": "Old Murk-Eye"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -4378,13 +4381,13 @@
         "Spell",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Old Murk-Eye"
     }
   },
   {
     "id": "onu",
+    "names": {
+      "en": "Onu"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -4454,13 +4457,13 @@
         "Squad",
         "Tank"
       ]
-    },
-    "names": {
-      "en": "Onu"
     }
   },
   {
     "id": "orgrim-doomhammer",
+    "names": {
+      "en": "Orgrim Doomhammer"
+    },
     "faction_ids": [
       "blackrock",
       "horde"
@@ -4533,13 +4536,13 @@
         "Spell",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Orgrim Doomhammer"
     }
   },
   {
     "id": "plague-farmer",
+    "names": {
+      "en": "Plague Farmer"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -4603,13 +4606,13 @@
         }
       ],
       "advanced_info": "Bomb Throw\nDeals 140 Elemental damage\nApplies 4 stacks of poison\nVirulence talent\nApplies 3 stacks of poison on kill on a radius of 4\nThis poison also hits Flying minis\nParting Gift talent\nApplies 1 stack of poison on a radius of 5"
-    },
-    "names": {
-      "en": "Plague Farmer"
     }
   },
   {
     "id": "polymorph",
+    "names": {
+      "en": "Polymorph"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -4662,13 +4665,13 @@
       ],
       "advanced_info": "Flying minis are still Flying as sheep.\nMini-bosses, bosses, raid bosses, unstoppable minis, and Ragnaros are immune to Polymorph.\nExploding Sheep talent\n75 damage\n8 radius\nStable Transfiguration talent\nSheep regenerate 25 percent of their maximum health per second"
     },
-    "speed": null,
-    "names": {
-      "en": "Polymorph"
-    }
+    "speed": null
   },
   {
     "id": "priestess",
+    "names": {
+      "en": "Priestess"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -4732,13 +4735,13 @@
         }
       ],
       "advanced_info": "Greater Heal\nRemoves poison\n4 second cooldown\nTargets the mini with the most health missing\nRenew\n5 second cooldown\n40 healing per second, 8 times, for a total of 320 healing\nDoes not stack\nTargets the mini with the lowest health percentage\nPriority cast ahead of Greater Heal\nSmite\nDeals Elemental damage\nEmpowered Renew talent\nEach Priestess only benefits from the talent’s bonus heal on Ragnaros once\nOther targets can gain the bonus on every cast\nPower Word: Shield talent\n8 seconds cooldown\nDebuffs the target with Weakened Soul, preventing them from receiving another Power Word: Shield for 8 seconds\nTargets the mini with the lowest current health\nSpirit of Redemption talent\nHeals all allies within a range of 8 for 40 every 0.5 seconds, for a total of 400 healing"
-    },
-    "names": {
-      "en": "Priestess"
     }
   },
   {
     "id": "prowler",
+    "names": {
+      "en": "Prowler"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -4798,13 +4801,13 @@
         }
       ],
       "advanced_info": "Dash\nProwler can dash between ranges 3 and 6\nCooldown 3 seconds\nDash ignores collisions\nDash increases Prowler’s movement speed by +700%\nPack Leader talent\nRadius 8\nPredatory Instincts talent\nThe double damage is implemented as higher base damage, so it is multiplicative and not additive with any other damage modifiers\nOn the Prowl talent\n1.5-second Stun"
-    },
-    "names": {
-      "en": "Prowler"
     }
   },
   {
     "id": "pyromancer",
+    "names": {
+      "en": "Pyromancer"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -4863,13 +4866,13 @@
       ],
       "advanced_info": "Blaze of Glory talent\nRadius 6\n100 Elemental damage\nApplies Burn\nConflagrate talent\nSplash radius 4.25 instead of the usual 3 (doubles the splash area)\nPyroblast talent\nImplemented as a multiplier: additive, not multiplicative, with other multipliers"
     },
-    "speed": null,
-    "names": {
-      "en": "Pyromancer"
-    }
+    "speed": null
   },
   {
     "id": "quilboar",
+    "names": {
+      "en": "Quilboar"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -4933,13 +4936,13 @@
         }
       ],
       "advanced_info": "Bramble Burst talent\nApplies 2 stacks of poison\nDoes not hit Flying minis\nRadius 5\nBristleback talent\nDeals 50 damage when hit by a non-Flying melee unit\n0.5 seconds cooldown\nTunnel Vision talent\nAble to act 1 second after being deployed instead of the usual 3 seconds\nQuilboar can be attacked immediately when deployed with or without the talent"
-    },
-    "names": {
-      "en": "Quilboar"
     }
   },
   {
     "id": "ragnaros",
+    "names": {
+      "en": "Ragnaros"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -5015,13 +5018,13 @@
         "Tank",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Ragnaros"
     }
   },
   {
     "id": "raptors",
+    "names": {
+      "en": "Raptors"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -5081,13 +5084,13 @@
         }
       ],
       "advanced_info": "Fast Food talent\nAll Raptors within a radius of 5 from the killed enemy are healed for 160\nMotivation talent\nRadius 7\nStrength in Numbers talent\nRadius 8"
-    },
-    "names": {
-      "en": "Raptors"
     }
   },
   {
     "id": "rend-blackhand",
+    "names": {
+      "en": "Rend Blackhand"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -5161,13 +5164,13 @@
         "Unbound"
       ]
     },
-    "speed": null,
-    "names": {
-      "en": "Rend Blackhand"
-    }
+    "speed": null
   },
   {
     "id": "s-a-f-e-pilot",
+    "names": {
+      "en": "S.A.F.E. Pilot"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -5229,13 +5232,13 @@
         }
       ],
       "advanced_info": "Crash\nCrash damage 220\nCrash delay 2.8 seconds\nComin’ In Hot! Talent\nCrash damage 145\nApplies Burn\nCrash delay 1.4 seconds"
-    },
-    "names": {
-      "en": "S.A.F.E. Pilot"
     }
   },
   {
     "id": "skeleton-party",
+    "names": {
+      "en": "Skeleton Party"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -5298,13 +5301,13 @@
         }
       ],
       "advanced_info": "Skeleton Warriors\n200 health\nMelee\n1.4 seconds attack speed\n46 damage\nUnlike other Skeleton Warriors, Skeleton Party members are not Cycle minis\nSkeleton Mages\n200 health\n7 range\n1.4 seconds attack speed\n46 Elemental damage\nFrost\nNot Cycle minis\nArmy bonus slots\nAlways gets the bonus from the Ranged slot\nDoes not get the bonus from the Melee slot with the Ritual of Rime talent\nRitual of Rime talent\nSkeleton Mages will walk back to their position if they are knocked off\nMind-controlled Skeleton Mages can move\n5-Man talent\nSkeleton Tank has Taunt: 10 seconds duration, 5.25 radius, 10 seconds cooldown\nSkeleton Rogue has Stealth and Ambush\nSkeleton Priest has a 20-damage wand attack with 1.5 seconds attack speed and heals for 50 every 4.5 seconds with a range of 8.5"
-    },
-    "names": {
-      "en": "Skeleton Party"
     }
   },
   {
     "id": "skeletons",
+    "names": {
+      "en": "Skeletons"
+    },
     "faction_ids": [
       "undead"
     ],
@@ -5364,13 +5367,13 @@
         }
       ],
       "advanced_info": "Exhume talent\nAdditional Skeletons spawn when played within a radius of 4 from any Barracks, Tower, or Meeting Stone. Deploying Skeletons near a boss does not spawn additional Skeletons.\nCackle talent\nSkeletons have Taunt: 10 seconds duration, 5.25 radius, 10 seconds cooldown"
-    },
-    "names": {
-      "en": "Skeletons"
     }
   },
   {
     "id": "smoke-bomb",
+    "names": {
+      "en": "Smoke Bomb"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -5427,13 +5430,13 @@
       ],
       "advanced_info": "Ambush talent\nDoes not apply to Goblin Sappers and Banshee\n+50% damage modifier, additive with other damage multipliers\nDoes not require Stealth\nThe bonus lasts for 8 seconds or until the first attack\nAdds +50% damage to minis with the Ambush ability (Smoke Bomb's Ambush is a separate multiplier)\nBand of Thieves talent\nNo level cap\nMost Skeletons are considered Cycle minis\nSkeleton Mages are not Cycle minis\nSkeleton Party members are not Cycle minis, not even the Skeleton Warriors"
     },
-    "speed": null,
-    "names": {
-      "en": "Smoke Bomb"
-    }
+    "speed": null
   },
   {
     "id": "sneed",
+    "names": {
+      "en": "Sneed"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -5505,13 +5508,13 @@
         "Squad",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Sneed"
     }
   },
   {
     "id": "spiderlings",
+    "names": {
+      "en": "Spiderlings"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -5574,13 +5577,13 @@
         }
       ],
       "advanced_info": "Poison attack\nDeals 8 Elemental damage and applies 1 stack of poison\nCave Dwellers talent\nStealth reduces movement speed by 20%\nBloated Carapace talent\nRadius 5\nDeals 45 Elemental damage and applies 1 stack of poison and a 1-second stun\nAlso hits Flying minis"
-    },
-    "names": {
-      "en": "Spiderlings"
     }
   },
   {
     "id": "stonehoof-tauren",
+    "names": {
+      "en": "Stonehoof Tauren"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -5640,13 +5643,13 @@
         }
       ],
       "advanced_info": "Charge\nMinimum range 3\nMaximum range 9.5\n300 physical damage on impact\nOnly targets non-boss minis with Charge\n5.6 seconds cooldown\nMomentum talent\nSecondary charge deals 260 damage on impact\nPummel talent\nThe 3-second Stun does not scale\nOnly targets non-boss minis with Charge\nProvoke talent\nRadius 6\n10 seconds duration"
-    },
-    "names": {
-      "en": "Stonehoof Tauren"
     }
   },
   {
     "id": "swole-troll",
+    "names": {
+      "en": "Swole Troll"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -5708,13 +5711,13 @@
         }
       ],
       "advanced_info": "Army bonus slots\nAlways gets the bonus from the Siege slot\nOnly gets the bonus from the Melee slot if equipped with the Meatier Elbow talent\nKnockback\nWhen attacking buildings, Swole Troll also knocks back surrounding enemy minis in a radius of 4\nTroll Train talent\nTargets are acquired from a 45-degree cone in front of the Swole Troll, so it will never turn back\n5.6-second cooldown\nTrollnado talent\nRadius 4\nMeatier Elbow\nCleave arc 180 degrees\nKnockback radius 3.5, in the cleave area\nDamage reduced to 210 siege damage\nAttack speed slowed down to 3.2 seconds\nNo longer a Siege Specialist, now a regular tank: targets enemy minis and stops to fight against them"
-    },
-    "names": {
-      "en": "Swole Troll"
     }
   },
   {
     "id": "sylvanas-windrunner",
+    "names": {
+      "en": "Sylvanas Windrunner"
+    },
     "faction_ids": [
       "horde",
       "undead"
@@ -5785,13 +5788,13 @@
         "Unbound",
         "Undead"
       ]
-    },
-    "names": {
-      "en": "Sylvanas Windrunner"
     }
   },
   {
     "id": "thrall",
+    "names": {
+      "en": "Thrall"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -5855,13 +5858,13 @@
         }
       ],
       "advanced_info": "Axe\n180 Physical damage\n1.8 seconds attack speed\nMelee range\nAfter two melee swings, Thrall gains one charge for his ground Chain Lightning\nChain Lightning\nThrall has two ranged Chain Lightning attacks: he can always cast his Chain Lightning on flying minis, and he also has another version of it that can be cast on ground minis. That version starts with one charge, and recharges after two melee swings. Other than that, the two Chain Lightning attacks are identical.\n125 Elemental damage\n1.7 seconds attack speed\n8 range\nBounces up to 2 additional targets within a range of 6\nFeral Spirit talent Spirit Wolves\n700 health\n4 movement speed (Fast)\nBite: 100 Elemental damage, 0.9 seconds attack speed, 1.5 range, hits ground minis only\nDash: 100 Elemental damage, 6 range charge\nTaunt: 10 seconds duration, 1.5 range, single use\nCall of the Horde talent Lightning pulse\n200 Elemental damage\n6 radius\nHits both ground and flying minis\nCannot hit Barracks\nTotemic Mastery talent Totems\nAll your Thralls cycle through the same list of Totems\nEach Totem lasts for 10 seconds, and Thrall summons another one after 10 seconds, so each Thrall has one active Totem at a time\nWindfury: +25% attack speed to allies map-wide\nSearing: 25 Elemental damage to an enemy within a radius of 6 every second\nHealing: 25 healing per second to allies map-wide\nEarthbind: -25% movement speed to enemies map-wide"
-    },
-    "names": {
-      "en": "Thrall"
     }
   },
   {
     "id": "tirion-fordring",
+    "names": {
+      "en": "Tirion Fordring"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -5934,13 +5937,13 @@
         "Squad",
         "Unbound"
       ]
-    },
-    "names": {
-      "en": "Tirion Fordring"
     }
   },
   {
     "id": "treant",
+    "names": {
+      "en": "Treant"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -6000,13 +6003,13 @@
         }
       ],
       "advanced_info": "Each additional gold you spend on Treants increases their health and damage by +10%\n1 gold spawns 1 Treant with the baseline stats\n2 gold spawns 2 Treants that both have +10% health and damage\n3 gold spawns 3 Treants that each have +20% health and damage\nAnd so on\nEach Treant spawned changes the form of Cenarion spells\n1 Treant (1 gold) changes Sunfire to Moonfire\n2 Treants (2 gold) keep Sunfire as Sunfire\nTherefore, odd amounts of gold spent change the form of Cenarion spells whereas even amounts of gold spent keeps them the same\nComposting talent\nRadius 6\n90 immediate healing + 60 healing over the next 6 seconds, 10 healing per second\nUproot talent\nCannot affect Flying minis or bosses\nRadius 6"
-    },
-    "names": {
-      "en": "Treant"
     }
   },
   {
     "id": "vultures",
+    "names": {
+      "en": "Vultures"
+    },
     "faction_ids": [
       "beast"
     ],
@@ -6066,13 +6069,13 @@
         }
       ],
       "advanced_info": "Deploying the squad mini summons three Vultures.\nSummoning new Vultures\nEach kill spawns two Vultures\nVultures do not spawn after killing other Vultures, Whelp Eggs (only the Egg part), Spider Eggs (Darkmist Broodqueen), or buildings\nVultures can spawn for up to 2.5 seconds after a Vulture has hit the target\nTendon Rip talent\n-30% movement speed for 5 seconds\nFeeding Frenzy talent\nGives Bloodlust to all allied Vultures in a radius of 100 for 5 seconds"
-    },
-    "names": {
-      "en": "Vultures"
     }
   },
   {
     "id": "warsong-grunts",
+    "names": {
+      "en": "Warsong Grunts"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -6132,13 +6135,13 @@
         }
       ],
       "advanced_info": "Command talent\nThe damage buff applies map-wide while a Grunt is alive"
-    },
-    "names": {
-      "en": "Warsong Grunts"
     }
   },
   {
     "id": "warsong-raider",
+    "names": {
+      "en": "Warsong Raider"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -6200,13 +6203,13 @@
         }
       ],
       "advanced_info": "Sunder Armor talent\nThe armor removal is temporary against bosses: it lasts for 8 seconds"
-    },
-    "names": {
-      "en": "Warsong Raider"
     }
   },
   {
     "id": "whelp-eggs",
+    "names": {
+      "en": "Whelp Eggs"
+    },
     "faction_ids": [
       "blackrock"
     ],
@@ -6269,13 +6272,13 @@
         }
       ],
       "advanced_info": "Eggs\n10 health\nChromatic Plating talent\nEggs have Taunt: 10 seconds duration, 5.25 radius, 10 seconds cooldown\nFlame Burst talent\nRadius 5\n50 Elemental damage\nOnly hits ground minis"
-    },
-    "names": {
-      "en": "Whelp Eggs"
     }
   },
   {
     "id": "witch-doctor",
+    "names": {
+      "en": "Witch Doctor"
+    },
     "faction_ids": [
       "horde"
     ],
@@ -6336,13 +6339,13 @@
         }
       ],
       "advanced_info": "Curse channeling\n18 damage every 0.2 seconds for 8 seconds\nWhen a target dies, it explodes for 100 Elemental damage on a radius of 5\nSpirit Ward talent\nRadius 8\nDuration 5 seconds\nAlchemist talent\nCooldown 12 seconds\n10 seconds of Bloodlust for one mini that picks up the potion\nAmplify Curse talent\nRadius 6"
-    },
-    "names": {
-      "en": "Witch Doctor"
     }
   },
   {
     "id": "worgen",
+    "names": {
+      "en": "Worgen"
+    },
     "faction_ids": [
       "alliance"
     ],
@@ -6404,13 +6407,13 @@
         }
       ],
       "advanced_info": "Ambush\nThe damage of the Ambush attack is 260\nAny damage modifiers are applied to this higher damage\nPremeditation talent\nThe damage of the Ambush attack with Premeditation is 390\nAny damage modifiers are applied to this higher damage\nLone Wolf talent\nThere can be no allies within a radius of 20"
-    },
-    "names": {
-      "en": "Worgen"
     }
   },
   {
     "id": "ysera",
+    "names": {
+      "en": "Ysera"
+    },
     "faction_ids": [
       "cenarion"
     ],
@@ -6499,9 +6502,6 @@
         "Emerald Drake applies 6 stacks of poison"
       ]
     },
-    "speed": null,
-    "names": {
-      "en": "Ysera"
-    }
+    "speed": null
   }
 ]

@@ -292,7 +292,7 @@ def fetch_units():
         faction_ids = [cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f]
         trait_ids = [cats["trait"].get(t, t.lower().replace(" ", "-")) for t in trait_names]
         type_id = cats["type"].get(unit_type, unit_type.lower())
-        if speed_val and speed_val != "Stationary":
+        if speed_val and speed_val != STATIONARY:
             speed_id = cats["speed"].get(speed_val, speed_val.lower())
         else:
             speed_id = None

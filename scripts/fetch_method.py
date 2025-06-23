@@ -105,6 +105,8 @@ def fetch_units():
     name, faction, type, cost, image as well as damage, health, dps, speed
     and traits for each entry. For every mini the corresponding detail page
     is fetched via :func:`fetch_unit_details` and merged into the output.
+    Spells oder stationäre Einheiten besitzen keinen ``speed``-Wert; in der
+    JSON-Datei erscheint dieser daher als ``null``.
     All collected units are written to ``data/units.json``. The file will be
     created if it does not exist and overwritten otherwise.
 
@@ -135,7 +137,11 @@ def fetch_units():
         health = int(float(health_attr)) if health_attr is not None else None
         dps_attr = card.get("data-dps")
         dps = float(dps_attr) if dps_attr is not None else None
-        speed = card.get("data-speed")
+        speed_attr = card.get("data-speed")
+        if speed_attr is None or speed_attr.strip() == "" or speed_attr == "Znull":
+            speed = None
+        else:
+            speed = speed_attr
         traits_attr = card.get("data-traits", "")
         traits = [t.strip() for t in traits_attr.split(",") if t.strip()]
 

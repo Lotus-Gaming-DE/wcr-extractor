@@ -146,7 +146,8 @@ def fetch_units():
     and traits for each entry. For every mini the corresponding detail page
     is fetched via :func:`fetch_unit_details` and merged into the output.
     Spells oder stationäre Einheiten besitzen keinen ``speed``-Wert; in der
-    JSON-Datei erscheint dieser daher als ``null``.
+    JSON-Datei erscheint dieser daher als ``null``. Ihr ``speed_id``-Eintrag
+    ist ebenfalls ``null``.
     All collected units are written to ``data/units.json``. The file will be
     created if it does not exist and overwritten otherwise.
 
@@ -181,9 +182,10 @@ def fetch_units():
         speed_attr = card.get("data-speed")
         if speed_attr is None or speed_attr.strip() == "" or speed_attr == "Znull":
             speed = None
+            speed_val = None
         else:
             speed = speed_attr
-        speed_val = card.get("data-speed")
+            speed_val = speed_attr
         traits_attr = card.get("data-traits", "")
         trait_names = [t.strip() for t in traits_attr.split(",") if t.strip()]
 
@@ -201,7 +203,10 @@ def fetch_units():
         faction_ids = [cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f]
         trait_ids = [cats["trait"].get(t, t.lower().replace(" ", "-")) for t in trait_names]
         type_id = cats["type"].get(unit_type, unit_type.lower())
-        speed_id = cats["speed"].get(speed_val, speed_val.lower()) if speed_val else None
+        if speed_val and speed_val != "Stationary":
+            speed_id = cats["speed"].get(speed_val, speed_val.lower())
+        else:
+            speed_id = None
 
         unit_data = {
             "id": unit_id,

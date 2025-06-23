@@ -93,7 +93,24 @@ def fetch_unit_details(url: str) -> dict:
     if adv_section:
         content = adv_section.select_one(".mini-content")
         if content:
-            details["advanced_info"] = content.get_text("\n", strip=True)
+            adv_text = content.get_text("\n", strip=True)
+            lines = adv_text.splitlines()
+            prefix = "Available army bonus slots for the bottom row"
+            army_bonus_slots = []
+            for idx, line in enumerate(lines):
+                if line.startswith(prefix):
+                    j = idx + 1
+                    while j < len(lines):
+                        next_line = lines[j]
+                        if next_line == "" or next_line.startswith("Without"):
+                            break
+                        army_bonus_slots.append(next_line.strip())
+                        j += 1
+                    del lines[idx + 1 : j]
+                    break
+            details["advanced_info"] = "\n".join(lines)
+            if army_bonus_slots:
+                details["army_bonus_slots"] = army_bonus_slots
 
     return details
 

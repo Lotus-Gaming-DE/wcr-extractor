@@ -25,7 +25,7 @@ Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
 [
   {
     "id": "footman",
-    "name": "Footman",
+    "names": {"en": "Footman"},
     "damage": 10,
     "health": 20,
     "dps": 5.0,
@@ -33,13 +33,22 @@ Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
     "type_id": "troop",
     "faction_ids": ["alliance"],
     "trait_ids": ["melee", "one-target"],
-    "details": {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "..."}
+    "details": {
+      "core_trait": {},
+      "stats": {},
+      "traits": [],
+      "talents": [
+        {"names": {"en": "Hold the Line"}, "description": "..."}
+      ],
+      "advanced_info": "..."
+    }
   }
 ]
 ```
 
 Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Dateien
 `data/units.json` und `data/categories.json` automatisch aktualisiert.
+Trait descriptions are stored in `data/categories.json` under the `descriptions` field.
 
 Das optionale Feld `army_bonus_slots` listet die Boni, die eine Einheit in der
 unteren Reihe des Armeefensters gewähren kann. Sind solche Angaben vorhanden,
@@ -60,10 +69,13 @@ pytest
 
 The names of factions and other categories are defined in
 `data/categories.json`.  Each entry contains an `id` and a `names`
-dictionary with language codes as keys.  The scraper currently reads only the
-English value (`names["en"]`), but you can provide translations for additional
-languages.  To contribute a translation, add or update the appropriate
-language key.  For example:
+dictionary with language codes as keys. Traits also have a `descriptions`
+dictionary for localized text. Unit and talent names in `data/units.json`
+use the same structure.
+The scraper currently reads only the English values (`names["en"]`), but you can
+provide translations for additional languages. To contribute a translation,
+add a new language key anywhere a `names` or `descriptions` dictionary appears.
+For example:
 
 ```json
 { "id": "alliance", "names": { "en": "Alliance", "de": "Allianz" } }

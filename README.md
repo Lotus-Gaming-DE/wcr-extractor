@@ -11,8 +11,10 @@ pip install -r requirements.txt
 python scripts/fetch_method.py
 ```
 
-Der Aufruf legt die Datei `data/units.json` an, die alle Minis mit ihren
-zusätzlichen Feldern enthält. Ein Auszug könnte folgendermaßen aussehen:
+Der Aufruf legt die Dateien `data/units.json` und `data/categories.json` an.
+`units.json` enthält die Minis, `categories.json` die verfügbaren Fraktionen,
+Typen, Traits und Geschwindigkeiten.
+Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
 
 ```json
 [
@@ -22,14 +24,17 @@ zusätzlichen Feldern enthält. Ein Auszug könnte folgendermaßen aussehen:
     "damage": 10,
     "health": 20,
     "dps": 5.0,
-    "speed": "Slow",
-    "traits": ["Melee", "One-Target"],
+    "speed_id": "slow",
+    "type_id": "troop",
+    "faction_ids": ["alliance"],
+    "trait_ids": ["melee", "one-target"],
     "details": {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "..."}
   }
 ]
 ```
 
-Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei `data/units.json` automatisch aktualisiert.
+Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Dateien
+`data/units.json` und `data/categories.json` automatisch aktualisiert.
 
 ## Tests
 

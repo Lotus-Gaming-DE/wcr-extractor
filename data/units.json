@@ -305,7 +305,8 @@
         }
       ],
       "advanced_info": "Like most spells, Arcane Blast deals half damage against player Barracks.\nInteraction with buffs\nEach cast of Arcane Blast is considered a separate spell, so buffs like Moonkin's +2 levels to the next spell only affect the first cast.\nOn the other hand, each cast is also considered a separate spell for positive effects, like buffing Bloodmage Thalnos.\nTorrent talent\nAdditional levels are capped at +10"
-    }
+    },
+    "speed": null
   },
   {
     "id": "arthas",
@@ -637,7 +638,8 @@
           "description": "Summons an additional Blizzard at your Base."
         }
       ]
-    }
+    },
+    "speed": null
   },
   {
     "id": "bloodmage-thalnos",
@@ -832,7 +834,8 @@
         "Spell",
         "Squad"
       ]
-    }
+    },
+    "speed": null
   },
   {
     "id": "cenarius",
@@ -980,7 +983,8 @@
         }
       ],
       "advanced_info": "Bounces\nBounces up to 20 times\nBounce range is 3, with Storm’s Reach talent it is 7\nBrilliant Flash talent\nApplies a 1-second Stun\nStuns Towers"
-    }
+    },
+    "speed": null
   },
   {
     "id": "charlga-razorflank",
@@ -1098,7 +1102,8 @@
         }
       ],
       "advanced_info": "Level modifier\nLevels gained while in play do not affect Cheat Death duration\nVampirism talent\nHeals the affected minis by 50 whenever they deal damage (includes damage-over-time effects like poison)"
-    }
+    },
+    "speed": null
   },
   {
     "id": "chimaera",
@@ -1381,7 +1386,8 @@
         }
       ],
       "advanced_info": "Deals 80 Elemental damage and a shorter 4-second Burn effect (120 damage) to Barracks."
-    }
+    },
+    "speed": null
   },
   {
     "id": "defias-bandits",
@@ -1619,7 +1625,8 @@
         }
       ],
       "advanced_info": "Bear form\nHeals for 30% of maximum health when changing shapes\nLeader of the Pack talent\nRadius 8\nRejuvenation talent\nCooldown 6 seconds\nRange 7\n25 healing every 0.6 seconds for 6 seconds, 250 healing overall\nTargets the closest injured ally (no smart targeting)"
-    }
+    },
+    "speed": null
   },
   {
     "id": "dryad",
@@ -1750,7 +1757,8 @@
         }
       ],
       "advanced_info": "Entangling Roots\nApplies 3 stacks of poison\nDoes not affect Flying minis\nStarfall\nHits for 65 damage 15 times for a total of 975 damage\nBalance talent\nThe second cast has to be immediately after the first cast: you can never cast the same form twice with Balance\nMoonfury talent\nStarfall ticks 19 times instead of the usual 15 times"
-    }
+    },
+    "speed": null
   },
   {
     "id": "earth-elemental",
@@ -1875,7 +1883,8 @@
         }
       ],
       "advanced_info": "Sunfire\nDeals 200 damage Barracks in PvP (half the usual damage)\nSolar Flare talent\nApplies a short 4-second Burn to Barracks in PvP (half the usual duration)"
-    }
+    },
+    "speed": null
   },
   {
     "id": "emperor-thaurissan",
@@ -1991,7 +2000,8 @@
         }
       ],
       "advanced_info": "Execute has a unique damage model. Its damage is a percentage of the target’s maximum health.\nMost targets: 50% with a 5% level modifier, minimum 5%\nBosses: 10% with a 1% level modifier, minimum 1%\nBarracks: 5% with a 1% level modifier, minimum 1%\nRaid bosses: 3% with a 0.5% level modifier, minimum 0.5%\nOverpower talent\nApplies a 1.5-second stun that does not affect bosses"
-    }
+    },
+    "speed": null
   },
   {
     "id": "faerie-dragon",
@@ -3081,7 +3091,8 @@
         }
       ],
       "advanced_info": "Renew talent\nHeals for 56 per second for 5 seconds for a total of 280 healing"
-    }
+    },
+    "speed": null
   },
   {
     "id": "huntress",
@@ -3259,7 +3270,8 @@
         }
       ],
       "advanced_info": "Explosion\nRadius 9\nDelay from cast 5 seconds\nAlso explodes if an affected mini dies before the time is up\nDeals half damage to Barracks and Bosses\nBlast Radius talent\nBurn is applied on cast to a radius of 10\nChain Reaction talent\nDelay from initial explosion 3 seconds\nReapplies Living Bomb to any minis that survive the initial explosion\nThe Chain Reaction explosion does not apply Living Bomb again"
-    }
+    },
+    "speed": null
   },
   {
     "id": "maiev-shadowsong",
@@ -4161,7 +4173,8 @@
         }
       ],
       "advanced_info": "Flying minis are still Flying as sheep.\nMini-bosses, bosses, raid bosses, unstoppable minis, and Ragnaros are immune to Polymorph.\nExploding Sheep talent\n75 damage\n8 radius\nStable Transfiguration talent\nSheep regenerate 25 percent of their maximum health per second"
-    }
+    },
+    "speed": null
   },
   {
     "id": "priestess",
@@ -4337,7 +4350,8 @@
         }
       ],
       "advanced_info": "Blaze of Glory talent\nRadius 6\n100 Elemental damage\nApplies Burn\nConflagrate talent\nSplash radius 4.25 instead of the usual 3 (doubles the splash area)\nPyroblast talent\nImplemented as a multiplier: additive, not multiplicative, with other multipliers"
-    }
+    },
+    "speed": null
   },
   {
     "id": "quilboar",
@@ -4617,7 +4631,8 @@
         "Tank",
         "Unbound"
       ]
-    }
+    },
+    "speed": null
   },
   {
     "id": "s-a-f-e-pilot",
@@ -4850,7 +4865,8 @@
         }
       ],
       "advanced_info": "Ambush talent\nDoes not apply to Goblin Sappers and Banshee\n+50% damage modifier, additive with other damage multipliers\nDoes not require Stealth\nThe bonus lasts for 8 seconds or until the first attack\nAdds +50% damage to minis with the Ambush ability (Smoke Bomb's Ambush is a separate multiplier)\nBand of Thieves talent\nNo level cap\nMost Skeletons are considered Cycle minis\nSkeleton Mages are not Cycle minis\nSkeleton Party members are not Cycle minis, not even the Skeleton Warriors"
-    }
+    },
+    "speed": null
   },
   {
     "id": "sneed",
@@ -5825,6 +5841,7 @@
         "Emerald Whelps apply 2 stacks of poison",
         "Emerald Drake applies 6 stacks of poison"
       ]
-    }
+    },
+    "speed": null
   }
 ]

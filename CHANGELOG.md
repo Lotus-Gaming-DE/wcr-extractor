@@ -10,4 +10,7 @@
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.
 - Pinned package versions in `requirements.txt` and `requirements-dev.txt`.
+- `fetch_unit_details` accepts a `categories` dict instead of a file path.
+- `fetch_units` loads categories once via `load_categories` and passes them to
+  `fetch_unit_details`.
 

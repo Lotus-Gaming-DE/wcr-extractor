@@ -357,7 +357,8 @@ def test_fetch_unit_details_army_bonus_slots_removed():
     with patch(
         "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get:
-        details = fetch_method.fetch_unit_details("url")
+        cats = fetch_method.load_categories()
+        details = fetch_method.fetch_unit_details("url", cats)
         mock_get.assert_called_once_with(
             "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
@@ -393,7 +394,8 @@ def test_fetch_unit_details_returns_trait_ids():
             "trait_desc": {"tank": "desc"},
         },
     ):
-        details = fetch_method.fetch_unit_details("url")
+        cats = fetch_method.load_categories()
+        details = fetch_method.fetch_unit_details("url", cats)
         mock_get.assert_called_once_with(
             "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
@@ -429,7 +431,8 @@ def test_fetch_unit_details_core_trait_ids():
             "trait_desc": {},
         },
     ):
-        details = fetch_method.fetch_unit_details("url")
+        cats = fetch_method.load_categories()
+        details = fetch_method.fetch_unit_details("url", cats)
         mock_get.assert_called_once_with(
             "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
@@ -444,7 +447,8 @@ def test_fetch_unit_details_request_exception():
         side_effect=requests.RequestException("boom"),
     ) as mock_get:
         with pytest.raises(fetch_method.FetchError) as excinfo:
-            fetch_method.fetch_unit_details("url")
+            cats = fetch_method.load_categories()
+            fetch_method.fetch_unit_details("url", cats)
         mock_get.assert_called_once_with(
             "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )

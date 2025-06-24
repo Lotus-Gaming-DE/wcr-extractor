@@ -69,6 +69,9 @@ Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei
 Trait descriptions are stored in `data/categories.json` under the `descriptions` field.
 The `core_trait` object of each unit lists `attack_id` and `type_id`,
 which map to the same trait IDs used in `trait_ids`.
+The helper function `fetch_unit_details()` now expects the category
+mappings as a dictionary argument so that callers can load the data only
+once with `load_categories()` and reuse it across multiple units.
 
 Das optionale Feld `army_bonus_slots` listet die Boni, die eine Einheit in der
 unteren Reihe des Armeefensters gewähren kann. Sind solche Angaben vorhanden,

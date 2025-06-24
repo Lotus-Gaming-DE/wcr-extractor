@@ -114,7 +114,8 @@ def is_unit_changed(old: dict, new: dict) -> bool:
 
 def fetch_unit_details(
     url: str,
-    categories_path: Path | str | None = None,
+    categories: dict,
+    *,
     timeout: int = 10,
 ) -> dict:
     """Fetch and parse the details page for a single mini.
@@ -123,9 +124,9 @@ def fetch_unit_details(
     ----------
     url:
         Full URL to the mini detail page.
-    categories_path:
-        Path to ``categories.json`` providing look-up tables.  If ``None`` the
-        default path is used.
+    categories:
+        Mapping of category names to ID look-up dictionaries as returned by
+        :func:`load_categories`.
     timeout:
         HTTP timeout in seconds for the request.
 
@@ -142,7 +143,7 @@ def fetch_unit_details(
     wird eine :class:`FetchError` ausgelöst.
     """
 
-    cats = load_categories(categories_path)
+    cats = categories
 
     try:
         response = SESSION.get(
@@ -275,6 +276,8 @@ def fetch_units(
     name, faction, type, cost, image as well as damage, health, dps, speed
     and traits for each entry. For every mini the corresponding detail page
     is fetched via :func:`fetch_unit_details` and merged into the output.
+    The category look-ups are loaded once and passed to each invocation of
+    :func:`fetch_unit_details`.
     Spells oder stationäre Einheiten besitzen keinen ``speed``-Wert; in der
     JSON-Datei erscheint dieser daher als ``null``. Ihr ``speed_id``-Eintrag
     ist ebenfalls ``null``.
@@ -349,11 +352,7 @@ def fetch_units(
             (link["href"].split("/")[-1] if link else name).lower().replace(" ", "-")
         )
 
-        details = (
-            fetch_unit_details(url, categories_path=categories_path, timeout=timeout)
-            if url
-            else {}
-        )
+        details = fetch_unit_details(url, cats, timeout=timeout) if url else {}
 
         faction_ids = [
             cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f

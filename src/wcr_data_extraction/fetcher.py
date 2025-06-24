@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import json
 import logging
+from logging.handlers import RotatingFileHandler
+import structlog
 from pathlib import Path
 from typing import Iterable
 
@@ -41,12 +43,32 @@ def _get_session() -> requests.Session:
 
 
 def configure_logging(level: str) -> None:
-    """Configure root logging with the given level."""
+    """Configure structured logging to ``logs/app.log``."""
 
-    logging.basicConfig(level=level.upper())
+    log_path = Path(__file__).resolve().parents[1] / "logs" / "app.log"
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    handler = RotatingFileHandler(log_path, maxBytes=1_000_000, backupCount=3)
+
+    logging.basicConfig(
+        level=level.upper(),
+        handlers=[handler, logging.StreamHandler()],
+        format="%(message)s",
+    )
+
+    structlog.configure(
+        processors=[
+            structlog.processors.TimeStamper(fmt="iso"),
+            structlog.processors.JSONRenderer(),
+        ],
+        logger_factory=structlog.stdlib.LoggerFactory(),
+        wrapper_class=structlog.make_filtering_bound_logger(
+            logging.getLevelName(level.upper())
+        ),
+    )
 
 
-logger = logging.getLogger(__name__)
+logger = structlog.get_logger(__name__)
 
 
 class FetchError(Exception):
@@ -139,16 +161,18 @@ def fetch_unit_details(
     """Fetch and parse the details page for a single mini."""
 
     if not url.startswith("https://"):
-        raise FetchError(f"Insecure URL not allowed: {url}")
+        raise FetchError(f"Unsichere URL nicht erlaubt: {url}")
 
     sess = session or _get_session()
 
     try:
         response = sess.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout)
     except requests.RequestException as exc:
-        raise FetchError(f"Error fetching {url}: {exc}") from exc
+        raise FetchError(f"Fehler beim Abrufen von {url}: {exc}") from exc
     if response.status_code != 200:
-        raise FetchError(f"Error fetching {url}: Status {response.status_code}")
+        raise FetchError(
+            f"Fehler beim Abrufen von {url}: Status {response.status_code}"
+        )
 
     soup = BeautifulSoup(response.text, "html.parser")
 
@@ -261,7 +285,7 @@ def fetch_units(
     """Download minis from method.gg and store them as JSON."""
 
     if not BASE_URL.startswith("https://"):
-        raise FetchError("BASE_URL must use HTTPS")
+        raise FetchError("BASE_URL muss HTTPS verwenden")
 
     out_path = Path(out_path or OUT_PATH)
     categories_path = Path(categories_path or CATEGORIES_PATH)
@@ -274,9 +298,11 @@ def fetch_units(
             BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout
         )
     except requests.RequestException as exc:
-        raise FetchError(f"Error fetching {BASE_URL}: {exc}") from exc
+        raise FetchError(f"Fehler beim Abrufen von {BASE_URL}: {exc}") from exc
     if response.status_code != 200:
-        raise FetchError(f"Error fetching {BASE_URL}: Status {response.status_code}")
+        raise FetchError(
+            f"Fehler beim Abrufen von {BASE_URL}: Status {response.status_code}"
+        )
 
     soup = BeautifulSoup(response.text, "html.parser")
     cards = soup.select("div.mini-wrapper")

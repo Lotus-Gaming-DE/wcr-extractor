@@ -22,10 +22,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     def positive_int(value: str) -> int:
         ivalue = int(value)
         if ivalue <= 0:
-            raise argparse.ArgumentTypeError("must be >0")
+            raise argparse.ArgumentTypeError("muss >0 sein")
         return ivalue
 
-    parser = argparse.ArgumentParser(description="Fetch minis from method.gg")
+    parser = argparse.ArgumentParser(description="Lade Minis von method.gg")
     parser.add_argument(
         "--output", default=str(OUT_PATH), help="Path to write units JSON"
     )

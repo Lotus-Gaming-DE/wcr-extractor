@@ -10,6 +10,9 @@ Bei allen anderen Einheiten wird `speed` weggelassen; stattdessen verweist `spee
 
 ## Setup
 
+Der Python-Code liegt im Verzeichnis `src/wcr_data_extraction` und wird
+mithilfe von `pytest.ini` automatisch gefunden.
+
 ```bash
 ./setup.sh
 python -m wcr_data_extraction.cli \
@@ -25,6 +28,9 @@ python -m wcr_data_extraction.cli \
    for runtime only.
 2. Run `python -m wcr_data_extraction.cli` to download the data.
 3. The results are written to `data/units.json` and `data/categories.json`.
+
+F\u00fcr konsistenten Code verwendet das Projekt `pre-commit`. Nach dem Klonen
+einfach `pre-commit install` ausf\u00fchren.
 
 ``--output`` legt den Pfad der Ergebnisdatei fest. ``--categories`` bestimmt die
 Kategorien-Definitionen. ``--timeout`` und ``--workers`` akzeptieren nur
@@ -48,6 +54,7 @@ nach erfolgreichem Schreiben atomar ersetzt, sodass bei Fehlern die alte Datei
 erhalten bleibt.
 `units.json` enthält die Minis, `categories.json` die verfügbaren Fraktionen,
 Typen, Traits und Geschwindigkeiten.
+Alle Logdateien landen im Verzeichnis `logs/` im JSON-Format.
 Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
 
 ```json

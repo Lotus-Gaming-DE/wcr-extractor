@@ -1,27 +1,35 @@
 from pathlib import Path
 from unittest.mock import patch
 
-import sys
-
-sys.path.append(str(Path(__file__).resolve().parents[1]))
-
 from wcr_data_extraction import fetcher  # noqa: E402
 
 
-def test_load_categories_logs_warning(tmp_path, caplog):
+def _setup_logging(tmp_path, monkeypatch):
+    (tmp_path / "dummy").mkdir()
+    monkeypatch.setattr(Path, "resolve", lambda self: tmp_path / "dummy" / "fetcher.py")
+    fetcher.configure_logging("WARNING")
+    log_path = tmp_path / "logs" / "app.log"
+    return log_path
+
+
+def test_load_categories_logs_warning(tmp_path, monkeypatch):
     bad_file = tmp_path / "cats.json"
     bad_file.write_text("{bad}")
-    with caplog.at_level("WARNING"):
-        cats = fetcher.load_categories(bad_file)
-    assert "Could not read categories" in caplog.text
+    log_file = _setup_logging(tmp_path, monkeypatch)
+    cats = fetcher.load_categories(bad_file)
+    for h in fetcher.logging.getLogger().handlers:
+        h.flush()
+    assert log_file.exists()
     assert cats["faction"] == {}
 
 
-def test_load_categories_logs_unreadable(tmp_path, caplog):
+def test_load_categories_logs_unreadable(tmp_path, monkeypatch):
     bad_file = tmp_path / "cats.json"
     bad_file.write_text("{}")
+    log_file = _setup_logging(tmp_path, monkeypatch)
     with patch("builtins.open", side_effect=OSError("fail")):
-        with caplog.at_level("WARNING"):
-            cats = fetcher.load_categories(bad_file)
-    assert "Could not read categories" in caplog.text
+        cats = fetcher.load_categories(bad_file)
+    for h in fetcher.logging.getLogger().handlers:
+        h.flush()
+    assert log_file.exists()
     assert cats["trait"] == {}

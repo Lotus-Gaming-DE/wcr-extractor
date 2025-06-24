@@ -1,9 +1,6 @@
-import sys
 from pathlib import Path
 from unittest.mock import patch
 import pytest
-
-sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from wcr_data_extraction import cli  # noqa: E402
 

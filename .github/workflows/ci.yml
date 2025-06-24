@@ -13,15 +13,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           pip install -r requirements-dev.txt
-      - name: Lint
-        run: flake8
+          pre-commit install --install-hooks
+      - name: Pre-commit
+        run: pre-commit run --show-diff-on-failure --color always
       - name: Test
         run: coverage run -m pytest
       - name: Coverage report
         run: |
           coverage xml
           coverage report --fail-under=90
+      - name: Snyk Scan
+        uses: snyk/actions/python@v1
+        with:
+          args: --severity-threshold=medium
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

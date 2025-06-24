@@ -1,12 +1,10 @@
 import json
-import sys
 from pathlib import Path
 from unittest.mock import patch, Mock
 
 import pytest
 import requests
 
-sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from wcr_data_extraction import fetcher  # noqa: E402
 
@@ -467,7 +465,7 @@ def test_fetch_unit_details_request_exception():
             headers={"User-Agent": "Mozilla/5.0"},
             timeout=10,
         )
-    assert "Error fetching" in str(excinfo.value)
+    assert "Fehler beim Abrufen" in str(excinfo.value)
 
 
 def test_fetch_unit_details_http_error():
@@ -503,7 +501,7 @@ def test_fetch_units_request_exception(tmp_path):
             headers={"User-Agent": "Mozilla/5.0"},
             timeout=10,
         )
-    assert "Error fetching" in str(excinfo.value)
+    assert "Fehler beim Abrufen" in str(excinfo.value)
 
 
 def test_fetch_units_http_error(tmp_path):

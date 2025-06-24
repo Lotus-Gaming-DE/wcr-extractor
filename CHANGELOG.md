@@ -16,6 +16,10 @@
 - Warning logs when `load_categories` fails to read the file.
 - Helper `create_session` for injecting custom HTTP sessions.
 - Tests for the new behaviors.
+- Structured JSON-Logging mit `structlog`.
+- Pre-commit-Konfiguration und CI-Integration.
+- Paketstruktur unter `src/`.
+- Shebang f\u00fcr `scripts/fetch_method.py` und zugeh\u00f6riger Test.
 
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.
@@ -26,4 +30,4 @@
 - `fetch_unit_details` and `fetch_units` werfen nun auch bei HTTP-Statuscodes
   ungleich `200` eine `FetchError` mit dem jeweiligen Statuscode.
 - `setup.sh` now uses `python3 -m pip`.
-
+- CLI-Fehlermeldungen und Ausgaben sind jetzt auf Deutsch.

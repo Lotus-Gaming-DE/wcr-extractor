@@ -17,6 +17,7 @@ venv/
 *.tmp
 *.swp
 *.bak
+logs/
 
 # macOS
 .DS_Store

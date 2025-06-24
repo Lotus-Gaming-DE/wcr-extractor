@@ -2,22 +2,25 @@ import json
 import sys
 from pathlib import Path
 from unittest.mock import patch, Mock
-import requests
+
 import pytest
+import requests
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from scripts import fetch_method
+from scripts import fetch_method  # noqa: E402
 
 
 def test_fetch_units_writes_json(tmp_path):
-    html = """
-        <div class="mini-wrapper" data-name="Footman" data-family="Alliance" data-type="Troop" data-cost="2" data-damage="10" data-health="20" data-dps="5" data-speed="Slow" data-traits="Melee,One-Target">
-            <a class="mini-link" href="/warcraft-rumble/minis/footman">
-                <img src="footman.png" />
-            </a>
-        </div>
-    """
+    html = (
+        "<div class='mini-wrapper' data-name='Footman' data-family='Alliance' "
+        "data-type='Troop' data-cost='2' data-damage='10' data-health='20' "
+        "data-dps='5' data-speed='Slow' data-traits='Melee,One-Target'>"
+        "<a class='mini-link' href='/warcraft-rumble/minis/footman'>"
+        "<img src='footman.png' />"
+        "</a>"
+        "</div>"
+    )
     mock_response = Mock(status_code=200, text=html)
 
     categories = {
@@ -52,9 +55,9 @@ def test_fetch_units_writes_json(tmp_path):
             "advanced_info": "info",
             "army_bonus_slots": ["Cycle"],
         }
-        with patch.object(fetch_method, "OUT_PATH", out_file), \
-             patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
-             patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
+        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
+            fetch_method, "CATEGORIES_PATH", cat_file
+        ), patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
             mock_get.assert_called_once_with(
                 fetch_method.BASE_URL,
@@ -63,30 +66,34 @@ def test_fetch_units_writes_json(tmp_path):
             )
             data = json.loads(Path(out_file).read_text(encoding="utf-8"))
 
-    assert data == [{
-        "id": "footman",
-        "names": {"en": "Footman"},
-        "faction_ids": ["alliance"],
-        "type_id": "troop",
-        "cost": 2,
-        "image": "footman.png",
-        "damage": 10,
-        "health": 20,
-        "dps": 5.0,
-        "speed_id": "slow",
-        "trait_ids": ["melee", "one-target"],
-        "details": dummy_details,
-    }]
+    assert data == [
+        {
+            "id": "footman",
+            "names": {"en": "Footman"},
+            "faction_ids": ["alliance"],
+            "type_id": "troop",
+            "cost": 2,
+            "image": "footman.png",
+            "damage": 10,
+            "health": 20,
+            "dps": 5.0,
+            "speed_id": "slow",
+            "trait_ids": ["melee", "one-target"],
+            "details": dummy_details,
+        }
+    ]
 
 
 def test_fetch_units_preserves_translations(tmp_path):
-    html = """
-        <div class=\"mini-wrapper\" data-name=\"Footman\" data-family=\"Alliance\" data-type=\"Troop\" data-cost=\"2\" data-damage=\"10\" data-health=\"20\" data-dps=\"5\" data-speed=\"Slow\" data-traits=\"Melee,One-Target\">
-            <a class=\"mini-link\" href=\"/warcraft-rumble/minis/footman\">
-                <img src=\"footman.png\" />
-            </a>
-        </div>
-    """
+    html = (
+        "<div class='mini-wrapper' data-name='Footman' data-family='Alliance' "
+        "data-type='Troop' data-cost='2' data-damage='10' data-health='20' "
+        "data-dps='5' data-speed='Slow' data-traits='Melee,One-Target'>"
+        "<a class='mini-link' href='/warcraft-rumble/minis/footman'>"
+        "<img src='footman.png' />"
+        "</a>"
+        "</div>"
+    )
     mock_response = Mock(status_code=200, text=html)
 
     categories = {
@@ -102,15 +109,23 @@ def test_fetch_units_preserves_translations(tmp_path):
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
         cat_file.write_text(json.dumps(categories))
-        existing = [{
-            "id": "footman",
-            "names": {"en": "Old", "de": "Fußmann"},
-        }]
+        existing = [
+            {
+                "id": "footman",
+                "names": {"en": "Old", "de": "Fußmann"},
+            }
+        ]
         out_file.write_text(json.dumps(existing))
-        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
-        with patch.object(fetch_method, "OUT_PATH", out_file), \
-             patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
-             patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
+        dummy_details = {
+            "core_trait": {},
+            "stats": {},
+            "traits": [],
+            "talents": [],
+            "advanced_info": "info",
+        }
+        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
+            fetch_method, "CATEGORIES_PATH", cat_file
+        ), patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
             mock_get.assert_called_once_with(
                 fetch_method.BASE_URL,
@@ -123,13 +138,15 @@ def test_fetch_units_preserves_translations(tmp_path):
 
 
 def test_fetch_units_skips_unchanged_unit(tmp_path):
-    html = """
-        <div class=\"mini-wrapper\" data-name=\"Footman\" data-family=\"Alliance\" data-type=\"Troop\" data-cost=\"2\" data-damage=\"10\" data-health=\"20\" data-dps=\"5\" data-speed=\"Slow\" data-traits=\"Melee\">
-            <a class=\"mini-link\" href=\"/warcraft-rumble/minis/footman\">
-                <img src=\"footman.png\" />
-            </a>
-        </div>
-    """
+    html = (
+        "<div class='mini-wrapper' data-name='Footman' data-family='Alliance' "
+        "data-type='Troop' data-cost='2' data-damage='10' data-health='20' "
+        "data-dps='5' data-speed='Slow' data-traits='Melee'>"
+        "<a class='mini-link' href='/warcraft-rumble/minis/footman'>"
+        "<img src='footman.png' />"
+        "</a>"
+        "</div>"
+    )
     mock_response = Mock(status_code=200, text=html)
 
     categories = {
@@ -145,25 +162,33 @@ def test_fetch_units_skips_unchanged_unit(tmp_path):
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
         cat_file.write_text(json.dumps(categories))
-        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
-        existing = [{
-            "id": "footman",
-            "names": {"en": "Footman", "de": "Fußmann"},
-            "faction_ids": ["alliance"],
-            "type_id": "troop",
-            "cost": 2,
-            "image": "footman.png",
-            "damage": 10,
-            "health": 20,
-            "dps": 5.0,
-            "speed_id": "slow",
-            "trait_ids": ["melee"],
-            "details": dummy_details,
-        }]
+        dummy_details = {
+            "core_trait": {},
+            "stats": {},
+            "traits": [],
+            "talents": [],
+            "advanced_info": "info",
+        }
+        existing = [
+            {
+                "id": "footman",
+                "names": {"en": "Footman", "de": "Fußmann"},
+                "faction_ids": ["alliance"],
+                "type_id": "troop",
+                "cost": 2,
+                "image": "footman.png",
+                "damage": 10,
+                "health": 20,
+                "dps": 5.0,
+                "speed_id": "slow",
+                "trait_ids": ["melee"],
+                "details": dummy_details,
+            }
+        ]
         out_file.write_text(json.dumps(existing))
-        with patch.object(fetch_method, "OUT_PATH", out_file), \
-             patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
-             patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
+        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
+            fetch_method, "CATEGORIES_PATH", cat_file
+        ), patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
             mock_get.assert_called_once_with(
                 fetch_method.BASE_URL,
@@ -176,13 +201,15 @@ def test_fetch_units_skips_unchanged_unit(tmp_path):
 
 
 def test_fetch_units_updates_changed_unit(tmp_path):
-    html = """
-        <div class=\"mini-wrapper\" data-name=\"Footman\" data-family=\"Alliance\" data-type=\"Troop\" data-cost=\"3\" data-damage=\"10\" data-health=\"20\" data-dps=\"5\" data-speed=\"Slow\" data-traits=\"Melee\">
-            <a class=\"mini-link\" href=\"/warcraft-rumble/minis/footman\">
-                <img src=\"footman.png\" />
-            </a>
-        </div>
-    """
+    html = (
+        "<div class='mini-wrapper' data-name='Footman' data-family='Alliance' "
+        "data-type='Troop' data-cost='3' data-damage='10' data-health='20' "
+        "data-dps='5' data-speed='Slow' data-traits='Melee'>"
+        "<a class='mini-link' href='/warcraft-rumble/minis/footman'>"
+        "<img src='footman.png' />"
+        "</a>"
+        "</div>"
+    )
     mock_response = Mock(status_code=200, text=html)
 
     categories = {
@@ -198,25 +225,33 @@ def test_fetch_units_updates_changed_unit(tmp_path):
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
         cat_file.write_text(json.dumps(categories))
-        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
-        existing = [{
-            "id": "footman",
-            "names": {"en": "Footman", "de": "Fußmann"},
-            "faction_ids": ["alliance"],
-            "type_id": "troop",
-            "cost": 2,
-            "image": "footman.png",
-            "damage": 10,
-            "health": 20,
-            "dps": 5.0,
-            "speed_id": "slow",
-            "trait_ids": ["melee"],
-            "details": dummy_details,
-        }]
+        dummy_details = {
+            "core_trait": {},
+            "stats": {},
+            "traits": [],
+            "talents": [],
+            "advanced_info": "info",
+        }
+        existing = [
+            {
+                "id": "footman",
+                "names": {"en": "Footman", "de": "Fußmann"},
+                "faction_ids": ["alliance"],
+                "type_id": "troop",
+                "cost": 2,
+                "image": "footman.png",
+                "damage": 10,
+                "health": 20,
+                "dps": 5.0,
+                "speed_id": "slow",
+                "trait_ids": ["melee"],
+                "details": dummy_details,
+            }
+        ]
         out_file.write_text(json.dumps(existing))
-        with patch.object(fetch_method, "OUT_PATH", out_file), \
-             patch.object(fetch_method, "CATEGORIES_PATH", cat_file), \
-             patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
+        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
+            fetch_method, "CATEGORIES_PATH", cat_file
+        ), patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
             fetch_method.fetch_units()
             mock_get.assert_called_once_with(
                 fetch_method.BASE_URL,
@@ -231,19 +266,28 @@ def test_fetch_units_updates_changed_unit(tmp_path):
 
 @pytest.mark.parametrize("speed_value", ["", "Znull", fetch_method.STATIONARY])
 def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
-    html = f"""
-        <div class=\"mini-wrapper\" data-name=\"Spell\" data-family=\"Beast\" data-type=\"Spell\" data-cost=\"1\" data-damage=\"0\" data-health=\"0\" data-dps=\"0\" data-speed=\"{speed_value}\" data-traits=\"\">
-            <a class=\"mini-link\" href=\"/warcraft-rumble/minis/spell\"></a>
-        </div>
-    """
+    html = (
+        f"<div class='mini-wrapper' data-name='Spell' data-family='Beast' "
+        f"data-type='Spell' data-cost='1' data-damage='0' data-health='0' "
+        f"data-dps='0' data-speed='{speed_value}' data-traits=''>"
+        "<a class='mini-link' href='/warcraft-rumble/minis/spell'></a>"
+        "</div>"
+    )
     mock_response = Mock(status_code=200, text=html)
     with patch(
         "scripts.fetch_method.requests.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
-        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
-        with patch.object(fetch_method, "OUT_PATH", out_file), \
-             patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
+        dummy_details = {
+            "core_trait": {},
+            "stats": {},
+            "traits": [],
+            "talents": [],
+            "advanced_info": "info",
+        }
+        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
+            fetch_method, "fetch_unit_details", return_value=dummy_details
+        ):
             fetch_method.fetch_units()
             mock_get.assert_called_once_with(
                 fetch_method.BASE_URL,
@@ -261,20 +305,28 @@ def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
 def test_speed_id_is_none_when_speed_empty_or_znull(tmp_path, speed_value):
     """Ensure speed_id is None when the speed attribute is empty, 'Znull' or
     'Stationary'."""
-    html = f"""
-        <div class=\"mini-wrapper\" data-name=\"Spell\" data-family=\"Beast\" da
-ta-type=\"Spell\" data-cost=\"1\" data-damage=\"0\" data-health=\"0\" data-dps=\"0\" data-speed=\"{speed_value}\" data-traits=\"\">
-            <a class=\"mini-link\" href=\"/warcraft-rumble/minis/spell\"></a>
-        </div>
-    """
+    html = (
+        f"<div class='mini-wrapper' data-name='Spell' data-family='Beast' "
+        f"data-type='Spell' data-cost='1' data-damage='0' data-health='0' "
+        f"data-dps='0' data-speed='{speed_value}' data-traits=''>"
+        "<a class='mini-link' href='/warcraft-rumble/minis/spell'></a>"
+        "</div>"
+    )
     mock_response = Mock(status_code=200, text=html)
     with patch(
         "scripts.fetch_method.requests.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
-        dummy_details = {"core_trait": {}, "stats": {}, "traits": [], "talents": [], "advanced_info": "info"}
-        with patch.object(fetch_method, "OUT_PATH", out_file), \
-             patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
+        dummy_details = {
+            "core_trait": {},
+            "stats": {},
+            "traits": [],
+            "talents": [],
+            "advanced_info": "info",
+        }
+        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
+            fetch_method, "fetch_unit_details", return_value=dummy_details
+        ):
             fetch_method.fetch_units()
             mock_get.assert_called_once_with(
                 fetch_method.BASE_URL,
@@ -331,17 +383,16 @@ def test_fetch_unit_details_returns_trait_ids():
 
     with patch(
         "scripts.fetch_method.requests.get", return_value=mock_response
-    ) as mock_get, \
-         patch(
-             "scripts.fetch_method.load_categories",
-             return_value={
-                 "faction": {},
-                 "type": {},
-                 "trait": {"Tank": "tank"},
-                 "speed": {},
-                 "trait_desc": {"tank": "desc"},
-             },
-         ):
+    ) as mock_get, patch(
+        "scripts.fetch_method.load_categories",
+        return_value={
+            "faction": {},
+            "type": {},
+            "trait": {"Tank": "tank"},
+            "speed": {},
+            "trait_desc": {"tank": "desc"},
+        },
+    ):
         details = fetch_method.fetch_unit_details("url")
         mock_get.assert_called_once_with(
             "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
@@ -368,17 +419,16 @@ def test_fetch_unit_details_core_trait_ids():
 
     with patch(
         "scripts.fetch_method.requests.get", return_value=mock_response
-    ) as mock_get, \
-        patch(
-            "scripts.fetch_method.load_categories",
-            return_value={
-                 "faction": {},
-                 "type": {},
-                 "trait": {"AoE": "aoe", "Melee": "melee"},
-                 "speed": {},
-                 "trait_desc": {},
-             },
-         ):
+    ) as mock_get, patch(
+        "scripts.fetch_method.load_categories",
+        return_value={
+            "faction": {},
+            "type": {},
+            "trait": {"AoE": "aoe", "Melee": "melee"},
+            "speed": {},
+            "trait_desc": {},
+        },
+    ):
         details = fetch_method.fetch_unit_details("url")
         mock_get.assert_called_once_with(
             "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10

@@ -27,9 +27,9 @@ python -m wcr_data_extraction.cli \
 3. The results are written to `data/units.json` and `data/categories.json`.
 
 ``--output`` legt den Pfad der Ergebnisdatei fest. ``--categories`` bestimmt die
-Kategorien-Definitionen. ``--timeout`` setzt das HTTP-Timeout in Sekunden und
-``--workers`` steuert die Anzahl paralleler Downloads. Ohne Angaben werden die
-obigen Standardwerte verwendet.
+Kategorien-Definitionen. ``--timeout`` und ``--workers`` akzeptieren nur
+positive Ganzzahlen und setzen das HTTP-Timeout bzw. die Anzahl paralleler
+Downloads. Ohne Angaben werden die obigen Standardwerte verwendet.
 
 `setup.sh` installiert die Bibliotheken aus `requirements.txt`. Mit
 `./setup.sh --dev` werden zusätzlich die Entwicklerwerkzeuge aus
@@ -43,6 +43,9 @@ Hauptprogramm fängt diese ab, schreibt eine Fehlermeldung in das Log und
 beendet sich mit dem Code `1`. Alle HTTP-Anfragen verwenden einen gemeinsamen
 `requests.Session` mit automatischen Retries und brechen nach zehn Sekunden
 ohne Antwort mit einem Timeout ab.
+Beim Schreiben von `units.json` wird zunächst eine temporäre Datei angelegt und
+nach erfolgreichem Schreiben atomar ersetzt, sodass bei Fehlern die alte Datei
+erhalten bleibt.
 `units.json` enthält die Minis, `categories.json` die verfügbaren Fraktionen,
 Typen, Traits und Geschwindigkeiten.
 Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
@@ -89,8 +92,8 @@ werden sie aus `advanced_info` entfernt und in `army_bonus_slots` gespeichert.
 ## Logging
 
 Die Skripte verwenden das Modul `logging`. Über das Argument `--log-level` oder
-die Umgebungsvariable `LOG_LEVEL` lässt sich die gewünschte Protokollstufe
-festlegen. Standardmäßig wird auf `INFO` geloggt.
+die Hilfsfunktion `configure_logging()` lässt sich die gewünschte
+Protokollstufe festlegen. Standardmäßig wird auf `INFO` geloggt.
 
 ## Tests
 

@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import logging
-import os
 from pathlib import Path
 from typing import Iterable
 
@@ -19,14 +18,34 @@ CATEGORIES_PATH = Path(__file__).resolve().parents[1] / "data" / "categories.jso
 STATIONARY = "Stationary"
 
 # HTTP session with retry logic and backoff
-SESSION = requests.Session()
 _retry = Retry(total=3, backoff_factor=0.5, status_forcelist=[500, 502, 503, 504])
 adapter = HTTPAdapter(max_retries=_retry)
-SESSION.mount("http://", adapter)
-SESSION.mount("https://", adapter)
 
-LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
-logging.basicConfig(level=LOG_LEVEL)
+_session: requests.Session | None = None
+
+
+def create_session() -> requests.Session:
+    """Return a configured ``requests.Session`` with retry logic."""
+
+    session = requests.Session()
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
+
+
+def _get_session() -> requests.Session:
+    global _session
+    if _session is None:
+        _session = create_session()
+    return _session
+
+
+def configure_logging(level: str) -> None:
+    """Configure root logging with the given level."""
+
+    logging.basicConfig(level=level.upper())
+
+
 logger = logging.getLogger(__name__)
 
 
@@ -46,8 +65,18 @@ def load_categories(categories_path: Path | str | None = None) -> dict:
             "speed": {},
             "trait_desc": {},
         }
-    with open(path, encoding="utf-8") as f:
-        data = json.load(f)
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, OSError) as exc:
+        logger.warning("Could not read categories from %s: %s", path, exc)
+        return {
+            "faction": {},
+            "type": {},
+            "trait": {},
+            "speed": {},
+            "trait_desc": {},
+        }
 
     def to_map(items: Iterable[dict]) -> dict:
         return {item["names"]["en"]: item["id"] for item in items}
@@ -105,16 +134,17 @@ def fetch_unit_details(
     categories: dict,
     *,
     timeout: int = 10,
+    session: requests.Session | None = None,
 ) -> dict:
     """Fetch and parse the details page for a single mini."""
 
     if not url.startswith("https://"):
         raise FetchError(f"Insecure URL not allowed: {url}")
 
+    sess = session or _get_session()
+
     try:
-        response = SESSION.get(
-            url, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout
-        )
+        response = sess.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout)
     except requests.RequestException as exc:
         raise FetchError(f"Error fetching {url}: {exc}") from exc
     if response.status_code != 200:
@@ -226,6 +256,7 @@ def fetch_units(
     categories_path: Path | str | None = None,
     timeout: int = 10,
     max_workers: int = 1,
+    session: requests.Session | None = None,
 ) -> None:
     """Download minis from method.gg and store them as JSON."""
 
@@ -235,9 +266,11 @@ def fetch_units(
     out_path = Path(out_path or OUT_PATH)
     categories_path = Path(categories_path or CATEGORIES_PATH)
 
+    sess = session or _get_session()
+
     logger.info("Fetching overview from %s", BASE_URL)
     try:
-        response = SESSION.get(
+        response = sess.get(
             BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout
         )
     except requests.RequestException as exc:
@@ -262,7 +295,9 @@ def fetch_units(
             .lower()
             .replace(" ", "-")
         )
-        details = fetch_unit_details(url, cats, timeout=timeout) if url else {}
+        details = (
+            fetch_unit_details(url, cats, timeout=timeout, session=sess) if url else {}
+        )
         logger.info("Fetched %s", unit_id)
         return unit_id, details
 
@@ -360,7 +395,9 @@ def fetch_units(
             result_units.append(old_unit)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as f:
+    tmp_path = out_path.with_suffix(".tmp")
+    with open(tmp_path, "w", encoding="utf-8") as f:
         json.dump(result_units, f, indent=2, ensure_ascii=False)
+    tmp_path.replace(out_path)
 
     logger.info("%s units saved to %s", len(result_units), out_path)

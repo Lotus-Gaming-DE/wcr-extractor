@@ -24,7 +24,7 @@ python -m wcr_data_extraction.cli \
 1. Install dependencies: `./setup.sh --dev` for development or without `--dev`
    for runtime only.
 2. Run `python -m wcr_data_extraction.cli` to download the data.
-3. The results are written to `data/units.json` and `data/categories.json`.
+3. The results are written to `data/units.json`. `data/categories.json` is used as input only.
 
 ``--output`` legt den Pfad der Ergebnisdatei fest. ``--categories`` bestimmt die
 Kategorien-Definitionen. ``--timeout`` und ``--workers`` akzeptieren nur
@@ -36,7 +36,7 @@ Downloads. Ohne Angaben werden die obigen Standardwerte verwendet.
 `requirements-dev.txt` installiert. Das Skript nutzt `python3 -m pip`, um
 Warnungen beim Ausführen als Root zu vermeiden.
 
-Der Aufruf legt die Dateien `data/units.json` und `data/categories.json` an.
+Der Aufruf legt die Datei `data/units.json` an. Die Datei `data/categories.json` bleibt unverändert.
 Tritt beim Abrufen ein Netzwerkfehler auf oder antwortet der Server mit einem
 HTTP-Status ungleich `200`, wird eine `FetchError`-Exception ausgelöst. Das
 Hauptprogramm fängt diese ab, schreibt eine Fehlermeldung in das Log und
@@ -75,8 +75,8 @@ Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
 ]
 ```
 
-Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Dateien
-`data/units.json` und `data/categories.json` automatisch aktualisiert.
+Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei
+`data/units.json` automatisch aktualisiert.
 Trait descriptions are stored in `data/categories.json` under the `descriptions` field.
 The `core_trait` object of each unit lists `attack_id` and `type_id`,
 which map to the same trait IDs used in `trait_ids`.
@@ -105,8 +105,8 @@ pytest
 ```
 
 Bei jedem Push und für Pull Requests führt ein GitHub Actions Workflow
-(`ci.yml`) `flake8` und `pytest` aus, um sicherzustellen, dass Linting und
-Tests fehlerfrei durchlaufen.
+(`ci.yml`) `pre-commit`, `flake8`, `pytest` und einen Snyk-Sicherheitsscan aus,
+um sicherzustellen, dass Linting, Tests und Security-Prüfungen fehlerfrei durchlaufen.
 
 ## Formatting
 
@@ -118,12 +118,12 @@ with:
 pip install -r requirements-dev.txt
 ```
 
-Run the formatters before committing:
+Run the formatters using `pre-commit` before committing:
 
 ```bash
-black scripts tests
-flake8
+pre-commit run --all-files
 ```
+Black prüft die Ordner `wcr_data_extraction`, `scripts` und `tests`.
 
 ## Updating dependencies
 

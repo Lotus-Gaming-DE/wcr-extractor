@@ -16,6 +16,9 @@
 - Warning logs when `load_categories` fails to read the file.
 - Helper `create_session` for injecting custom HTTP sessions.
 - Tests for the new behaviors.
+- Pre-commit configuration and CI integration.
+- CLI module can now be executed with `python -m wcr_data_extraction.cli`.
+- Snyk security scan in CI workflow.
 
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.
@@ -26,4 +29,4 @@
 - `fetch_unit_details` and `fetch_units` werfen nun auch bei HTTP-Statuscodes
   ungleich `200` eine `FetchError` mit dem jeweiligen Statuscode.
 - `setup.sh` now uses `python3 -m pip`.
-
+- README updated with correct CLI invocation and workflow description.

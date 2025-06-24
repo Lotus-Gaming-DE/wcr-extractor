@@ -26,3 +26,9 @@ venv/
 
 # Misc
 .env
+
+# pre-commit
+.pre-commit/
+
+# Logs
+logs/

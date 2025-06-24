@@ -57,3 +57,7 @@ def main(argv: list[str] | None = None) -> None:
     except FetchError as exc:
         logger.error(exc)
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

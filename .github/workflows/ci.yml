@@ -17,6 +17,14 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r requirements-dev.txt
+      - name: Pre-commit
+        run: pre-commit run --all-files --show-diff-on-failure
+      - name: Snyk Scan
+        uses: snyk/actions/python@v2
+        with:
+          command: test
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - name: Lint
         run: flake8
       - name: Test

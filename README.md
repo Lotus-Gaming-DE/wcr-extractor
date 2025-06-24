@@ -25,7 +25,9 @@ python scripts/fetch_method.py \
 die Kategorien-Definitionen und ``--timeout`` setzt das HTTP-Timeout in
 Sekunden. Ohne Angaben werden die obigen Standardwerte verwendet.
 
-`setup.sh` installiert alle Abhängigkeiten aus `requirements.txt`.
+`setup.sh` installiert die Bibliotheken aus `requirements.txt`. Mit
+`./setup.sh --dev` werden zusätzlich die Entwicklerwerkzeuge aus
+`requirements-dev.txt` installiert.
 
 Der Aufruf legt die Dateien `data/units.json` und `data/categories.json` an.
 Tritt beim Abrufen ein Netzwerkfehler auf, wird eine `FetchError`-Exception
@@ -110,6 +112,20 @@ Run the formatters before committing:
 black scripts tests
 flake8
 ```
+
+## Updating dependencies
+
+The versions in `requirements.txt` and `requirements-dev.txt` are pinned.
+To update a package, run `pip install -U <package>` and then freeze the
+current version into the appropriate requirements file.  After adjusting the
+files, execute the test suite:
+
+```bash
+pip install -r requirements.txt -r requirements-dev.txt
+pytest
+```
+
+Commit the updated requirements together with any code changes.
 
 ## Contributing translations
 

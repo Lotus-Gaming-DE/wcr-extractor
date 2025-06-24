@@ -21,9 +21,10 @@ python scripts/fetch_method.py
 `setup.sh` installiert alle Abhängigkeiten aus `requirements.txt`.
 
 Der Aufruf legt die Dateien `data/units.json` und `data/categories.json` an.
-Tritt beim Abrufen ein Netzwerkfehler auf, gibt das Skript eine
-Fehlermeldung aus und beendet sich mit dem Code `1`. Alle HTTP-Anfragen brechen
-nach zehn Sekunden ohne Antwort mit einem Timeout ab.
+Tritt beim Abrufen ein Netzwerkfehler auf, wird eine `FetchError`-Exception
+ausgelöst. Das Hauptprogramm fängt diese ab, gibt eine Fehlermeldung aus und
+beendet sich mit dem Code `1`. Alle HTTP-Anfragen brechen nach zehn Sekunden
+ohne Antwort mit einem Timeout ab.
 `units.json` enthält die Minis, `categories.json` die verfügbaren Fraktionen,
 Typen, Traits und Geschwindigkeiten.
 Ein Auszug aus `units.json` könnte folgendermaßen aussehen:

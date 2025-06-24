@@ -12,6 +12,10 @@ CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
 STATIONARY = "Stationary"
 
 
+class FetchError(Exception):
+    """Raised when fetching data from method.gg fails."""
+
+
 def load_categories() -> dict:
     """Return mappings for category lookups.
 
@@ -96,9 +100,9 @@ def fetch_unit_details(url: str) -> dict:
     "Fresh Meat"}}``.  If present, the optional ``army_bonus_slots`` field lists
     the available army bonus slots for the bottom row and those lines are
     removed from ``advanced_info``.  Wenn beim Abruf ein Netzwerkfehler
-    auftritt, gibt die Funktion eine Fehlermeldung aus und beendet das Skript
-    mit dem Rückgabecode ``1``. Alle HTTP-Anfragen verwenden einen Timeout von
-    zehn Sekunden, um bei ausbleibender Antwort nicht ewig zu blockieren.
+    auftritt, wird eine :class:`FetchError` ausgelöst. Alle HTTP-Anfragen
+    verwenden einen Timeout von zehn Sekunden, um bei ausbleibender Antwort
+    nicht ewig zu blockieren.
     """
 
     cats = load_categories()
@@ -106,8 +110,7 @@ def fetch_unit_details(url: str) -> dict:
     try:
         response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
     except requests.RequestException as exc:
-        print(f"Fehler beim Abrufen von {url}: {exc}")
-        sys.exit(1)
+        raise FetchError(f"Fehler beim Abrufen von {url}: {exc}") from exc
     if response.status_code != 200:
         raise Exception(f"Fehler beim Abrufen: {response.status_code}")
 
@@ -227,9 +230,9 @@ def fetch_units():
     to the scraped data. Only minis with changed values are updated in the
     output; unchanged entries remain verbatim. The file will be created if it
     does not exist.  Scheitert der Abruf der Übersichtsseite aufgrund
-    eines Netzwerkfehlers, gibt die Funktion eine Meldung aus und beendet
-    das Skript mit dem Rückgabecode ``1``. Die HTTP-Abfrage der Übersichtsseite
-    bricht nach zehn Sekunden ohne Antwort mit einem Timeout ab.
+    eines Netzwerkfehlers, wird eine :class:`FetchError` ausgelöst. Die
+    HTTP-Abfrage der Übersichtsseite bricht nach zehn Sekunden ohne Antwort mit
+    einem Timeout ab.
 
     Returns:
         None: Writes the JSON file and prints progress information.
@@ -241,8 +244,7 @@ def fetch_units():
             BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
     except requests.RequestException as exc:
-        print(f"Fehler beim Abrufen von {BASE_URL}: {exc}")
-        sys.exit(1)
+        raise FetchError(f"Fehler beim Abrufen von {BASE_URL}: {exc}") from exc
     if response.status_code != 200:
         raise Exception(f"Fehler beim Abrufen: {response.status_code}")
 
@@ -351,4 +353,8 @@ def fetch_units():
 
 
 if __name__ == "__main__":
-    fetch_units()
+    try:
+        fetch_units()
+    except FetchError as exc:
+        print(exc)
+        sys.exit(1)

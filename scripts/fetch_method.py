@@ -139,8 +139,9 @@ def fetch_unit_details(
     descriptions are stored as language dictionaries, e.g. ``{"name": {"en":
     "Fresh Meat"}}``. If present, the optional ``army_bonus_slots`` field lists
     the available army bonus slots for the bottom row and those lines are
-    removed from ``advanced_info``. Wenn beim Abruf ein Netzwerkfehler auftritt,
-    wird eine :class:`FetchError` ausgelöst.
+    removed from ``advanced_info``. Wenn beim Abruf ein Netzwerkfehler auftritt
+    oder der HTTP-Status von ``method.gg`` ungleich ``200`` ist, wird eine
+    :class:`FetchError` ausgelöst.
     """
 
     cats = categories
@@ -152,7 +153,9 @@ def fetch_unit_details(
     except requests.RequestException as exc:
         raise FetchError(f"Fehler beim Abrufen von {url}: {exc}") from exc
     if response.status_code != 200:
-        raise Exception(f"Fehler beim Abrufen: {response.status_code}")
+        raise FetchError(
+            f"Fehler beim Abrufen von {url}: Status {response.status_code}"
+        )
 
     soup = BeautifulSoup(response.text, "html.parser")
 
@@ -286,9 +289,9 @@ def fetch_units(
     to the scraped data. Only minis with changed values are updated in the
     output; unchanged entries remain verbatim. The file will be created if it
     does not exist.  Scheitert der Abruf der Übersichtsseite aufgrund
-    eines Netzwerkfehlers, wird eine :class:`FetchError` ausgelöst. Die
-    HTTP-Abfrage der Übersichtsseite bricht nach zehn Sekunden ohne Antwort mit
-    einem Timeout ab.
+    eines Netzwerkfehlers oder liefert ``method.gg`` einen HTTP-Status ungleich
+    ``200``, wird eine :class:`FetchError` ausgelöst. Die HTTP-Abfrage der
+    Übersichtsseite bricht nach zehn Sekunden ohne Antwort mit einem Timeout ab.
 
     Returns:
         None: Writes the JSON file and logs progress information.
@@ -305,7 +308,9 @@ def fetch_units(
     except requests.RequestException as exc:
         raise FetchError(f"Fehler beim Abrufen von {BASE_URL}: {exc}") from exc
     if response.status_code != 200:
-        raise Exception(f"Fehler beim Abrufen: {response.status_code}")
+        raise FetchError(
+            f"Fehler beim Abrufen von {BASE_URL}: Status {response.status_code}"
+        )
 
     soup = BeautifulSoup(response.text, "html.parser")
     cards = soup.select("div.mini-wrapper")

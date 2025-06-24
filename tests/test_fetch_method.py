@@ -455,6 +455,21 @@ def test_fetch_unit_details_request_exception():
     assert "Fehler beim Abrufen" in str(excinfo.value)
 
 
+def test_fetch_unit_details_http_error():
+    """Bei HTTP-Fehlern soll eine FetchError mit Statuscode entstehen."""
+    mock_response = Mock(status_code=404, text="not found")
+    with patch(
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
+    ) as mock_get:
+        with pytest.raises(fetch_method.FetchError) as excinfo:
+            cats = fetch_method.load_categories()
+            fetch_method.fetch_unit_details("url", cats)
+        mock_get.assert_called_once_with(
+            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+        )
+    assert "Status 404" in str(excinfo.value)
+
+
 def test_fetch_units_request_exception(tmp_path):
     """Die Funktion soll bei Netzwerkfehlern mit Code 1 beenden."""
     with patch(
@@ -469,6 +484,22 @@ def test_fetch_units_request_exception(tmp_path):
             timeout=10,
         )
     assert "Fehler beim Abrufen" in str(excinfo.value)
+
+
+def test_fetch_units_http_error(tmp_path):
+    """Die Funktion soll bei HTTP-Fehlern eine FetchError werfen."""
+    mock_response = Mock(status_code=500, text="")
+    with patch(
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
+    ) as mock_get, patch.object(fetch_method, "OUT_PATH", tmp_path / "units.json"):
+        with pytest.raises(fetch_method.FetchError) as excinfo:
+            fetch_method.fetch_units()
+        mock_get.assert_called_once_with(
+            fetch_method.BASE_URL,
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=10,
+        )
+    assert "Status 500" in str(excinfo.value)
 
 
 def test_session_retry_adapter():

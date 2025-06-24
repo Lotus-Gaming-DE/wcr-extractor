@@ -30,11 +30,12 @@ Sekunden. Ohne Angaben werden die obigen Standardwerte verwendet.
 `requirements-dev.txt` installiert.
 
 Der Aufruf legt die Dateien `data/units.json` und `data/categories.json` an.
-Tritt beim Abrufen ein Netzwerkfehler auf, wird eine `FetchError`-Exception
-ausgelöst. Das Hauptprogramm fängt diese ab, schreibt eine Fehlermeldung in das
-Log und beendet sich mit dem Code `1`. Alle HTTP-Anfragen verwenden einen
-gemeinsamen `requests.Session` mit automatischen Retries und brechen nach zehn
-Sekunden ohne Antwort mit einem Timeout ab.
+Tritt beim Abrufen ein Netzwerkfehler auf oder antwortet der Server mit einem
+HTTP-Status ungleich `200`, wird eine `FetchError`-Exception ausgelöst. Das
+Hauptprogramm fängt diese ab, schreibt eine Fehlermeldung in das Log und
+beendet sich mit dem Code `1`. Alle HTTP-Anfragen verwenden einen gemeinsamen
+`requests.Session` mit automatischen Retries und brechen nach zehn Sekunden
+ohne Antwort mit einem Timeout ab.
 `units.json` enthält die Minis, `categories.json` die verfügbaren Fraktionen,
 Typen, Traits und Geschwindigkeiten.
 Ein Auszug aus `units.json` könnte folgendermaßen aussehen:

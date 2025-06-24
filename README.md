@@ -15,8 +15,15 @@ Bei allen anderen Einheiten wird `speed` weggelassen; stattdessen verweist
 
 ```bash
 ./setup.sh
-python scripts/fetch_method.py
+python scripts/fetch_method.py \
+  --output data/units.json \
+  --categories data/categories.json \
+  --timeout 10
 ```
+
+``--output`` legt den Pfad der Ergebnisdatei fest. ``--categories`` bestimmt
+die Kategorien-Definitionen und ``--timeout`` setzt das HTTP-Timeout in
+Sekunden. Ohne Angaben werden die obigen Standardwerte verwendet.
 
 `setup.sh` installiert alle Abhängigkeiten aus `requirements.txt`.
 

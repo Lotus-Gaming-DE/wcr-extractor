@@ -5,6 +5,7 @@ import logging
 import os
 from pathlib import Path
 import sys
+import argparse
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -32,16 +33,18 @@ class FetchError(Exception):
     """Raised when fetching data from method.gg fails."""
 
 
-def load_categories() -> dict:
+def load_categories(categories_path: Path | str | None = None) -> dict:
     """Return mappings for category lookups.
 
     Besides the existing English name-to-ID maps, the returned dictionary
     contains a ``trait_desc`` mapping from trait IDs to their English
-    descriptions.  ``CATEGORIES_PATH`` must point to the JSON file with the
-    category definitions.
+    descriptions. ``categories_path`` points to the JSON file with the
+    category definitions. If omitted, :data:`CATEGORIES_PATH` is used.
     """
 
-    if not CATEGORIES_PATH.exists():
+    path = Path(categories_path or CATEGORIES_PATH)
+
+    if not path.exists():
         return {
             "faction": {},
             "type": {},
@@ -50,7 +53,7 @@ def load_categories() -> dict:
             "trait_desc": {},
         }
 
-    with open(CATEGORIES_PATH, encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         data = json.load(f)
 
     def to_map(items):
@@ -70,13 +73,19 @@ def load_categories() -> dict:
     }
 
 
-def load_existing_units() -> dict:
-    """Return existing units indexed by ``id`` if the JSON file exists."""
+def load_existing_units(out_path: Path | str | None = None) -> dict:
+    """Return existing units indexed by ``id`` if the JSON file exists.
 
-    if not OUT_PATH.exists():
+    ``out_path`` specifies the units file location. If omitted,
+    :data:`OUT_PATH` is used.
+    """
+
+    path = Path(out_path or OUT_PATH)
+
+    if not path.exists():
         return {}
     try:
-        with open(OUT_PATH, encoding="utf-8") as f:
+        with open(path, encoding="utf-8") as f:
             units = json.load(f)
         return {unit.get("id"): unit for unit in units}
     except (json.JSONDecodeError, OSError):
@@ -103,28 +112,42 @@ def is_unit_changed(old: dict, new: dict) -> bool:
     return any(old.get(k) != new.get(k) for k in compare_keys)
 
 
-def fetch_unit_details(url: str) -> dict:
+def fetch_unit_details(
+    url: str,
+    categories_path: Path | str | None = None,
+    timeout: int = 10,
+) -> dict:
     """Fetch and parse the details page for a single mini.
+
+    Parameters
+    ----------
+    url:
+        Full URL to the mini detail page.
+    categories_path:
+        Path to ``categories.json`` providing look-up tables.  If ``None`` the
+        default path is used.
+    timeout:
+        HTTP timeout in seconds for the request.
 
     The returned dictionary contains the sections ``core_trait``, ``stats``,
     ``traits``, ``talents`` and ``advanced_info`` extracted from the detail
     page. ``core_trait`` stores ``attack_id`` and ``type_id`` which reference
     trait IDs from ``data/categories.json``. ``traits`` contains only trait IDs
-    which are resolved via category lookups.  The mapping data is loaded once at
-    the start of this function using :func:`load_categories`.  Talent names and
+    which are resolved via category lookups. The mapping data is loaded once at
+    the start of this function using :func:`load_categories`. Talent names and
     descriptions are stored as language dictionaries, e.g. ``{"name": {"en":
-    "Fresh Meat"}}``.  If present, the optional ``army_bonus_slots`` field lists
+    "Fresh Meat"}}``. If present, the optional ``army_bonus_slots`` field lists
     the available army bonus slots for the bottom row and those lines are
-    removed from ``advanced_info``.  Wenn beim Abruf ein Netzwerkfehler
-    auftritt, wird eine :class:`FetchError` ausgelöst. Alle HTTP-Anfragen
-    verwenden einen Timeout von zehn Sekunden, um bei ausbleibender Antwort
-    nicht ewig zu blockieren.
+    removed from ``advanced_info``. Wenn beim Abruf ein Netzwerkfehler auftritt,
+    wird eine :class:`FetchError` ausgelöst.
     """
 
-    cats = load_categories()
+    cats = load_categories(categories_path)
 
     try:
-        response = SESSION.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+        response = SESSION.get(
+            url, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout
+        )
     except requests.RequestException as exc:
         raise FetchError(f"Fehler beim Abrufen von {url}: {exc}") from exc
     if response.status_code != 200:
@@ -230,9 +253,23 @@ def fetch_unit_details(url: str) -> dict:
     return details
 
 
-def fetch_units():
-    """Fetch the minis list from method.gg and return it as a list of dicts."""
+def fetch_units(
+    *,
+    out_path: Path | str | None = None,
+    categories_path: Path | str | None = None,
+    timeout: int = 10,
+) -> None:
     """Download minis from method.gg and store them as JSON.
+
+    Parameters
+    ----------
+    out_path:
+        Destination JSON file for unit data. Uses :data:`OUT_PATH` when
+        ``None``.
+    categories_path:
+        Path to ``categories.json``. Defaults to :data:`CATEGORIES_PATH`.
+    timeout:
+        HTTP timeout in seconds used for all requests.
 
     The function retrieves the minis overview from ``method.gg`` and parses
     name, faction, type, cost, image as well as damage, health, dps, speed
@@ -254,10 +291,13 @@ def fetch_units():
         None: Writes the JSON file and logs progress information.
     """
 
+    out_path = Path(out_path or OUT_PATH)
+    categories_path = Path(categories_path or CATEGORIES_PATH)
+
     logger.info("Starte Abruf von %s ...", BASE_URL)
     try:
         response = SESSION.get(
-            BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout
         )
     except requests.RequestException as exc:
         raise FetchError(f"Fehler beim Abrufen von {BASE_URL}: {exc}") from exc
@@ -267,9 +307,9 @@ def fetch_units():
     soup = BeautifulSoup(response.text, "html.parser")
     cards = soup.select("div.mini-wrapper")
 
-    cats = load_categories()
+    cats = load_categories(categories_path)
     scraped_units = []
-    existing_units = load_existing_units()
+    existing_units = load_existing_units(out_path)
 
     for card in cards:
         name = card.get("data-name", "?")
@@ -309,7 +349,11 @@ def fetch_units():
             (link["href"].split("/")[-1] if link else name).lower().replace(" ", "-")
         )
 
-        details = fetch_unit_details(url) if url else {}
+        details = (
+            fetch_unit_details(url, categories_path=categories_path, timeout=timeout)
+            if url
+            else {}
+        )
 
         faction_ids = [
             cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f
@@ -361,28 +405,57 @@ def fetch_units():
         if uid not in seen:
             result_units.append(old_unit)
 
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUT_PATH, "w", encoding="utf-8") as f:
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(result_units, f, indent=2, ensure_ascii=False)
 
-    logger.info("%s Einheiten gespeichert in %s", len(result_units), OUT_PATH)
+    logger.info("%s Einheiten gespeichert in %s", len(result_units), out_path)
 
 
-if __name__ == "__main__":
-    import argparse
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    """Parse command line arguments for the CLI."""
 
     parser = argparse.ArgumentParser(description="Fetch minis from method.gg")
+    parser.add_argument(
+        "--output",
+        default=str(OUT_PATH),
+        help="Path to write units JSON",
+    )
+    parser.add_argument(
+        "--categories",
+        default=str(CATEGORIES_PATH),
+        help="Path to categories JSON",
+    )
+    parser.add_argument(
+        "--timeout",
+        type=int,
+        default=10,
+        help="HTTP timeout in seconds",
+    )
     parser.add_argument(
         "--log-level",
         default=os.getenv("LOG_LEVEL", "INFO"),
         help="Logging level",
     )
-    args = parser.parse_args()
+    return parser.parse_args(argv)
 
+
+def main(argv: list[str] | None = None) -> None:
+    """Entry point for command line execution."""
+
+    args = parse_args(argv)
     logging.getLogger().setLevel(args.log_level.upper())
 
     try:
-        fetch_units()
+        fetch_units(
+            out_path=Path(args.output),
+            categories_path=Path(args.categories),
+            timeout=args.timeout,
+        )
     except FetchError as exc:
         logger.error(exc)
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

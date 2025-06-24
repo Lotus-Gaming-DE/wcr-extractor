@@ -5,7 +5,6 @@ from unittest.mock import patch
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from wcr_data_extraction import cli  # noqa: E402
-from wcr_data_extraction import fetcher  # noqa: E402
 
 
 def test_parse_args_defaults(tmp_path):

@@ -360,7 +360,9 @@ def test_fetch_unit_details_army_bonus_slots_removed():
         cats = fetcher.load_categories()
         details = fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit",
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=10,
         )
 
     assert details["army_bonus_slots"] == ["Cycle", "Tank"]
@@ -397,7 +399,9 @@ def test_fetch_unit_details_returns_trait_ids():
         cats = fetcher.load_categories()
         details = fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit",
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=10,
         )
 
     assert details["traits"] == ["tank"]
@@ -434,7 +438,9 @@ def test_fetch_unit_details_core_trait_ids():
         cats = fetcher.load_categories()
         details = fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit",
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=10,
         )
 
     assert details["core_trait"] == {"attack_id": "aoe", "type_id": "melee"}
@@ -450,7 +456,9 @@ def test_fetch_unit_details_request_exception():
             cats = fetcher.load_categories()
             fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit",
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=10,
         )
     assert "Error fetching" in str(excinfo.value)
 
@@ -465,7 +473,9 @@ def test_fetch_unit_details_http_error():
             cats = fetcher.load_categories()
             fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit",
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=10,
         )
     assert "Status 404" in str(excinfo.value)
 

@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from scripts import fetch_method
+from scripts import fetch_method  # noqa: E402
 
 
 def test_is_unit_changed_identical():

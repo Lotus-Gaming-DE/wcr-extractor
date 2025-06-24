@@ -83,9 +83,6 @@ def is_unit_changed(old: dict, new: dict) -> bool:
     return any(old.get(k) != new.get(k) for k in compare_keys)
 
 
-
-
-
 def fetch_unit_details(url: str) -> dict:
     """Fetch and parse the details page for a single mini.
 
@@ -107,9 +104,7 @@ def fetch_unit_details(url: str) -> dict:
     cats = load_categories()
 
     try:
-        response = requests.get(
-            url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10
-        )
+        response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
     except requests.RequestException as exc:
         print(f"Fehler beim Abrufen von {url}: {exc}")
         sys.exit(1)
@@ -215,6 +210,7 @@ def fetch_unit_details(url: str) -> dict:
 
     return details
 
+
 def fetch_units():
     """Fetch the minis list from method.gg and return it as a list of dicts."""
     """Download minis from method.gg and store them as JSON.
@@ -292,13 +288,17 @@ def fetch_units():
         image_url = image_elem["src"] if image_elem else None
 
         unit_id = (
-            link["href"].split("/")[-1] if link else name
-        ).lower().replace(" ", "-")
+            (link["href"].split("/")[-1] if link else name).lower().replace(" ", "-")
+        )
 
         details = fetch_unit_details(url) if url else {}
 
-        faction_ids = [cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f]
-        trait_ids = [cats["trait"].get(t, t.lower().replace(" ", "-")) for t in trait_names]
+        faction_ids = [
+            cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f
+        ]
+        trait_ids = [
+            cats["trait"].get(t, t.lower().replace(" ", "-")) for t in trait_names
+        ]
         type_id = cats["type"].get(unit_type, unit_type.lower())
         if speed_val and speed_val != STATIONARY:
             speed_id = cats["speed"].get(speed_val, speed_val.lower())

@@ -78,6 +78,23 @@ Bei jedem Push und für Pull Requests führt ein GitHub Actions Workflow
 (`ci.yml`) `flake8` und `pytest` aus, um sicherzustellen, dass Linting und
 Tests fehlerfrei durchlaufen.
 
+## Formatting
+
+Code style is enforced with [Black](https://black.readthedocs.io/) and
+[Flake8](https://flake8.pycqa.org/). Install the development dependencies
+with:
+
+```bash
+pip install -r requirements-dev.txt
+```
+
+Run the formatters before committing:
+
+```bash
+black scripts tests
+flake8
+```
+
 ## Contributing translations
 
 The names of factions and other categories are defined in

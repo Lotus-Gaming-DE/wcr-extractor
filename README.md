@@ -22,9 +22,10 @@ python scripts/fetch_method.py
 
 Der Aufruf legt die Dateien `data/units.json` und `data/categories.json` an.
 Tritt beim Abrufen ein Netzwerkfehler auf, wird eine `FetchError`-Exception
-ausgelöst. Das Hauptprogramm fängt diese ab, gibt eine Fehlermeldung aus und
-beendet sich mit dem Code `1`. Alle HTTP-Anfragen brechen nach zehn Sekunden
-ohne Antwort mit einem Timeout ab.
+ausgelöst. Das Hauptprogramm fängt diese ab, schreibt eine Fehlermeldung in das
+Log und beendet sich mit dem Code `1`. Alle HTTP-Anfragen verwenden einen
+gemeinsamen `requests.Session` mit automatischen Retries und brechen nach zehn
+Sekunden ohne Antwort mit einem Timeout ab.
 `units.json` enthält die Minis, `categories.json` die verfügbaren Fraktionen,
 Typen, Traits und Geschwindigkeiten.
 Ein Auszug aus `units.json` könnte folgendermaßen aussehen:
@@ -65,6 +66,13 @@ unteren Reihe des Armeefensters gewähren kann. Sind solche Angaben vorhanden,
 werden sie aus `advanced_info` entfernt und in `army_bonus_slots` gespeichert.
 
 Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei `data/units.json` automatisch aktualisiert.
+
+
+## Logging
+
+Die Skripte verwenden das Modul `logging`. Über das Argument `--log-level` oder
+die Umgebungsvariable `LOG_LEVEL` lässt sich die gewünschte Protokollstufe
+festlegen. Standardmäßig wird auf `INFO` geloggt.
 
 ## Tests
 

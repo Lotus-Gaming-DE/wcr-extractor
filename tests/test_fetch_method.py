@@ -42,7 +42,7 @@ def test_fetch_units_writes_json(tmp_path):
     }
 
     with patch(
-        "scripts.fetch_method.requests.get", return_value=mock_response
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
@@ -104,7 +104,7 @@ def test_fetch_units_preserves_translations(tmp_path):
     }
 
     with patch(
-        "scripts.fetch_method.requests.get", return_value=mock_response
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
@@ -157,7 +157,7 @@ def test_fetch_units_skips_unchanged_unit(tmp_path):
     }
 
     with patch(
-        "scripts.fetch_method.requests.get", return_value=mock_response
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
@@ -220,7 +220,7 @@ def test_fetch_units_updates_changed_unit(tmp_path):
     }
 
     with patch(
-        "scripts.fetch_method.requests.get", return_value=mock_response
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
@@ -275,7 +275,7 @@ def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
     )
     mock_response = Mock(status_code=200, text=html)
     with patch(
-        "scripts.fetch_method.requests.get", return_value=mock_response
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         dummy_details = {
@@ -314,7 +314,7 @@ def test_speed_id_is_none_when_speed_empty_or_znull(tmp_path, speed_value):
     )
     mock_response = Mock(status_code=200, text=html)
     with patch(
-        "scripts.fetch_method.requests.get", return_value=mock_response
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         dummy_details = {
@@ -355,7 +355,7 @@ def test_fetch_unit_details_army_bonus_slots_removed():
     mock_response = Mock(status_code=200, text=html)
 
     with patch(
-        "scripts.fetch_method.requests.get", return_value=mock_response
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get:
         details = fetch_method.fetch_unit_details("url")
         mock_get.assert_called_once_with(
@@ -382,7 +382,7 @@ def test_fetch_unit_details_returns_trait_ids():
     mock_response = Mock(status_code=200, text=html)
 
     with patch(
-        "scripts.fetch_method.requests.get", return_value=mock_response
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get, patch(
         "scripts.fetch_method.load_categories",
         return_value={
@@ -418,7 +418,7 @@ def test_fetch_unit_details_core_trait_ids():
     mock_response = Mock(status_code=200, text=html)
 
     with patch(
-        "scripts.fetch_method.requests.get", return_value=mock_response
+        "scripts.fetch_method.SESSION.get", return_value=mock_response
     ) as mock_get, patch(
         "scripts.fetch_method.load_categories",
         return_value={
@@ -440,7 +440,7 @@ def test_fetch_unit_details_core_trait_ids():
 def test_fetch_unit_details_request_exception():
     """Die Funktion soll bei Netzwerkfehlern mit Code 1 beenden."""
     with patch(
-        "scripts.fetch_method.requests.get",
+        "scripts.fetch_method.SESSION.get",
         side_effect=requests.RequestException("boom"),
     ) as mock_get:
         with pytest.raises(fetch_method.FetchError) as excinfo:
@@ -454,7 +454,7 @@ def test_fetch_unit_details_request_exception():
 def test_fetch_units_request_exception(tmp_path):
     """Die Funktion soll bei Netzwerkfehlern mit Code 1 beenden."""
     with patch(
-        "scripts.fetch_method.requests.get",
+        "scripts.fetch_method.SESSION.get",
         side_effect=requests.RequestException("boom"),
     ) as mock_get, patch.object(fetch_method, "OUT_PATH", tmp_path / "units.json"):
         with pytest.raises(fetch_method.FetchError) as excinfo:
@@ -465,3 +465,7 @@ def test_fetch_units_request_exception(tmp_path):
             timeout=10,
         )
     assert "Fehler beim Abrufen" in str(excinfo.value)
+
+
+def test_session_retry_adapter():
+    assert fetch_method.adapter.max_retries.total == 3

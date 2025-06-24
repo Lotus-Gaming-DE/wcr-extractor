@@ -1,8 +1,13 @@
+"""Scrape minis data from method.gg with retry and logging."""
+
 import json
+import logging
+import os
 from pathlib import Path
 import sys
 
 import requests
+from requests.adapters import HTTPAdapter
 from bs4 import BeautifulSoup
 
 BASE_URL = "https://www.method.gg/warcraft-rumble/minis"
@@ -10,6 +15,17 @@ OUT_PATH = Path(__file__).parent.parent / "data" / "units.json"
 CATEGORIES_PATH = Path(__file__).parent.parent / "data" / "categories.json"
 # Value used by method.gg for immobile units.
 STATIONARY = "Stationary"
+
+# HTTP session with retry logic
+SESSION = requests.Session()
+adapter = HTTPAdapter(max_retries=3)
+SESSION.mount("http://", adapter)
+SESSION.mount("https://", adapter)
+
+# Logger configuration
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+logging.basicConfig(level=LOG_LEVEL)
+logger = logging.getLogger(__name__)
 
 
 class FetchError(Exception):
@@ -108,7 +124,7 @@ def fetch_unit_details(url: str) -> dict:
     cats = load_categories()
 
     try:
-        response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+        response = SESSION.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
     except requests.RequestException as exc:
         raise FetchError(f"Fehler beim Abrufen von {url}: {exc}") from exc
     if response.status_code != 200:
@@ -235,12 +251,12 @@ def fetch_units():
     einem Timeout ab.
 
     Returns:
-        None: Writes the JSON file and prints progress information.
+        None: Writes the JSON file and logs progress information.
     """
 
-    print(f"Starte Abruf von {BASE_URL} ...")
+    logger.info("Starte Abruf von %s ...", BASE_URL)
     try:
-        response = requests.get(
+        response = SESSION.get(
             BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
     except requests.RequestException as exc:
@@ -349,12 +365,24 @@ def fetch_units():
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(result_units, f, indent=2, ensure_ascii=False)
 
-    print(f"{len(result_units)} Einheiten gespeichert in {OUT_PATH}")
+    logger.info("%s Einheiten gespeichert in %s", len(result_units), OUT_PATH)
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Fetch minis from method.gg")
+    parser.add_argument(
+        "--log-level",
+        default=os.getenv("LOG_LEVEL", "INFO"),
+        help="Logging level",
+    )
+    args = parser.parse_args()
+
+    logging.getLogger().setLevel(args.log_level.upper())
+
     try:
         fetch_units()
     except FetchError as exc:
-        print(exc)
+        logger.error(exc)
         sys.exit(1)

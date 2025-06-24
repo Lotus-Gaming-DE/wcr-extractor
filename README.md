@@ -74,6 +74,10 @@ pip install -r requirements.txt
 pytest
 ```
 
+Bei jedem Push und für Pull Requests führt ein GitHub Actions Workflow
+(`ci.yml`) `flake8` und `pytest` aus, um sicherzustellen, dass Linting und
+Tests fehlerfrei durchlaufen.
+
 ## Contributing translations
 
 The names of factions and other categories are defined in

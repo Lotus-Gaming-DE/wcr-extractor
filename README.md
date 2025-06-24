@@ -70,7 +70,7 @@ Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei
 Die Tests lassen sich mit [pytest](https://pytest.org) ausführen:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt -r requirements-dev.txt
 pytest
 ```
 

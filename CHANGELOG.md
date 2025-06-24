@@ -30,3 +30,4 @@
   ungleich `200` eine `FetchError` mit dem jeweiligen Statuscode.
 - `setup.sh` now uses `python3 -m pip`.
 - README updated with correct CLI invocation and workflow description.
+- `data/units.json` now ends with a newline to satisfy pre-commit hooks.

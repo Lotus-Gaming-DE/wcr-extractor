@@ -13,4 +13,6 @@
 - `fetch_unit_details` accepts a `categories` dict instead of a file path.
 - `fetch_units` loads categories once via `load_categories` and passes them to
   `fetch_unit_details`.
+- `fetch_unit_details` and `fetch_units` werfen nun auch bei HTTP-Statuscodes
+  ungleich `200` eine `FetchError` mit dem jeweiligen Statuscode.
 

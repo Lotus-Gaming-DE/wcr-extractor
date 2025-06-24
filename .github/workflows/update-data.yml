@@ -19,7 +19,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Fetch latest data
-        run: python scripts/fetch_method.py
+        run: |
+          python scripts/fetch_method.py \
+            --output data/units.json \
+            --categories data/categories.json \
+            --timeout 10
       - name: Commit changes
         run: |
           if [[ `git status --porcelain data/units.json` ]]; then

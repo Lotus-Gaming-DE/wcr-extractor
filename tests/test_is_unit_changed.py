@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from scripts import fetch_method  # noqa: E402
+from wcr_data_extraction import fetcher  # noqa: E402
 
 
 def test_is_unit_changed_identical():
@@ -20,7 +20,7 @@ def test_is_unit_changed_identical():
         "trait_ids": ["melee"],
         "details": {},
     }
-    assert fetch_method.is_unit_changed(unit, unit.copy()) is False
+    assert fetcher.is_unit_changed(unit, unit.copy()) is False
 
 
 def test_is_unit_changed_field_differs():
@@ -39,7 +39,7 @@ def test_is_unit_changed_field_differs():
     }
     new = old.copy()
     new["cost"] = 3
-    assert fetch_method.is_unit_changed(old, new) is True
+    assert fetcher.is_unit_changed(old, new) is True
 
 
 def test_is_unit_changed_translation_changed():
@@ -60,4 +60,4 @@ def test_is_unit_changed_translation_changed():
         **old,
         "names": {"en": "Footman", "fr": "Fantassin"},
     }
-    assert fetch_method.is_unit_changed(old, new) is False
+    assert fetcher.is_unit_changed(old, new) is False

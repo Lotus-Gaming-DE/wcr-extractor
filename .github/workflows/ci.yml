@@ -20,4 +20,8 @@ jobs:
       - name: Lint
         run: flake8
       - name: Test
-        run: pytest
+        run: coverage run -m pytest
+      - name: Coverage report
+        run: |
+          coverage xml
+          coverage report --fail-under=90

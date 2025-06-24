@@ -1,33 +1,40 @@
 # Warcraft Rumble Data Extractor
+[![Coverage Status](https://img.shields.io/badge/coverage-90%25-brightgreen)](https://github.com)
 
 Dieses Skript lädt die aktuellen Minis von [method.gg](https://www.method.gg/warcraft-rumble/minis) und speichert sie als `data/units.json`.
-Der Scraper durchsucht dabei alle `div.mini-wrapper` Elemente auf der Minis-Liste und ruft anschließend die jeweilige Detailseite auf.
-Neben den Basisdaten werden dadurch auch Schaden, Lebenspunkte, DPS,
-Geschwindigkeit und Traits sowie weitere Detailinformationen erfasst.
-Zauber oder stationäre Einheiten besitzen keinen Geschwindigkeitswert; in der
-JSON-Datei erscheint daher `"speed": null` und auch `speed_id` ist `null`.
-Falls das `speed`-Attribut den Wert `"Stationary"` trägt, wird dieser ebenfalls
-als fehlende Geschwindigkeit behandelt und als `null` gespeichert.
-Bei allen anderen Einheiten wird `speed` weggelassen; stattdessen verweist
-`speed_id` auf die jeweilige Geschwindigkeitskategorie.
+Der Scraper durchsucht alle `div.mini-wrapper` Elemente auf der Übersichtsseite und ruft anschließend die jeweilige Detailseite auf.
+Neben den Basisdaten werden dadurch auch Schaden, Lebenspunkte, DPS, Geschwindigkeit und Traits sowie weitere Details erfasst.
+Zauber oder stationäre Einheiten besitzen keinen Geschwindigkeitswert; in der JSON-Datei erscheint daher `"speed": null` und auch `speed_id` ist `null`.
+Falls das `speed`-Attribut den Wert `"Stationary"` trägt, wird dieser ebenfalls als fehlende Geschwindigkeit behandelt und als `null` gespeichert.
+Bei allen anderen Einheiten wird `speed` weggelassen; stattdessen verweist `speed_id` auf die jeweilige Geschwindigkeitskategorie.
 
 ## Setup
 
 ```bash
 ./setup.sh
-python scripts/fetch_method.py \
+python -m wcr_data_extraction.cli \
   --output data/units.json \
   --categories data/categories.json \
-  --timeout 10
+  --timeout 10 \
+  --workers 4
 ```
 
-``--output`` legt den Pfad der Ergebnisdatei fest. ``--categories`` bestimmt
-die Kategorien-Definitionen und ``--timeout`` setzt das HTTP-Timeout in
-Sekunden. Ohne Angaben werden die obigen Standardwerte verwendet.
+## Quickstart
+
+1. Install dependencies: `./setup.sh --dev` for development or without `--dev`
+   for runtime only.
+2. Run `python -m wcr_data_extraction.cli` to download the data.
+3. The results are written to `data/units.json` and `data/categories.json`.
+
+``--output`` legt den Pfad der Ergebnisdatei fest. ``--categories`` bestimmt die
+Kategorien-Definitionen. ``--timeout`` setzt das HTTP-Timeout in Sekunden und
+``--workers`` steuert die Anzahl paralleler Downloads. Ohne Angaben werden die
+obigen Standardwerte verwendet.
 
 `setup.sh` installiert die Bibliotheken aus `requirements.txt`. Mit
 `./setup.sh --dev` werden zusätzlich die Entwicklerwerkzeuge aus
-`requirements-dev.txt` installiert.
+`requirements-dev.txt` installiert. Das Skript nutzt `python3 -m pip`, um
+Warnungen beim Ausführen als Root zu vermeiden.
 
 Der Aufruf legt die Dateien `data/units.json` und `data/categories.json` an.
 Tritt beim Abrufen ein Netzwerkfehler auf oder antwortet der Server mit einem
@@ -70,15 +77,13 @@ Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei
 Trait descriptions are stored in `data/categories.json` under the `descriptions` field.
 The `core_trait` object of each unit lists `attack_id` and `type_id`,
 which map to the same trait IDs used in `trait_ids`.
-The helper function `fetch_unit_details()` now expects the category
-mappings as a dictionary argument so that callers can load the data only
-once with `load_categories()` and reuse it across multiple units.
+The helper function `fetch_unit_details()` expects the category mappings as a
+dictionary argument so that callers can load the data only once with
+`load_categories()` and reuse it across multiple units.
 
 Das optionale Feld `army_bonus_slots` listet die Boni, die eine Einheit in der
 unteren Reihe des Armeefensters gewähren kann. Sind solche Angaben vorhanden,
 werden sie aus `advanced_info` entfernt und in `army_bonus_slots` gespeichert.
-
-Bei jedem Push wird zudem ein GitHub Actions Workflow ausgeführt, der die Datei `data/units.json` automatisch aktualisiert.
 
 
 ## Logging
@@ -130,6 +135,7 @@ pytest
 ```
 
 Commit the updated requirements together with any code changes.
+The repository can also be kept up to date automatically via Dependabot.
 
 ## Contributing translations
 

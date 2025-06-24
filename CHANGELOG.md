@@ -6,6 +6,10 @@
 - New unit tests for CLI parsing.
 - Development requirements file and optional `--dev` flag for `setup.sh`.
 - Section in README on updating dependencies.
+- Package refactored into `wcr_data_extraction` with `cli` module.
+- Parallel download support via `--workers`.
+- Retry logic now includes exponential backoff.
+- Coverage badge in README and CI enforces >90% coverage.
 
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.
@@ -15,4 +19,5 @@
   `fetch_unit_details`.
 - `fetch_unit_details` and `fetch_units` werfen nun auch bei HTTP-Statuscodes
   ungleich `200` eine `FetchError` mit dem jeweiligen Statuscode.
+- `setup.sh` now uses `python3 -m pip`.
 

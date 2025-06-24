@@ -1,0 +1,29 @@
+import sys
+from pathlib import Path
+from unittest.mock import patch, Mock
+
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+
+from wcr_data_extraction import fetcher  # noqa: E402
+
+
+def test_fetch_units_uses_max_workers(tmp_path):
+    html = "<div class='mini-wrapper'></div>"
+    mock_response = Mock(status_code=200, text=html)
+
+    with patch(
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
+    ) as mock_get, patch(
+        "concurrent.futures.ThreadPoolExecutor"
+    ) as executor_mock, patch.object(
+        fetcher, "OUT_PATH", tmp_path / "u.json"
+    ):
+        executor = executor_mock.return_value.__enter__.return_value
+        executor.map.return_value = []
+        fetcher.fetch_units(max_workers=5)
+        executor_mock.assert_called_once_with(max_workers=5)
+        mock_get.assert_called_once_with(
+            fetcher.BASE_URL,
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=10,
+        )

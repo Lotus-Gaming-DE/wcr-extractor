@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import structlog
 from pathlib import Path
 from typing import Iterable
 
@@ -40,13 +41,24 @@ def _get_session() -> requests.Session:
     return _session
 
 
-def configure_logging(level: str) -> None:
-    """Configure root logging with the given level."""
+def configure_structlog(level: str) -> None:
+    """Configure structured logging with the given level."""
 
-    logging.basicConfig(level=level.upper())
+    logging.basicConfig(level=level.upper(), format="%(message)s")
+    structlog.configure(
+        logger_factory=structlog.stdlib.LoggerFactory(),
+        wrapper_class=structlog.make_filtering_bound_logger(
+            logging.getLevelName(level.upper())
+        ),
+        processors=[
+            structlog.processors.add_log_level,
+            structlog.processors.TimeStamper(fmt="iso"),
+            structlog.processors.JSONRenderer(),
+        ],
+    )
 
 
-logger = logging.getLogger(__name__)
+logger = structlog.get_logger(__name__)
 
 
 class FetchError(Exception):

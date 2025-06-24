@@ -8,7 +8,7 @@ import requests
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from scripts import fetch_method  # noqa: E402
+from wcr_data_extraction import fetcher  # noqa: E402
 
 
 def test_fetch_units_writes_json(tmp_path):
@@ -42,7 +42,7 @@ def test_fetch_units_writes_json(tmp_path):
     }
 
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
@@ -55,12 +55,12 @@ def test_fetch_units_writes_json(tmp_path):
             "advanced_info": "info",
             "army_bonus_slots": ["Cycle"],
         }
-        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
-            fetch_method, "CATEGORIES_PATH", cat_file
-        ), patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
-            fetch_method.fetch_units()
+        with patch.object(fetcher, "OUT_PATH", out_file), patch.object(
+            fetcher, "CATEGORIES_PATH", cat_file
+        ), patch.object(fetcher, "fetch_unit_details", return_value=dummy_details):
+            fetcher.fetch_units()
             mock_get.assert_called_once_with(
-                fetch_method.BASE_URL,
+                fetcher.BASE_URL,
                 headers={"User-Agent": "Mozilla/5.0"},
                 timeout=10,
             )
@@ -104,7 +104,7 @@ def test_fetch_units_preserves_translations(tmp_path):
     }
 
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
@@ -123,12 +123,12 @@ def test_fetch_units_preserves_translations(tmp_path):
             "talents": [],
             "advanced_info": "info",
         }
-        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
-            fetch_method, "CATEGORIES_PATH", cat_file
-        ), patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
-            fetch_method.fetch_units()
+        with patch.object(fetcher, "OUT_PATH", out_file), patch.object(
+            fetcher, "CATEGORIES_PATH", cat_file
+        ), patch.object(fetcher, "fetch_unit_details", return_value=dummy_details):
+            fetcher.fetch_units()
             mock_get.assert_called_once_with(
-                fetch_method.BASE_URL,
+                fetcher.BASE_URL,
                 headers={"User-Agent": "Mozilla/5.0"},
                 timeout=10,
             )
@@ -157,7 +157,7 @@ def test_fetch_units_skips_unchanged_unit(tmp_path):
     }
 
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
@@ -186,12 +186,12 @@ def test_fetch_units_skips_unchanged_unit(tmp_path):
             }
         ]
         out_file.write_text(json.dumps(existing))
-        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
-            fetch_method, "CATEGORIES_PATH", cat_file
-        ), patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
-            fetch_method.fetch_units()
+        with patch.object(fetcher, "OUT_PATH", out_file), patch.object(
+            fetcher, "CATEGORIES_PATH", cat_file
+        ), patch.object(fetcher, "fetch_unit_details", return_value=dummy_details):
+            fetcher.fetch_units()
             mock_get.assert_called_once_with(
-                fetch_method.BASE_URL,
+                fetcher.BASE_URL,
                 headers={"User-Agent": "Mozilla/5.0"},
                 timeout=10,
             )
@@ -220,7 +220,7 @@ def test_fetch_units_updates_changed_unit(tmp_path):
     }
 
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         cat_file = tmp_path / "categories.json"
@@ -249,12 +249,12 @@ def test_fetch_units_updates_changed_unit(tmp_path):
             }
         ]
         out_file.write_text(json.dumps(existing))
-        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
-            fetch_method, "CATEGORIES_PATH", cat_file
-        ), patch.object(fetch_method, "fetch_unit_details", return_value=dummy_details):
-            fetch_method.fetch_units()
+        with patch.object(fetcher, "OUT_PATH", out_file), patch.object(
+            fetcher, "CATEGORIES_PATH", cat_file
+        ), patch.object(fetcher, "fetch_unit_details", return_value=dummy_details):
+            fetcher.fetch_units()
             mock_get.assert_called_once_with(
-                fetch_method.BASE_URL,
+                fetcher.BASE_URL,
                 headers={"User-Agent": "Mozilla/5.0"},
                 timeout=10,
             )
@@ -264,7 +264,7 @@ def test_fetch_units_updates_changed_unit(tmp_path):
     assert data[0]["names"]["de"] == "Fußmann"
 
 
-@pytest.mark.parametrize("speed_value", ["", "Znull", fetch_method.STATIONARY])
+@pytest.mark.parametrize("speed_value", ["", "Znull", fetcher.STATIONARY])
 def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
     html = (
         f"<div class='mini-wrapper' data-name='Spell' data-family='Beast' "
@@ -275,7 +275,7 @@ def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
     )
     mock_response = Mock(status_code=200, text=html)
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         dummy_details = {
@@ -285,23 +285,23 @@ def test_fetch_units_handles_missing_speed_id(tmp_path, speed_value):
             "talents": [],
             "advanced_info": "info",
         }
-        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
-            fetch_method, "fetch_unit_details", return_value=dummy_details
+        with patch.object(fetcher, "OUT_PATH", out_file), patch.object(
+            fetcher, "fetch_unit_details", return_value=dummy_details
         ):
-            fetch_method.fetch_units()
+            fetcher.fetch_units()
             mock_get.assert_called_once_with(
-                fetch_method.BASE_URL,
+                fetcher.BASE_URL,
                 headers={"User-Agent": "Mozilla/5.0"},
                 timeout=10,
             )
             data = json.loads(Path(out_file).read_text(encoding="utf-8"))
 
     assert data[0]["speed_id"] is None
-    if speed_value == fetch_method.STATIONARY:
+    if speed_value == fetcher.STATIONARY:
         assert data[0]["speed"] is None
 
 
-@pytest.mark.parametrize("speed_value", ["", "Znull", fetch_method.STATIONARY])
+@pytest.mark.parametrize("speed_value", ["", "Znull", fetcher.STATIONARY])
 def test_speed_id_is_none_when_speed_empty_or_znull(tmp_path, speed_value):
     """Ensure speed_id is None when the speed attribute is empty, 'Znull' or
     'Stationary'."""
@@ -314,7 +314,7 @@ def test_speed_id_is_none_when_speed_empty_or_znull(tmp_path, speed_value):
     )
     mock_response = Mock(status_code=200, text=html)
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get:
         out_file = tmp_path / "units.json"
         dummy_details = {
@@ -324,12 +324,12 @@ def test_speed_id_is_none_when_speed_empty_or_znull(tmp_path, speed_value):
             "talents": [],
             "advanced_info": "info",
         }
-        with patch.object(fetch_method, "OUT_PATH", out_file), patch.object(
-            fetch_method, "fetch_unit_details", return_value=dummy_details
+        with patch.object(fetcher, "OUT_PATH", out_file), patch.object(
+            fetcher, "fetch_unit_details", return_value=dummy_details
         ):
-            fetch_method.fetch_units()
+            fetcher.fetch_units()
             mock_get.assert_called_once_with(
-                fetch_method.BASE_URL,
+                fetcher.BASE_URL,
                 headers={"User-Agent": "Mozilla/5.0"},
                 timeout=10,
             )
@@ -355,12 +355,12 @@ def test_fetch_unit_details_army_bonus_slots_removed():
     mock_response = Mock(status_code=200, text=html)
 
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get:
-        cats = fetch_method.load_categories()
-        details = fetch_method.fetch_unit_details("url", cats)
+        cats = fetcher.load_categories()
+        details = fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
 
     assert details["army_bonus_slots"] == ["Cycle", "Tank"]
@@ -383,9 +383,9 @@ def test_fetch_unit_details_returns_trait_ids():
     mock_response = Mock(status_code=200, text=html)
 
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get, patch(
-        "scripts.fetch_method.load_categories",
+        "wcr_data_extraction.fetcher.load_categories",
         return_value={
             "faction": {},
             "type": {},
@@ -394,10 +394,10 @@ def test_fetch_unit_details_returns_trait_ids():
             "trait_desc": {"tank": "desc"},
         },
     ):
-        cats = fetch_method.load_categories()
-        details = fetch_method.fetch_unit_details("url", cats)
+        cats = fetcher.load_categories()
+        details = fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
 
     assert details["traits"] == ["tank"]
@@ -420,9 +420,9 @@ def test_fetch_unit_details_core_trait_ids():
     mock_response = Mock(status_code=200, text=html)
 
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get, patch(
-        "scripts.fetch_method.load_categories",
+        "wcr_data_extraction.fetcher.load_categories",
         return_value={
             "faction": {},
             "type": {},
@@ -431,10 +431,10 @@ def test_fetch_unit_details_core_trait_ids():
             "trait_desc": {},
         },
     ):
-        cats = fetch_method.load_categories()
-        details = fetch_method.fetch_unit_details("url", cats)
+        cats = fetcher.load_categories()
+        details = fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
 
     assert details["core_trait"] == {"attack_id": "aoe", "type_id": "melee"}
@@ -443,29 +443,29 @@ def test_fetch_unit_details_core_trait_ids():
 def test_fetch_unit_details_request_exception():
     """Die Funktion soll bei Netzwerkfehlern mit Code 1 beenden."""
     with patch(
-        "scripts.fetch_method.SESSION.get",
+        "wcr_data_extraction.fetcher.SESSION.get",
         side_effect=requests.RequestException("boom"),
     ) as mock_get:
-        with pytest.raises(fetch_method.FetchError) as excinfo:
-            cats = fetch_method.load_categories()
-            fetch_method.fetch_unit_details("url", cats)
+        with pytest.raises(fetcher.FetchError) as excinfo:
+            cats = fetcher.load_categories()
+            fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
-    assert "Fehler beim Abrufen" in str(excinfo.value)
+    assert "Error fetching" in str(excinfo.value)
 
 
 def test_fetch_unit_details_http_error():
     """Bei HTTP-Fehlern soll eine FetchError mit Statuscode entstehen."""
     mock_response = Mock(status_code=404, text="not found")
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
     ) as mock_get:
-        with pytest.raises(fetch_method.FetchError) as excinfo:
-            cats = fetch_method.load_categories()
-            fetch_method.fetch_unit_details("url", cats)
+        with pytest.raises(fetcher.FetchError) as excinfo:
+            cats = fetcher.load_categories()
+            fetcher.fetch_unit_details("https://example.com/unit", cats)
         mock_get.assert_called_once_with(
-            "url", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
+            "https://example.com/unit", headers={"User-Agent": "Mozilla/5.0"}, timeout=10
         )
     assert "Status 404" in str(excinfo.value)
 
@@ -473,29 +473,29 @@ def test_fetch_unit_details_http_error():
 def test_fetch_units_request_exception(tmp_path):
     """Die Funktion soll bei Netzwerkfehlern mit Code 1 beenden."""
     with patch(
-        "scripts.fetch_method.SESSION.get",
+        "wcr_data_extraction.fetcher.SESSION.get",
         side_effect=requests.RequestException("boom"),
-    ) as mock_get, patch.object(fetch_method, "OUT_PATH", tmp_path / "units.json"):
-        with pytest.raises(fetch_method.FetchError) as excinfo:
-            fetch_method.fetch_units()
+    ) as mock_get, patch.object(fetcher, "OUT_PATH", tmp_path / "units.json"):
+        with pytest.raises(fetcher.FetchError) as excinfo:
+            fetcher.fetch_units()
         mock_get.assert_called_once_with(
-            fetch_method.BASE_URL,
+            fetcher.BASE_URL,
             headers={"User-Agent": "Mozilla/5.0"},
             timeout=10,
         )
-    assert "Fehler beim Abrufen" in str(excinfo.value)
+    assert "Error fetching" in str(excinfo.value)
 
 
 def test_fetch_units_http_error(tmp_path):
     """Die Funktion soll bei HTTP-Fehlern eine FetchError werfen."""
     mock_response = Mock(status_code=500, text="")
     with patch(
-        "scripts.fetch_method.SESSION.get", return_value=mock_response
-    ) as mock_get, patch.object(fetch_method, "OUT_PATH", tmp_path / "units.json"):
-        with pytest.raises(fetch_method.FetchError) as excinfo:
-            fetch_method.fetch_units()
+        "wcr_data_extraction.fetcher.SESSION.get", return_value=mock_response
+    ) as mock_get, patch.object(fetcher, "OUT_PATH", tmp_path / "units.json"):
+        with pytest.raises(fetcher.FetchError) as excinfo:
+            fetcher.fetch_units()
         mock_get.assert_called_once_with(
-            fetch_method.BASE_URL,
+            fetcher.BASE_URL,
             headers={"User-Agent": "Mozilla/5.0"},
             timeout=10,
         )
@@ -503,4 +503,4 @@ def test_fetch_units_http_error(tmp_path):
 
 
 def test_session_retry_adapter():
-    assert fetch_method.adapter.max_retries.total == 3
+    assert fetcher.adapter.max_retries.total == 3

@@ -12,6 +12,9 @@ speeds are read from `data/categories.json`.
 ./setup.sh --dev       # installs dev tools as well
 ```
 
+Copy `.env.example` to `.env` if you need to define environment variables (none
+are required by default).
+
 ## Usage
 
 ```bash
@@ -60,8 +63,9 @@ A GitHub Actions workflow updates `data/units.json` on every push to `main`.
 ## Logging
 
 Structured JSON logs are configured via `configure_structlog()` or the
-`--log-level` option. Internal logs are English while user-facing errors are in
-German.
+`--log-level` option. When a log file is provided, messages are written to
+`logs/wcr.log` with rotation. Internal logs are English while user-facing
+errors are in German.
 
 ## Development
 
@@ -76,7 +80,7 @@ pre-commit run --all-files
 Run the tests with:
 
 ```bash
-pytest
+pytest  # fails after 60s if a test hangs
 ```
 
 CI executes `pre-commit` and the test suite with coverage ≥90 %.

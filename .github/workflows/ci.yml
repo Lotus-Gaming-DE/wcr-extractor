@@ -27,11 +27,20 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r requirements-dev.txt
+      - name: Prepare logs directory
+        run: mkdir -p logs
       - name: Run pre-commit
         run: pre-commit run --all-files --show-diff-on-failure --color=always
       - name: Test
-        run: coverage run -m pytest
+        run: coverage run -m pytest --timeout=60
       - name: Coverage report
         run: |
           coverage xml
           coverage report --fail-under=90
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: logs/latest_railway.log
+          if-no-files-found: ignore

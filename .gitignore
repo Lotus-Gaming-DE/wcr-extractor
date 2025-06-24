@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Coverage reports
+.coverage
+coverage.xml
+*.cover
+
+# Virtual environments
+.venv/
+venv/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.bak
+
+# macOS
+.DS_Store
+
+# Python egg metadata
+*.egg-info/
+
+# Misc
+.env

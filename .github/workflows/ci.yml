@@ -32,7 +32,7 @@ jobs:
           coverage xml
           coverage report --fail-under=90
       - name: Snyk Scan
-        uses: snyk/actions/python@v1
+        uses: snyk/actions/python@0.4.0
         with:
           args: --severity-threshold=medium
         env:

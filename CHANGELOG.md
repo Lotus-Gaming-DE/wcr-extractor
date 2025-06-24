@@ -21,6 +21,10 @@
 - Security scan workflow using Snyk.
 - Unit tests for structured logging.
 - Package moved to `src/` layout.
+- `.env.example` and log rotation support.
+- Central `tests/conftest.py` and pytest-timeout with 60s default.
+- CI uploads Railway logs as artifacts.
+- Unit test ensuring sessions close when created.
 
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.
@@ -35,3 +39,4 @@
 - README regenerated with updated instructions.
 - CLI error messages are now in German.
 - Requirements updated with `structlog`, `pre-commit` and `ruff`.
+- Sessions created in `fetch_units` are now closed reliably.

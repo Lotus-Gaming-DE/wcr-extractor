@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+from logging.handlers import RotatingFileHandler
 import structlog
 from pathlib import Path
 from typing import Iterable
@@ -41,10 +42,24 @@ def _get_session() -> requests.Session:
     return _session
 
 
-def configure_structlog(level: str) -> None:
-    """Configure structured logging with the given level."""
+def configure_structlog(level: str, log_file: str | Path | None = None) -> None:
+    """Configure structured logging with the given level.
 
-    logging.basicConfig(level=level.upper(), format="%(message)s")
+    If ``log_file`` is provided, logs are also written there with rotation.
+    """
+
+    handlers: list[logging.Handler] = [logging.StreamHandler()]
+    if log_file is not None:
+        Path(log_file).parent.mkdir(parents=True, exist_ok=True)
+        handlers.append(
+            RotatingFileHandler(
+                log_file, maxBytes=1_000_000, backupCount=3, encoding="utf-8"
+            )
+        )
+
+    logging.basicConfig(
+        level=level.upper(), format="%(message)s", handlers=handlers, force=True
+    )
     structlog.configure(
         logger_factory=structlog.stdlib.LoggerFactory(),
         wrapper_class=structlog.make_filtering_bound_logger(
@@ -278,138 +293,153 @@ def fetch_units(
     out_path = Path(out_path or OUT_PATH)
     categories_path = Path(categories_path or CATEGORIES_PATH)
 
-    sess = session or _get_session()
+    created_session = False
+    if session is None:
+        sess = create_session()
+        created_session = True
+    else:
+        sess = session
 
-    logger.info("Fetching overview from %s", BASE_URL)
     try:
-        response = sess.get(
-            BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout
-        )
-    except requests.RequestException as exc:
-        raise FetchError(f"Error fetching {BASE_URL}: {exc}") from exc
-    if response.status_code != 200:
-        raise FetchError(f"Error fetching {BASE_URL}: Status {response.status_code}")
+        logger.info("Fetching overview from %s", BASE_URL)
+        try:
+            response = sess.get(
+                BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout
+            )
+        except requests.RequestException as exc:
+            raise FetchError(f"Error fetching {BASE_URL}: {exc}") from exc
+        if response.status_code != 200:
+            raise FetchError(
+                f"Error fetching {BASE_URL}: Status {response.status_code}"
+            )
 
-    soup = BeautifulSoup(response.text, "html.parser")
-    cards = soup.select("div.mini-wrapper")
+        soup = BeautifulSoup(response.text, "html.parser")
+        cards = soup.select("div.mini-wrapper")
 
-    cats = load_categories(categories_path)
-    scraped_units = []
-    existing_units = load_existing_units(out_path)
+        cats = load_categories(categories_path)
+        scraped_units = []
+        existing_units = load_existing_units(out_path)
 
-    from concurrent.futures import ThreadPoolExecutor
+        from concurrent.futures import ThreadPoolExecutor
 
-    def fetch(card) -> tuple[str, dict]:
-        link = card.select_one("a.mini-link")
-        url = f"https://www.method.gg{link['href']}" if link else None
-        unit_id = (
-            (link["href"].split("/")[-1] if link else card.get("data-name", "?"))
-            .lower()
-            .replace(" ", "-")
-        )
-        details = (
-            fetch_unit_details(url, cats, timeout=timeout, session=sess) if url else {}
-        )
-        logger.info("Fetched %s", unit_id)
-        return unit_id, details
+        def fetch(card) -> tuple[str, dict]:
+            link = card.select_one("a.mini-link")
+            url = f"https://www.method.gg{link['href']}" if link else None
+            unit_id = (
+                (link["href"].split("/")[-1] if link else card.get("data-name", "?"))
+                .lower()
+                .replace(" ", "-")
+            )
+            details = (
+                fetch_unit_details(url, cats, timeout=timeout, session=sess)
+                if url
+                else {}
+            )
+            logger.info("Fetched %s", unit_id)
+            return unit_id, details
 
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        detail_results = list(executor.map(fetch, cards))
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            detail_results = list(executor.map(fetch, cards))
 
-    details_map = {uid: det for uid, det in detail_results}
+        details_map = {uid: det for uid, det in detail_results}
 
-    for card in cards:
-        name = card.get("data-name", "?")
-        faction_val = card.get("data-family", "?")
-        unit_type = card.get("data-type", "?")
-        cost_attr = card.get("data-cost")
-        cost = int(cost_attr) if cost_attr is not None else None
+        for card in cards:
+            name = card.get("data-name", "?")
+            faction_val = card.get("data-family", "?")
+            unit_type = card.get("data-type", "?")
+            cost_attr = card.get("data-cost")
+            cost = int(cost_attr) if cost_attr is not None else None
 
-        damage_attr = card.get("data-damage")
-        damage = int(float(damage_attr)) if damage_attr is not None else None
-        health_attr = card.get("data-health")
-        health = int(float(health_attr)) if health_attr is not None else None
-        dps_attr = card.get("data-dps")
-        dps = float(dps_attr) if dps_attr is not None else None
-        speed_attr = card.get("data-speed")
-        if (
-            speed_attr is None
-            or speed_attr.strip() == ""
-            or speed_attr == "Znull"
-            or speed_attr == STATIONARY
-        ):
-            speed = None
-            speed_val = None
-        else:
-            speed = speed_attr
-            speed_val = speed_attr
-        traits_attr = card.get("data-traits", "")
-        trait_names = [t.strip() for t in traits_attr.split(",") if t.strip()]
+            damage_attr = card.get("data-damage")
+            damage = int(float(damage_attr)) if damage_attr is not None else None
+            health_attr = card.get("data-health")
+            health = int(float(health_attr)) if health_attr is not None else None
+            dps_attr = card.get("data-dps")
+            dps = float(dps_attr) if dps_attr is not None else None
+            speed_attr = card.get("data-speed")
+            if (
+                speed_attr is None
+                or speed_attr.strip() == ""
+                or speed_attr == "Znull"
+                or speed_attr == STATIONARY
+            ):
+                speed = None
+                speed_val = None
+            else:
+                speed = speed_attr
+                speed_val = speed_attr
+            traits_attr = card.get("data-traits", "")
+            trait_names = [t.strip() for t in traits_attr.split(",") if t.strip()]
 
-        link = card.select_one("a.mini-link")
-        image_elem = card.select_one("img")
-        image_url = image_elem["src"] if image_elem else None
+            link = card.select_one("a.mini-link")
+            image_elem = card.select_one("img")
+            image_url = image_elem["src"] if image_elem else None
 
-        unit_id = (
-            (link["href"].split("/")[-1] if link else name).lower().replace(" ", "-")
-        )
+            unit_id = (
+                (link["href"].split("/")[-1] if link else name)
+                .lower()
+                .replace(" ", "-")
+            )
 
-        details = details_map.get(unit_id, {})
+            details = details_map.get(unit_id, {})
 
-        faction_ids = [
-            cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f
-        ]
-        trait_ids = [
-            cats["trait"].get(t, t.lower().replace(" ", "-")) for t in trait_names
-        ]
-        type_id = cats["type"].get(unit_type, unit_type.lower())
-        if speed_val and speed_val != STATIONARY:
-            speed_id = cats["speed"].get(speed_val, speed_val.lower())
-        else:
-            speed_id = None
+            faction_ids = [
+                cats["faction"].get(f, f.lower()) for f in faction_val.split(",") if f
+            ]
+            trait_ids = [
+                cats["trait"].get(t, t.lower().replace(" ", "-")) for t in trait_names
+            ]
+            type_id = cats["type"].get(unit_type, unit_type.lower())
+            if speed_val and speed_val != STATIONARY:
+                speed_id = cats["speed"].get(speed_val, speed_val.lower())
+            else:
+                speed_id = None
 
-        unit_data = {
-            "id": unit_id,
-            "names": {"en": name},
-            "faction_ids": faction_ids,
-            "type_id": type_id,
-            "cost": cost,
-            "image": image_url,
-            "damage": damage,
-            "health": health,
-            "dps": dps,
-            "speed_id": speed_id,
-            "trait_ids": trait_ids,
-            "details": details,
-        }
-        if speed is None:
-            unit_data["speed"] = None
+            unit_data = {
+                "id": unit_id,
+                "names": {"en": name},
+                "faction_ids": faction_ids,
+                "type_id": type_id,
+                "cost": cost,
+                "image": image_url,
+                "damage": damage,
+                "health": health,
+                "dps": dps,
+                "speed_id": speed_id,
+                "trait_ids": trait_ids,
+                "details": details,
+            }
+            if speed is None:
+                unit_data["speed"] = None
 
-        scraped_units.append(unit_data)
+            scraped_units.append(unit_data)
 
-    result_units = []
-    seen = set()
-    for unit in scraped_units:
-        old = existing_units.get(unit["id"])
-        seen.add(unit["id"])
-        if old and not is_unit_changed(old, unit):
-            result_units.append(old)
-            continue
+        result_units = []
+        seen = set()
+        for unit in scraped_units:
+            old = existing_units.get(unit["id"])
+            seen.add(unit["id"])
+            if old and not is_unit_changed(old, unit):
+                result_units.append(old)
+                continue
 
-        old_names = old.get("names", {}) if old else {}
-        for lang, text in old_names.items():
-            if lang != "en" and lang not in unit["names"]:
-                unit["names"][lang] = text
-        result_units.append(unit)
+            old_names = old.get("names", {}) if old else {}
+            for lang, text in old_names.items():
+                if lang != "en" and lang not in unit["names"]:
+                    unit["names"][lang] = text
+            result_units.append(unit)
 
-    for uid, old_unit in existing_units.items():
-        if uid not in seen:
-            result_units.append(old_unit)
+        for uid, old_unit in existing_units.items():
+            if uid not in seen:
+                result_units.append(old_unit)
 
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path = out_path.with_suffix(".tmp")
-    with open(tmp_path, "w", encoding="utf-8") as f:
-        json.dump(result_units, f, indent=2, ensure_ascii=False)
-    tmp_path.replace(out_path)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_path = out_path.with_suffix(".tmp")
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(result_units, f, indent=2, ensure_ascii=False)
+        tmp_path.replace(out_path)
 
-    logger.info("%s units saved to %s", len(result_units), out_path)
+        logger.info("%s units saved to %s", len(result_units), out_path)
+    finally:
+        if created_session:
+            sess.close()

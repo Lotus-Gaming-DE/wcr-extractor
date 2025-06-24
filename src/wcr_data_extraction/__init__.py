@@ -6,7 +6,7 @@ from .fetcher import (
     load_existing_units,
     is_unit_changed,
     fetch_unit_details,
-    configure_logging,
+    configure_structlog,
     create_session,
 )
 
@@ -16,6 +16,6 @@ __all__ = [
     "load_existing_units",
     "is_unit_changed",
     "fetch_unit_details",
-    "configure_logging",
+    "configure_structlog",
     "create_session",
 ]

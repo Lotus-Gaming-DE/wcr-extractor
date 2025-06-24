@@ -12,7 +12,7 @@ from .fetcher import (
     CATEGORIES_PATH,
     FetchError,
     logger,
-    configure_logging,
+    configure_structlog,
 )
 
 
@@ -46,7 +46,7 @@ def main(argv: list[str] | None = None) -> None:
     """Entry point for the command line."""
 
     args = parse_args(argv)
-    configure_logging(args.log_level)
+    configure_structlog(args.log_level)
     try:
         fetch_units(
             out_path=Path(args.output),
@@ -55,5 +55,5 @@ def main(argv: list[str] | None = None) -> None:
             max_workers=args.workers,
         )
     except FetchError as exc:
-        logger.error(exc)
+        logger.error("Fehler beim Abrufen: %s", exc)
         sys.exit(1)

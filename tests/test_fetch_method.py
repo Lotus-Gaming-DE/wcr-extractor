@@ -6,7 +6,7 @@ from unittest.mock import patch, Mock
 import pytest
 import requests
 
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
 
 from wcr_data_extraction import fetcher  # noqa: E402
 

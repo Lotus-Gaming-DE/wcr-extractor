@@ -3,7 +3,7 @@ from pathlib import Path
 from unittest.mock import patch
 import pytest
 
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
 
 from wcr_data_extraction import cli  # noqa: E402
 
@@ -30,7 +30,7 @@ def test_main_invokes_fetch_units(tmp_path):
         "--log-level",
         "DEBUG",
     ]
-    with patch.object(cli, "configure_logging") as mock_conf, patch.object(
+    with patch.object(cli, "configure_structlog") as mock_conf, patch.object(
         cli, "fetch_units"
     ) as mock_fetch:
         cli.main(args)

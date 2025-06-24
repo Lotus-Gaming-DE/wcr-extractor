@@ -14,6 +14,7 @@ venv/
 
 # Logs and temporary files
 *.log
+logs/
 *.tmp
 *.swp
 *.bak

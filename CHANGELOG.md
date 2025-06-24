@@ -16,6 +16,11 @@
 - Warning logs when `load_categories` fails to read the file.
 - Helper `create_session` for injecting custom HTTP sessions.
 - Tests for the new behaviors.
+- Structured JSON logging via `configure_structlog`.
+- Pre-commit configuration and CI integration.
+- Security scan workflow using Snyk.
+- Unit tests for structured logging.
+- Package moved to `src/` layout.
 
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.
@@ -26,4 +31,7 @@
 - `fetch_unit_details` and `fetch_units` werfen nun auch bei HTTP-Statuscodes
   ungleich `200` eine `FetchError` mit dem jeweiligen Statuscode.
 - `setup.sh` now uses `python3 -m pip`.
-
+- CI caches dependencies and runs pre-commit.
+- README regenerated with updated instructions.
+- CLI error messages are now in German.
+- Requirements updated with `structlog`, `pre-commit` and `ruff`.

@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 from unittest.mock import patch
+import pytest
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
@@ -29,11 +30,24 @@ def test_main_invokes_fetch_units(tmp_path):
         "--log-level",
         "DEBUG",
     ]
-    with patch.object(cli, "fetch_units") as mock_fetch:
+    with patch.object(cli, "configure_logging") as mock_conf, patch.object(
+        cli, "fetch_units"
+    ) as mock_fetch:
         cli.main(args)
+        mock_conf.assert_called_once_with("DEBUG")
         mock_fetch.assert_called_once_with(
             out_path=Path(args[1]),
             categories_path=Path(args[3]),
             timeout=7,
             max_workers=1,
         )
+
+
+def test_parse_args_invalid_timeout():
+    with pytest.raises(SystemExit):
+        cli.parse_args(["--timeout", "0"])
+
+
+def test_parse_args_invalid_workers():
+    with pytest.raises(SystemExit):
+        cli.parse_args(["--workers", "-1"])

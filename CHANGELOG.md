@@ -10,6 +10,12 @@
 - Parallel download support via `--workers`.
 - Retry logic now includes exponential backoff.
 - Coverage badge in README and CI enforces >90% coverage.
+- Logging configuration via `configure_logging()`.
+- Validation for positive integer arguments `--timeout` and `--workers`.
+- Atomic writes when saving `units.json`.
+- Warning logs when `load_categories` fails to read the file.
+- Helper `create_session` for injecting custom HTTP sessions.
+- Tests for the new behaviors.
 
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.

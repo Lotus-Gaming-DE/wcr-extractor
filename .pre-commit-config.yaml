@@ -21,3 +21,9 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+  - repo: https://github.com/pypa/pip-audit
+    rev: v2.7.2
+    hooks:
+      - id: pip-audit
+        additional_dependencies: ["pip-audit[cyclonedx]", "cyclonedx-bom"]
+        args: ["-r", "requirements.txt", "--format", "columns"]

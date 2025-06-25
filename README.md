@@ -84,6 +84,7 @@ pytest  # fails after 60s if a test hangs
 ```
 
 CI executes `pre-commit` and the test suite with coverage ≥90 %.
+During tests, Railway logs are streamed to `logs/latest_railway.log` and uploaded as workflow artifacts.
 A scheduled workflow performs a Snyk security scan.
 Dependabot creates pull requests to update Python and GitHub Actions dependencies, and alerts are enabled for vulnerable packages.
 

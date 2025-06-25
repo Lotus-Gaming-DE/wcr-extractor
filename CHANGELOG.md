@@ -25,6 +25,7 @@
 - Central `tests/conftest.py` and pytest-timeout with 60s default.
 - CI streams Railway logs during tests and uploads them as artifacts.
 - Fix newline at end of `data/units.json` causing pre-commit failure.
+- README mentions log streaming in CI.
 - Unit test ensuring sessions close when created.
 - Dependabot configuration for automated dependency updates.
 

@@ -32,7 +32,9 @@ jobs:
       - name: Prepare logs directory
         run: mkdir -p logs
       - name: Capture Railway logs
-        run: railway logs --follow > logs/latest_railway.log &
+        run: |
+          railway logs --follow > logs/latest_railway.log &
+          echo $! > logs/railway_logs.pid
       - name: Run pre-commit
         run: pre-commit run --all-files --show-diff-on-failure --color=always
       - name: Test
@@ -43,7 +45,12 @@ jobs:
           coverage report --fail-under=90
       - name: Stop Railway logs
         if: always()
-        run: pkill railway
+        run: |
+          if [ -f logs/railway_logs.pid ]; then
+            kill "$(cat logs/railway_logs.pid)" || true
+          else
+            pkill railway || true
+          fi
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v4

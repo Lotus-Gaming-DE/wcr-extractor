@@ -25,6 +25,7 @@
 - Central `tests/conftest.py` and pytest-timeout with 60s default.
 - CI uploads Railway logs as artifacts.
 - Unit test ensuring sessions close when created.
+- Dependabot configuration for automated dependency updates.
 
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.
@@ -36,6 +37,7 @@
   ungleich `200` eine `FetchError` mit dem jeweiligen Statuscode.
 - `setup.sh` now uses `python3 -m pip`.
 - CI caches dependencies and runs pre-commit.
+- CI now runs on Dependabot pull requests.
 - README regenerated with updated instructions.
 - CLI error messages are now in German.
 - Requirements updated with `structlog`, `pre-commit` and `ruff`.

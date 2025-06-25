@@ -18,6 +18,7 @@
 - Tests for the new behaviors.
 - Structured JSON logging via `configure_structlog`.
 - Pre-commit configuration and CI integration.
+- SBOM generation via `cyclonedx-bom` and CI archiving.
 - Security scan workflow using Snyk.
 - Unit tests for structured logging.
 - Package moved to `src/` layout.

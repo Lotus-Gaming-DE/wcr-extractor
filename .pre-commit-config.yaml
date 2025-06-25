@@ -27,3 +27,8 @@ repos:
       - id: pip-audit
         additional_dependencies: ["pip-audit[cyclonedx]", "cyclonedx-bom"]
         args: ["-r", "requirements.txt", "--format", "columns"]
+  - repo: https://github.com/CycloneDX/cyclonedx-python
+    rev: v6.1.1
+    hooks:
+      - id: cyclonedx-bom
+        args: ["-o", "sbom.xml"]

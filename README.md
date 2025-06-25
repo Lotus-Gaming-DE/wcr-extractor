@@ -76,6 +76,8 @@ pip install -r requirements-dev.txt
 pre-commit install
 pre-commit run --all-files
 ```
+Running pre-commit also creates an SBOM via `cyclonedx-bom`, saved as
+`sbom.xml`.
 
 Run the tests with:
 

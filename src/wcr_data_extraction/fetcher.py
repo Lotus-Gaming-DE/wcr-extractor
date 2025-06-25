@@ -437,6 +437,7 @@ def fetch_units(
         tmp_path = out_path.with_suffix(".tmp")
         with open(tmp_path, "w", encoding="utf-8") as f:
             json.dump(result_units, f, indent=2, ensure_ascii=False)
+            f.write("\n")
         tmp_path.replace(out_path)
 
         logger.info("%s units saved to %s", len(result_units), out_path)

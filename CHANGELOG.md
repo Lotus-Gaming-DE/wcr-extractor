@@ -24,6 +24,7 @@
 - `.env.example` and log rotation support.
 - Central `tests/conftest.py` and pytest-timeout with 60s default.
 - CI uploads Railway logs as artifacts.
+- Fix newline at end of `data/units.json` causing pre-commit failure.
 - Unit test ensuring sessions close when created.
 - Dependabot configuration for automated dependency updates.
 

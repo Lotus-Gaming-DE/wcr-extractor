@@ -89,6 +89,20 @@ CI executes `pre-commit` and the test suite with coverage ≥90 %.
 A scheduled workflow performs a Snyk security scan.
 Dependabot creates pull requests to update Python and GitHub Actions dependencies, and alerts are enabled for vulnerable packages.
 
+## Deployment
+
+Deploy the extractor to [Railway](https://railway.app/) to automate data updates.
+Create a Railway project linked to this repository and set the start command
+to run the CLI, e.g.:
+
+```bash
+python -m wcr_data_extraction.cli --output data/units.json --categories data/categories.json
+```
+
+The CI workflow streams the service logs with
+`railway logs --follow > logs/latest_railway.log` and uploads the log file as an
+artifact so you can inspect the deployment output.
+
 ## Contributing translations
 
 Names and trait descriptions are defined in `data/categories.json`.

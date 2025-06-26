@@ -22,7 +22,7 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
   - repo: https://github.com/pypa/pip-audit
-    rev: v2.7.2
+    rev: v2.9.0
     hooks:
       - id: pip-audit
         additional_dependencies: ["pip-audit[cyclonedx]", "cyclonedx-bom"]

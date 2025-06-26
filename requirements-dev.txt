@@ -5,3 +5,5 @@ coverage==7.9.1
 pre-commit==3.7.1
 ruff==0.4.4
 pytest-timeout==2.3.1
+pip-audit==2.9.0
+cyclonedx-bom==6.1.1

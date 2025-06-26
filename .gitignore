@@ -28,3 +28,4 @@ logs/
 # Misc
 .env
 sbom.xml
+.pytest_cache/

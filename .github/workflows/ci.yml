@@ -44,11 +44,9 @@ jobs:
             mv sbom.xml logs/
           fi
       - name: Test
-        run: coverage run -m pytest --timeout=60
+        run: pytest --cov=. --cov-report=xml --cov-report=term
       - name: Coverage report
-        run: |
-          coverage xml
-          coverage report --fail-under=90
+        run: coverage report --fail-under=90
       - name: Stop Railway logs
         if: always()
         run: |

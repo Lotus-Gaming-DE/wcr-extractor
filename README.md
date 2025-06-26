@@ -82,16 +82,19 @@ Running `pre-commit` formats the code, lints it with Black, Ruff and
 Flake8, scans the requirements with `pip-audit` and creates an SBOM via
 `cyclonedx-bom` which is saved as `sbom.xml`.
 
+
+CI executes `pre-commit` and the test suite with coverage ≥90 %.
+A scheduled workflow performs a Snyk security scan.
+Dependabot checks Python requirements every day (GitHub Actions weekly) and its pull
+requests trigger the full CI pipeline with linting, testing and `pip-audit`.
+## Tests
+
 Run the tests with:
 
 ```bash
 pytest  # runs with --cov=. and fails after 60s if a test hangs
 ```
 
-CI executes `pre-commit` and the test suite with coverage ≥90 %.
-A scheduled workflow performs a Snyk security scan.
-Dependabot checks Python requirements every day (GitHub Actions weekly) and its pull
-requests trigger the full CI pipeline with linting, testing and `pip-audit`.
 
 ## Deployment
 

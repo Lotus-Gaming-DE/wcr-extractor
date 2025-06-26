@@ -89,7 +89,8 @@ pytest  # fails after 60s if a test hangs
 
 CI executes `pre-commit` and the test suite with coverage ≥90 %.
 A scheduled workflow performs a Snyk security scan.
-Dependabot creates pull requests to update Python and GitHub Actions dependencies, and alerts are enabled for vulnerable packages.
+Dependabot checks Python requirements every day (GitHub Actions weekly) and its pull
+requests trigger the full CI pipeline with linting, testing and `pip-audit`.
 
 ## Deployment
 

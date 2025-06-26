@@ -27,6 +27,8 @@
 - CI uploads Railway logs as artifacts.
 - Unit test ensuring sessions close when created.
 - Dependabot configuration for automated dependency updates.
+- Dependabot now checks Python dependencies daily and its pull requests run
+  the complete CI pipeline.
 
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.

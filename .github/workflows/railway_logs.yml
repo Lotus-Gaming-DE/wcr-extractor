@@ -1,0 +1,21 @@
+name: Railway Logs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  logs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Railway CLI
+        run: npm install -g railway
+      - name: Stream logs
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          mkdir -p logs
+          railway logs --follow > logs/latest_railway.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: railway-logs
+          path: logs/latest_railway.log

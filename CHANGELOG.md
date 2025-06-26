@@ -29,6 +29,11 @@
 - Dependabot configuration for automated dependency updates.
 - Dependabot now checks Python dependencies daily and its pull requests run
   the complete CI pipeline.
+- Railway log workflow with manual trigger.
+- SBOM generation step in CI.
+- Snyk steps now use environment variable checks.
+- Utility script documented in README.
+- Fixed merge conflict markers in `requirements-dev.txt`.
 
 ### Changed
 - GitHub Actions workflow uses explicit paths when updating data.

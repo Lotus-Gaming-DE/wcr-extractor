@@ -27,6 +27,16 @@ python -m wcr_data_extraction.cli \
   --log-file logs/wcr.log
 ```
 
+## Utility Scripts
+
+Execute the convenience wrapper with:
+
+```bash
+python scripts/fetch_method.py --help
+```
+
+It delegates to the main CLI and supports all the same options.
+
 `--timeout` and `--workers` accept positive integers. Data is fetched with a
 shared `requests.Session` that retries failed requests and applies the given
 timeout. Results are written atomically so existing files stay intact on errors.

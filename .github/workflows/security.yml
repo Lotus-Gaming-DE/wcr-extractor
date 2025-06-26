@@ -14,10 +14,10 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - name: Snyk Scan
-        if: ${{ secrets.SNYK_TOKEN != '' && github.event.pull_request.head.repo.full_name == github.repository }}
-        uses: snyk/actions/python@master
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+      - name: Run Snyk Test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          command: test
+        if: ${{ env.SNYK_TOKEN != '' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false) }}
+        run: snyk test

@@ -4,13 +4,8 @@ black==25.1.0
 flake8==7.3.0
 coverage==7.9.1
 pre-commit==4.2.0
-<<<<<<< dependabot/pip/pytest-timeout-2.4.0
 ruff==0.4.4
 pytest-timeout==2.4.0
-=======
-ruff==0.12.0
-pytest-timeout==2.3.1
->>>>>>> main
 pytest-asyncio==1.0.0
 pip-audit==2.9.0
 cyclonedx-bom==6.1.1

@@ -18,6 +18,7 @@ logs/
 *.tmp
 *.swp
 *.bak
+/data/
 
 # macOS
 .DS_Store

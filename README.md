@@ -3,7 +3,7 @@
 
 Simple scraper that downloads minis from [method.gg](https://www.method.gg/warcraft-rumble/minis)
 and stores them in `data/units.json`. Categories for factions, types, traits and
-speeds are read from `data/categories.json`.
+speeds are read from `src/wcr_data_extraction/data/categories.json`.
 
 ## Setup
 
@@ -20,7 +20,7 @@ are required by default).
 ```bash
 python -m wcr_data_extraction.cli \
   --output data/units.json \
-  --categories data/categories.json \
+  --categories src/wcr_data_extraction/data/categories.json \
   --timeout 10 \
   --workers 4 \
   --log-level INFO \
@@ -58,7 +58,6 @@ Example snippet from `units.json`:
 ]
 ```
 
-A GitHub Actions workflow updates `data/units.json` on every push to `main`.
 `categories.json` is static and must be edited manually when categories change.
 
 ## Logging
@@ -105,7 +104,7 @@ Create a Railway project linked to this repository and set the start command
 to run the CLI, e.g.:
 
 ```bash
-python -m wcr_data_extraction.cli --output data/units.json --categories data/categories.json
+python -m wcr_data_extraction.cli --output data/units.json --categories src/wcr_data_extraction/data/categories.json
 ```
 
 The CI workflow streams the service logs with
@@ -114,7 +113,7 @@ artifact so you can inspect the deployment output.
 
 ## Contributing translations
 
-Names and trait descriptions are defined in `data/categories.json`.
+Names and trait descriptions are defined in `src/wcr_data_extraction/data/categories.json`.
 Add new language keys in the `names` or `descriptions` objects, keeping the
 English text intact. Running `scripts/fetch_method.py` preserves existing
 translations in `units.json`.

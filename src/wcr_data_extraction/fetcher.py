@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 
 BASE_URL = "https://www.method.gg/warcraft-rumble/minis"
 OUT_PATH = Path(__file__).resolve().parents[1] / "data" / "units.json"
-CATEGORIES_PATH = Path(__file__).resolve().parents[1] / "data" / "categories.json"
+CATEGORIES_PATH = Path(__file__).resolve().parent / "data" / "categories.json"
 STATIONARY = "Stationary"
 
 # HTTP session with retry logic and backoff

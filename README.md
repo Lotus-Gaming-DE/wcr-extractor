@@ -84,6 +84,8 @@ Flake8, scans the requirements with `pip-audit` and creates an SBOM via
 
 
 CI executes `pre-commit` and the test suite with coverage ≥90 %.
+A `snyk test` step runs only when the `SNYK_TOKEN` secret is present and the
+pull request originates from this repository so forked PRs do not fail.
 A scheduled workflow performs a Snyk security scan.
 Dependabot checks Python requirements every day (GitHub Actions weekly) and its pull
 requests trigger the full CI pipeline with linting, testing and `pip-audit`.

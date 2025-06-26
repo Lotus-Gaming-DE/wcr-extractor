@@ -48,3 +48,5 @@
 - README and CHANGELOG brought in line with the global structure.
 - Clarified example environment file and added explanatory comments.
 - CI: Skip Snyk test in forked PRs to prevent missing-secret auth errors.
+- Security workflow now runs on pushes and pull requests and gracefully skips
+  Snyk scans when the token is absent.

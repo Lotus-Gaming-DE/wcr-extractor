@@ -48,10 +48,10 @@ jobs:
       - name: Coverage report
         run: coverage report --fail-under=90
       - name: Snyk Test
-        if: ${{ secrets.SNYK_TOKEN != '' && github.event.pull_request.head.repo.full_name == github.repository }}
-        run: snyk test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        if: github.event.pull_request.head.repo.full_name == github.repository && env.SNYK_TOKEN != ''
+        run: snyk test
       - name: Stop Railway logs
         if: always()
         run: |

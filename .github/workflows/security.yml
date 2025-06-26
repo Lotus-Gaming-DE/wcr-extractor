@@ -1,6 +1,8 @@
 name: Security Scan
 
 on:
+  push:
+  pull_request:
   schedule:
     - cron: '0 3 * * 0'
   workflow_dispatch:
@@ -15,9 +17,9 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - name: Snyk Scan
-        if: ${{ secrets.SNYK_TOKEN != '' && github.event.pull_request.head.repo.full_name == github.repository }}
-        uses: snyk/actions/python@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        if: github.event.pull_request.head.repo.full_name == github.repository && env.SNYK_TOKEN != ''
+        uses: snyk/actions/python@master
         with:
           command: test

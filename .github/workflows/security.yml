@@ -15,6 +15,7 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - name: Snyk Scan
+        if: ${{ secrets.SNYK_TOKEN != '' && github.event.pull_request.head.repo.full_name == github.repository }}
         uses: snyk/actions/python@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

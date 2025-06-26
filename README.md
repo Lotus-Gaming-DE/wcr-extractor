@@ -69,15 +69,17 @@ errors are in German.
 
 ## Development
 
-Formatting and linting are enforced via [pre-commit](https://pre-commit.com/):
+Formatting, linting and dependency checks are enforced via
+[pre-commit](https://pre-commit.com/):
 
 ```bash
 pip install -r requirements-dev.txt
 pre-commit install
 pre-commit run --all-files
 ```
-Running pre-commit also creates an SBOM via `cyclonedx-bom`, saved as
-`sbom.xml`.
+Running `pre-commit` formats the code, lints it with Black, Ruff and
+Flake8, scans the requirements with `pip-audit` and creates an SBOM via
+`cyclonedx-bom` which is saved as `sbom.xml`.
 
 Run the tests with:
 

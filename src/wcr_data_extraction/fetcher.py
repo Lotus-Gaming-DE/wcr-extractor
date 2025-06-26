@@ -36,6 +36,7 @@ def create_session() -> requests.Session:
 
 
 def _get_session() -> requests.Session:
+    """Return a global session instance to reuse connections."""
     global _session
     if _session is None:
         _session = create_session()
@@ -138,6 +139,7 @@ def load_existing_units(out_path: Path | str | None = None) -> dict:
 
 def is_unit_changed(old: dict, new: dict) -> bool:
     """Return ``True`` if relevant fields differ between two units."""
+    # Only compare fields that affect gameplay. Translations are ignored.
 
     compare_keys = [
         "faction_ids",
@@ -259,6 +261,7 @@ def fetch_unit_details(
             lines = adv_text.splitlines()
             prefix = "Available army bonus slots for the bottom row"
             army_bonus_slots = []
+            # Extract the slot list and remove it from the remaining text
             for idx, line in enumerate(lines):
                 if line.startswith(prefix):
                     j = idx + 1
@@ -322,6 +325,7 @@ def fetch_units(
 
         from concurrent.futures import ThreadPoolExecutor
 
+        # Fetch detail pages in parallel to speed up scraping
         def fetch(card) -> tuple[str, dict]:
             link = card.select_one("a.mini-link")
             url = f"https://www.method.gg{link['href']}" if link else None
@@ -423,6 +427,7 @@ def fetch_units(
                 result_units.append(old)
                 continue
 
+            # Preserve translations from the previous file so they are not lost
             old_names = old.get("names", {}) if old else {}
             for lang, text in old_names.items():
                 if lang != "en" and lang not in unit["names"]:

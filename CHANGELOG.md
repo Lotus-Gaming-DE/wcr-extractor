@@ -45,3 +45,5 @@
 - CLI error messages are now in German.
 - Requirements updated with `structlog`, `pre-commit` and `ruff`.
 - Sessions created in `fetch_units` are now closed reliably.
+- README and CHANGELOG brought in line with the global structure.
+- Clarified example environment file and added explanatory comments.

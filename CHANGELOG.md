@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 ### Added
+- Workflow `railway_logs.yml` streams deployment logs.
+- SBOM uploaded as a CI artifact.
+- `scripts/fetch_method.py` now exposes a `main()` function.
 - Command-line interface for `fetch_method.py` with `--output`, `--categories` and `--timeout` options.
 - New unit tests for CLI parsing.
 - Development requirements file and optional `--dev` flag for `setup.sh`.
@@ -31,6 +34,7 @@
   the complete CI pipeline.
 
 ### Changed
+- Removed tracked `data/` directory and added it to `.gitignore`.
 - GitHub Actions workflow uses explicit paths when updating data.
 - Pinned package versions in `requirements.txt` and `requirements-dev.txt`.
 - `fetch_unit_details` accepts a `categories` dict instead of a file path.

@@ -23,7 +23,8 @@ python -m wcr_data_extraction.cli \
   --categories data/categories.json \
   --timeout 10 \
   --workers 4 \
-  --log-level INFO
+  --log-level INFO \
+  --log-file logs/wcr.log
 ```
 
 `--timeout` and `--workers` accept positive integers. Data is fetched with a
@@ -63,8 +64,8 @@ A GitHub Actions workflow updates `data/units.json` on every push to `main`.
 ## Logging
 
 Structured JSON logs are configured via `configure_structlog()` or the
-`--log-level` option. When a log file is provided, messages are written to
-`logs/wcr.log` with rotation. Internal logs are English while user-facing
+`--log-level` option. By default logs are written to `logs/wcr.log` with
+rotation. Internal logs are English while user-facing
 errors are in German.
 
 ## Development

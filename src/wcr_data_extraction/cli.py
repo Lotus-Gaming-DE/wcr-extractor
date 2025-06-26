@@ -39,6 +39,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--workers", type=positive_int, default=1, help="Number of parallel workers"
     )
     parser.add_argument("--log-level", default="INFO", help="Logging level")
+    parser.add_argument(
+        "--log-file",
+        default="logs/wcr.log",
+        help="Path to the log file (stored under logs/)",
+    )
     return parser.parse_args(argv)
 
 
@@ -46,7 +51,7 @@ def main(argv: list[str] | None = None) -> None:
     """Entry point for the command line."""
 
     args = parse_args(argv)
-    configure_structlog(args.log_level)
+    configure_structlog(args.log_level, Path(args.log_file))
     try:
         fetch_units(
             out_path=Path(args.output),

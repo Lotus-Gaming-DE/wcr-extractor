@@ -43,7 +43,7 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-CI runs pre-commit, the test suite (`pytest --cov=.`) and uploads an SBOM. Snyk security scans execute when the `SNYK_TOKEN` secret is available. Dependabot keeps Python and GitHub Actions dependencies up to date.
+CI runs pre-commit, executes the test suite (`pytest --cov=.`), generates an SBOM with `cyclonedx-py` and runs Snyk when the `SNYK_TOKEN` secret is available. Dependabot keeps Python and GitHub Actions dependencies up to date.
 
 ## Tests
 

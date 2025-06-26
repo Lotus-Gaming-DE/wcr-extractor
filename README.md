@@ -84,7 +84,7 @@ Flake8, scans the requirements with `pip-audit` and creates an SBOM via
 Run the tests with:
 
 ```bash
-pytest  # fails after 60s if a test hangs
+pytest  # runs with --cov=. and fails after 60s if a test hangs
 ```
 
 CI executes `pre-commit` and the test suite with coverage ≥90 %.

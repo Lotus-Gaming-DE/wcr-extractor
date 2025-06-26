@@ -11,6 +11,12 @@ Simple scraper that downloads minis from [method.gg](https://www.method.gg/warcr
 
 Copy `.env.example` to `.env` if you need to define environment variables. None are required by default.
 
+### Environment variables
+
+`SNYK_TOKEN` and `RAILWAY_TOKEN` are used by the GitHub Actions workflows for
+security scanning and fetching Railway logs. Leave them empty if you do not use
+those features.
+
 ## Usage
 
 ```bash

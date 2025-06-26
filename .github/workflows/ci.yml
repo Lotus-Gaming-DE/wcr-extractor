@@ -2,10 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
   pull_request:
-  pull_request_target:
-    types: [opened, synchronize]
 
 jobs:
   test:
@@ -34,6 +31,8 @@ jobs:
       - name: Prepare logs directory
         run: mkdir -p logs
       - name: Capture Railway logs
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           railway logs --follow > logs/latest_railway.log &
           echo $! > logs/railway_logs.pid

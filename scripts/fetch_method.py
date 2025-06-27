@@ -1,17 +1,18 @@
-"""Wrapper for the ``wcr_data_extraction`` CLI.
+"""Fetch Warcraft Rumble data from method.gg and store it in ``tmp_data/``.
 
-This script provides a stable entry point for fetching unit and category data.
-All command line arguments are passed directly to :mod:`wcr_data_extraction.cli`.
+This script downloads unit and category information without requiring any
+command-line arguments. Output files are only overwritten when the fetched
+content differs from the existing data so that manual translations remain
+intact.
 """
 
-import argparse
+from __future__ import annotations
+
 from pathlib import Path
 import sys
-from typing import List
 
 sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
 
-from wcr_data_extraction import cli  # noqa: E402
 from wcr_data_extraction.fetcher import (  # noqa: E402
     fetch_units,
     fetch_categories,
@@ -21,33 +22,31 @@ from wcr_data_extraction.fetcher import (  # noqa: E402
 )
 
 
-def main(argv: List[str] | None = None) -> None:
-    """Execute the extractor CLI.
+def main() -> None:
+    """Fetch minis and categories to ``tmp_data/``."""
+    base_dir = Path(__file__).resolve().parents[1]
+    out_dir = base_dir / "tmp_data"
+    units_path = out_dir / "units.json"
+    categories_path = out_dir / "categories.json"
 
-    Parameters are forwarded directly to :mod:`wcr_data_extraction.cli`. Use
-    ``--help`` to see available options.
-    """
-    parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument("--help", action="store_true", help="Show help message")
-    args, rest = parser.parse_known_args(argv)
-    if args.help:
-        cli.main(["--help"])
-        return
+    configure_structlog("INFO")
+    logger.info("Starting fetch")
 
-    parsed = cli.parse_args(rest)
-    configure_structlog(parsed.log_level, Path(parsed.log_file))
     try:
-        logger.info("Starting fetch")
-        fetch_categories(out_path=Path(parsed.categories), timeout=parsed.timeout)
-        fetch_units(
-            out_path=Path(parsed.output),
-            categories_path=Path(parsed.categories),
-            timeout=parsed.timeout,
-            max_workers=parsed.workers,
+        cat_data = fetch_categories(out_path=categories_path, timeout=10)
+        unit_data = fetch_units(
+            out_path=units_path,
+            categories_path=categories_path,
+            timeout=10,
+            max_workers=4,
+        )
+        logger.info(
+            "Fetched %s units and %s category entries",
+            len(unit_data),
+            sum(len(v) for v in cat_data.values()),
         )
     except FetchError as exc:
-        logger.error("Fehler beim Abrufen: %s", exc)
-        sys.exit(1)
+        logger.warning("Fetch failed: %s", exc)
 
 
 if __name__ == "__main__":

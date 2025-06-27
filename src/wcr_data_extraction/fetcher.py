@@ -167,7 +167,7 @@ def fetch_categories(
     out_path: Path | str | None = None,
     timeout: int = 10,
     session: requests.Session | None = None,
-) -> None:
+) -> dict:
     """Download category data from method.gg and store it as JSON."""
 
     if not BASE_URL.startswith("https://"):
@@ -248,6 +248,23 @@ def fetch_categories(
             "speeds": build_items("speeds", speeds_raw),
         }
 
+        total = sum(len(v) for v in data.values())
+
+        existing_raw: dict = {}
+        if out_path.exists():
+            try:
+                with open(out_path, encoding="utf-8") as f:
+                    existing_raw = json.load(f)
+            except (json.JSONDecodeError, OSError) as exc:
+                logger.warning("Could not read categories from %s: %s", out_path, exc)
+
+        new_dump = json.dumps(data, sort_keys=True)
+        old_dump = json.dumps(existing_raw, sort_keys=True) if existing_raw else ""
+
+        if new_dump == old_dump:
+            logger.info("No changes detected for categories at %s", out_path)
+            return data
+
         out_path.parent.mkdir(parents=True, exist_ok=True)
         tmp_path = out_path.with_suffix(".tmp")
         with open(tmp_path, "w", encoding="utf-8") as f:
@@ -255,8 +272,8 @@ def fetch_categories(
             f.write("\n")
         tmp_path.replace(out_path)
 
-        total = sum(len(v) for v in data.values())
         logger.info("%s categories saved to %s", total, out_path)
+        return data
     finally:
         if created_session:
             sess.close()
@@ -391,7 +408,7 @@ def fetch_units(
     timeout: int = 10,
     max_workers: int = 1,
     session: requests.Session | None = None,
-) -> None:
+) -> list[dict]:
     """Download minis from method.gg and store them as JSON."""
 
     if not BASE_URL.startswith("https://"):
@@ -542,6 +559,21 @@ def fetch_units(
             if uid not in seen:
                 result_units.append(old_unit)
 
+        existing_raw: list[dict] = []
+        if out_path.exists():
+            try:
+                with open(out_path, encoding="utf-8") as f:
+                    existing_raw = json.load(f)
+            except (json.JSONDecodeError, OSError):
+                existing_raw = []
+
+        new_dump = json.dumps(result_units, sort_keys=True)
+        old_dump = json.dumps(existing_raw, sort_keys=True) if existing_raw else ""
+
+        if new_dump == old_dump:
+            logger.info("No changes detected for units at %s", out_path)
+            return result_units
+
         out_path.parent.mkdir(parents=True, exist_ok=True)
         tmp_path = out_path.with_suffix(".tmp")
         with open(tmp_path, "w", encoding="utf-8") as f:
@@ -550,6 +582,7 @@ def fetch_units(
         tmp_path.replace(out_path)
 
         logger.info("%s units saved to %s", len(result_units), out_path)
+        return result_units
     finally:
         if created_session:
             sess.close()

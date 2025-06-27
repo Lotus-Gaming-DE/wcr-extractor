@@ -82,3 +82,35 @@ def test_fetch_categories_http_error(tmp_path):
         with patch.object(fetcher, "CATEGORIES_PATH", tmp_path / "c.json"):
             with pytest.raises(fetcher.FetchError):
                 fetcher.fetch_categories(session=mock_session)
+
+
+def test_fetch_categories_skips_when_unchanged(tmp_path):
+    html = make_html()
+    expected = {
+        "factions": [
+            {"id": "alliance", "names": {"en": "Alliance"}},
+            {"id": "alliance-undead", "names": {"en": "Alliance & Undead"}},
+        ],
+        "types": [
+            {"id": "leader", "names": {"en": "Leader"}},
+            {"id": "spell", "names": {"en": "Spell"}},
+        ],
+        "traits": [
+            {"id": "ambush", "names": {"en": "Ambush"}},
+            {"id": "aoe", "names": {"en": "AoE"}},
+        ],
+        "speeds": [
+            {"id": "fast", "names": {"en": "Fast"}},
+            {"id": "slow", "names": {"en": "Slow"}},
+        ],
+    }
+    out_file = tmp_path / "cats.json"
+    out_file.write_text(json.dumps(expected))
+    mock_response = Mock(status_code=200, text=html)
+    mock_session = Mock()
+    mock_session.get.return_value = mock_response
+    with patch.object(fetcher, "create_session", return_value=mock_session):
+        with patch.object(fetcher, "CATEGORIES_PATH", out_file):
+            with patch("wcr_data_extraction.fetcher.json.dump") as dump_mock:
+                fetcher.fetch_categories(session=mock_session)
+                dump_mock.assert_not_called()

@@ -7,6 +7,8 @@
 - `scripts/fetch_method.py` now exposes a `main()` function.
 - Command-line interface for `fetch_method.py` with `--output`, `--categories` and `--timeout` options.
 - New unit tests for CLI parsing.
+- `scripts/fetch_method.py` now runs without CLI flags and only overwrites files
+  in `tmp_data/` when the fetched data changed.
 - Development requirements file and optional `--dev` flag for `setup.sh`.
 - Automatic fetching of category data to `categories.json`.
 - Section in README on updating dependencies.

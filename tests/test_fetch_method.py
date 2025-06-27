@@ -198,6 +198,66 @@ def test_fetch_units_skips_unchanged_unit(tmp_path):
     assert data == existing
 
 
+def test_fetch_units_skips_write_when_identical(tmp_path):
+    html = (
+        "<div class='mini-wrapper' data-name='Footman' data-family='Alliance' "
+        "data-type='Troop' data-cost='2' data-damage='10' data-health='20' "
+        "data-dps='5' data-speed='Slow' data-traits='Melee'>"
+        "<a class='mini-link' href='/warcraft-rumble/minis/footman'>"
+        "<img src='footman.png' />"
+        "</a>"
+        "</div>"
+    )
+    mock_response = Mock(status_code=200, text=html)
+
+    categories = {
+        "factions": [{"id": "alliance", "names": {"en": "Alliance"}}],
+        "types": [{"id": "troop", "names": {"en": "Troop"}}],
+        "traits": [{"id": "melee", "names": {"en": "Melee"}}],
+        "speeds": [{"id": "slow", "names": {"en": "Slow"}}],
+    }
+
+    mock_session = Mock()
+    mock_session.get.return_value = mock_response
+    with patch.object(fetcher, "create_session", return_value=mock_session):
+        out_file = tmp_path / "units.json"
+        cat_file = tmp_path / "categories.json"
+        cat_file.write_text(json.dumps(categories))
+        dummy_details = {
+            "core_trait": {},
+            "stats": {},
+            "traits": [],
+            "talents": [],
+            "advanced_info": "info",
+        }
+        existing = [
+            {
+                "id": "footman",
+                "names": {"en": "Footman", "de": "Fußmann"},
+                "faction_ids": ["alliance"],
+                "type_id": "troop",
+                "cost": 2,
+                "image": "footman.png",
+                "damage": 10,
+                "health": 20,
+                "dps": 5.0,
+                "speed_id": "slow",
+                "trait_ids": ["melee"],
+                "details": dummy_details,
+            }
+        ]
+        out_file.write_text(json.dumps(existing))
+        with patch.object(fetcher, "OUT_PATH", out_file), patch.object(
+            fetcher, "CATEGORIES_PATH", cat_file
+        ), patch.object(
+            fetcher, "fetch_unit_details", return_value=dummy_details
+        ), patch(
+            "wcr_data_extraction.fetcher.json.dump"
+        ) as dump_mock:
+            fetcher.fetch_units(session=mock_session)
+            dump_mock.assert_not_called()
+
+
 def test_fetch_units_updates_changed_unit(tmp_path):
     html = (
         "<div class='mini-wrapper' data-name='Footman' data-family='Alliance' "

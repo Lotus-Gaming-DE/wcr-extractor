@@ -34,7 +34,9 @@ python -m wcr_data_extraction.cli \
 
 ## Utility Scripts
 
-- `python scripts/fetch_method.py` – fetches units and categories from method.gg. Run with `--help` to see available options; arguments mirror the CLI.
+- `python scripts/fetch_method.py` – downloads the latest unit and category data
+  from method.gg into `tmp_data/`. Existing files are only overwritten when the
+  fetched content has changed.
 
 ## Logging
 

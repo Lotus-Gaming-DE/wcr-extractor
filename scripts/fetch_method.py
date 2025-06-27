@@ -13,12 +13,18 @@ from typing import List
 sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
 
 from wcr_data_extraction import cli  # noqa: E402
+from wcr_data_extraction import fetcher  # noqa: E402
 from wcr_data_extraction.fetcher import (  # noqa: E402
     fetch_units,
     fetch_categories,
     configure_structlog,
     FetchError,
     logger,
+)
+
+DEFAULT_UNITS_PATH = Path(__file__).resolve().parents[1] / "tmp_data" / "units.json"
+DEFAULT_CATEGORIES_PATH = (
+    Path(__file__).resolve().parents[1] / "tmp_data" / "categories.json"
 )
 
 
@@ -52,6 +58,10 @@ def main(argv: List[str] | None = None) -> None:
         cli.main(["--help"])
         return
 
+    cli.OUT_PATH = DEFAULT_UNITS_PATH
+    cli.CATEGORIES_PATH = DEFAULT_CATEGORIES_PATH
+    fetcher.OUT_PATH = DEFAULT_UNITS_PATH
+    fetcher.CATEGORIES_PATH = DEFAULT_CATEGORIES_PATH
     parsed = cli.parse_args(rest)
     configure_structlog(parsed.log_level, Path(parsed.log_file))
     logger.info("Starting fetch")

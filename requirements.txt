@@ -1,3 +1,4 @@
 requests==2.32.4
+urllib3==2.5.0
 beautifulsoup4==4.13.4
 structlog==24.1.0

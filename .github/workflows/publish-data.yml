@@ -22,12 +22,30 @@ jobs:
       - name: Install dependencies
         run: ./setup.sh
 
+      - name: Prepare folders
+        run: |
+          mkdir -p tmp_data logs data
+
       - name: Run extractor to tmp_data/
         run: |
-          mkdir -p tmp_data
           python scripts/fetch_method.py \
             --output tmp_data/units.json \
-            --categories tmp_data/categories.json
+            --categories tmp_data/categories.json \
+            --log-file logs/extractor.json
+
+      - name: Validate JSON output
+        run: |
+          for f in units.json categories.json; do
+            path="tmp_data/$f"
+            if [ ! -s "$path" ] || [ $(stat -c%s "$path") -le 2 ]; then
+              echo "$f missing or empty" >&2
+              exit 1
+            fi
+            python -m json.tool "$path" > /dev/null || {
+              echo "$f is invalid JSON" >&2
+              exit 1
+            }
+          done
 
       - name: Copy JSON files
         run: |
@@ -54,6 +72,15 @@ jobs:
           git switch data-sync
           git pull origin data-sync || true
 
+          if [ ! -s data/units.json ] || [ $(stat -c%s data/units.json) -le 2 ]; then
+            echo "units.json missing or empty" >&2
+            exit 1
+          fi
+          if [ ! -s data/categories.json ] || [ $(stat -c%s data/categories.json) -le 2 ]; then
+            echo "categories.json missing or empty" >&2
+            exit 1
+          fi
+
           git add -f data/units.json data/categories.json 2>/dev/null || true
 
           if git diff --cached --quiet; then
@@ -63,3 +90,11 @@ jobs:
 
           git commit -m "Update data from main [CI]"
           git push origin data-sync
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extractor-logs
+          path: logs/
+          if-no-files-found: ignore

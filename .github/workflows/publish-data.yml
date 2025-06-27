@@ -48,22 +48,22 @@ jobs:
           done
 
       - name: Copy JSON files
+        id: copy
         run: |
           mkdir -p data
+          updated=false
           if [ -f tmp_data/units.json ]; then
             cp tmp_data/units.json data/units.json
-            echo "units.json updated"
-          else
-            echo "units.json missing" >&2
+            updated=true
           fi
           if [ -f tmp_data/categories.json ]; then
             cp tmp_data/categories.json data/categories.json
-            echo "categories.json updated"
-          else
-            echo "categories.json not generated"
+            updated=true
           fi
+          echo "updated=$updated" >> "$GITHUB_OUTPUT"
 
       - name: Commit data to data-sync branch
+        if: steps.copy.outputs.updated == 'true'
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
@@ -71,15 +71,6 @@ jobs:
           git fetch origin data-sync
           git switch data-sync
           git pull origin data-sync || true
-
-          if [ ! -s data/units.json ] || [ $(stat -c%s data/units.json) -le 2 ]; then
-            echo "units.json missing or empty" >&2
-            exit 1
-          fi
-          if [ ! -s data/categories.json ] || [ $(stat -c%s data/categories.json) -le 2 ]; then
-            echo "categories.json missing or empty" >&2
-            exit 1
-          fi
 
           git add -f data/units.json data/categories.json 2>/dev/null || true
 

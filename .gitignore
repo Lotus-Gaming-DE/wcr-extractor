@@ -31,7 +31,7 @@ tmp/
 sbom.xml
 
 # Data handling
-data/
+data/*
 !data/export/
 !data/export/units.json
 !data/export/categories.json

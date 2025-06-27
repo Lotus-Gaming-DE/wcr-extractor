@@ -15,7 +15,8 @@ def test_parse_args_defaults(tmp_path):
         assert Path(args.categories) == tmp_path / "categories.json"
         assert args.timeout == 10
         assert args.workers == 1
-        assert Path(args.log_file) == Path("logs/wcr.log")
+        assert Path(args.log_file).parent == Path("logs")
+        assert Path(args.log_file).name.startswith("runtime-")
 
 
 def test_main_invokes_fetch_units(tmp_path):
@@ -33,7 +34,9 @@ def test_main_invokes_fetch_units(tmp_path):
         cli, "fetch_units"
     ) as mock_fetch:
         cli.main(args)
-        mock_conf.assert_called_once_with("DEBUG", Path("logs/wcr.log"))
+        called_path = mock_conf.call_args.args[1]
+        assert called_path.parent == Path("logs")
+        assert called_path.name.startswith("runtime-")
         mock_fetch.assert_called_once_with(
             out_path=Path(args[1]),
             categories_path=Path(args[3]),

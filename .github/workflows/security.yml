@@ -21,3 +21,18 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         if: ${{ env.SNYK_TOKEN != '' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false) }}
         run: snyk test
+
+  codeql:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/codeql-action/init@v2
+      - uses: github/codeql-action/analyze@v2
+
+  trufflehog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: trufflesecurity/trufflehog@v3
+        with:
+          path: ./
+        continue-on-error: false

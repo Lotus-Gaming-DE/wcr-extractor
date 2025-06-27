@@ -27,14 +27,16 @@ jobs:
           pip install -r requirements.txt
           pip install -r requirements-dev.txt
       - name: Install Railway CLI
-        run: npm install -g railway
+        run: npx railway --version
       - name: Prepare logs directory
         run: mkdir -p logs
       - name: Capture Railway logs
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT: ${{ secrets.RAILWAY_PROJECT }}
+          RAILWAY_SERVICE: ${{ secrets.RAILWAY_SERVICE }}
         run: |
-          railway logs --follow > logs/latest_railway.log &
+          npx railway logs --service "$RAILWAY_SERVICE" --project "$RAILWAY_PROJECT" --env production --json --follow > logs/latest_railway.log &
           echo $! > logs/railway_logs.pid
       - name: Run pre-commit
         run: pre-commit run --all-files --show-diff-on-failure --color=always

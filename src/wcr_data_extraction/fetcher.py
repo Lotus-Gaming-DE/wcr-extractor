@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
-from logging.handlers import RotatingFileHandler
+from logging.handlers import TimedRotatingFileHandler
 import structlog
 from pathlib import Path
 from typing import Iterable
@@ -53,8 +53,12 @@ def configure_structlog(level: str, log_file: str | Path | None = None) -> None:
     if log_file is not None:
         Path(log_file).parent.mkdir(parents=True, exist_ok=True)
         handlers.append(
-            RotatingFileHandler(
-                log_file, maxBytes=1_000_000, backupCount=3, encoding="utf-8"
+            TimedRotatingFileHandler(
+                log_file,
+                when="H",
+                interval=1,
+                backupCount=0,
+                encoding="utf-8",
             )
         )
 

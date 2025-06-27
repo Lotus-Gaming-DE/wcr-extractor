@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .fetcher import (
     fetch_units,
+    fetch_categories,
     OUT_PATH,
     CATEGORIES_PATH,
     FetchError,
@@ -59,6 +60,12 @@ def main(argv: list[str] | None = None) -> None:
             categories_path=Path(args.categories),
             timeout=args.timeout,
             max_workers=args.workers,
+        )
+        fetch_categories(
+            out_path=Path(args.categories),
+            timeout=args.timeout,
+            existing_path=Path(args.categories),
+            units_path=Path(args.output),
         )
     except FetchError as exc:
         logger.error("Fehler beim Abrufen: %s", exc)

@@ -22,9 +22,9 @@ from wcr_data_extraction.fetcher import (  # noqa: E402
     logger,
 )
 
-DEFAULT_UNITS_PATH = Path(__file__).resolve().parents[1] / "tmp_data" / "units.json"
+DEFAULT_UNITS_PATH = Path(__file__).resolve().parents[1] / "data" / "units.json"
 DEFAULT_CATEGORIES_PATH = (
-    Path(__file__).resolve().parents[1] / "tmp_data" / "categories.json"
+    Path(__file__).resolve().parents[1] / "data" / "categories.json"
 )
 
 

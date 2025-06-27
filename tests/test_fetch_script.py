@@ -1,10 +1,10 @@
-from argparse import Namespace
+import sys
 from pathlib import Path
+from argparse import Namespace
 from unittest.mock import patch
 
-import sys
 sys.path.append(str(Path(__file__).resolve().parents[1]))
-from scripts import fetch_method
+from scripts import fetch_method  # noqa: E402
 
 
 def test_script_invokes_fetchers(tmp_path):

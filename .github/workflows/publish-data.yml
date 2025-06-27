@@ -10,36 +10,56 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
         run: ./setup.sh
 
-      - name: Run extractor to data/temp/
+      - name: Run extractor to tmp_data/
         run: |
-          mkdir -p data/temp
+          mkdir -p tmp_data
           python scripts/fetch_method.py \
-            --output data/temp/units.json \
-            --categories data/temp/categories.json
+            --output tmp_data/units.json \
+            --categories tmp_data/categories.json
+
+      - name: Copy JSON files
+        run: |
+          mkdir -p data
+          if [ -f tmp_data/units.json ]; then
+            cp tmp_data/units.json data/units.json
+            echo "units.json updated"
+          else
+            echo "units.json missing" >&2
+          fi
+          if [ -f tmp_data/categories.json ]; then
+            cp tmp_data/categories.json data/categories.json
+            echo "categories.json updated"
+          else
+            echo "categories.json not generated"
+          fi
 
       - name: Commit data to data-sync branch
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
+          git fetch origin data-sync
           git switch data-sync
-          git pull origin data-sync
+          git pull origin data-sync || true
 
-          cp data/temp/units.json data/units.json
-          cp data/temp/categories.json data/categories.json
+          git add -f data/units.json data/categories.json 2>/dev/null || true
 
-          git add data/units.json data/categories.json
-          git commit -m "Update data from main [CI]" || echo "No changes to commit"
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update data from main [CI]"
           git push origin data-sync

@@ -2,7 +2,9 @@ name: CI
 
 on:
   push:
+    branches-ignore: ['data-sync']
   pull_request:
+    branches-ignore: ['data-sync']
 
 jobs:
   test:

@@ -32,6 +32,12 @@ def test_fetch_categories_closes_created_session(tmp_path):
     mock_session.get.return_value.status_code = 200
     mock_session.get.return_value.text = "<div></div>"
     with patch.object(fetcher, "create_session", return_value=mock_session):
-        with patch.object(fetcher, "CATEGORIES_PATH", tmp_path / "c.json"):
+        with patch.object(
+            fetcher, "CATEGORIES_PATH", tmp_path / "c.json"
+        ), patch.object(
+            fetcher,
+            "OUT_PATH",
+            tmp_path / "units.json",
+        ):
             fetcher.fetch_categories()
     mock_session.close.assert_called_once()

@@ -8,6 +8,8 @@
 - Command-line interface for `fetch_method.py` with `--output`, `--categories` and `--timeout` options.
 - New unit tests for CLI parsing.
 - Development requirements file and optional `--dev` flag for `setup.sh`.
+- Automatic fetching of category data to `categories.json`.
+- Errors are raised when no categories or units are found.
 - Section in README on updating dependencies.
 - Package refactored into `wcr_data_extraction` with `cli` module.
 - Parallel download support via `--workers`.

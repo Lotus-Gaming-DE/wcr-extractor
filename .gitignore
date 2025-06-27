@@ -29,5 +29,11 @@ logs/
 .env
 sbom.xml
 .pytest_cache/
-data/
+
+# Data (ignore everything by default, allow whitelisted files)
+data/*
+!data/units.json
+!data/categories.json
+
+# Temporary data used during fetch
 tmp_data/

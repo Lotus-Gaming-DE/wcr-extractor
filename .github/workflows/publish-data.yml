@@ -1,91 +1,26 @@
-name: Publish Extractor Data
+name: Publish Data
 
 on:
-  workflow_dispatch:
   push:
     branches: [main]
 
 jobs:
-  extract-and-push:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: ./setup.sh
-
-      - name: Prepare folders
+      - name: Set up Git
         run: |
-          mkdir -p tmp_data logs data
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Run extractor to tmp_data/
+      - name: Stage whitelisted data files
         run: |
-          python scripts/fetch_method.py \
-            --output tmp_data/units.json \
-            --categories tmp_data/categories.json \
-            --log-file logs/extractor.json
-
-      - name: Validate JSON output
-        run: |
-          for f in units.json categories.json; do
-            path="tmp_data/$f"
-            if [ ! -s "$path" ] || [ $(stat -c%s "$path") -le 2 ]; then
-              echo "$f missing or empty" >&2
-              exit 1
-            fi
-            python -m json.tool "$path" > /dev/null || {
-              echo "$f is invalid JSON" >&2
-              exit 1
-            }
-          done
-
-      - name: Copy JSON files
-        id: copy
-        run: |
-          mkdir -p data
-          updated=false
-          if [ -f tmp_data/units.json ]; then
-            cp tmp_data/units.json data/units.json
-            updated=true
-          fi
-          if [ -f tmp_data/categories.json ]; then
-            cp tmp_data/categories.json data/categories.json
-            updated=true
-          fi
-          echo "updated=$updated" >> "$GITHUB_OUTPUT"
-
-      - name: Commit data to data-sync branch
-        if: steps.copy.outputs.updated == 'true'
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-          git fetch origin data-sync
-          git switch data-sync
-          git pull origin data-sync || true
-
-          git add -f data/units.json data/categories.json 2>/dev/null || true
-
+          git add -f data/units.json data/categories.json
           if git diff --cached --quiet; then
-            echo "No changes to commit"
-            exit 0
+            echo "No data changes to commit"
+          else
+            git commit -m "Update data files via workflow"
+            git push
           fi
-
-          git commit -m "Update data from main [CI]"
-          git push origin data-sync
-
-      - name: Upload logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: extractor-logs
-          path: logs/
-          if-no-files-found: ignore

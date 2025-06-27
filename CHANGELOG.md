@@ -64,3 +64,4 @@
 - Workflows use `npx` for Railway CLI and include project/service IDs.
 - Security workflow runs CodeQL and TruffleHog scans.
 - Dependabot auto-merge workflow.
+- GitHub Actions workflow to auto-publish `units.json` and `categories.json` into `data/` if changed

@@ -22,13 +22,6 @@ def test_script_invokes_fetchers(tmp_path):
         ) as fc, patch.object(fetch_method, "fetch_units") as fu:
             fetch_method.main([])
             conf.assert_called_once_with("INFO", Path(args.log_file))
-            cat_tmp = Path(args.categories).with_suffix(".tmp")
-            fc.assert_called_once_with(
-                out_path=cat_tmp,
-                timeout=5,
-                existing_path=Path(args.categories),
-                units_path=Path(args.output),
-            )
             unit_tmp = Path(args.output).with_suffix(".tmp")
             fu.assert_called_once_with(
                 out_path=unit_tmp,
@@ -36,6 +29,13 @@ def test_script_invokes_fetchers(tmp_path):
                 timeout=5,
                 max_workers=2,
                 existing_path=Path(args.output),
+            )
+            cat_tmp = Path(args.categories).with_suffix(".tmp")
+            fc.assert_called_once_with(
+                out_path=cat_tmp,
+                timeout=5,
+                existing_path=Path(args.categories),
+                units_path=Path(args.output),
             )
 
 

@@ -71,29 +71,6 @@ def main(argv: List[str] | None = None) -> None:
     cats_path = Path(parsed.categories)
     units_path = Path(parsed.output)
 
-    cats_tmp = cats_path.with_suffix(".tmp")
-    try:
-        fetch_categories(
-            out_path=cats_tmp,
-            timeout=parsed.timeout,
-            existing_path=cats_path,
-            units_path=units_path,
-        )
-        new_cats = _load_json(cats_tmp) or {}
-        logger.info("%s category items fetched", sum(len(v) for v in new_cats.values()))
-    except FetchError as exc:
-        logger.warning("Fetching categories failed: %s", exc)
-        cats_tmp.unlink(missing_ok=True)
-        return
-
-    existing_cats = _load_json(cats_path) or {}
-    if _dump_sorted(existing_cats) == _dump_sorted(new_cats):
-        logger.info("No changes detected for categories")
-        cats_tmp.unlink(missing_ok=True)
-    else:
-        cats_tmp.replace(cats_path)
-        logger.info("Categories updated at %s", cats_path)
-
     units_tmp = units_path.with_suffix(".tmp")
     try:
         fetch_units(
@@ -117,6 +94,29 @@ def main(argv: List[str] | None = None) -> None:
     else:
         units_tmp.replace(units_path)
         logger.info("Units updated at %s", units_path)
+
+    cats_tmp = cats_path.with_suffix(".tmp")
+    try:
+        fetch_categories(
+            out_path=cats_tmp,
+            timeout=parsed.timeout,
+            existing_path=cats_path,
+            units_path=units_path,
+        )
+        new_cats = _load_json(cats_tmp) or {}
+        logger.info("%s category items fetched", sum(len(v) for v in new_cats.values()))
+    except FetchError as exc:
+        logger.warning("Fetching categories failed: %s", exc)
+        cats_tmp.unlink(missing_ok=True)
+        return
+
+    existing_cats = _load_json(cats_path) or {}
+    if _dump_sorted(existing_cats) == _dump_sorted(new_cats):
+        logger.info("No changes detected for categories")
+        cats_tmp.unlink(missing_ok=True)
+    else:
+        cats_tmp.replace(cats_path)
+        logger.info("Categories updated at %s", cats_path)
 
 
 if __name__ == "__main__":

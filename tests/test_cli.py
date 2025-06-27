@@ -19,7 +19,7 @@ def test_parse_args_defaults(tmp_path):
         assert Path(args.log_file).name.startswith("runtime-")
 
 
-def test_main_invokes_fetch_units(tmp_path):
+def test_main_invokes_fetchers(tmp_path):
     args = [
         "--output",
         str(tmp_path / "u.json"),
@@ -31,17 +31,24 @@ def test_main_invokes_fetch_units(tmp_path):
         "DEBUG",
     ]
     with patch.object(cli, "configure_structlog") as mock_conf, patch.object(
-        cli, "fetch_units"
-    ) as mock_fetch:
+        cli,
+        "fetch_units",
+    ) as mock_units, patch.object(cli, "fetch_categories") as mock_cats:
         cli.main(args)
         called_path = mock_conf.call_args.args[1]
         assert called_path.parent == Path("logs")
         assert called_path.name.startswith("runtime-")
-        mock_fetch.assert_called_once_with(
+        mock_units.assert_called_once_with(
             out_path=Path(args[1]),
             categories_path=Path(args[3]),
             timeout=7,
             max_workers=1,
+        )
+        mock_cats.assert_called_once_with(
+            out_path=Path(args[3]),
+            timeout=7,
+            existing_path=Path(args[3]),
+            units_path=Path(args[1]),
         )
 
 

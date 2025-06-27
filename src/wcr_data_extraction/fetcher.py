@@ -170,6 +170,7 @@ def fetch_categories(
     timeout: int = 10,
     session: requests.Session | None = None,
     existing_path: Path | str | None = None,
+    units_path: Path | str | None = None,
 ) -> None:
     """Download category data from method.gg and store it as JSON."""
 
@@ -203,25 +204,30 @@ def fetch_categories(
 
         minis = soup.select("div.mini-wrapper")
         factions_raw = set()
-        speeds_raw = set()
+        speeds_map: dict[str, str] = {}
         for mini in minis:
             fam = mini.get("data-family")
             if fam:
                 factions_raw.add(fam.strip())
             spd = mini.get("data-speed")
             if spd and spd not in ("", "Znull"):
-                speeds_raw.add(spd.strip())
+                spd_clean = spd.strip()
+                spd_id = spd_clean.lower().replace(" ", "-")
+                speeds_map.setdefault(spd_id, spd_clean)
 
-        types_raw = {
-            inp.get("data-value", "").strip()
-            for inp in soup.select(".filter__type input[data-for='type']")
-            if inp.get("data-value")
-        }
-        traits_raw = {
-            inp.get("data-value", "").strip()
-            for inp in soup.select(".filter__trait input[data-for='traits']")
-            if inp.get("data-value")
-        }
+        units = load_existing_units(units_path)
+        types_raw: set[str] = set()
+        traits_raw: set[str] = set()
+        speed_ids: set[str] = set(speeds_map.keys())
+        for unit in units.values():
+            t_id = unit.get("type_id")
+            if t_id:
+                types_raw.add(t_id)
+            for tr in unit.get("trait_ids", []):
+                traits_raw.add(tr)
+            s_id = unit.get("speed_id")
+            if s_id:
+                speed_ids.add(s_id)
 
         existing: dict = {}
         if source_path.exists():
@@ -233,25 +239,47 @@ def fetch_categories(
                     "Could not read categories from %s: %s", source_path, exc
                 )
 
-        def build_items(name: str, values: set[str]) -> list[dict]:
+        def build_faction_items(values: set[str]) -> list[dict]:
             items: list[dict] = []
-            existing_map = {item.get("id"): item for item in existing.get(name, [])}
+            existing_map = {
+                item.get("id"): item for item in existing.get("factions", [])
+            }
             for val in sorted(values):
                 parts = [p.strip() for p in val.split(",")]
                 cat_id = "-".join(p.lower() for p in parts)
                 en_name = " & ".join(parts)
-                item = existing_map.get(cat_id, {"id": cat_id, "names": {}})
+                item = dict(existing_map.get(cat_id, {"id": cat_id}))
                 names = item.get("names", {})
                 names["en"] = en_name
                 item["names"] = names
                 items.append(item)
             return items
 
+        def build_from_ids(
+            name: str, ids: set[str], name_map: dict[str, str] | None = None
+        ) -> list[dict]:
+            items: list[dict] = []
+            existing_map = {item.get("id"): item for item in existing.get(name, [])}
+            for cat_id in sorted(ids):
+                en_name = (
+                    name_map.get(cat_id, cat_id.replace("-", " ").title())
+                    if name_map
+                    else cat_id.replace("-", " ").title()
+                )
+                item = dict(existing_map.get(cat_id, {"id": cat_id}))
+                names = item.get("names", {})
+                names["en"] = en_name
+                item["names"] = names
+                if "descriptions" in existing_map.get(cat_id, {}):
+                    item["descriptions"] = existing_map[cat_id]["descriptions"]
+                items.append(item)
+            return items
+
         data = {
-            "factions": build_items("factions", factions_raw),
-            "types": build_items("types", types_raw),
-            "traits": build_items("traits", traits_raw),
-            "speeds": build_items("speeds", speeds_raw),
+            "factions": build_faction_items(factions_raw),
+            "types": build_from_ids("types", types_raw),
+            "traits": build_from_ids("traits", traits_raw),
+            "speeds": build_from_ids("speeds", speed_ids, speeds_map),
         }
 
         out_path.parent.mkdir(parents=True, exist_ok=True)

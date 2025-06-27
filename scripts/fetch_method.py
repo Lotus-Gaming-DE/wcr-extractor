@@ -77,6 +77,7 @@ def main(argv: List[str] | None = None) -> None:
             out_path=cats_tmp,
             timeout=parsed.timeout,
             existing_path=cats_path,
+            units_path=units_path,
         )
         new_cats = _load_json(cats_tmp) or {}
         logger.info("%s category items fetched", sum(len(v) for v in new_cats.values()))

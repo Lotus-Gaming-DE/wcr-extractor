@@ -27,6 +27,7 @@ jobs:
             echo "API_REPO_TOKEN missing" && exit 1
           fi
           git clone --depth=1 --branch=main https://$TOKEN@github.com/Lotus-Gaming-DE/wcr-api.git api-repo
+          mkdir -p api-repo/data
           cp data/export/units.json api-repo/data/units.json
           cp data/export/categories.json api-repo/data/categories.json
           cd api-repo

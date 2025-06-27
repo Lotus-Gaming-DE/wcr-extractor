@@ -1,6 +1,6 @@
 # Warcraft Rumble Data Extractor
 
-Simple scraper that downloads minis and category data from [method.gg](https://www.method.gg/warcraft-rumble/minis). Results are written to `tmp_data/units.json` and `tmp_data/categories.json` by default, both ignored by Git.
+Simple scraper that downloads minis and category data from [method.gg](https://www.method.gg/warcraft-rumble/minis). Results are written to `data/units.json` and `data/categories.json` by default, both ignored by Git.
 
 ## Setup
 
@@ -22,8 +22,8 @@ logs. Leave them empty if you do not use those features.
 
 ```bash
 python -m wcr_data_extraction.cli \
-  --output tmp_data/units.json \
-  --categories tmp_data/categories.json \
+  --output data/units.json \
+  --categories data/categories.json \
   --timeout 10 \
   --workers 4 \
   --log-level INFO \
@@ -65,7 +65,7 @@ Coverage must remain above 90 %.
 Deploy the extractor to [Railway](https://railway.app/). Set the start command to run the CLI, for example:
 
 ```bash
-python -m wcr_data_extraction.cli --output tmp_data/units.json --categories tmp_data/categories.json
+python -m wcr_data_extraction.cli --output data/units.json --categories data/categories.json
 ```
 
 The `railway_logs` workflow streams service logs with
@@ -74,7 +74,7 @@ and uploads them as artifacts.
 
 ## Contributing translations
 
-Names and trait descriptions are defined in your local `tmp_data/categories.json`. Add new language keys in the `names` or `descriptions` objects, keeping the English text intact. Running `scripts/fetch_method.py` preserves existing translations in `units.json`.
+Names and trait descriptions are defined in your local `data/categories.json`. Add new language keys in the `names` or `descriptions` objects, keeping the English text intact. Running `scripts/fetch_method.py` preserves existing translations in `units.json`.
 The script compares downloaded data with the current files and only writes an update when changes are detected.
 
 ## License

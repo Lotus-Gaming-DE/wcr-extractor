@@ -18,6 +18,9 @@
 - Atomic writes when saving `units.json`.
 - Warning logs when `load_categories` fails to read the file.
 - Helper `create_session` for injecting custom HTTP sessions.
+- Validation in publish workflow ensures JSON files are non-empty and valid.
+- Requirements now include explicit `urllib3` dependency.
+- `setup.sh` fails fast on installation errors.
 - Tests for the new behaviors.
 - Structured JSON logging via `configure_structlog`.
 - Pre-commit configuration and CI integration.

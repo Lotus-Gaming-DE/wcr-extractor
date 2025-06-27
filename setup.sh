@@ -1,8 +1,16 @@
 #!/bin/bash
+set -e
+
 # Install required Python packages
-python3 -m pip install -r requirements.txt
+if ! python3 -m pip install -r requirements.txt; then
+    echo "Failed to install runtime requirements" >&2
+    exit 1
+fi
 
 if [ "$1" = "--dev" ]; then
     # Install development tools as well
-    python3 -m pip install -r requirements-dev.txt
+    if ! python3 -m pip install -r requirements-dev.txt; then
+        echo "Failed to install development requirements" >&2
+        exit 1
+    fi
 fi

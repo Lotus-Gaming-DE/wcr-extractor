@@ -8,6 +8,7 @@ Simple scraper that downloads minis from [method.gg](https://www.method.gg/warcr
 ./setup.sh             # install runtime requirements
 ./setup.sh --dev       # additionally install development tools
 ```
+The script aborts with an error message if installation fails.
 
 Copy `.env.example` to `.env` if you need to define environment variables. None are required by default.
 

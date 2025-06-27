@@ -38,6 +38,7 @@
   the complete CI pipeline.
 
 ### Changed
+- `scripts/fetch_method.py` now skips writing `units.json` and `categories.json` when no changes are detected.
 - Removed tracked `data/` directory and added it to `.gitignore`.
 - GitHub Actions workflow uses explicit paths when updating data.
 - Pinned package versions in `requirements.txt` and `requirements-dev.txt`.

@@ -34,7 +34,7 @@ python -m wcr_data_extraction.cli \
 
 ## Utility Scripts
 
-- `python scripts/fetch_method.py` – fetches units and categories from method.gg. Run with `--help` to see available options; arguments mirror the CLI.
+- `python scripts/fetch_method.py` – fetches units and categories from method.gg. Existing files are only overwritten when the downloaded data differs. Run with `--help` to see available options; arguments mirror the CLI.
 
 ## Logging
 
@@ -75,6 +75,7 @@ and uploads them as artifacts.
 ## Contributing translations
 
 Names and trait descriptions are defined in your local `data/categories.json`. Add new language keys in the `names` or `descriptions` objects, keeping the English text intact. Running `scripts/fetch_method.py` preserves existing translations in `units.json`.
+The script compares downloaded data with the current files and only writes an update when changes are detected.
 
 ## License
 

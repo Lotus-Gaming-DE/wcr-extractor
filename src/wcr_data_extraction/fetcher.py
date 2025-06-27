@@ -167,6 +167,7 @@ def fetch_categories(
     out_path: Path | str | None = None,
     timeout: int = 10,
     session: requests.Session | None = None,
+    existing_path: Path | str | None = None,
 ) -> None:
     """Download category data from method.gg and store it as JSON."""
 
@@ -174,6 +175,7 @@ def fetch_categories(
         raise FetchError("BASE_URL must use HTTPS")
 
     out_path = Path(out_path or CATEGORIES_PATH)
+    source_path = Path(existing_path or out_path)
 
     created_session = False
     if session is None:
@@ -220,12 +222,14 @@ def fetch_categories(
         }
 
         existing: dict = {}
-        if out_path.exists():
+        if source_path.exists():
             try:
-                with open(out_path, encoding="utf-8") as f:
+                with open(source_path, encoding="utf-8") as f:
                     existing = json.load(f)
             except (json.JSONDecodeError, OSError) as exc:
-                logger.warning("Could not read categories from %s: %s", out_path, exc)
+                logger.warning(
+                    "Could not read categories from %s: %s", source_path, exc
+                )
 
         def build_items(name: str, values: set[str]) -> list[dict]:
             items: list[dict] = []
@@ -391,6 +395,7 @@ def fetch_units(
     timeout: int = 10,
     max_workers: int = 1,
     session: requests.Session | None = None,
+    existing_path: Path | str | None = None,
 ) -> None:
     """Download minis from method.gg and store them as JSON."""
 
@@ -399,6 +404,7 @@ def fetch_units(
 
     out_path = Path(out_path or OUT_PATH)
     categories_path = Path(categories_path or CATEGORIES_PATH)
+    source_path = Path(existing_path or out_path)
 
     created_session = False
     if session is None:
@@ -425,7 +431,7 @@ def fetch_units(
 
         cats = load_categories(categories_path)
         scraped_units = []
-        existing_units = load_existing_units(out_path)
+        existing_units = load_existing_units(source_path)
 
         from concurrent.futures import ThreadPoolExecutor
 

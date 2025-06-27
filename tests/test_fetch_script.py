@@ -22,10 +22,53 @@ def test_script_invokes_fetchers(tmp_path):
         ) as fc, patch.object(fetch_method, "fetch_units") as fu:
             fetch_method.main([])
             conf.assert_called_once_with("INFO", Path(args.log_file))
-            fc.assert_called_once_with(out_path=Path(args.categories), timeout=5)
+            cat_tmp = Path(args.categories).with_suffix(".tmp")
+            fc.assert_called_once_with(
+                out_path=cat_tmp,
+                timeout=5,
+                existing_path=Path(args.categories),
+            )
+            unit_tmp = Path(args.output).with_suffix(".tmp")
             fu.assert_called_once_with(
-                out_path=Path(args.output),
+                out_path=unit_tmp,
                 categories_path=Path(args.categories),
                 timeout=5,
                 max_workers=2,
+                existing_path=Path(args.output),
             )
+
+
+def test_no_overwrite_when_unchanged(tmp_path):
+    units_file = tmp_path / "units.json"
+    cats_file = tmp_path / "cats.json"
+    units_file.write_text("[]")
+    cats_file.write_text("{}")
+
+    args = Namespace(
+        output=str(units_file),
+        categories=str(cats_file),
+        timeout=5,
+        workers=1,
+        log_level="INFO",
+        log_file=str(tmp_path / "log.json"),
+    )
+
+    def write_same(out_path, **_):
+        Path(out_path).write_text(
+            units_file.read_text() if "unit" in str(out_path) else cats_file.read_text()
+        )
+
+    with patch.object(fetch_method.cli, "parse_args", return_value=args):
+        with patch.object(fetch_method, "configure_structlog"), patch.object(
+            fetch_method,
+            "fetch_categories",
+            side_effect=write_same,
+        ), patch.object(
+            fetch_method,
+            "fetch_units",
+            side_effect=write_same,
+        ):
+            fetch_method.main([])
+            # temp files removed
+            assert units_file.read_text() == "[]"
+            assert cats_file.read_text() == "{}"

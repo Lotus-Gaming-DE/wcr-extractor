@@ -52,3 +52,9 @@
 - README and CHANGELOG brought in line with the global structure.
 - Clarified example environment file and added explanatory comments.
 - CI: Skip Snyk test in forked PRs to prevent missing-secret auth errors.
+- Hourly log rotation with `TimedRotatingFileHandler`.
+- Default log file name `runtime-<YYYY-MM-DD-HH>.json`.
+- Wrapper script now uses `argparse` and supports `--help`.
+- Workflows use `npx` for Railway CLI and include project/service IDs.
+- Security workflow runs CodeQL and TruffleHog scans.
+- Dependabot auto-merge workflow.

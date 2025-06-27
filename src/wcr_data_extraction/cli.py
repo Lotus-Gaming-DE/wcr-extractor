@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import datetime
 from pathlib import Path
 
 from .fetcher import (
@@ -41,7 +42,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--log-level", default="INFO", help="Logging level")
     parser.add_argument(
         "--log-file",
-        default="logs/wcr.log",
+        default=f"logs/runtime-{datetime.now():%Y-%m-%d-%H}.json",
         help="Path to the log file (stored under logs/)",
     )
     return parser.parse_args(argv)

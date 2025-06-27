@@ -13,9 +13,9 @@ Copy `.env.example` to `.env` if you need to define environment variables. None 
 
 ### Environment variables
 
-`SNYK_TOKEN` and `RAILWAY_TOKEN` are used by the GitHub Actions workflows for
-security scanning and fetching Railway logs. Leave them empty if you do not use
-those features.
+`SNYK_TOKEN`, `RAILWAY_TOKEN`, `RAILWAY_PROJECT` and `RAILWAY_SERVICE` are used
+by the GitHub Actions workflows for security scanning and fetching Railway
+logs. Leave them empty if you do not use those features.
 
 ## Usage
 
@@ -26,18 +26,18 @@ python -m wcr_data_extraction.cli \
   --timeout 10 \
   --workers 4 \
   --log-level INFO \
-  --log-file logs/wcr.log
+  --log-file logs/runtime-YYYY-MM-DD-HH.json
 ```
 
 `--timeout` and `--workers` must be positive integers. Results are written atomically so existing files stay intact on errors.
 
 ## Utility Scripts
 
-- `python scripts/fetch_method.py` – wrapper around the main CLI. All arguments are forwarded as-is.
+- `python scripts/fetch_method.py` – wrapper around the main CLI. Run with `--help` to see available options; all arguments are forwarded as-is.
 
 ## Logging
 
-Structured JSON logs are configured via `configure_structlog()` or the `--log-level` option. By default logs are written to `logs/wcr.log` with rotation. Internal logs are in English while user-facing errors are in German.
+Structured JSON logs are configured via `configure_structlog()` or the `--log-level` option. By default logs are written to `logs/runtime-<YYYY-MM-DD-HH>.json` with hourly rotation. Internal logs are in English while user-facing errors are in German.
 
 ## Development
 
@@ -67,7 +67,9 @@ Deploy the extractor to [Railway](https://railway.app/). Set the start command t
 python -m wcr_data_extraction.cli --output data/units.json --categories data/categories.json
 ```
 
-The `railway_logs` workflow streams service logs with `railway logs --follow` and uploads them as artifacts.
+The `railway_logs` workflow streams service logs with
+`npx railway logs --service <service> --project <project> --env production --json --follow`
+and uploads them as artifacts.
 
 ## Contributing translations
 

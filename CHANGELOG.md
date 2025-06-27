@@ -70,3 +70,4 @@
 - GitHub Actions workflow to auto-publish `units.json` and `categories.json` into `data/` if changed
 - `fetch_categories` derives `types`, `traits` and `speeds` from `units.json` instead of HTML filters.
 - CLI now writes `categories.json` alongside `units.json`.
+- Update workflow to use default export paths and upload extractor logs.

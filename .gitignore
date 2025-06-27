@@ -1,4 +1,3 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *.so
@@ -12,9 +11,10 @@ coverage.xml
 .venv/
 venv/
 
-# Logs and temporary files
+# Logs and temp
 *.log
 logs/
+tmp/
 *.tmp
 *.swp
 *.bak
@@ -27,11 +27,11 @@ logs/
 
 # Misc
 .env
-sbom.xml
 .pytest_cache/
+sbom.xml
 
-# Ignore all files in data/…
-data/*
-# …except specific files
-!data/units.json
-!data/categories.json
+# Data handling
+data/
+!data/export/
+!data/export/units.json
+!data/export/categories.json

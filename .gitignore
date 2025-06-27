@@ -30,10 +30,8 @@ logs/
 sbom.xml
 .pytest_cache/
 
-# Data (ignore everything by default, allow whitelisted files)
+# Ignore all files in data/…
 data/*
+# …except specific files
 !data/units.json
 !data/categories.json
-
-# Temporary data used during fetch
-tmp_data/

@@ -39,3 +39,13 @@ def test_fetch_categories_closes_created_session(tmp_path):
             with pytest.raises(fetcher.FetchError):
                 fetcher.fetch_categories()
     mock_session.close.assert_called_once()
+
+
+def test_fetch_categories_closes_created_session(tmp_path):
+    mock_session = Mock()
+    mock_session.get.return_value.status_code = 200
+    mock_session.get.return_value.text = "<div></div>"
+    with patch.object(fetcher, "create_session", return_value=mock_session):
+        with patch.object(fetcher, "CATEGORIES_PATH", tmp_path / "c.json"):
+            fetcher.fetch_categories()
+    mock_session.close.assert_called_once()

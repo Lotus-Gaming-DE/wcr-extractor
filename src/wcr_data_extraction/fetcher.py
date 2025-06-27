@@ -259,6 +259,7 @@ def fetch_categories(
             f.write("\n")
         tmp_path.replace(out_path)
 
+        total = sum(len(v) for v in data.values())
         logger.info("%s categories saved to %s", total, out_path)
     finally:
         if created_session:

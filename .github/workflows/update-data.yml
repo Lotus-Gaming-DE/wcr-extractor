@@ -20,16 +20,18 @@ jobs:
         run: pip install -r requirements.txt
       - name: Fetch latest data
         run: |
-          python scripts/fetch_method.py \
-            --output data/units.json \
-            --categories data/categories.json \
-            --timeout 10
+          python scripts/fetch_method.py --timeout 10
       - name: Commit changes
         run: |
-          if [[ `git status --porcelain data/units.json` ]]; then
+          if [[ $(git status --porcelain data/export/units.json data/export/categories.json) ]]; then
             git config user.name 'github-actions[bot]'
             git config user.email 'github-actions[bot]@users.noreply.github.com'
-            git add data/units.json
-            git commit -m 'Update units.json via workflow'
+            git add data/export/units.json data/export/categories.json
+            git commit -m 'Update data via workflow'
             git push
           fi
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: extractor-logs
+          path: logs/runtime-*.json

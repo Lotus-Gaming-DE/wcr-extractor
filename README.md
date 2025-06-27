@@ -1,6 +1,6 @@
 # Warcraft Rumble Data Extractor
 
-Simple scraper that downloads minis and category data from [method.gg](https://www.method.gg/warcraft-rumble/minis). Results are written to `data/units.json` and `data/categories.json` by default, both ignored by Git.
+Simple scraper that downloads minis and category data from [method.gg](https://www.method.gg/warcraft-rumble/minis). Results are written to `data/export/units.json` and `data/export/categories.json` by default, both ignored by Git except for these two files.
 
 ## Setup
 
@@ -15,15 +15,16 @@ Copy `.env.example` to `.env` if you need to define environment variables. None 
 ### Environment variables
 
 `SNYK_TOKEN`, `RAILWAY_TOKEN`, `RAILWAY_PROJECT` and `RAILWAY_SERVICE` are used
-by the GitHub Actions workflows for security scanning and fetching Railway
-logs. Leave them empty if you do not use those features.
+by the GitHub Actions workflows for security scanning and fetching Railway logs.
+`API_REPO_TOKEN` is required for publishing data to the external API repository.
+Leave them empty if you do not use those features.
 
 ## Usage
 
 ```bash
 python -m wcr_data_extraction.cli \
-  --output data/units.json \
-  --categories data/categories.json \
+  --output data/export/units.json \
+  --categories data/export/categories.json \
   --timeout 10 \
   --workers 4 \
   --log-level INFO \
@@ -35,6 +36,14 @@ python -m wcr_data_extraction.cli \
 ## Utility Scripts
 
 - `python scripts/fetch_method.py` – fetches units and categories from method.gg. Existing files are only overwritten when the downloaded data differs. Run with `--help` to see available options; arguments mirror the CLI.
+
+## 📤 Data Export
+
+Extracted unit data is automatically saved to `data/export/units.json` and `categories.json`.
+
+A GitHub Actions workflow publishes these files to the public API repo [`wcr-api`](https://github.com/Lotus-Gaming-DE/wcr-api) on every push to `main`.
+
+To enable this workflow, you must define a repository secret named `API_REPO_TOKEN` with write access to the API repository.
 
 ## Logging
 
@@ -65,7 +74,7 @@ Coverage must remain above 90 %.
 Deploy the extractor to [Railway](https://railway.app/). Set the start command to run the CLI, for example:
 
 ```bash
-python -m wcr_data_extraction.cli --output data/units.json --categories data/categories.json
+python -m wcr_data_extraction.cli --output data/export/units.json --categories data/export/categories.json
 ```
 
 The `railway_logs` workflow streams service logs with

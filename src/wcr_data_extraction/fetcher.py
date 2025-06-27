@@ -15,8 +15,10 @@ from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 
 BASE_URL = "https://www.method.gg/warcraft-rumble/minis"
-OUT_PATH = Path(__file__).resolve().parents[1] / "data" / "units.json"
-CATEGORIES_PATH = Path(__file__).resolve().parents[1] / "data" / "categories.json"
+OUT_PATH = Path(__file__).resolve().parents[1] / "data" / "export" / "units.json"
+CATEGORIES_PATH = (
+    Path(__file__).resolve().parents[1] / "data" / "export" / "categories.json"
+)
 STATIONARY = "Stationary"
 
 # HTTP session with retry logic and backoff

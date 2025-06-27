@@ -48,11 +48,12 @@ jobs:
           echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Generate SBOM
         run: |
-          cyclonedx-py requirements -i requirements.txt -o logs/sbom.xml
-      - uses: actions/upload-artifact@v4
+          cyclonedx-py requirements -i requirements.txt -o logs/sbom.json
+      - name: Upload SBOM to logs
+        uses: actions/upload-artifact@v4
         with:
-          name: sbom
-          path: logs/sbom.xml
+          name: sbom-cyclonedx
+          path: logs/sbom.json
       - name: Test
         run: pytest --cov=. --cov-report=xml --cov-report=term
       - name: Coverage report

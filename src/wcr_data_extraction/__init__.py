@@ -2,6 +2,7 @@
 
 from .fetcher import (
     fetch_units,
+    fetch_categories,
     load_categories,
     load_existing_units,
     is_unit_changed,
@@ -12,6 +13,7 @@ from .fetcher import (
 
 __all__ = [
     "fetch_units",
+    "fetch_categories",
     "load_categories",
     "load_existing_units",
     "is_unit_changed",

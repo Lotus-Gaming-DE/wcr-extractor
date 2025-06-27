@@ -1,0 +1,44 @@
+name: Publish Extractor Data
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  extract-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # needed for switching branches
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: ./setup.sh
+
+      - name: Run extractor
+        run: |
+          python scripts/fetch_method.py \
+            --output data/units.json \
+            --categories data/categories.json
+
+      - name: Commit data to data-sync branch
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git switch data-sync
+          git pull origin data-sync
+
+          cp data/units.json data/
+          cp data/categories.json data/
+
+          git add data/units.json data/categories.json
+          git commit -m "Update data from main [CI]" || echo "No changes to commit"
+          git push origin data-sync

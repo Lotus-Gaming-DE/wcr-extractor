@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 ### Added
+- Automated export of JSON files to `data/export/`
+- GitHub Actions workflow to push data to the `wcr-api` repository
+- JSON validation and export file tests
 - Workflow `railway_logs.yml` streams deployment logs.
 - SBOM uploaded as a CI artifact.
 - `scripts/fetch_method.py` now exposes a `main()` function.

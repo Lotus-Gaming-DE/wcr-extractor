@@ -10,17 +10,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Git
+      - name: Validate JSON files
         run: |
+          for f in data/export/units.json data/export/categories.json; do
+            if [ ! -s "$f" ]; then
+              echo "$f missing or empty" && exit 1
+            fi
+            python -m json.tool "$f" > /dev/null
+          done
+
+      - name: Clone API repository
+        env:
+          TOKEN: ${{ secrets.API_REPO_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "API_REPO_TOKEN missing" && exit 1
+          fi
+          git clone --depth=1 --branch=main https://$TOKEN@github.com/Lotus-Gaming-DE/wcr-api.git api-repo
+          cp data/export/units.json api-repo/data/units.json
+          cp data/export/categories.json api-repo/data/categories.json
+          cd api-repo
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Stage whitelisted data files
-        run: |
           git add -f data/units.json data/categories.json
           if git diff --cached --quiet; then
-            echo "No data changes to commit"
+            echo "No changes to commit"
           else
-            git commit -m "Update data files via workflow"
-            git push
+            git commit -m "Update data from extractor"
+            git push https://$TOKEN@github.com/Lotus-Gaming-DE/wcr-api.git HEAD:main
           fi

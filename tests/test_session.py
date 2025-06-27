@@ -30,7 +30,7 @@ def test_fetch_units_closes_created_session(tmp_path):
     mock_session.close.assert_called_once()
 
 
-def test_fetch_categories_closes_created_session(tmp_path):
+def test_fetch_categories_closes_session(tmp_path):
     mock_session = Mock()
     mock_session.get.return_value.status_code = 200
     mock_session.get.return_value.text = "<div></div>"

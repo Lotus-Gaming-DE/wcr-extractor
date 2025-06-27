@@ -1,6 +1,6 @@
 # Warcraft Rumble Data Extractor
 
-Simple scraper that downloads minis from [method.gg](https://www.method.gg/warcraft-rumble/minis). The result is written to `data/units.json` which is ignored by Git. Optionally you can provide a category mapping in `data/categories.json`.
+Simple scraper that downloads minis and category data from [method.gg](https://www.method.gg/warcraft-rumble/minis). Results are written to `data/units.json` and `data/categories.json`, both ignored by Git.
 
 ## Setup
 
@@ -34,7 +34,7 @@ python -m wcr_data_extraction.cli \
 
 ## Utility Scripts
 
-- `python scripts/fetch_method.py` – wrapper around the main CLI. Run with `--help` to see available options; all arguments are forwarded as-is.
+- `python scripts/fetch_method.py` – fetches units and categories from method.gg. Run with `--help` to see available options; arguments mirror the CLI.
 
 ## Logging
 

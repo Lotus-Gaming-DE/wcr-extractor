@@ -162,6 +162,106 @@ def is_unit_changed(old: dict, new: dict) -> bool:
     return any(old.get(k) != new.get(k) for k in compare_keys)
 
 
+def fetch_categories(
+    *,
+    out_path: Path | str | None = None,
+    timeout: int = 10,
+    session: requests.Session | None = None,
+) -> None:
+    """Download category data from method.gg and store it as JSON."""
+
+    if not BASE_URL.startswith("https://"):
+        raise FetchError("BASE_URL must use HTTPS")
+
+    out_path = Path(out_path or CATEGORIES_PATH)
+
+    created_session = False
+    if session is None:
+        sess = create_session()
+        created_session = True
+    else:
+        sess = session
+
+    try:
+        logger.info("Fetching categories from %s", BASE_URL)
+        try:
+            response = sess.get(
+                BASE_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout
+            )
+        except requests.RequestException as exc:
+            raise FetchError(f"Error fetching {BASE_URL}: {exc}") from exc
+        if response.status_code != 200:
+            raise FetchError(
+                f"Error fetching {BASE_URL}: Status {response.status_code}"
+            )
+
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        minis = soup.select("div.mini-wrapper")
+        factions_raw = set()
+        speeds_raw = set()
+        for mini in minis:
+            fam = mini.get("data-family")
+            if fam:
+                factions_raw.add(fam.strip())
+            spd = mini.get("data-speed")
+            if spd and spd not in ("", "Znull"):
+                speeds_raw.add(spd.strip())
+
+        types_raw = {
+            inp.get("data-value", "").strip()
+            for inp in soup.select(".filter__type input[data-for='type']")
+            if inp.get("data-value")
+        }
+        traits_raw = {
+            inp.get("data-value", "").strip()
+            for inp in soup.select(".filter__trait input[data-for='traits']")
+            if inp.get("data-value")
+        }
+
+        existing: dict = {}
+        if out_path.exists():
+            try:
+                with open(out_path, encoding="utf-8") as f:
+                    existing = json.load(f)
+            except (json.JSONDecodeError, OSError) as exc:
+                logger.warning("Could not read categories from %s: %s", out_path, exc)
+
+        def build_items(name: str, values: set[str]) -> list[dict]:
+            items: list[dict] = []
+            existing_map = {item.get("id"): item for item in existing.get(name, [])}
+            for val in sorted(values):
+                parts = [p.strip() for p in val.split(",")]
+                cat_id = "-".join(p.lower() for p in parts)
+                en_name = " & ".join(parts)
+                item = existing_map.get(cat_id, {"id": cat_id, "names": {}})
+                names = item.get("names", {})
+                names["en"] = en_name
+                item["names"] = names
+                items.append(item)
+            return items
+
+        data = {
+            "factions": build_items("factions", factions_raw),
+            "types": build_items("types", types_raw),
+            "traits": build_items("traits", traits_raw),
+            "speeds": build_items("speeds", speeds_raw),
+        }
+
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_path = out_path.with_suffix(".tmp")
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+        tmp_path.replace(out_path)
+
+        total = sum(len(v) for v in data.values())
+        logger.info("%s categories saved to %s", total, out_path)
+    finally:
+        if created_session:
+            sess.close()
+
+
 def fetch_unit_details(
     url: str,
     categories: dict,

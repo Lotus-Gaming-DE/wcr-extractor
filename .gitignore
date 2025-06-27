@@ -30,3 +30,4 @@ logs/
 sbom.xml
 .pytest_cache/
 data/
+tmp_data/

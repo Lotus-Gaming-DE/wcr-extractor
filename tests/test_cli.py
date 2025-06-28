@@ -34,6 +34,7 @@ def test_main_invokes_fetchers(tmp_path):
         cli,
         "fetch_units",
     ) as mock_units, patch.object(cli, "fetch_categories") as mock_cats:
+        mock_units.return_value = {"ambush": "desc"}
         cli.main(args)
         called_path = mock_conf.call_args.args[1]
         assert called_path.parent == Path("logs")
@@ -49,6 +50,7 @@ def test_main_invokes_fetchers(tmp_path):
             timeout=7,
             existing_path=Path(args[3]),
             units_path=Path(args[1]),
+            trait_desc_map=mock_units.return_value,
         )
 
 

@@ -55,7 +55,7 @@ def main(argv: list[str] | None = None) -> None:
     args = parse_args(argv)
     configure_structlog(args.log_level, Path(args.log_file))
     try:
-        fetch_units(
+        trait_descs = fetch_units(
             out_path=Path(args.output),
             categories_path=Path(args.categories),
             timeout=args.timeout,
@@ -66,6 +66,7 @@ def main(argv: list[str] | None = None) -> None:
             timeout=args.timeout,
             existing_path=Path(args.categories),
             units_path=Path(args.output),
+            trait_desc_map=trait_descs,
         )
     except FetchError as exc:
         logger.error("Fehler beim Abrufen: %s", exc)

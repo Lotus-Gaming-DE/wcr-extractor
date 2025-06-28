@@ -164,6 +164,16 @@ def is_unit_changed(old: dict, new: dict) -> bool:
     return any(old.get(k) != new.get(k) for k in compare_keys)
 
 
+def _strip_trait_descriptions(unit: dict) -> dict:
+    """Return a copy of ``unit`` without ``trait_descriptions``."""
+
+    cleaned = dict(unit)
+    details = dict(cleaned.get("details", {}))
+    details.pop("trait_descriptions", None)
+    cleaned["details"] = details
+    return cleaned
+
+
 def fetch_categories(
     *,
     out_path: Path | str | None = None,
@@ -171,8 +181,14 @@ def fetch_categories(
     session: requests.Session | None = None,
     existing_path: Path | str | None = None,
     units_path: Path | str | None = None,
+    trait_desc_map: dict[str, str] | None = None,
 ) -> None:
-    """Download category data from method.gg and store it as JSON."""
+    """Download category data from method.gg and store it as JSON.
+
+    ``trait_desc_map`` may contain descriptions keyed by trait id. When
+    provided, these values are preferred over any descriptions found in the
+    units file.
+    """
 
     if not BASE_URL.startswith("https://"):
         raise FetchError("BASE_URL must use HTTPS")
@@ -218,7 +234,9 @@ def fetch_categories(
         units = load_existing_units(units_path)
         types_raw: set[str] = set()
         traits_raw: set[str] = set()
-        trait_descs: dict[str, str] = {}
+        trait_descs: dict[str, str] = {
+            k: v for k, v in (trait_desc_map or {}).items() if v is not None
+        }
         speed_ids: set[str] = set(speeds_map.keys())
         for unit in units.values():
             t_id = unit.get("type_id")
@@ -226,14 +244,16 @@ def fetch_categories(
                 types_raw.add(t_id)
             for tr in unit.get("trait_ids", []):
                 traits_raw.add(tr)
-            for tid, desc in (
-                unit.get("details", {}).get("trait_descriptions", {}).items()
-            ):
-                if desc:
-                    trait_descs[tid] = desc
             s_id = unit.get("speed_id")
             if s_id:
                 speed_ids.add(s_id)
+        if trait_desc_map is None:
+            for unit in units.values():
+                for tid, desc in (
+                    unit.get("details", {}).get("trait_descriptions", {}).items()
+                ):
+                    if desc:
+                        trait_descs[tid] = desc
 
         existing: dict = {}
         if source_path.exists():
@@ -457,7 +477,7 @@ def fetch_units(
     max_workers: int = 1,
     session: requests.Session | None = None,
     existing_path: Path | str | None = None,
-) -> None:
+) -> dict[str, str]:
     """Download minis from method.gg and store them as JSON."""
 
     if not BASE_URL.startswith("https://"):
@@ -517,6 +537,12 @@ def fetch_units(
             detail_results = list(executor.map(fetch, cards))
 
         details_map = {uid: det for uid, det in detail_results}
+        trait_descs: dict[str, str] = {}
+        for det in details_map.values():
+            for tid, desc in det.get("trait_descriptions", {}).items():
+                if desc is not None and tid not in trait_descs:
+                    trait_descs[tid] = desc
+            det.pop("trait_descriptions", None)
 
         for card in cards:
             name = card.get("data-name", "?")
@@ -595,7 +621,7 @@ def fetch_units(
             old = existing_units.get(unit["id"])
             seen.add(unit["id"])
             if old and not is_unit_changed(old, unit):
-                result_units.append(old)
+                result_units.append(_strip_trait_descriptions(old))
                 continue
 
             # Preserve translations from the previous file so they are not lost
@@ -603,11 +629,11 @@ def fetch_units(
             for lang, text in old_names.items():
                 if lang != "en" and lang not in unit["names"]:
                     unit["names"][lang] = text
-            result_units.append(unit)
+            result_units.append(_strip_trait_descriptions(unit))
 
         for uid, old_unit in existing_units.items():
             if uid not in seen:
-                result_units.append(old_unit)
+                result_units.append(_strip_trait_descriptions(old_unit))
 
         out_path.parent.mkdir(parents=True, exist_ok=True)
         tmp_path = out_path.with_suffix(".tmp")
@@ -617,6 +643,7 @@ def fetch_units(
         tmp_path.replace(out_path)
 
         logger.info("%s units saved to %s", len(result_units), out_path)
+        return trait_descs
     finally:
         if created_session:
             sess.close()

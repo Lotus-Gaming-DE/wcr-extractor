@@ -121,3 +121,26 @@ def test_fetch_categories_http_error(tmp_path):
         ):
             with pytest.raises(fetcher.FetchError):
                 fetcher.fetch_categories(session=mock_session)
+
+
+def test_fetch_categories_uses_trait_descriptions(tmp_path):
+    html = make_html()
+    units_path = tmp_path / "units.json"
+    units = make_units()
+    units[0]["details"] = {"trait_descriptions": {"ambush": "Ambush foes"}}
+    units_path.write_text(json.dumps(units))
+
+    mock_response = Mock(status_code=200, text=html)
+    mock_session = Mock()
+    mock_session.get.return_value = mock_response
+    with patch.object(fetcher, "create_session", return_value=mock_session):
+        out_file = tmp_path / "cats.json"
+        with patch.object(fetcher, "CATEGORIES_PATH", out_file), patch.object(
+            fetcher,
+            "OUT_PATH",
+            units_path,
+        ):
+            fetcher.fetch_categories(session=mock_session)
+    data = json.loads(out_file.read_text())
+    trait = next(t for t in data["traits"] if t["id"] == "ambush")
+    assert trait["descriptions"]["en"] == "Ambush foes"

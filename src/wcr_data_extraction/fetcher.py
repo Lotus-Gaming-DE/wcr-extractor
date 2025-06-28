@@ -229,7 +229,8 @@ def fetch_categories(
             for tid, desc in (
                 unit.get("details", {}).get("trait_descriptions", {}).items()
             ):
-                trait_descs.setdefault(tid, desc)
+                if desc:
+                    trait_descs[tid] = desc
             s_id = unit.get("speed_id")
             if s_id:
                 speed_ids.add(s_id)

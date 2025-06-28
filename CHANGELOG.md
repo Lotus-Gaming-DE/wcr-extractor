@@ -74,3 +74,7 @@
 - README now displays a CI coverage badge.
 - README clarifies that `API_REPO_TOKEN` must have push rights to `wcr-api` and
   that the publish workflow fails without it.
+
+### Fixed
+- `fetch_unit_details` now stores trait descriptions when categories contain
+  `null` values.

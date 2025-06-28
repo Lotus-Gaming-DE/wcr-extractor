@@ -395,7 +395,10 @@ def fetch_unit_details(
                 trait_id = cat_map.get(name, name.lower().replace(" ", "-"))
                 traits.append(trait_id)
                 if desc:
-                    trait_desc_map[trait_id] = desc_map.get(trait_id, desc)
+                    existing_desc = desc_map.get(trait_id)
+                    trait_desc_map[trait_id] = (
+                        existing_desc if existing_desc is not None else desc
+                    )
     if traits:
         details["traits"] = traits
     if trait_desc_map:

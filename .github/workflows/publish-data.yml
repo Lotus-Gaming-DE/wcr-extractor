@@ -30,6 +30,8 @@ jobs:
           mkdir -p api-repo/data
           cp data/export/units.json api-repo/data/units.json
           cp data/export/categories.json api-repo/data/categories.json
+          ls -l api-repo/data
+          cat api-repo/data/categories.json | head
           cd api-repo
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'

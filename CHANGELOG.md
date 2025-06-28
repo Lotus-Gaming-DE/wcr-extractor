@@ -72,3 +72,5 @@
 - CLI now writes `categories.json` alongside `units.json`.
 - Update workflow to use default export paths and upload extractor logs.
 - README now displays a CI coverage badge.
+- README clarifies that `API_REPO_TOKEN` must have push rights to `wcr-api` and
+  that the publish workflow fails without it.

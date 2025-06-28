@@ -37,8 +37,8 @@
         "hook"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "hook": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "hook": "Hooks ranged enemies."
       },
       "talents": [
         {
@@ -108,9 +108,9 @@
         "surge"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "armored": null,
-        "surge": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "armored": "50% Physical damage reduction.",
+        "surge": "Consumes remaining Gold when deployed."
       },
       "talents": [
         {
@@ -179,8 +179,8 @@
         "fast"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "fast": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "fast": "Fastest moving units."
       },
       "talents": [
         {
@@ -252,9 +252,9 @@
         "charge"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "armored": null,
-        "charge": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "armored": "50% Physical damage reduction.",
+        "charge": "Charges to enemy targets."
       },
       "talents": [
         {
@@ -331,8 +331,8 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "elemental": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -407,11 +407,11 @@
         "army-of-the-dead"
       ],
       "trait_descriptions": {
-        "armored": null,
-        "frost": null,
-        "remorseless-winter": null,
-        "lichborne": null,
-        "army-of-the-dead": null
+        "armored": "50% Physical damage reduction.",
+        "frost": "Frost damage slows enemy movement and attack speed.",
+        "remorseless-winter": "Apply Frost to nearby enemies.",
+        "lichborne": "Alliance Minis summon a Skeleton Mage on death.",
+        "army-of-the-dead": "Periodically summon a Frosty Footman, max 2 (13 second cooldown)."
       },
       "talents": [
         {
@@ -486,7 +486,7 @@
         "possession"
       ],
       "trait_descriptions": {
-        "possession": null
+        "possession": "Takes control of an enemy unit."
       },
       "talents": [
         {
@@ -559,10 +559,10 @@
         "armored"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "fast": null,
-        "elemental": null,
-        "armored": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "fast": "Fastest moving units.",
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "armored": "50% Physical damage reduction."
       },
       "talents": [
         {
@@ -645,9 +645,9 @@
         "bombard"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "elemental": null,
-        "bombard": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "bombard": "Attacks ground enemies only."
       },
       "talents": [
         {
@@ -715,8 +715,8 @@
         "frost"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "frost": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "frost": "Frost damage slows enemy movement and attack speed."
       },
       "talents": [
         {
@@ -784,7 +784,7 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "elemental": null
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -864,8 +864,8 @@
         "resistant"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "resistant": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "resistant": "Takes 50% less Elemental damage."
       },
       "talents": [
         {
@@ -935,9 +935,9 @@
         "attack-stun"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "fast": null,
-        "attack-stun": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "fast": "Fastest moving units.",
+        "attack-stun": "Attack stuns enemies."
       },
       "talents": [
         {
@@ -1027,11 +1027,11 @@
         "tranquility"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "resistant": null,
-        "healer": null,
-        "brambles": null,
-        "tranquility": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "resistant": "Takes 50% less Elemental damage.",
+        "healer": "Heals friendly units.",
+        "brambles": "Enemies are Rooted for 3 seconds when first entering an AOE around Cenarius.",
+        "tranquility": "Nearby allies are healed over time."
       },
       "talents": [
         {
@@ -1113,8 +1113,8 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "elemental": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -1187,9 +1187,9 @@
         "attack-root"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "percent-damage": null,
-        "attack-root": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "percent-damage": "Deals a percentage of the target's health in damage.",
+        "attack-root": "Attack roots enemies, immobilising them."
       },
       "talents": [
         {
@@ -1329,8 +1329,8 @@
         "poisonous"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "poisonous": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "poisonous": "Deals stacking damage over time. Strong vs Armored."
       },
       "talents": [
         {
@@ -1401,9 +1401,9 @@
         "revive"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "resistant": null,
-        "revive": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "resistant": "Takes 50% less Elemental damage.",
+        "revive": "Squadmates resurrect each other."
       },
       "talents": [
         {
@@ -1474,9 +1474,9 @@
         "miner"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "unbound": null,
-        "miner": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "unbound": "Can be played anywhere on the map.",
+        "miner": "Mines Gold from Gold Veins."
       },
       "talents": [
         {
@@ -1601,7 +1601,7 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "elemental": null
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -1673,9 +1673,9 @@
         "cheap-shot"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "stealth": null,
-        "cheap-shot": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "stealth": "Invisible to enemies until it attacks or is damaged.",
+        "cheap-shot": "Attacking from Stealth will Stun enemy units."
       },
       "talents": [
         {
@@ -1746,9 +1746,9 @@
         "detect"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "fast": null,
-        "detect": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "fast": "Fastest moving units.",
+        "detect": "Detect and attack Sealthed enemies."
       },
       "talents": [
         {
@@ -1815,7 +1815,7 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "elemental": null
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -1885,8 +1885,8 @@
         "shapeshift"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "shapeshift": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "shapeshift": "Morphs into an alternate form at 50% health."
       },
       "talents": [
         {
@@ -1960,9 +1960,9 @@
         "poisonous"
       ],
       "trait_descriptions": {
-        "fast": null,
-        "attack-root": null,
-        "poisonous": null
+        "fast": "Fastest moving units.",
+        "attack-root": "Attack roots enemies, immobilising them.",
+        "poisonous": "Deals stacking damage over time. Strong vs Armored."
       },
       "talents": [
         {
@@ -2036,9 +2036,9 @@
         "earth-and-moon"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "poisonous": null,
-        "earth-and-moon": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "poisonous": "Deals stacking damage over time. Strong vs Armored.",
+        "earth-and-moon": "Alternates between Starfall and Entangling Roots whenever a Cenarion Mini is played."
       },
       "talents": [
         {
@@ -2112,10 +2112,10 @@
         "siege-damage"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "armored": null,
-        "unbound": null,
-        "siege-damage": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "armored": "50% Physical damage reduction.",
+        "unbound": "Can be played anywhere on the map.",
+        "siege-damage": "Double damage vs Towers."
       },
       "talents": [
         {
@@ -2183,8 +2183,8 @@
         "eclipse"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "eclipse": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "eclipse": "Changing forms whenever a Cenarion Mini is played"
       },
       "talents": [
         {
@@ -2255,8 +2255,8 @@
         "fiery-weapon-enchant"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "fiery-weapon-enchant": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "fiery-weapon-enchant": "Non-Elemental allies apply Burn on hit."
       },
       "talents": [
         {
@@ -2402,10 +2402,10 @@
         "detect"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "resistant": null,
-        "nullify": null,
-        "detect": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "resistant": "Takes 50% less Elemental damage.",
+        "nullify": "Immune to Poison, Burn, Stun and slowing effects.",
+        "detect": "Detect and attack Sealthed enemies."
       },
       "talents": [
         {
@@ -2476,9 +2476,9 @@
         "resistant"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "elemental": null,
-        "resistant": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "resistant": "Takes 50% less Elemental damage."
       },
       "talents": [
         {
@@ -2548,8 +2548,8 @@
         "fury"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "fury": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "fury": "Attack speed increases while in combat."
       },
       "talents": [
         {
@@ -2619,8 +2619,8 @@
         "bombard"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "bombard": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "bombard": "Attacks ground enemies only."
       },
       "talents": [
         {
@@ -2689,8 +2689,8 @@
         "armored"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "armored": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "armored": "50% Physical damage reduction."
       },
       "talents": [
         {
@@ -2761,8 +2761,8 @@
         "healer"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "healer": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "healer": "Heals friendly units."
       },
       "talents": [
         {
@@ -2833,9 +2833,9 @@
         "siege-damage"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "armored": null,
-        "siege-damage": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "armored": "50% Physical damage reduction.",
+        "siege-damage": "Double damage vs Towers."
       },
       "talents": [
         {
@@ -2906,9 +2906,9 @@
         "resistant"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "elemental": null,
-        "resistant": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "resistant": "Takes 50% less Elemental damage."
       },
       "talents": [
         {
@@ -2989,9 +2989,9 @@
         "cannibalize"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "cycle": null,
-        "cannibalize": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "cycle": "2 cost or less for more Mini plays!",
+        "cannibalize": "Consumes fallen enemy gold residue to regain health."
       },
       "talents": [
         {
@@ -3058,7 +3058,7 @@
         "tank"
       ],
       "trait_descriptions": {
-        "tank": null
+        "tank": "High health unit. Good at soaking Tower damage."
       },
       "talents": [
         {
@@ -3125,8 +3125,8 @@
         "siege-damage"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "siege-damage": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "siege-damage": "Double damage vs Towers."
       },
       "talents": [
         {
@@ -3195,8 +3195,8 @@
         "bloodlust"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "bloodlust": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "bloodlust": "Bloodlusted units gain +33% movement and attack speed."
       },
       "talents": [
         {
@@ -3274,7 +3274,7 @@
         "cycle"
       ],
       "trait_descriptions": {
-        "cycle": null
+        "cycle": "2 cost or less for more Mini plays!"
       },
       "talents": [
         {
@@ -3341,7 +3341,7 @@
         "fast"
       ],
       "trait_descriptions": {
-        "fast": null
+        "fast": "Fastest moving units."
       },
       "talents": [
         {
@@ -3409,8 +3409,8 @@
         "rebirth"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "rebirth": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "rebirth": "One-time self resurrection. Reborn at 50% life."
       },
       "talents": [
         {
@@ -3483,10 +3483,10 @@
         "poisonous"
       ],
       "trait_descriptions": {
-        "fast": null,
-        "elemental": null,
-        "bombard": null,
-        "poisonous": null
+        "fast": "Fastest moving units.",
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "bombard": "Attacks ground enemies only.",
+        "poisonous": "Deals stacking damage over time. Strong vs Armored."
       },
       "talents": [
         {
@@ -3553,7 +3553,7 @@
         "tank"
       ],
       "trait_descriptions": {
-        "tank": null
+        "tank": "High health unit. Good at soaking Tower damage."
       },
       "talents": [
         {
@@ -3628,7 +3628,7 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "elemental": null
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -3699,8 +3699,8 @@
         "resistant"
       ],
       "trait_descriptions": {
-        "fast": null,
-        "resistant": null
+        "fast": "Fastest moving units.",
+        "resistant": "Takes 50% less Elemental damage."
       },
       "talents": [
         {
@@ -3770,8 +3770,8 @@
         "frost"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "frost": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "frost": "Frost damage slows enemy movement and attack speed."
       },
       "talents": [
         {
@@ -3845,7 +3845,7 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "elemental": null
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -3916,8 +3916,8 @@
         "stealth"
       ],
       "trait_descriptions": {
-        "unbound": null,
-        "stealth": null
+        "unbound": "Can be played anywhere on the map.",
+        "stealth": "Invisible to enemies until it attacks or is damaged."
       },
       "talents": [
         {
@@ -4001,9 +4001,9 @@
         "seeds-of-protection"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "healer": null,
-        "seeds-of-protection": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "healer": "Heals friendly units.",
+        "seeds-of-protection": "Protect a nearby Building or Meeting Stone from the next 3 attacks. Ability has one charge."
       },
       "talents": [
         {
@@ -4098,9 +4098,9 @@
         "longshot"
       ],
       "trait_descriptions": {
-        "bombard": null,
-        "siege-damage": null,
-        "longshot": null
+        "bombard": "Attacks ground enemies only.",
+        "siege-damage": "Double damage vs Towers.",
+        "longshot": "Outranges EVERYTHING else."
       },
       "talents": [
         {
@@ -4171,9 +4171,9 @@
         "siege-damage"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "armored": null,
-        "siege-damage": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "armored": "50% Physical damage reduction.",
+        "siege-damage": "Double damage vs Towers."
       },
       "talents": [
         {
@@ -4244,8 +4244,8 @@
         "armored"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "armored": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "armored": "50% Physical damage reduction."
       },
       "talents": [
         {
@@ -4319,8 +4319,8 @@
         "heal-squadmate"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "heal-squadmate": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "heal-squadmate": "Mountaineer periodically heals his Bear companion."
       },
       "talents": [
         {
@@ -4390,8 +4390,8 @@
         "fast"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "fast": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "fast": "Fastest moving units."
       },
       "talents": [
         {
@@ -4461,8 +4461,8 @@
         "summoner"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "summoner": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "summoner": "Summons additional units."
       },
       "talents": [
         {
@@ -4532,8 +4532,8 @@
         "bloodlust"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "bloodlust": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "bloodlust": "Bloodlusted units gain +33% movement and attack speed."
       },
       "talents": [
         {
@@ -4603,8 +4603,8 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "fast": null,
-        "elemental": null
+        "fast": "Fastest moving units.",
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -4683,8 +4683,8 @@
         "vulnerable"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "vulnerable": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "vulnerable": "Unit takes 2x elemental damage."
       },
       "talents": [
         {
@@ -4765,8 +4765,8 @@
         "mak'gora"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "mak'gora": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "mak'gora": "Challenges the first enemy in sight to a duel, revealing their true strength if victorious. Gains more power the closer the duel was."
       },
       "talents": [
         {
@@ -4850,9 +4850,9 @@
         "poisonous"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "bombard": null,
-        "poisonous": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "bombard": "Attacks ground enemies only.",
+        "poisonous": "Deals stacking damage over time. Strong vs Armored."
       },
       "talents": [
         {
@@ -4984,9 +4984,9 @@
         "healer"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "elemental": null,
-        "healer": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "healer": "Heals friendly units."
       },
       "talents": [
         {
@@ -5055,8 +5055,8 @@
         "fast"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "fast": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "fast": "Fastest moving units."
       },
       "talents": [
         {
@@ -5123,7 +5123,7 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "elemental": null
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -5197,10 +5197,10 @@
         "unbound"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "cycle": null,
-        "resistant": null,
-        "unbound": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "cycle": "2 cost or less for more Mini plays!",
+        "resistant": "Takes 50% less Elemental damage.",
+        "unbound": "Can be played anywhere on the map."
       },
       "talents": [
         {
@@ -5275,11 +5275,11 @@
         "blast-wave"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "elemental": null,
-        "resistant": null,
-        "braze": null,
-        "blast-wave": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "resistant": "Takes 50% less Elemental damage.",
+        "braze": "Attach to the nearest allied Tower or Base, shielding it.",
+        "blast-wave": "While in play, replaces this Mini in your deck with the Blast Wave spell: Burn and knock back enemies near buildings."
       },
       "talents": [
         {
@@ -5359,8 +5359,8 @@
         "fast"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "fast": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "fast": "Fastest moving units."
       },
       "talents": [
         {
@@ -5432,8 +5432,8 @@
         "dismounts"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "dismounts": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "dismounts": "Dismounts the mount/vehicle after it's destroyed."
       },
       "talents": [
         {
@@ -5515,8 +5515,8 @@
         "unbound"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "unbound": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "unbound": "Can be played anywhere on the map."
       },
       "talents": [
         {
@@ -5588,9 +5588,9 @@
         "unbound"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "frost": null,
-        "unbound": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "frost": "Frost damage slows enemy movement and attack speed.",
+        "unbound": "Can be played anywhere on the map."
       },
       "talents": [
         {
@@ -5659,8 +5659,8 @@
         "unbound"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "unbound": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "unbound": "Can be played anywhere on the map."
       },
       "talents": [
         {
@@ -5725,7 +5725,7 @@
         "cycle"
       ],
       "trait_descriptions": {
-        "cycle": null
+        "cycle": "2 cost or less for more Mini plays!"
       },
       "talents": [
         {
@@ -5797,9 +5797,9 @@
         "siege-damage"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "armored": null,
-        "siege-damage": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "armored": "50% Physical damage reduction.",
+        "siege-damage": "Double damage vs Towers."
       },
       "talents": [
         {
@@ -5881,9 +5881,9 @@
         "vulnerable"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "poisonous": null,
-        "vulnerable": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "poisonous": "Deals stacking damage over time. Strong vs Armored.",
+        "vulnerable": "Unit takes 2x elemental damage."
       },
       "talents": [
         {
@@ -5952,8 +5952,8 @@
         "charge"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "charge": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "charge": "Charges to enemy targets."
       },
       "talents": [
         {
@@ -6024,9 +6024,9 @@
         "unstoppable"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "siege-damage": null,
-        "unstoppable": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "siege-damage": "Double damage vs Towers.",
+        "unstoppable": "Cannot be slowed, rooted, frozen stunned, or polymorphed."
       },
       "talents": [
         {
@@ -6095,7 +6095,7 @@
         "haunt"
       ],
       "trait_descriptions": {
-        "haunt": null
+        "haunt": "Summon a Banshee on death."
       },
       "talents": [
         {
@@ -6179,9 +6179,9 @@
         "detect"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "elemental": null,
-        "detect": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "detect": "Detect and attack Sealthed enemies."
       },
       "talents": [
         {
@@ -6253,9 +6253,9 @@
         "healer"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "armored": null,
-        "healer": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "armored": "50% Physical damage reduction.",
+        "healer": "Heals friendly units."
       },
       "talents": [
         {
@@ -6334,8 +6334,8 @@
         "surge"
       ],
       "trait_descriptions": {
-        "armored": null,
-        "surge": null
+        "armored": "50% Physical damage reduction.",
+        "surge": "Consumes remaining Gold when deployed."
       },
       "talents": [
         {
@@ -6404,8 +6404,8 @@
         "carrion"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "carrion": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "carrion": "Multiplies from slain enemies."
       },
       "talents": [
         {
@@ -6474,8 +6474,8 @@
         "fury"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "fury": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "fury": "Attack speed increases while in combat."
       },
       "talents": [
         {
@@ -6546,9 +6546,9 @@
         "siege-damage"
       ],
       "trait_descriptions": {
-        "tank": null,
-        "fast": null,
-        "siege-damage": null
+        "tank": "High health unit. Good at soaking Tower damage.",
+        "fast": "Fastest moving units.",
+        "siege-damage": "Double damage vs Towers."
       },
       "talents": [
         {
@@ -6620,9 +6620,9 @@
         "hatching"
       ],
       "trait_descriptions": {
-        "elemental": null,
-        "unbound": null,
-        "hatching": null
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "unbound": "Can be played anywhere on the map.",
+        "hatching": "Unit hatches into final form when attacked."
       },
       "talents": [
         {
@@ -6692,8 +6692,8 @@
         "elemental"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "elemental": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "elemental": "Deals elemental damage. Strong vs Armored."
       },
       "talents": [
         {
@@ -6764,9 +6764,9 @@
         "ambush"
       ],
       "trait_descriptions": {
-        "unbound": null,
-        "stealth": null,
-        "ambush": null
+        "unbound": "Can be played anywhere on the map.",
+        "stealth": "Invisible to enemies until it attacks or is damaged.",
+        "ambush": "Double damage when attacking from Stealth."
       },
       "talents": [
         {
@@ -6830,9 +6830,9 @@
         "poisonous"
       ],
       "trait_descriptions": {
-        "cycle": null,
-        "elemental": null,
-        "poisonous": null
+        "cycle": "2 cost or less for more Mini plays!",
+        "elemental": "Deals elemental damage. Strong vs Armored.",
+        "poisonous": "Deals stacking damage over time. Strong vs Armored."
       },
       "talents": [
         {

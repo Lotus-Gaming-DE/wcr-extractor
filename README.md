@@ -18,8 +18,9 @@ Copy `.env.example` to `.env` if you need to define environment variables. None 
 
 `SNYK_TOKEN`, `RAILWAY_TOKEN`, `RAILWAY_PROJECT` and `RAILWAY_SERVICE` are used
 by the GitHub Actions workflows for security scanning and fetching Railway logs.
-`API_REPO_TOKEN` is required for publishing data to the external API repository.
-Leave them empty if you do not use those features.
+`API_REPO_TOKEN` must be a GitHub token with push rights to
+[`wcr-api`](https://github.com/Lotus-Gaming-DE/wcr-api); without it, the
+publish workflow will fail. Leave them empty if you do not use those features.
 
 ## Usage
 

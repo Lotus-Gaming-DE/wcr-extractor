@@ -126,9 +126,7 @@ def test_fetch_categories_http_error(tmp_path):
 def test_fetch_categories_uses_trait_descriptions(tmp_path):
     html = make_html()
     units_path = tmp_path / "units.json"
-    units = make_units()
-    units[0]["details"] = {"trait_descriptions": {"ambush": "Ambush foes"}}
-    units_path.write_text(json.dumps(units))
+    units_path.write_text(json.dumps(make_units()))
 
     mock_response = Mock(status_code=200, text=html)
     mock_session = Mock()
@@ -140,7 +138,9 @@ def test_fetch_categories_uses_trait_descriptions(tmp_path):
             "OUT_PATH",
             units_path,
         ):
-            fetcher.fetch_categories(session=mock_session)
+            fetcher.fetch_categories(
+                session=mock_session, trait_desc_map={"ambush": "Ambush foes"}
+            )
     data = json.loads(out_file.read_text())
     trait = next(t for t in data["traits"] if t["id"] == "ambush")
     assert trait["descriptions"]["en"] == "Ambush foes"
@@ -149,10 +149,7 @@ def test_fetch_categories_uses_trait_descriptions(tmp_path):
 def test_fetch_categories_prefers_non_null_descriptions(tmp_path):
     html = make_html()
     units_path = tmp_path / "units.json"
-    units = make_units()
-    units[0]["details"] = {"trait_descriptions": {"ambush": None}}
-    units[1]["details"] = {"trait_descriptions": {"ambush": "Ambush foes"}}
-    units_path.write_text(json.dumps(units))
+    units_path.write_text(json.dumps(make_units()))
 
     mock_response = Mock(status_code=200, text=html)
     mock_session = Mock()
@@ -164,7 +161,9 @@ def test_fetch_categories_prefers_non_null_descriptions(tmp_path):
             "OUT_PATH",
             units_path,
         ):
-            fetcher.fetch_categories(session=mock_session)
+            fetcher.fetch_categories(
+                session=mock_session, trait_desc_map={"ambush": "Ambush foes"}
+            )
     data = json.loads(out_file.read_text())
     trait = next(t for t in data["traits"] if t["id"] == "ambush")
     assert trait["descriptions"]["en"] == "Ambush foes"

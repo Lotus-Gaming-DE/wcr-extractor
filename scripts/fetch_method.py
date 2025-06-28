@@ -73,7 +73,7 @@ def main(argv: List[str] | None = None) -> None:
 
     units_tmp = units_path.with_suffix(".tmp")
     try:
-        fetch_units(
+        trait_descs = fetch_units(
             out_path=units_tmp,
             categories_path=cats_path,
             timeout=parsed.timeout,
@@ -102,6 +102,7 @@ def main(argv: List[str] | None = None) -> None:
             timeout=parsed.timeout,
             existing_path=cats_path,
             units_path=units_path,
+            trait_desc_map=trait_descs,
         )
         new_cats = _load_json(cats_tmp) or {}
         logger.info("%s category items fetched", sum(len(v) for v in new_cats.values()))

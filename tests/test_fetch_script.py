@@ -20,6 +20,7 @@ def test_script_invokes_fetchers(tmp_path):
         with patch.object(fetch_method, "configure_structlog") as conf, patch.object(
             fetch_method, "fetch_categories"
         ) as fc, patch.object(fetch_method, "fetch_units") as fu:
+            fu.return_value = {"ambush": "desc"}
             fetch_method.main([])
             conf.assert_called_once_with("INFO", Path(args.log_file))
             unit_tmp = Path(args.output).with_suffix(".tmp")
@@ -36,6 +37,7 @@ def test_script_invokes_fetchers(tmp_path):
                 timeout=5,
                 existing_path=Path(args.categories),
                 units_path=Path(args.output),
+                trait_desc_map=fu.return_value,
             )
 
 
@@ -67,7 +69,7 @@ def test_no_overwrite_when_unchanged(tmp_path):
         ), patch.object(
             fetch_method,
             "fetch_units",
-            side_effect=write_same,
+            side_effect=lambda *a, **k: (write_same(*a, **k) or {}),
         ):
             fetch_method.main([])
             # temp files removed

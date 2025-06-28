@@ -1,5 +1,7 @@
 # Warcraft Rumble Data Extractor
 
+![coverage](https://github.com/Lotus-Gaming-DE/wcr-extractor/actions/workflows/ci.yml/badge.svg)
+
 Simple scraper that downloads minis and category data from [method.gg](https://www.method.gg/warcraft-rumble/minis). Results are written to `data/export/units.json` and `data/export/categories.json` by default, both ignored by Git except for these two files.
 
 ## Setup

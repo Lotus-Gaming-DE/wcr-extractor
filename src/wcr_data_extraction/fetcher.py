@@ -218,6 +218,7 @@ def fetch_categories(
         units = load_existing_units(units_path)
         types_raw: set[str] = set()
         traits_raw: set[str] = set()
+        trait_descs: dict[str, str] = {}
         speed_ids: set[str] = set(speeds_map.keys())
         for unit in units.values():
             t_id = unit.get("type_id")
@@ -225,6 +226,10 @@ def fetch_categories(
                 types_raw.add(t_id)
             for tr in unit.get("trait_ids", []):
                 traits_raw.add(tr)
+            for tid, desc in (
+                unit.get("details", {}).get("trait_descriptions", {}).items()
+            ):
+                trait_descs.setdefault(tid, desc)
             s_id = unit.get("speed_id")
             if s_id:
                 speed_ids.add(s_id)
@@ -256,7 +261,10 @@ def fetch_categories(
             return items
 
         def build_from_ids(
-            name: str, ids: set[str], name_map: dict[str, str] | None = None
+            name: str,
+            ids: set[str],
+            name_map: dict[str, str] | None = None,
+            desc_map: dict[str, str] | None = None,
         ) -> list[dict]:
             items: list[dict] = []
             existing_map = {item.get("id"): item for item in existing.get(name, [])}
@@ -270,15 +278,25 @@ def fetch_categories(
                 names = item.get("names", {})
                 names["en"] = en_name
                 item["names"] = names
-                if "descriptions" in existing_map.get(cat_id, {}):
-                    item["descriptions"] = existing_map[cat_id]["descriptions"]
+                desc_value = desc_map.get(cat_id) if desc_map else None
+                if (
+                    "descriptions" in existing_map.get(cat_id, {})
+                    or desc_value is not None
+                ):
+                    descriptions = dict(
+                        existing_map.get(cat_id, {}).get("descriptions", {})
+                    )
+                    if desc_value is not None and "en" not in descriptions:
+                        descriptions["en"] = desc_value
+                    if descriptions:
+                        item["descriptions"] = descriptions
                 items.append(item)
             return items
 
         data = {
             "factions": build_faction_items(factions_raw),
             "types": build_from_ids("types", types_raw),
-            "traits": build_from_ids("traits", traits_raw),
+            "traits": build_from_ids("traits", traits_raw, None, trait_descs),
             "speeds": build_from_ids("speeds", speed_ids, speeds_map),
         }
 
@@ -363,15 +381,24 @@ def fetch_unit_details(
     # Traits section
     traits_section = find_section("Traits")
     traits: list[str] = []
+    trait_desc_map: dict[str, str] = {}
     if traits_section:
         cat_map = categories["trait"]
+        desc_map = categories.get("trait_desc", {})
         for tile in traits_section.select(".mini-trait-tile"):
             name_elem = tile.select_one(".detail-info")
+            desc_elem = tile.select_one(".mini-talent__description")
             name = name_elem.get_text(strip=True) if name_elem else None
+            desc = desc_elem.get_text(strip=True) if desc_elem else None
             if name:
-                traits.append(cat_map.get(name, name.lower().replace(" ", "-")))
+                trait_id = cat_map.get(name, name.lower().replace(" ", "-"))
+                traits.append(trait_id)
+                if desc:
+                    trait_desc_map[trait_id] = desc_map.get(trait_id, desc)
     if traits:
         details["traits"] = traits
+    if trait_desc_map:
+        details["trait_descriptions"] = trait_desc_map
 
     # Talents section
     talents_section = find_section("Talents")

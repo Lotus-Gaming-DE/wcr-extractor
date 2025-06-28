@@ -36,6 +36,10 @@
         "tank",
         "hook"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "hook": null
+      },
       "talents": [
         {
           "name": {
@@ -103,6 +107,11 @@
         "armored",
         "surge"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "armored": null,
+        "surge": null
+      },
       "talents": [
         {
           "name": {
@@ -169,6 +178,10 @@
         "cycle",
         "fast"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "fast": null
+      },
       "talents": [
         {
           "name": {
@@ -238,6 +251,11 @@
         "armored",
         "charge"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "armored": null,
+        "charge": null
+      },
       "talents": [
         {
           "name": {
@@ -312,6 +330,10 @@
         "cycle",
         "elemental"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -384,6 +406,13 @@
         "lichborne",
         "army-of-the-dead"
       ],
+      "trait_descriptions": {
+        "armored": null,
+        "frost": null,
+        "remorseless-winter": null,
+        "lichborne": null,
+        "army-of-the-dead": null
+      },
       "talents": [
         {
           "name": {
@@ -456,6 +485,9 @@
       "traits": [
         "possession"
       ],
+      "trait_descriptions": {
+        "possession": null
+      },
       "talents": [
         {
           "name": {
@@ -526,6 +558,12 @@
         "elemental",
         "armored"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "fast": null,
+        "elemental": null,
+        "armored": null
+      },
       "talents": [
         {
           "name": {
@@ -606,6 +644,11 @@
         "elemental",
         "bombard"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "elemental": null,
+        "bombard": null
+      },
       "talents": [
         {
           "name": {
@@ -671,6 +714,10 @@
         "elemental",
         "frost"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "frost": null
+      },
       "talents": [
         {
           "name": {
@@ -736,6 +783,9 @@
       "traits": [
         "elemental"
       ],
+      "trait_descriptions": {
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -813,6 +863,10 @@
         "tank",
         "resistant"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "resistant": null
+      },
       "talents": [
         {
           "name": {
@@ -880,6 +934,11 @@
         "fast",
         "attack-stun"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "fast": null,
+        "attack-stun": null
+      },
       "talents": [
         {
           "name": {
@@ -967,6 +1026,13 @@
         "brambles",
         "tranquility"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "resistant": null,
+        "healer": null,
+        "brambles": null,
+        "tranquility": null
+      },
       "talents": [
         {
           "name": {
@@ -1046,6 +1112,10 @@
         "cycle",
         "elemental"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -1116,6 +1186,11 @@
         "percent-damage",
         "attack-root"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "percent-damage": null,
+        "attack-root": null
+      },
       "talents": [
         {
           "name": {
@@ -1253,6 +1328,10 @@
         "elemental",
         "poisonous"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "poisonous": null
+      },
       "talents": [
         {
           "name": {
@@ -1321,6 +1400,11 @@
         "resistant",
         "revive"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "resistant": null,
+        "revive": null
+      },
       "talents": [
         {
           "name": {
@@ -1389,6 +1473,11 @@
         "unbound",
         "miner"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "unbound": null,
+        "miner": null
+      },
       "talents": [
         {
           "name": {
@@ -1511,6 +1600,9 @@
       "traits": [
         "elemental"
       ],
+      "trait_descriptions": {
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -1580,6 +1672,11 @@
         "stealth",
         "cheap-shot"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "stealth": null,
+        "cheap-shot": null
+      },
       "talents": [
         {
           "name": {
@@ -1648,6 +1745,11 @@
         "fast",
         "detect"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "fast": null,
+        "detect": null
+      },
       "talents": [
         {
           "name": {
@@ -1712,6 +1814,9 @@
       "traits": [
         "elemental"
       ],
+      "trait_descriptions": {
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -1779,6 +1884,10 @@
         "elemental",
         "shapeshift"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "shapeshift": null
+      },
       "talents": [
         {
           "name": {
@@ -1850,6 +1959,11 @@
         "attack-root",
         "poisonous"
       ],
+      "trait_descriptions": {
+        "fast": null,
+        "attack-root": null,
+        "poisonous": null
+      },
       "talents": [
         {
           "name": {
@@ -1921,6 +2035,11 @@
         "poisonous",
         "earth-and-moon"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "poisonous": null,
+        "earth-and-moon": null
+      },
       "talents": [
         {
           "name": {
@@ -1992,6 +2111,12 @@
         "unbound",
         "siege-damage"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "armored": null,
+        "unbound": null,
+        "siege-damage": null
+      },
       "talents": [
         {
           "name": {
@@ -2057,6 +2182,10 @@
         "elemental",
         "eclipse"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "eclipse": null
+      },
       "talents": [
         {
           "name": {
@@ -2125,6 +2254,10 @@
         "elemental",
         "fiery-weapon-enchant"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "fiery-weapon-enchant": null
+      },
       "talents": [
         {
           "name": {
@@ -2268,6 +2401,12 @@
         "nullify",
         "detect"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "resistant": null,
+        "nullify": null,
+        "detect": null
+      },
       "talents": [
         {
           "name": {
@@ -2336,6 +2475,11 @@
         "elemental",
         "resistant"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "elemental": null,
+        "resistant": null
+      },
       "talents": [
         {
           "name": {
@@ -2403,6 +2547,10 @@
         "elemental",
         "fury"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "fury": null
+      },
       "talents": [
         {
           "name": {
@@ -2470,6 +2618,10 @@
         "elemental",
         "bombard"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "bombard": null
+      },
       "talents": [
         {
           "name": {
@@ -2536,6 +2688,10 @@
         "tank",
         "armored"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "armored": null
+      },
       "talents": [
         {
           "name": {
@@ -2604,6 +2760,10 @@
         "elemental",
         "healer"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "healer": null
+      },
       "talents": [
         {
           "name": {
@@ -2672,6 +2832,11 @@
         "armored",
         "siege-damage"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "armored": null,
+        "siege-damage": null
+      },
       "talents": [
         {
           "name": {
@@ -2740,6 +2905,11 @@
         "elemental",
         "resistant"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "elemental": null,
+        "resistant": null
+      },
       "talents": [
         {
           "name": {
@@ -2818,6 +2988,11 @@
         "cycle",
         "cannibalize"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "cycle": null,
+        "cannibalize": null
+      },
       "talents": [
         {
           "name": {
@@ -2882,6 +3057,9 @@
       "traits": [
         "tank"
       ],
+      "trait_descriptions": {
+        "tank": null
+      },
       "talents": [
         {
           "name": {
@@ -2946,6 +3124,10 @@
         "cycle",
         "siege-damage"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "siege-damage": null
+      },
       "talents": [
         {
           "name": {
@@ -3012,6 +3194,10 @@
         "tank",
         "bloodlust"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "bloodlust": null
+      },
       "talents": [
         {
           "name": {
@@ -3087,6 +3273,9 @@
       "traits": [
         "cycle"
       ],
+      "trait_descriptions": {
+        "cycle": null
+      },
       "talents": [
         {
           "name": {
@@ -3151,6 +3340,9 @@
       "traits": [
         "fast"
       ],
+      "trait_descriptions": {
+        "fast": null
+      },
       "talents": [
         {
           "name": {
@@ -3216,6 +3408,10 @@
         "tank",
         "rebirth"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "rebirth": null
+      },
       "talents": [
         {
           "name": {
@@ -3286,6 +3482,12 @@
         "bombard",
         "poisonous"
       ],
+      "trait_descriptions": {
+        "fast": null,
+        "elemental": null,
+        "bombard": null,
+        "poisonous": null
+      },
       "talents": [
         {
           "name": {
@@ -3350,6 +3552,9 @@
       "traits": [
         "tank"
       ],
+      "trait_descriptions": {
+        "tank": null
+      },
       "talents": [
         {
           "name": {
@@ -3422,6 +3627,9 @@
       "traits": [
         "elemental"
       ],
+      "trait_descriptions": {
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -3490,6 +3698,10 @@
         "fast",
         "resistant"
       ],
+      "trait_descriptions": {
+        "fast": null,
+        "resistant": null
+      },
       "talents": [
         {
           "name": {
@@ -3557,6 +3769,10 @@
         "elemental",
         "frost"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "frost": null
+      },
       "talents": [
         {
           "name": {
@@ -3628,6 +3844,9 @@
       "traits": [
         "elemental"
       ],
+      "trait_descriptions": {
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -3696,6 +3915,10 @@
         "unbound",
         "stealth"
       ],
+      "trait_descriptions": {
+        "unbound": null,
+        "stealth": null
+      },
       "talents": [
         {
           "name": {
@@ -3777,6 +4000,11 @@
         "healer",
         "seeds-of-protection"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "healer": null,
+        "seeds-of-protection": null
+      },
       "talents": [
         {
           "name": {
@@ -3869,6 +4097,11 @@
         "siege-damage",
         "longshot"
       ],
+      "trait_descriptions": {
+        "bombard": null,
+        "siege-damage": null,
+        "longshot": null
+      },
       "talents": [
         {
           "name": {
@@ -3937,6 +4170,11 @@
         "armored",
         "siege-damage"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "armored": null,
+        "siege-damage": null
+      },
       "talents": [
         {
           "name": {
@@ -4005,6 +4243,10 @@
         "elemental",
         "armored"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "armored": null
+      },
       "talents": [
         {
           "name": {
@@ -4076,6 +4318,10 @@
         "tank",
         "heal-squadmate"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "heal-squadmate": null
+      },
       "talents": [
         {
           "name": {
@@ -4143,6 +4389,10 @@
         "cycle",
         "fast"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "fast": null
+      },
       "talents": [
         {
           "name": {
@@ -4210,6 +4460,10 @@
         "elemental",
         "summoner"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "summoner": null
+      },
       "talents": [
         {
           "name": {
@@ -4277,6 +4531,10 @@
         "elemental",
         "bloodlust"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "bloodlust": null
+      },
       "talents": [
         {
           "name": {
@@ -4344,6 +4602,10 @@
         "fast",
         "elemental"
       ],
+      "trait_descriptions": {
+        "fast": null,
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -4420,6 +4682,10 @@
         "tank",
         "vulnerable"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "vulnerable": null
+      },
       "talents": [
         {
           "name": {
@@ -4498,6 +4764,10 @@
         "tank",
         "mak'gora"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "mak'gora": null
+      },
       "talents": [
         {
           "name": {
@@ -4579,6 +4849,11 @@
         "bombard",
         "poisonous"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "bombard": null,
+        "poisonous": null
+      },
       "talents": [
         {
           "name": {
@@ -4708,6 +4983,11 @@
         "elemental",
         "healer"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "elemental": null,
+        "healer": null
+      },
       "talents": [
         {
           "name": {
@@ -4774,6 +5054,10 @@
         "tank",
         "fast"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "fast": null
+      },
       "talents": [
         {
           "name": {
@@ -4838,6 +5122,9 @@
       "traits": [
         "elemental"
       ],
+      "trait_descriptions": {
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -4909,6 +5196,12 @@
         "resistant",
         "unbound"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "cycle": null,
+        "resistant": null,
+        "unbound": null
+      },
       "talents": [
         {
           "name": {
@@ -4981,6 +5274,13 @@
         "braze",
         "blast-wave"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "elemental": null,
+        "resistant": null,
+        "braze": null,
+        "blast-wave": null
+      },
       "talents": [
         {
           "name": {
@@ -5058,6 +5358,10 @@
         "cycle",
         "fast"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "fast": null
+      },
       "talents": [
         {
           "name": {
@@ -5127,6 +5431,10 @@
         "elemental",
         "dismounts"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "dismounts": null
+      },
       "talents": [
         {
           "name": {
@@ -5206,6 +5514,10 @@
         "elemental",
         "unbound"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "unbound": null
+      },
       "talents": [
         {
           "name": {
@@ -5275,6 +5587,11 @@
         "frost",
         "unbound"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "frost": null,
+        "unbound": null
+      },
       "talents": [
         {
           "name": {
@@ -5341,6 +5658,10 @@
         "cycle",
         "unbound"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "unbound": null
+      },
       "talents": [
         {
           "name": {
@@ -5403,6 +5724,9 @@
       "traits": [
         "cycle"
       ],
+      "trait_descriptions": {
+        "cycle": null
+      },
       "talents": [
         {
           "name": {
@@ -5472,6 +5796,11 @@
         "armored",
         "siege-damage"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "armored": null,
+        "siege-damage": null
+      },
       "talents": [
         {
           "name": {
@@ -5551,6 +5880,11 @@
         "poisonous",
         "vulnerable"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "poisonous": null,
+        "vulnerable": null
+      },
       "talents": [
         {
           "name": {
@@ -5617,6 +5951,10 @@
         "tank",
         "charge"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "charge": null
+      },
       "talents": [
         {
           "name": {
@@ -5685,6 +6023,11 @@
         "siege-damage",
         "unstoppable"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "siege-damage": null,
+        "unstoppable": null
+      },
       "talents": [
         {
           "name": {
@@ -5751,6 +6094,9 @@
       "traits": [
         "haunt"
       ],
+      "trait_descriptions": {
+        "haunt": null
+      },
       "talents": [
         {
           "name": {
@@ -5832,6 +6178,11 @@
         "elemental",
         "detect"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "elemental": null,
+        "detect": null
+      },
       "talents": [
         {
           "name": {
@@ -5901,6 +6252,11 @@
         "armored",
         "healer"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "armored": null,
+        "healer": null
+      },
       "talents": [
         {
           "name": {
@@ -5977,6 +6333,10 @@
         "armored",
         "surge"
       ],
+      "trait_descriptions": {
+        "armored": null,
+        "surge": null
+      },
       "talents": [
         {
           "name": {
@@ -6043,6 +6403,10 @@
         "cycle",
         "carrion"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "carrion": null
+      },
       "talents": [
         {
           "name": {
@@ -6109,6 +6473,10 @@
         "tank",
         "fury"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "fury": null
+      },
       "talents": [
         {
           "name": {
@@ -6177,6 +6545,11 @@
         "fast",
         "siege-damage"
       ],
+      "trait_descriptions": {
+        "tank": null,
+        "fast": null,
+        "siege-damage": null
+      },
       "talents": [
         {
           "name": {
@@ -6246,6 +6619,11 @@
         "unbound",
         "hatching"
       ],
+      "trait_descriptions": {
+        "elemental": null,
+        "unbound": null,
+        "hatching": null
+      },
       "talents": [
         {
           "name": {
@@ -6313,6 +6691,10 @@
         "cycle",
         "elemental"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "elemental": null
+      },
       "talents": [
         {
           "name": {
@@ -6381,6 +6763,11 @@
         "stealth",
         "ambush"
       ],
+      "trait_descriptions": {
+        "unbound": null,
+        "stealth": null,
+        "ambush": null
+      },
       "talents": [
         {
           "name": {
@@ -6442,6 +6829,11 @@
         "elemental",
         "poisonous"
       ],
+      "trait_descriptions": {
+        "cycle": null,
+        "elemental": null,
+        "poisonous": null
+      },
       "talents": [
         {
           "name": {

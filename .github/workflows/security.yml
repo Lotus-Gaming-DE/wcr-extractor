@@ -25,8 +25,8 @@ jobs:
   codeql:
     runs-on: ubuntu-latest
     steps:
-      - uses: github/codeql-action/init@v2
-      - uses: github/codeql-action/analyze@v2
+      - uses: github/codeql-action/init@v3
+      - uses: github/codeql-action/analyze@v3
 
   trufflehog:
     runs-on: ubuntu-latest

@@ -50,7 +50,7 @@ jobs:
         run: |
           cyclonedx-py requirements -i requirements.txt -o logs/sbom.json
       - name: Upload SBOM to logs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: sbom-cyclonedx
           path: logs/sbom.json
@@ -75,7 +75,7 @@ jobs:
           fi
       - name: Upload logs
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: logs
           path: logs/

@@ -18,7 +18,7 @@ jobs:
         run: |
           mkdir -p logs
           npx railway logs --service "$RAILWAY_SERVICE" --project "$RAILWAY_PROJECT" --env production --json --follow > logs/latest_railway.log
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: railway-logs
           path: logs/latest_railway.log

@@ -31,7 +31,7 @@ jobs:
             git push
           fi
       - name: Upload logs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: extractor-logs
           path: logs/runtime-*.json
